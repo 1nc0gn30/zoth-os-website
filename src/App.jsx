@@ -16,9 +16,9 @@ import DocsPage from './pages/DocsPage';
 
 // ─── Theme Context ──────────────────────────────────────────
 export const ThemeContext = createContext({
-  mode: 'dark',
+  mode: 'light',
   toggle: () => {},
-  T: getTheme('dark'),
+  T: getTheme('light'),
 });
 
 export const useTheme = () => useContext(ThemeContext);
@@ -157,9 +157,9 @@ const GlobalStyles = ({ T }) => (
 export default function App() {
   const [mode, setMode] = useState(() => {
     try {
-      return localStorage.getItem('zothos_theme_mode') || 'dark';
+      return localStorage.getItem('zothos_theme_light_v2') || 'light';
     } catch {
-      return 'dark';
+      return 'light';
     }
   });
   const [introState, setIntroState] = useState({ active: false, path: '/', completedCount: 0 });
@@ -168,7 +168,7 @@ export default function App() {
     setMode((prev) => {
       const next = prev === 'light' ? 'dark' : 'light';
       try {
-        localStorage.setItem('zothos_theme_mode', next);
+        localStorage.setItem('zothos_theme_light_v2', next);
       } catch {
         // ignore storage errors
       }

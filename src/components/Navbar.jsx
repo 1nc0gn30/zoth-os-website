@@ -28,7 +28,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LaunchIcon from '@mui/icons-material/Launch';
 import BoltIcon from '@mui/icons-material/Bolt';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-import GoldenZLogo3D from './GoldenZLogo3D';
+import ZothosAsciiLogo from './ZothosAsciiLogo';
 import { useProLicense } from '../context/ProLicenseContext';
 import { LOOPBACK_DAEMONS, FRONTIER_AGENTS } from '../data/zothOsData';
 
@@ -55,13 +55,9 @@ export default function Navbar({ mode, onToggleTheme }) {
   const { isPro, openPaywallModal, openDePayCheckout } = useProLicense();
 
   const goldAccent = dark ? '#D4AF37' : '#8A6508';
-  const brandColor = dark ? '#F5E6AB' : '#101828';
-  const navIdle = dark ? '#9CA3AF' : '#475467';
-  const navActive = dark ? '#D4AF37' : '#B8860B';
-
-  const isLocalHost =
-    typeof window !== 'undefined' &&
-    (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost');
+  const brandColor = dark ? '#F5E6AB' : '#0A0D14';
+  const navIdle = dark ? '#9CA3AF' : '#1E293B';
+  const navActive = dark ? '#D4AF37' : '#0A0D14';
 
   useEffect(() => {
     const onKey = (e) => {
@@ -95,68 +91,27 @@ export default function Navbar({ mode, onToggleTheme }) {
         top: 0,
         background: dark
           ? 'linear-gradient(180deg, rgba(14, 15, 22, 0.90) 0%, rgba(8, 8, 11, 0.85) 100%)'
-          : 'linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.92) 100%)',
-        backdropFilter: 'blur(28px) saturate(180%)',
+          : 'rgba(255, 255, 255, 0.96)',
+        backdropFilter: 'blur(24px) saturate(180%)',
         zIndex: 1100,
-        borderBottom: `1px solid ${dark ? 'rgba(212, 175, 55, 0.24)' : 'rgba(184, 134, 11, 0.22)'}`,
+        borderBottom: `1px solid ${dark ? 'rgba(212, 175, 55, 0.24)' : 'rgba(212, 175, 55, 0.35)'}`,
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: 72, gap: 1 }}>
-          {/* Brand Logo */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexShrink: 0 }}>
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: 74, gap: 1 }}>
+          {/* Pure Black ASCII Brand Logo (No images, no font text title) */}
+          <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <Box
               component={RouterLink}
               to="/"
+              aria-label="ZOTHOS Home"
               sx={{
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                gap: 1.4,
                 textDecoration: 'none',
-                color: brandColor,
               }}
             >
-              <Box
-                sx={{
-                  p: 0.5,
-                  borderRadius: '12px',
-                  border: `1px solid ${dark ? 'rgba(212, 175, 55, 0.3)' : 'rgba(184, 134, 11, 0.25)'}`,
-                  bgcolor: dark ? 'rgba(212, 175, 55, 0.08)' : 'rgba(212, 175, 55, 0.06)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <GoldenZLogo3D size={36} />
-              </Box>
-              <Box>
-                <Typography
-                  sx={{
-                    fontFamily: '"Celtic Garamond", Georgia, serif',
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.03em',
-                    lineHeight: 1.1,
-                    color: brandColor,
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  ZothOS Linux
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: mono,
-                    fontSize: '0.64rem',
-                    fontWeight: 700,
-                    letterSpacing: '0.12em',
-                    color: goldAccent,
-                    display: 'block',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  {isLocalHost ? 'LOCAL NODE • v3.2.0' : 'SOVEREIGN AI OS • v3.2'}
-                </Typography>
-              </Box>
+              <ZothosAsciiLogo size="sm" showTag />
             </Box>
           </Box>
 
@@ -339,9 +294,7 @@ export default function Navbar({ mode, onToggleTheme }) {
         }}
       >
         <Box sx={{ p: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography sx={{ fontFamily: mono, fontWeight: 800, color: goldAccent }}>
-            ZOTHOS LINUX v3.2
-          </Typography>
+          <ZothosAsciiLogo size="sm" showTag={false} />
           <IconButton aria-label="Close navigation menu" onClick={() => setMobileOpen(false)}>
             <CloseIcon />
           </IconButton>

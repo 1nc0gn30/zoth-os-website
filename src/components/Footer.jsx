@@ -4,6 +4,7 @@ import { Box, Container, Typography, Link, Chip, Stack, Unstable_Grid2 as Grid, 
 import ShieldIcon from '@mui/icons-material/Shield';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import ZothosAsciiLogo from './ZothosAsciiLogo';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -11,8 +12,7 @@ export default function Footer() {
   const theme = useTheme();
   const isDark = theme.palette.mode === 'dark';
   const gold = isDark ? '#D4AF37' : '#8A6508';
-  const goldLight = isDark ? '#F5E6AB' : '#8A6A09';
-  const linkColor = isDark ? '#94A3B8' : '#334155';
+  const linkColor = isDark ? '#94A3B8' : '#1E293B';
 
   const osSections = [
     { label: 'ZothOS v3.2 Overview', to: '/' },
@@ -46,8 +46,8 @@ export default function Footer() {
       component="footer"
       sx={{
         mt: 'auto',
-        borderTop: `1px solid ${theme.palette.divider}`,
-        bgcolor: isDark ? '#06070B' : '#F8FAFC',
+        borderTop: `1px solid ${isDark ? '#26262F' : 'rgba(212, 175, 55, 0.38)'}`,
+        bgcolor: isDark ? '#06070B' : '#FFFFFF',
         pt: { xs: 6, md: 8 },
         pb: 5,
       }}
@@ -55,29 +55,8 @@ export default function Footer() {
       <Container maxWidth="xl">
         <Grid container spacing={4}>
           <Grid xs={12} md={5}>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
-              <Box
-                component="img"
-                src="/brand/zoth-mark.png"
-                alt="ZothOS Sovereign Gold Mark"
-                sx={{ width: 38, height: 38, borderRadius: 2 }}
-              />
-              <Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontFamily: '"Celtic Garamond", Georgia, serif',
-                    fontWeight: 700,
-                    color: isDark ? goldLight : '#101828',
-                    lineHeight: 1.1,
-                  }}
-                >
-                  ZothOS Linux v3.2
-                </Typography>
-                <Typography sx={{ fontFamily: mono, fontSize: '0.66rem', color: gold, fontWeight: 800, letterSpacing: '0.12em' }}>
-                  SOVEREIGN AI &amp; OFFENSIVE SECURITY OS
-                </Typography>
-              </Box>
+            <Box sx={{ display: 'inline-flex', alignItems: 'center', mb: 2.2 }}>
+              <ZothosAsciiLogo size="md" showTag />
             </Box>
 
             <Typography
@@ -96,16 +75,16 @@ export default function Footer() {
 
             <Stack direction="row" spacing={1.2} flexWrap="wrap" useFlexGap>
               <Chip
-                icon={<TerminalIcon sx={{ fontSize: '0.88rem !important', color: '#34D399 !important' }} />}
+                icon={<TerminalIcon sx={{ fontSize: '0.88rem !important', color: `${isDark ? '#34D399' : '#047857'} !important` }} />}
                 label="22 LOOPBACK DAEMONS"
                 size="small"
                 sx={{
                   fontFamily: mono,
                   fontSize: '0.66rem',
                   fontWeight: 800,
-                  bgcolor: 'rgba(52,211,153,0.1)',
-                  color: '#34D399',
-                  border: '1px solid rgba(52,211,153,0.35)',
+                  bgcolor: isDark ? 'rgba(52,211,153,0.1)' : '#ECFDF5',
+                  color: isDark ? '#34D399' : '#047857',
+                  border: `1px solid ${isDark ? 'rgba(52,211,153,0.35)' : '#A7F3D0'}`,
                 }}
               />
               <Chip
@@ -116,7 +95,7 @@ export default function Footer() {
                   fontFamily: mono,
                   fontSize: '0.66rem',
                   fontWeight: 800,
-                  bgcolor: 'rgba(212,175,55,0.1)',
+                  bgcolor: isDark ? 'rgba(212,175,55,0.1)' : '#FEF9E7',
                   color: gold,
                   border: `1px solid ${gold}`,
                 }}

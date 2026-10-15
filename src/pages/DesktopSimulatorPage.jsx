@@ -459,13 +459,14 @@ qemu-system-x86_64 \\
               m: 0,
               p: 2.5,
               borderRadius: 2.5,
-              bgcolor: '#07080D',
-              color: '#F5E6AB',
+              bgcolor: isDark ? '#07080D' : '#FAF9F5',
+              color: isDark ? '#F5E6AB' : '#0A0D14',
               fontFamily: mono,
               fontSize: '0.78rem',
+              fontWeight: 600,
               lineHeight: 1.65,
               overflowX: 'auto',
-              border: '1px solid rgba(212,175,55,0.28)',
+              border: '1px solid rgba(212,175,55,0.35)',
             }}
           >
             {generatedProfileScript}

@@ -125,7 +125,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.65 }}>
             Hybrid UEFI + Legacy BIOS Live &amp; Calamares Installer ISO. Includes KDE Plasma 6.3 Wayland (`zoth-pill`), 175+ Kali/Parrot tools, 9 AI coding agents, and 22 loopback daemons.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: '#07080D', fontFamily: mono, fontSize: '0.74rem', color: '#F5E6AB', overflowX: 'auto' }}>
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.74rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
             SHA-256: 8f4e2b9c78d3a1e50647bf04c264a938e55e34b79101683dcf8a804791e2b5e2
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
@@ -156,10 +156,10 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
           </Box>
         </Paper>
 
-        <Paper elevation={0} sx={{ p: 3.5, borderRadius: 3.5, bgcolor: cardBg, border: '1px solid rgba(52,211,153,0.4)' }}>
+        <Paper elevation={0} sx={{ p: 3.5, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-            <VerifiedUserIcon sx={{ color: '#34D399', fontSize: 32 }} />
-            <Chip label="QEMU / KVM APPLIANCE" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: '#34D399' }} />
+            <VerifiedUserIcon sx={{ color: gold, fontSize: 32 }} />
+            <Chip label="QEMU / KVM APPLIANCE" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
           <Typography variant="h4" sx={{ mb: 1 }}>
             zoth-agent-os.qcow2
@@ -167,7 +167,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.65 }}>
             Pre-installed QEMU/KVM VirtIO disk image with pre-configured loopback port-forwarding (`:8094` STDP Memory, `:8787` Zoth Vault, `:9393` Civilization) and Sigstore cosign attestation.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: '#07080D', fontFamily: mono, fontSize: '0.74rem', color: '#34D399', overflowX: 'auto' }}>
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.74rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowX: 'auto' }}>
             $ cosign verify-blob --key cosign.pub --signature zothos-3.2.sig zothos-3.2-amd64.iso
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
@@ -177,7 +177,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}
-              sx={{ fontFamily: mono, fontWeight: 800, borderColor: '#34D399', color: '#34D399' }}
+              sx={{ fontFamily: mono, fontWeight: 800, borderColor: gold, color: gold }}
             >
               Inspect Source &amp; Cosign Key
             </Button>
@@ -199,7 +199,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
       </Box>
 
       {/* Interactive Custom Live-Build ISO Studio */}
-      <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, border: `1px solid ${gold}` }}>
+      <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mb: 2.5 }}>
           <Box>
             <Typography variant="h5" sx={{ fontWeight: 800 }}>
@@ -259,10 +259,12 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
               m: 0,
               p: 2.5,
               borderRadius: 2,
-              bgcolor: '#07080D',
-              color: '#F5E6AB',
+              bgcolor: isDark ? '#07080D' : '#FAF9F5',
+              color: isDark ? '#F5E6AB' : '#0A0D14',
+              border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)',
               fontFamily: mono,
               fontSize: '0.78rem',
+              fontWeight: 600,
               lineHeight: 1.6,
               overflowX: 'auto',
             }}

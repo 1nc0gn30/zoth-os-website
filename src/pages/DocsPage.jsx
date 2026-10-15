@@ -85,7 +85,7 @@ export default function DocsPage() {
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
             ZothOS boots with UFW default-deny incoming, explicitly permitting `lo` (loopback `127.0.0.1` for all 22 resident daemons), `tailscale0` mesh interface, UDP `41641` WireGuard, and TCP `7890` local proxy.
           </Typography>
-          <Box component="pre" sx={{ m: 0, p: 2, borderRadius: 2, bgcolor: '#07080D', color: '#34D399', fontFamily: mono, fontSize: '0.75rem', overflowX: 'auto' }}>
+          <Box component="pre" sx={{ m: 0, p: 2, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', color: isDark ? '#34D399' : '#0A0D14', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.75rem', fontWeight: 600, overflowX: 'auto' }}>
 {`sudo ufw default deny incoming
 sudo ufw allow in on lo
 sudo ufw allow in on tailscale0
@@ -101,7 +101,7 @@ sudo ufw enable`}
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
             Native system controllers located in `/usr/local/bin/` for switching reality modes, managing the interactive wallpaper, and auditing system health:
           </Typography>
-          <Box component="pre" sx={{ m: 0, p: 2, borderRadius: 2, bgcolor: '#07080D', color: '#F5E6AB', fontFamily: mono, fontSize: '0.75rem', overflowX: 'auto' }}>
+          <Box component="pre" sx={{ m: 0, p: 2, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', color: isDark ? '#F5E6AB' : '#0A0D14', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.75rem', fontWeight: 600, overflowX: 'auto' }}>
 {`zoth-mode [gold|ghost|matrix|incognito]
 zoth-live-wallpaper [start|stop|status]
 zoth-glow [start|toggle|color #FFD700]

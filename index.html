@@ -47,8 +47,8 @@
       }
 
       html, body {
-        background-color: #070709;
-        color: #EDEFF2;
+        background-color: #FFFFFF;
+        color: #0A0D14;
         margin: 0;
         padding: 0;
         min-height: 100vh;
@@ -58,82 +58,52 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* Zero-Latency Sovereign Splash Veil */
+      /* Zero-Latency Sovereign Splash Veil (White BG + Black ASCII Logo + Gold) */
       #zoth-preloader {
         position: fixed;
         inset: 0;
         z-index: 999999;
-        background-color: #070709;
+        background-color: #FFFFFF;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
+        transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
         pointer-events: all;
         user-select: none;
       }
-      #zoth-preloader.fade-out {
+      #zoth-preloader.fade-out, #zoth-preloader.is-hidden {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
       }
-      .zoth-loader-core {
-        position: relative;
-        width: 72px;
-        height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 24px;
-      }
-      .zoth-spinner-ring {
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        border: 2px solid rgba(212, 175, 55, 0.14);
-        border-top-color: #D4AF37;
-        box-shadow: 0 0 16px rgba(212, 175, 55, 0.28);
-        animation: zoth-spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
-      }
-      .zoth-spinner-ring-inner {
-        position: absolute;
-        inset: 8px;
-        border-radius: 50%;
-        border: 1.5px solid rgba(237, 239, 242, 0.08);
-        border-bottom-color: #F5E6AB;
-        animation: zoth-spin-rev 1.6s linear infinite;
-      }
-      .zoth-loader-emblem {
-        width: 32px;
-        height: 32px;
-        opacity: 0.94;
-        filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
-      }
-      .zoth-loader-title {
-        font-family: "Celtic Garamond", Georgia, serif;
-        font-size: 1.25rem;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        background: linear-gradient(135deg, #FFF1D0 0%, #D4AF37 50%, #9B7B3E 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 0 0 8px 0;
-        font-weight: 600;
-        text-align: center;
+      .zoth-loader-ascii {
+        font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
+        font-size: 7px;
+        line-height: 1.05;
+        font-weight: 900;
+        color: #0A0D14;
+        white-space: pre;
+        margin: 0 0 14px 0;
+        padding: 10px 14px;
+        border: 1px solid rgba(212, 175, 55, 0.45);
+        border-radius: 8px;
+        background: #FFFFFF;
       }
       .zoth-loader-status {
         font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
         font-size: 0.72rem;
         letter-spacing: 0.22em;
-        color: rgba(212, 175, 55, 0.78);
+        color: #8A6508;
+        font-weight: 800;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         text-align: center;
       }
       .zoth-loader-progress {
-        width: 130px;
+        width: 140px;
         height: 2px;
-        background: rgba(212, 175, 55, 0.15);
+        background: rgba(212, 175, 55, 0.2);
         border-radius: 2px;
         overflow: hidden;
         position: relative;
@@ -144,14 +114,8 @@
         left: 0;
         height: 100%;
         width: 45%;
-        background: linear-gradient(90deg, transparent, #D4AF37, #FFF1D0, transparent);
-        animation: zoth-slide 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-      }
-      @keyframes zoth-spin {
-        to { transform: rotate(360deg); }
-      }
-      @keyframes zoth-spin-rev {
-        to { transform: rotate(-360deg); }
+        background: linear-gradient(90deg, transparent, #D4AF37, #8A6508, transparent);
+        animation: zoth-slide 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
       }
       @keyframes zoth-slide {
         0% { left: -45%; }
@@ -244,12 +208,12 @@
   </head>
   <body>
     <div id="zoth-preloader" aria-hidden="true">
-      <div class="zoth-loader-core">
-        <div class="zoth-spinner-ring"></div>
-        <div class="zoth-spinner-ring-inner"></div>
-        <img src="/brand/zoth-mark.png" alt="ZothOS Linux Emblem" class="zoth-loader-emblem" />
-      </div>
-      <div class="zoth-loader-title">ZOTHOS LINUX 3.2</div>
+      <pre class="zoth-loader-ascii">███████╗ ██████╗ ████████╗██╗  ██╗ ██████╗ ███████╗
+╚══███╔╝██╔═══██╗╚══██╔══╝██║  ██║██╔═══██╗██╔════╝
+  ███╔╝ ██║   ██║   ██║   ███████║██║   ██║███████╗
+ ███╔╝  ██║   ██║   ██║   ██╔══██║██║   ██║╚════██║
+███████╗╚██████╔╝   ██║   ██║  ██║╚██████╔╝███████║
+╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝</pre>
       <div class="zoth-loader-status">BOOTING SOVEREIGN KERNEL</div>
       <div class="zoth-loader-progress">
         <div class="zoth-loader-bar"></div>
