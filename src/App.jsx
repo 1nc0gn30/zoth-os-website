@@ -7,10 +7,12 @@ import { ProLicenseProvider } from './context/ProLicenseContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
+import SEO from './components/SEO';
 import HomePage from './pages/HomePage';
 import DesktopSimulatorPage from './pages/DesktopSimulatorPage';
 import DaemonsPage from './pages/DaemonsPage';
 import SecurityVaultPage from './pages/SecurityVaultPage';
+import McpAxPage from './pages/McpAxPage';
 import DownloadPage from './pages/DownloadPage';
 import DocsPage from './pages/DocsPage';
 
@@ -185,6 +187,7 @@ export default function App() {
           <GlobalStyles T={T} />
           <ErrorBoundary>
             <Router>
+              <SEO />
               <IntroDirector>
                 <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', overflowX: 'hidden' }}>
                   <Navbar mode={mode} onToggleTheme={toggle} />
@@ -195,6 +198,7 @@ export default function App() {
                         <Route path="/desktop" element={<DesktopSimulatorPage />} />
                         <Route path="/daemons" element={<DaemonsPage />} />
                         <Route path="/security" element={<SecurityVaultPage />} />
+                        <Route path="/mcp" element={<McpAxPage />} />
                         <Route path="/download" element={<DownloadPage />} />
                         <Route path="/docs" element={<DocsPage />} />
                       </Routes>

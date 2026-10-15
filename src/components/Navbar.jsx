@@ -39,6 +39,7 @@ const PRIMARY_NAV = [
   { label: 'Desktop Lab', path: '/desktop', badge: 'LIVE' },
   { label: '22 Daemons', path: '/daemons', badge: '22' },
   { label: 'Security Vault', path: '/security', badge: '175+' },
+  { label: 'MCP & AX', path: '/mcp', badge: 'MCP' },
   { label: 'Download ISO', path: '/download', badge: 'v3.2' },
   { label: 'Codex', path: '/docs' },
 ];

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schemas.nullai.tech/agent-card/v1.json",
+  "protocol": "A2A-AX/1.0",
+  "name": "ZothOS Sovereign Operating System Agent",
+  "id": "did:web:zothos.nullai.tech",
+  "version": "3.2.0",
+  "url": "https://zothos.nullai.tech",
+  "description": "Machine-readable Agent Experience (AX) & Agent-to-Agent (A2A) capability profile for ZothOS Linux v3.2 (zoth-pill) — Debian 13 (Trixie), KDE Plasma 6.3 Wayland, Kali + Parrot dual parity, 9 frontier AI coding agents, and 22 loopback enclave daemons.",
+  "provider": {
+    "organization": "Neal Frazier Tech • NullAI Platform",
+    "url": "https://nullai.tech",
+    "github": "https://github.com/1nc0gn30/zoth-os"
+  },
+  "discovery": {
+    "llmsTxt": "https://zothos.nullai.tech/llms.txt",
+    "llmsFullTxt": "https://zothos.nullai.tech/llms-full.txt",
+    "aiTxt": "https://zothos.nullai.tech/ai.txt",
+    "mcpManifest": "https://zothos.nullai.tech/.well-known/mcp.json",
+    "sitemap": "https://zothos.nullai.tech/sitemap.xml",
+    "docs": "https://zothos.nullai.tech/docs",
+    "mcpPlayground": "https://zothos.nullai.tech/mcp"
+  },
+  "capabilities": {
+    "streaming": true,
+    "mcpStdio": true,
+    "mcpSseLoopback": true,
+    "zeroEgressEnclave": true,
+    "hardwareVaultInjection": true,
+    "offlineOllamaInference": true
+  },
+  "residentAgents": [
+    { "name": "Google Antigravity (AGY)", "binary": "agy", "mode": "Hybrid + Local Ollama" },
+    { "name": "Claude Code CLI", "binary": "claude", "mode": "Anthropic Frontier API" },
+    { "name": "Grok CLI", "binary": "grok", "mode": "Hybrid + Local Daemon" },
+    { "name": "Aider", "binary": "aider", "mode": "100% Offline Ollama Ready" },
+    { "name": "Nous Hermes", "binary": "hermes", "mode": "Local + 70+ Skills" },
+    { "name": "Cursor AI IDE", "binary": "cursor", "mode": "Hybrid Visual IDE + MCP" },
+    { "name": "Cline", "binary": "cline", "mode": "Local Ollama / MCP" },
+    { "name": "OpenCode CLI", "binary": "opencode", "mode": "Multi-Model Terminal" },
+    { "name": "Ollama", "binary": "ollama", "mode": "127.0.0.1:11434 Air-Gapped" }
+  ],
+  "authentication": {
+    "schemes": ["local-loopback-unix-uid", "argon2id-vault-lease", "ed25519-capability-token"]
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/2025-03-26/mcp-manifest.json",
+  "protocolVersion": "2025-03-26",
+  "name": "zothos-linux-mcp-mesh",
+  "title": "ZothOS Linux v3.2 — Sovereign Localhost MCP & Enclave Mesh",
+  "version": "3.2.0",
+  "description": "Model Context Protocol (MCP) discovery manifest for ZothOS Linux v3.2 (zoth-pill). Exposes 5 core MCP server clusters wrapping 22 loopback daemons (127.0.0.1:8094–:8120, :8787, :9393, :9989), 175+ Kali/Parrot offensive security binaries, and 9 pre-installed frontier AI coding agents.",
+  "homepage": "https://zothos.nullai.tech",
+  "documentationUrl": "https://zothos.nullai.tech/docs",
+  "mcpHubUrl": "https://zothos.nullai.tech/mcp",
+  "publisher": {
+    "name": "Neal Frazier Tech (NullAI Platform)",
+    "url": "https://nullai.tech",
+    "github": "https://github.com/1nc0gn30"
+  },
+  "securityInvariants": {
+    "zeroEgress": true,
+    "loopbackBindOnly": "127.0.0.1",
+    "secretInjection": "Argon2id + XChaCha20-Poly1305 ephemeral memory-only injection via zoth-vault-daemon (:8787)",
+    "thermalCeiling": "< 55.0°C (no_turbo=1 lock, 0 RPM passive fan curve)"
+  },
+  "mcpServers": {
+    "zoth-kernel-mcp": {
+      "command": "/usr/local/bin/zoth-kernel-mcp",
+      "args": ["--transport", "stdio", "--loopback-guard"],
+      "sseEndpoint": "http://127.0.0.1:8109/mcp/kernel/sse",
+      "description": "Controls ZothOS Reality Pill modes (gold, ghost, matrix, incognito), 60 FPS KWin Wayland cursor physics (:9989), and <55°C thermal governance.",
+      "tools": [
+        {
+          "name": "zoth_mode_switch",
+          "description": "Switch ZothOS Reality Pill operational posture (Gold Master, NullAI Ghostmode Tor, Matrix Phosphor, or Quantum Covert).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": ["gold", "ghost", "matrix", "incognito"],
+                "description": "Target ZothOS Reality Pill posture."
+              },
+              "verifyTor": {
+                "type": "boolean",
+                "default": true,
+                "description": "Verify transparent Tor 9040/9053 routing and MAC rotation when switching to ghost mode."
+              }
+            },
+            "required": ["mode"]
+          }
+        },
+        {
+          "name": "zoth_thermal_telemetry",
+          "description": "Read real-time CPU package temperature, fan RPM, no_turbo lock status, and zoth-heal daemon health.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "includePerCore": { "type": "boolean", "default": true }
+            }
+          }
+        }
+      ]
+    },
+    "zoth-vault-mcp": {
+      "command": "/usr/local/bin/zoth-vault-mcp",
+      "args": ["--daemon", "http://127.0.0.1:8787"],
+      "sseEndpoint": "http://127.0.0.1:8787/mcp/sse",
+      "description": "Hardware-anchored Argon2id + ChaCha20-Poly1305 secrets vault. Injects credentials directly into child process memory without writing .env files to disk.",
+      "tools": [
+        {
+          "name": "vault_exec_ephemeral",
+          "description": "Execute a command or AI agent with secrets injected into ephemeral child memory via zoth-vault-daemon (:8787).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "secretNamespace": {
+                "type": "string",
+                "description": "Vault namespace (e.g. prod/stripe, llm/anthropic, web3/solana)."
+              },
+              "command": {
+                "type": "string",
+                "description": "Binary and arguments to run inside the memory-isolated child process."
+              },
+              "ttlSeconds": {
+                "type": "integer",
+                "default": 60,
+                "description": "Maximum execution lifetime before automatic mlockall memory zeroization."
+              }
+            },
+            "required": ["secretNamespace", "command"]
+          }
+        },
+        {
+          "name": "vault_attestation_status",
+          "description": "Verify Argon2id KDF parameters, mlockall pages, and zero-plaintext-on-disk invariants.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      ]
+    },
+    "zoth-hexstrike-mcp": {
+      "command": "/usr/local/bin/zoth-hexstrike-mcp",
+      "args": ["--cgroups-jail", "http://127.0.0.1:8105"],
+      "sseEndpoint": "http://127.0.0.1:8112/mcp/sse",
+      "description": "Sandboxed MCP bridge to 175+ Kali Rolling & Parrot Security binaries (Nuclei, Subfinder, RustScan, Impacket, Certipy-AD, Ghidra headless).",
+      "tools": [
+        {
+          "name": "hexstrike_recon_scan",
+          "description": "Run an authorized, cgroups-v2 sandboxed reconnaissance or vulnerability workflow using ProjectDiscovery or RustScan.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "target": {
+                "type": "string",
+                "description": "Authorized target domain, CIDR, or localhost service."
+              },
+              "profile": {
+                "type": "string",
+                "enum": ["subfinder-httpx", "nuclei-cves", "rustscan-fast", "trufflehog-secrets"],
+                "description": "Offensive security tool pipeline to execute."
+              }
+            },
+            "required": ["target", "profile"]
+          }
+        }
+      ]
+    },
+    "zoth-memory-stdp-mcp": {
+      "command": "/usr/local/bin/zoth-memory-mcp",
+      "args": ["--endpoint", "http://127.0.0.1:8094"],
+      "sseEndpoint": "http://127.0.0.1:8094/mcp/sse",
+      "description": "Biomorphic Spike-Timing-Dependent Plasticity (STDP) synaptic vector memory and SQLite HNSW graph (:8094).",
+      "tools": [
+        {
+          "name": "stdp_memory_recall",
+          "description": "Query the local HNSW vector stratum and reinforce matching synaptic weights using Spike-Timing-Dependent Plasticity (dw = A+ * exp(-dt/tau)).",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "query": {
+                "type": "string",
+                "description": "Semantic query or architectural concept to recall."
+              },
+              "topK": {
+                "type": "integer",
+                "default": 5
+              },
+              "reinforceSynapse": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "required": ["query"]
+          }
+        }
+      ]
+    },
+    "zoth-daemons-mcp": {
+      "command": "/usr/local/bin/zoth-daemons-mcp",
+      "args": ["--port-range", "8094-8120,8787,9393,9989"],
+      "sseEndpoint": "http://127.0.0.1:8109/mcp/daemons/sse",
+      "description": "Unified orchestrator and telemetry inspector for all 22 resident ZothOS loopback daemons.",
+      "tools": [
+        {
+          "name": "daemon_health_matrix",
+          "description": "Inspect live bind state, latency, memory footprint, and zero-egress compliance across all 22 loopback daemons.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string",
+                "enum": ["all", "AI Memory", "Zero-Egress", "Security", "Commerce", "FinOps", "Crypto Vault", "Compositor"],
+                "default": "all"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

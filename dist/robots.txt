@@ -8,6 +8,9 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
 Allow: /
 
@@ -17,4 +20,12 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
+User-agent: DeepSeekBot
+Allow: /
+
 Sitemap: https://zothos.nullai.tech/sitemap.xml
+# Machine-Readable Discovery:
+# LLMs Context: https://zothos.nullai.tech/llms.txt
+# LLMs Deep Spec: https://zothos.nullai.tech/llms-full.txt
+# MCP Manifest: https://zothos.nullai.tech/.well-known/mcp.json
+# Agent Card: https://zothos.nullai.tech/.well-known/agent.json

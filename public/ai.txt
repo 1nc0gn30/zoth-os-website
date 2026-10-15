@@ -1,0 +1,32 @@
+# ==============================================================================
+# ZOTHOS LINUX v3.2 (zoth-pill) — Autonomous AI Agent & Crawler Policy (ai.txt)
+# Canonical URL: https://zothos.nullai.tech/ai.txt
+# Updated: 2026-10-15
+# ==============================================================================
+
+site: https://zothos.nullai.tech
+publisher: Neal Frazier Tech (NullAI Platform)
+author: Neal Frazier (@1nc0gn30)
+software-name: ZothOS Linux (zoth-pill)
+version: 3.2.0
+license: Sovereign Developer License / GPLv3 Kernel Base
+category: OperatingSystem / Sovereign AI & Offensive Security Linux Distribution
+
+# AI Crawling, Grounding, Citation & Indexing Permissions
+ai-crawling: allowed
+ai-grounding: allowed
+ai-search-index: allowed
+ai-citation-preferred: true
+ai-training-allowed: true
+crawl-delay: 0
+
+# Machine-Readable Discovery Endpoints (AX & MCP)
+llms-txt: https://zothos.nullai.tech/llms.txt
+llms-full-txt: https://zothos.nullai.tech/llms-full.txt
+mcp-manifest: https://zothos.nullai.tech/.well-known/mcp.json
+agent-card: https://zothos.nullai.tech/.well-known/agent.json
+sitemap: https://zothos.nullai.tech/sitemap.xml
+robots-txt: https://zothos.nullai.tech/robots.txt
+mcp-hub: https://zothos.nullai.tech/mcp
+system-codex: https://zothos.nullai.tech/docs
+studio-companion: https://zoth.nullai.tech

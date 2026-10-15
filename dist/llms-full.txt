@@ -1,0 +1,74 @@
+# ZothOS Linux v3.2 (zoth-pill) — Complete Technical Grounding Specification (llms-full.txt)
+
+> Canonical URL: https://zothos.nullai.tech/llms-full.txt
+> Companion Studio: https://zoth.nullai.tech
+> Maintainer: Neal Frazier Tech (@1nc0gn30) • NullAI Platform (https://nullai.tech)
+> Version: 3.2.0-amd64 (Debian 13 Trixie • Linux 6.12 Hybrid UEFI • KDE Plasma 6.3 Wayland)
+
+================================================================================
+SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
+================================================================================
+ZothOS Linux v3.2 (`zoth-pill`) is a sovereign operating system engineered from the ground up for autonomous AI agent orchestration, offensive cybersecurity operations, and cryptographic zero-egress privacy.
+
+1. Base System: Debian 13 (Trixie) with Linux 6.12 LTS/Hybrid UEFI kernel.
+2. Surgical Tri-Repository APT Pinning: Combines Debian 13 stability (Pin-Priority 900) with surgical package pinning from Kali Rolling (Pin-Priority 400) and Parrot Security (Pin-Priority 400). This provides 175+ offensive security binaries without libc6 or desktop dependency breakage.
+3. Desktop Environment: KDE Plasma 6.3 Wayland featuring the custom `org.zothos.interactive` QML WallpaperItem engine, 60 FPS KWin cursor broadcaster (`zoth-cursor-daemon` on `127.0.0.1:9989`), 3D embossed metallic ZOTHOS typography, golden constellation ley-lines, and shockwave ripples.
+4. Thermal & Acoustic Governance: Hardware-enforced `< 55.0°C` thermal ceiling (`no_turbo=1` pstate lock, 0 RPM silent passive fan curve under load, monitored by `zoth-heal`).
+
+================================================================================
+SECTION 2: FOUR REALITY PILL OPERATIONAL MODES (`zoth-mode`)
+================================================================================
+Operators and MCP agents can switch system posture in under 250ms:
+- `zoth-mode gold` (Sovereign Gold Master — Default): 24K Celtic Gold KDE Plasma 6.3 Wayland desktop, UFW default-deny inbound, 22 loopback daemons active, Tailscale mesh ready.
+- `zoth-mode ghost` (NullAI Ghostmode Stealth — Red Pill): System-wide transparent Tor routing (`9040` transport / `9053` DNS) via nftables, cryptographic MAC address spoofing, ephemeral hostname rotation, and automatic RAM tmpfs scrubbing on poweroff.
+- `zoth-mode matrix` (Hermetic Matrix Phosphor — Green Pill): High-contrast emerald phosphor cyber-deck profile tuned for nocturnal red-team reconnaissance, HexStrike AI terminal auditing, and zero eye strain.
+- `zoth-mode incognito` (Quantum Cyber / Chameleon — Blue Pill): Instant visual camouflage for public field operations while keeping all 22 encrypted loopback enclaves running silently in the background.
+
+================================================================================
+SECTION 3: 22 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
+================================================================================
+Every ZothOS daemon binds strictly to `127.0.0.1` and never exposes public network sockets:
+- `:8094` — `neuro-memory-daemon` (Python / SQLite STDP): Biomorphic Spike-Timing-Dependent Plasticity (`dw = A+ * exp(-dt/tau)`) synaptic vector memory & HNSW index.
+- `:8095 / :8096` — `agent-egress-sentinel` (Python / TLS SNI Proxy): Zero-dependency outbound packet inspector and telemetry blocker.
+- `:8097` — `agent-mock-twin` (Python / JSON-RPC): Deterministic offline API replay twin for testing subagents without internet access.
+- `:8098 / :8099` — `agent-prompt-firewall` (Python / Regex AST): Inline prompt injection defense, jailbreak heuristic scanner, and automatic PII redactor.
+- `:8104` — `agent-flight-recorder` (Python / SQLite): Immutable cryptographic black-box event recorder for every agent tool call and shell command.
+- `:8105` — `agent-capsule-jail` (Python / Linux Cgroups v2): Kernel-level enclave sandbox enforcing strict RAM, CPU, and filesystem quotas on untrusted agent tasks.
+- `:8106` — `agent-policy-auditor` (Python / Ed25519): Cryptographic capability leaser and automated OWASP LLM Top-10 compliance auditor.
+- `:8107` — `etsy-pod-forge` (FastMCP / Pillow): Lifestyle mockup compositor and 2026 Etsy ranking algorithm 13-tag SEO optimizer.
+- `:8108` — `etsy-connector` (FastMCP / Open API v3): Etsy seller fee/margin calculator, competitor listing auditor, and draft product publisher.
+- `:8109` — `mcp-lens` (FastMCP / Inspector): Real-time Model Context Protocol (MCP) JSON-RPC 2.0 packet sniffer and latency profiler.
+- `:8110 / :8111` — `agent-budget-sentinel` (Python / Reverse Proxy): Real-time financial circuit breaker and token spend limiter across all LLM API providers.
+- `:8112` — `agent-gods-eye` (Python / OSINT Radar): Planetary OSINT threat radar, subdomain aggregator, and exposed industrial asset mapper.
+- `:8113` — `shopify-connector` (FastMCP / GraphQL): Transpiles Etsy listings into Shopify GraphQL draft products and audits inventory margins.
+- `:8114` — `agent-voice-call` (Python / WebRTC P2P): Full-duplex low-latency neural voice calling cockpit with local speech synthesis.
+- `:8115` — `printify-connector` (FastMCP / REST v1): Automated Print-on-Demand catalog pricing, 20% margin enforcement, and blueprint router.
+- `:8116` — `gelato-connector` (FastMCP / REST v2): Localized print fulfillment routing across 32 countries with tariff & shipping optimization.
+- `:8117` — `pod-smart-router` (FastMCP / Arbitrage): Real-time landed-cost and SLA speed arbitration engine between Printify and Gelato.
+- `:8118` — `digital-asset-forge` (FastMCP / 300 DPI): Generates 5-ratio 300 DPI printable wall art master packs with 98% digital profit margins.
+- `:8119` — `pod-mockup-forge` (FastMCP / Lumen Matrix): Photorealistic apparel and canvas mockup studio with displacement map ink blending.
+- `:8120` — `pod-margin-sentinel` (FastMCP / Math Solver): Multi-channel break-even solver and ROAS ad-spend simulator.
+- `:9393` — `zoth-civilization` (Node.js / Three.js 3D): 21-Agent autonomous society simulation, 3D Golden Sanctum world, and Adytum Great Work loop.
+- `:8787` — `zoth-vault-daemon` (Rust / ChaCha20-Poly1305): Resident memory-only cryptographic secrets vault with Argon2id key derivation (`m=65536, t=4, p=4`) and `mlockall()` protection.
+- `:9989` — `zoth-cursor-daemon` (Python / KWin DBus): 60 FPS Wayland/X11 global cursor broadcaster (`127.0.0.1:9989` + `/dev/shm/zoth_cursor_pos`) powering desktop constellation & aura physics.
+
+================================================================================
+SECTION 4: 9 PRE-INSTALLED FRONTIER AI CODING AGENTS
+================================================================================
+1. Google Antigravity (`agy`) — Flagship Agentic IDE, subagent orchestrator, and Chrome CDP verification harness.
+2. Claude Code CLI (`claude`) — Deep architectural refactoring and multi-file AST terminal agent.
+3. Grok CLI (`grok`) — Real-time autonomous reasoning & long-running sentinel wired to Signal/SimpleX.
+4. Aider (`aider --model ollama/qwen2.5-coder`) — 100% air-gapped Git-native terminal pair programmer.
+5. Nous Hermes (`hermes gateway run`) — Resident tool-calling mesh agent with 70+ built-in skills.
+6. Cursor AI IDE (`cursor`) — Pre-themed 24K Gold AI IDE with pre-bound local MCP servers.
+7. Cline (`cline`) — Step-by-step autonomous agent with native MCP connectors.
+8. OpenCode / Codex CLI (`opencode`) — Fast diff patch and shell pipeline synthesizer.
+9. Ollama (`ollama serve` on `127.0.0.1:11434`) — Local quantized LLM server (Qwen 2.5 Coder, DeepSeek-R1, Llama 3.2, Nomic-Embed-Text).
+
+================================================================================
+SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
+================================================================================
+- MCP Manifest: `https://zothos.nullai.tech/.well-known/mcp.json`
+- A2A Agent Card: `https://zothos.nullai.tech/.well-known/agent.json`
+- Interactive MCP & AX Hub: `https://zothos.nullai.tech/mcp`
+- System Codex Documentation: `https://zothos.nullai.tech/docs`

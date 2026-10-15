@@ -16,6 +16,7 @@ const ROUTES = [
   { match: /^\/desktop\/?$/, clip: 'home', label: 'Zoth-Pill Desktop', kicker: 'KDE Plasma 6.3 Wayland & KVM Lab', accent: 'gold' },
   { match: /^\/daemons\/?$/, clip: 'bridges', label: '22 Loopback Daemons', kicker: '127.0.0.1 Enclave Mesh & 9 AI Agents', accent: 'emerald' },
   { match: /^\/security\/?$/, clip: 'hexstrike', label: 'Cyber Arsenal & Vault', kicker: 'Kali + Parrot Parity & Argon2id Vault', accent: 'crimson' },
+  { match: /^\/mcp\/?$/, clip: 'bridges', label: 'MCP & AX Hub', kicker: 'Model Context Protocol & Agent Experience', accent: 'emerald' },
   { match: /^\/download\/?$/, clip: 'arsenal', label: 'ISO & Custom Builder', kicker: 'UEFI Live-Build & Cosign Verification', accent: 'cyan' },
   { match: /^\/docs\/?$/, clip: 'docs', label: 'System Codex', kicker: 'Architecture, APT Pinning & Invariants', accent: 'gold' },
 ];

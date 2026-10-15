@@ -19,6 +19,7 @@ export default function Footer() {
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
     { label: '22 Loopback Daemons & 9 AI Agents', to: '/daemons' },
     { label: '175+ Security Arsenal & Zoth Vault', to: '/security' },
+    { label: 'MCP & Agent Experience (AX) Hub', to: '/mcp' },
     { label: 'ISO Download & Custom Builder', to: '/download' },
     { label: 'System Codex & APT Architecture', to: '/docs' },
   ];
@@ -36,9 +37,10 @@ export default function Footer() {
     { label: 'Terms of Service', href: '/terms.html' },
     { label: 'Zero-Egress Privacy Policy', href: '/privacy.html' },
     { label: 'Operator Support & FAQ Hub', href: '/support.html' },
-    { label: 'LLM Context (llms.txt)', href: '/llms.txt' },
+    { label: 'MCP Manifest (.well-known/mcp.json)', href: '/.well-known/mcp.json' },
+    { label: 'A2A Agent Card (.well-known/agent.json)', href: '/.well-known/agent.json' },
+    { label: 'LLM Context (llms-full.txt)', href: '/llms-full.txt' },
     { label: 'Sitemap Index (sitemap.xml)', href: '/sitemap.xml' },
-    { label: 'Robots Policy (robots.txt)', href: '/robots.txt' },
   ];
 
   return (
