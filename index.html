@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZothOS Linux v3.2 // The Sovereign AI, Cryptographic Vault &amp; Offensive Security OS</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="ZothOS Linux v3.2 — Bootable Debian 13 Trixie + Kali &amp; Parrot Dual-Parity Operating System with KDE Plasma 6.3 Wayland, 9 Pre-Installed Frontier AI Coding Agents, 22 Loopback Enclave Daemons, and Zero-Egress Hardware Sovereignty." />
+    <meta name="keywords" content="ZothOS, Zoth OS Linux, Sovereign AI Operating System, Kali Parrot Dual Parity, KDE Plasma 6 Wayland, Zero Egress Linux, Local LLM OS, Ollama Linux Distro, NullAI Tech, Neal Frazier Tech" />
+    <meta name="author" content="Neal Frazier Tech (@1nc0gn30) • NullAI Platform" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://zothos.nullai.tech/" />
+    <link rel="icon" type="image/png" href="/brand/zoth-mark.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zothos.nullai.tech/" />
+    <meta property="og:title" content="ZothOS Linux v3.2 // The Sovereign AI &amp; Offensive Security Operating System" />
+    <meta property="og:description" content="KDE Plasma 6.3 Wayland • Debian 13 Trixie • Kali &amp; Parrot Parity • 9 Frontier AI Coding Agents • 22 Loopback Enclave Daemons • Argon2id Hardware Vault." />
+    <meta property="og:image" content="https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg" />
+    <meta property="og:site_name" content="ZothOS Linux" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@1nc0gn30" />
+    <meta name="twitter:creator" content="@1nc0gn30" />
+    <meta name="twitter:title" content="ZothOS Linux v3.2 // The Sovereign AI &amp; Offensive Security Operating System" />
+    <meta name="twitter:description" content="Bootable Linux OS combining Kali + Parrot offensive security parity with 9 Frontier AI coding agents, 22 loopback daemons, and KDE Plasma 6.3 24K Gold UX." />
+    <meta name="twitter:image" content="https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg" />
+
+    <!-- Fonts & Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- DePay Solana Payment Widget -->
+    <script defer src="https://integrate.depay.com/widgets/v13.js"></script>
+
+    <style>
+      @font-face {
+        font-family: "Celtic Garamond";
+        src: url("/fonts/CelticGaramond.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      html, body {
+        background-color: #070709;
+        color: #EDEFF2;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        max-width: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Zero-Latency Sovereign Splash Veil */
+      #zoth-preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        background-color: #070709;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
+        pointer-events: all;
+        user-select: none;
+      }
+      #zoth-preloader.fade-out {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .zoth-loader-core {
+        position: relative;
+        width: 72px;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+      .zoth-spinner-ring {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 2px solid rgba(212, 175, 55, 0.14);
+        border-top-color: #D4AF37;
+        box-shadow: 0 0 16px rgba(212, 175, 55, 0.28);
+        animation: zoth-spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+      }
+      .zoth-spinner-ring-inner {
+        position: absolute;
+        inset: 8px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(237, 239, 242, 0.08);
+        border-bottom-color: #F5E6AB;
+        animation: zoth-spin-rev 1.6s linear infinite;
+      }
+      .zoth-loader-emblem {
+        width: 32px;
+        height: 32px;
+        opacity: 0.94;
+        filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+      }
+      .zoth-loader-title {
+        font-family: "Celtic Garamond", Georgia, serif;
+        font-size: 1.25rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #FFF1D0 0%, #D4AF37 50%, #9B7B3E 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 8px 0;
+        font-weight: 600;
+        text-align: center;
+      }
+      .zoth-loader-status {
+        font-family: "JetBrains Mono", "IBM Plex Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        color: rgba(212, 175, 55, 0.78);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .zoth-loader-progress {
+        width: 130px;
+        height: 2px;
+        background: rgba(212, 175, 55, 0.15);
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      }
+      .zoth-loader-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 45%;
+        background: linear-gradient(90deg, transparent, #D4AF37, #FFF1D0, transparent);
+        animation: zoth-slide 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      @keyframes zoth-spin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes zoth-spin-rev {
+        to { transform: rotate(-360deg); }
+      }
+      @keyframes zoth-slide {
+        0% { left: -45%; }
+        100% { left: 100%; }
+      }
+    </style>
+    <noscript>
+      <style>
+        #zoth-preloader { display: none !important; }
+      </style>
+    </noscript>
+
+    <!-- Schema.org Structured Data (AEO + SEO Graph) -->
+    <script type="application/ld+json" id="zothos-schema-graph">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://zothos.nullai.tech/#webapp",
+          "name": "ZothOS Linux v3.2",
+          "url": "https://zothos.nullai.tech/",
+          "applicationCategory": "OperatingSystem",
+          "operatingSystem": "Linux (Debian 13 Trixie x86_64 Hybrid UEFI)",
+          "creator": {
+            "@type": "Person",
+            "name": "Neal Frazier",
+            "url": "https://nealfrazier.tech"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Neal Frazier Tech • NullAI Platform",
+            "url": "https://nullai.tech"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "19.00",
+            "priceCurrency": "USD",
+            "url": "https://buy.stripe.com/cNiaEWaEldKo6Tm1C0fw40D",
+            "description": "Founding Lifetime Sovereign Pass — Custom ISO Builder Pro, Signed Bootloader Manifests & 59 Studio Enclaves"
+          },
+          "description": "Sovereign AI, Cryptographic Vault & Offensive Security Linux Operating System featuring KDE Plasma 6.3 Wayland, Kali + Parrot Dual Parity, 9 Frontier AI Coding Agents, and 22 Loopback Daemons."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://zothos.nullai.tech/#distro",
+          "name": "ZothOS Linux 3.2 ISO & KVM Hypervisor Suite",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Linux",
+          "softwareVersion": "3.2.0",
+          "offers": {
+            "@type": "Offer",
+            "price": "19.00",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://zothos.nullai.tech/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What makes ZothOS Linux v3.2 different from Kali Linux, Parrot OS, or Ubuntu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ZothOS Linux v3.2 combines Debian 13 (Trixie) stability with surgical APT pinning for Kali Rolling and Parrot OS offensive security tools (175+ tools), while pre-installing 9 Frontier AI coding agents (AGY, Claude Code, Grok CLI, Aider, Cursor, Cline, Hermes, Codex, Ollama), 22 localhost loopback enclave daemons (:8094–:8120, :9393, :8787), and the custom 24K Gold KDE Plasma 6.3 Wayland desktop."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does ZothOS send any telemetry or prompt data to external servers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. ZothOS enforces a strict default-deny UFW firewall posture with all 22 AI & security daemons bound exclusively to 127.0.0.1 loopback. Local LLM inference runs offline via Ollama and WebGPU, and one-command NullAI Ghostmode routes external traffic through transparent Tor with MAC spoofing and RAM scrubbing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I unlock the Custom ISO Builder Pro & Sovereign USB Provisioner?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can test the interactive ZothOS desktop simulator, terminal, and custom ISO package selector directly in your browser. Unlocking full cloud-init / live-build script exports and signed bootloader manifests is a one-time $19 Founding Lifetime payment via Stripe (Card/Apple Pay) or Solana DePay (SOL/USDC)."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="zoth-preloader" aria-hidden="true">
+      <div class="zoth-loader-core">
+        <div class="zoth-spinner-ring"></div>
+        <div class="zoth-spinner-ring-inner"></div>
+        <img src="/brand/zoth-mark.png" alt="ZothOS Linux Emblem" class="zoth-loader-emblem" />
+      </div>
+      <div class="zoth-loader-title">ZOTHOS LINUX 3.2</div>
+      <div class="zoth-loader-status">BOOTING SOVEREIGN KERNEL</div>
+      <div class="zoth-loader-progress">
+        <div class="zoth-loader-bar"></div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
