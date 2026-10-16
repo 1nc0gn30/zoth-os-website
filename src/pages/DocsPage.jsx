@@ -204,7 +204,7 @@ const FAQS = [
   },
   {
     q: 'How do I unlock the Pro Custom ISO Live-Build Script, MCP Bundle, and Vault Policy Exporter?',
-    a: 'Click any Stripe ($19 Founding Lifetime) or Solana DePay button in the sales banner above, or enter your license key in the Pro modal. Activation is instant, verified client-side, and persisted in localStorage.',
+    a: 'Click the Solana DePay ($19 Founding Lifetime) button in the sales banner above, or enter your Pro license key / transaction signature in the activation modal. Activation is instant, verified client-side, and persisted in localStorage.',
   },
 ];
 

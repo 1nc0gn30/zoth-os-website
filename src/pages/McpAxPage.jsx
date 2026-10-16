@@ -335,7 +335,7 @@ export default function McpAxPage() {
   const theme = useTheme();
   const dark = theme.palette.mode === 'dark';
   const goldAccent = dark ? '#D4AF37' : '#8A6508';
-  const { isPro, openPaywallModal, openStripeCheckout, openDePayCheckout } = useProLicense();
+  const { isPro, openPaywallModal, openDePayCheckout } = useProLicense();
 
   // Config generator state
   const [ideTarget, setIdeTarget] = useState('agy');
@@ -771,15 +771,13 @@ export default function McpAxPage() {
                       Unlock full copy/export access to the 5-cluster ZothOS MCP manifest, custom Live-Build ISO scripts, and Argon2id Vault policies for $19 lifetime.
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1.2 }}>
-                      <Button variant="contained" color="primary" onClick={openStripeCheckout} sx={{ fontFamily: mono, fontWeight: 800 }}>
-                        💳 Unlock via Stripe ($19)
-                      </Button>
                       <Button
-                        variant="outlined"
+                        variant="contained"
+                        color="primary"
                         onClick={openDePayCheckout}
-                        sx={{ fontFamily: mono, fontWeight: 800, borderColor: '#14F195', color: '#14F195' }}
+                        sx={{ fontFamily: mono, fontWeight: 800 }}
                       >
-                        ⚡ Pay with Solana (DePay)
+                        ⚡ Pay with Solana ($19 — DePay)
                       </Button>
                       <Button variant="text" onClick={openPaywallModal} sx={{ fontFamily: mono, color: '#F5E6AB', fontSize: '0.76rem' }}>
                         Have a Pro License Key? Activate →

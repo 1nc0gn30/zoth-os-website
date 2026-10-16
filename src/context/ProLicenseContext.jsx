@@ -17,12 +17,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import LockIcon from '@mui/icons-material/Lock';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import BoltIcon from '@mui/icons-material/Bolt';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
-const STRIPE_URL = 'https://buy.stripe.com/cNiaEWaEldKo6Tm1C0fw40D';
 const DEPAY_INTEGRATION_ID = '428790dd-7ad1-407c-8ecf-c048c77a4cb8';
 const STORAGE_KEY = 'zothos_pro_licensed';
 
@@ -32,7 +30,6 @@ const ProLicenseContext = createContext({
   openLicenseModal: () => {},
   openDePayCheckout: () => {},
   activateLicense: () => {},
-  stripeUrl: STRIPE_URL,
 });
 
 export function useProLicense() {
@@ -86,7 +83,7 @@ export function ProLicenseProvider({ children }) {
         integration: DEPAY_INTEGRATION_ID,
       });
     } else {
-      window.open(STRIPE_URL, '_blank', 'noopener,noreferrer');
+      setPaywallOpen(true);
     }
   };
 
@@ -110,7 +107,6 @@ export function ProLicenseProvider({ children }) {
         },
         openDePayCheckout,
         activateLicense,
-        stripeUrl: STRIPE_URL,
       }}
     >
       {children}
@@ -171,29 +167,15 @@ export function ProLicenseProvider({ children }) {
             <Button
               variant="contained"
               color="primary"
-              href={STRIPE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              startIcon={<CreditCardIcon />}
-              sx={{ py: 1.3, fontWeight: 800, fontFamily: mono }}
-            >
-              Unlock with Card / Apple Pay ($19 Lifetime)
-            </Button>
-            <Button
-              variant="outlined"
               onClick={openDePayCheckout}
               startIcon={<BoltIcon />}
               sx={{
-                py: 1.2,
+                py: 1.35,
                 fontWeight: 800,
                 fontFamily: mono,
-                borderColor: '#14F195',
-                color: isDark ? '#14F195' : '#047857',
-                bgcolor: 'rgba(20, 241, 149, 0.08)',
-                '&:hover': { borderColor: '#14F195', bgcolor: 'rgba(20, 241, 149, 0.16)' },
               }}
             >
-              ⚡ Pay with Solana / USDC (DePay Web3)
+              ⚡ Pay with Solana / USDC ($19 Lifetime — DePay Web3)
             </Button>
           </Box>
 
@@ -206,13 +188,13 @@ export function ProLicenseProvider({ children }) {
               }}
               sx={{ fontFamily: mono, fontSize: '0.75rem', color: 'text.secondary', textDecoration: 'underline' }}
             >
-              Already purchased? Activate with License Key or Receipt Email →
+              Already purchased? Activate with License Key or Transaction Signature →
             </Button>
           </Box>
         </DialogContent>
       </Dialog>
 
-      {/* License Key / Email Activation Modal */}
+      {/* License Key / Signature Activation Modal */}
       <Dialog
         open={licenseOpen}
         onClose={() => setLicenseOpen(false)}
@@ -236,12 +218,12 @@ export function ProLicenseProvider({ children }) {
             </IconButton>
           </Box>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            Enter your Stripe receipt email, Solana transaction signature, or Sovereign Pro key to unlock all exports permanently in this browser:
+            Enter your Solana transaction signature or Sovereign Pro license key to unlock all exports permanently in this browser:
           </Typography>
           <TextField
             fullWidth
             size="small"
-            placeholder="operator@domain.com or ZOTH-PRO-2026"
+            placeholder="Solana Tx Signature or ZOTH-PRO-2026"
             value={keyInput}
             onChange={(e) => setKeyInput(e.target.value)}
             onKeyDown={(e) => {
@@ -279,7 +261,7 @@ export function ProLicenseProvider({ children }) {
  * Above-The-Fold High-Converting Sales Funnel Banner
  */
 export function ProFunnelBanner() {
-  const { isPro, openLicenseModal, openDePayCheckout, stripeUrl } = useProLicense();
+  const { isPro, openLicenseModal, openDePayCheckout } = useProLicense();
   const theme = useTheme();
   const isDark = theme.palette.mode === 'dark';
   const gold = isDark ? '#D4AF37' : '#8A6508';
@@ -350,31 +332,17 @@ export function ProFunnelBanner() {
             variant="contained"
             color="primary"
             size="small"
-            href={stripeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            startIcon={<CreditCardIcon sx={{ fontSize: 15 }} />}
-            sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.78rem', px: 2, py: 0.8 }}
-          >
-            Unlock Instant Access ($19)
-          </Button>
-          <Button
-            variant="outlined"
-            size="small"
             onClick={openDePayCheckout}
             startIcon={<BoltIcon sx={{ fontSize: 15 }} />}
             sx={{
               fontFamily: mono,
               fontWeight: 800,
               fontSize: '0.78rem',
-              px: 1.8,
+              px: 2.2,
               py: 0.8,
-              borderColor: '#14F195',
-              color: isDark ? '#14F195' : '#047857',
-              bgcolor: 'rgba(20, 241, 149, 0.08)',
             }}
           >
-            Pay with SOL
+            ⚡ Pay with SOL ($19 Lifetime)
           </Button>
         </Box>
 
@@ -391,7 +359,7 @@ export function ProFunnelBanner() {
             '&:hover': { bgcolor: 'transparent', color: gold },
           }}
         >
-          Already purchased? Enter License Key / Email →
+          Already purchased? Enter License Key →
         </Button>
       </Box>
     </Paper>
@@ -402,7 +370,7 @@ export function ProFunnelBanner() {
  * Frosted Glass Blur Output Paywall Gate
  */
 export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest Output', children }) {
-  const { isPro, openDePayCheckout, openLicenseModal, stripeUrl } = useProLicense();
+  const { isPro, openDePayCheckout, openLicenseModal } = useProLicense();
   const theme = useTheme();
   const isDark = theme.palette.mode === 'dark';
   const gold = isDark ? '#D4AF37' : '#8A6508';
@@ -464,30 +432,16 @@ export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest
             variant="contained"
             color="primary"
             size="small"
-            href={stripeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            startIcon={<CreditCardIcon sx={{ fontSize: 15 }} />}
-            sx={{ fontFamily: mono, fontWeight: 800, px: 2.2, py: 0.9 }}
-          >
-            Unlock Pro ($19 Lifetime)
-          </Button>
-          <Button
-            variant="outlined"
-            size="small"
             onClick={openDePayCheckout}
             startIcon={<BoltIcon sx={{ fontSize: 15 }} />}
             sx={{
               fontFamily: mono,
               fontWeight: 800,
-              px: 2,
-              py: 0.9,
-              borderColor: '#14F195',
-              color: isDark ? '#14F195' : '#047857',
-              bgcolor: 'rgba(20, 241, 149, 0.1)',
+              px: 2.4,
+              py: 0.95,
             }}
           >
-            Pay with Crypto (SOL)
+            ⚡ Pay with Solana ($19 Lifetime)
           </Button>
         </Box>
         <Button
