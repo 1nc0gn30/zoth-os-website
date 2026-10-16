@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const SITE_URL = 'https://zothos.nullai.tech';
-const OG_IMAGE = 'https://zothos.nullai.tech/screenshots/zothos-desktop.png';
+const OG_IMAGE = 'https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg';
 
 const ROUTE_META = {
   '/': {

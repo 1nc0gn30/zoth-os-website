@@ -134,28 +134,49 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://zothos.nullai.tech/#website",
+          "url": "https://zothos.nullai.tech/",
+          "name": "ZothOS Linux v3.2 (zoth-pill)",
+          "alternateName": "ZothOS Sovereign AI & Offensive Security OS",
+          "publisher": {
+            "@id": "https://zothos.nullai.tech/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://zothos.nullai.tech/#organization",
+          "name": "Neal Frazier Tech • NullAI Platform",
+          "url": "https://nullai.tech",
+          "sameAs": [
+            "https://github.com/1nc0gn30/zoth-os-website",
+            "https://github.com/1nc0gn30/zoth-os",
+            "https://zoth.nullai.tech",
+            "https://nealfrazier.tech"
+          ]
+        },
+        {
           "@type": "WebApplication",
           "@id": "https://zothos.nullai.tech/#webapp",
           "name": "ZothOS Linux v3.2",
           "url": "https://zothos.nullai.tech/",
           "applicationCategory": "OperatingSystem",
           "operatingSystem": "Linux (Debian 13 Trixie x86_64 Hybrid UEFI)",
+          "softwareHelp": "https://zothos.nullai.tech/docs",
           "creator": {
             "@type": "Person",
             "name": "Neal Frazier",
             "url": "https://nealfrazier.tech"
           },
           "publisher": {
-            "@type": "Organization",
-            "name": "Neal Frazier Tech • NullAI Platform",
-            "url": "https://nullai.tech"
+            "@id": "https://zothos.nullai.tech/#organization"
           },
           "offers": {
             "@type": "Offer",
             "price": "19.00",
             "priceCurrency": "USD",
             "url": "https://buy.stripe.com/cNiaEWaEldKo6Tm1C0fw40D",
-            "description": "Founding Lifetime Sovereign Pass — Custom ISO Builder Pro, Signed Bootloader Manifests & 59 Studio Enclaves"
+            "description": "Founding Lifetime Sovereign Pass — Custom ISO Builder Pro, Signed Bootloader Manifests, 5-Cluster MCP Bundle & 59 Studio Enclaves"
           },
           "description": "Sovereign AI, Cryptographic Vault & Offensive Security Linux Operating System featuring KDE Plasma 6.3 Wayland, Kali + Parrot Dual Parity, 9 Frontier AI Coding Agents, and 22 Loopback Daemons."
         },
@@ -163,6 +184,7 @@
           "@type": "SoftwareApplication",
           "@id": "https://zothos.nullai.tech/#distro",
           "name": "ZothOS Linux 3.2 ISO & KVM Hypervisor Suite",
+          "url": "https://zothos.nullai.tech/download",
           "applicationCategory": "DeveloperApplication",
           "operatingSystem": "Linux",
           "softwareVersion": "3.2.0",
@@ -194,10 +216,18 @@
             },
             {
               "@type": "Question",
+              "name": "How do I connect AI coding agents to ZothOS via Model Context Protocol (MCP)?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Visit https://zothos.nullai.tech/mcp or fetch https://zothos.nullai.tech/.well-known/mcp.json to generate 1-click mcpServers configurations for Google Antigravity (AGY), Claude Code, Cursor, and Cline across ZothOS's 5 local MCP clusters."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "How do I unlock the Custom ISO Builder Pro & Sovereign USB Provisioner?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "You can test the interactive ZothOS desktop simulator, terminal, and custom ISO package selector directly in your browser. Unlocking full cloud-init / live-build script exports and signed bootloader manifests is a one-time $19 Founding Lifetime payment via Stripe (Card/Apple Pay) or Solana DePay (SOL/USDC)."
+                "text": "You can test the interactive ZothOS desktop simulator, terminal, MCP JSON-RPC 2.0 playground, and custom ISO package selector directly in your browser at https://zothos.nullai.tech. Unlocking full cloud-init / live-build script exports and signed bootloader manifests is a one-time $19 Founding Lifetime payment via Stripe (Card/Apple Pay) or Solana DePay (SOL/USDC)."
               }
             }
           ]
@@ -205,7 +235,7 @@
       ]
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-DAtCVi0l.js"></script>
+    <script type="module" crossorigin src="/assets/index-pWBnpC56.js"></script>
   </head>
   <body>
     <div id="zoth-preloader" aria-hidden="true">
