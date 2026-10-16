@@ -6,9 +6,9 @@ const OG_IMAGE = 'https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg';
 
 const ROUTE_META = {
   '/': {
-    title: 'ZothOS Linux v3.2 (zoth-pill) — Sovereign AI, Security & KDE Plasma 6.3 Wayland OS',
-    desc: 'ZothOS Linux v3.2 (zoth-pill): Sovereign Debian 13 (Trixie) OS with Kali + Parrot dual parity (175+ tools), 9 frontier AI coding agents, 22 loopback daemons, and KDE Plasma 6.3 Wayland 24K Gold desktop.',
-    keywords: 'ZothOS, zoth-pill, Sovereign AI Linux, Debian 13 Trixie, Kali Parrot dual parity, KDE Plasma 6.3 Wayland, 22 loopback daemons, Argon2id vault, MCP OS',
+    title: 'ZothOS Linux v3.2 — The Operating System Built for AI Agents & Human Operators',
+    desc: 'ZothOS Linux v3.2: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 152 MCP servers, zoth-relay :8765, 22 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and 175+ Kali/Parrot tools for humans.',
+    keywords: 'ZothOS, Agent-Native Linux OS, OS for AI agents, zoth-agent-os, zoth-relay, 152 MCP servers, Debian 13 Trixie, Kali Parrot dual parity, KDE Plasma 6.3 Wayland, 22 loopback daemons',
     schemaType: 'SoftwareApplication',
     breadcrumb: 'Overview',
   },

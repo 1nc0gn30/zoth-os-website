@@ -117,41 +117,41 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
         <Paper elevation={0} sx={{ p: 3.5, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
             <UsbIcon sx={{ color: gold, fontSize: 32 }} />
-            <Chip label="BARE METAL & LIVE USB" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
+            <Chip label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
           <Typography variant="h4" sx={{ mb: 1 }}>
             zothos-3.2-amd64.iso
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.65 }}>
-            Hybrid UEFI + Legacy BIOS Live &amp; Calamares Installer ISO. Includes KDE Plasma 6.3 Wayland (`zoth-pill`), 175+ Kali/Parrot tools, 9 AI coding agents, and 22 loopback daemons.
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
+            Hybrid UEFI + Legacy BIOS Live &amp; Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, 152 MCP catalog, 175+ Kali/Parrot tools, and 22 loopback daemons. Live credentials: user <code>neo</code> / password <code>zoth</code>.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.74rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
-            SHA-256: 8f4e2b9c78d3a1e50647bf04c264a938e55e34b79101683dcf8a804791e2b5e2
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
+            $ bash zothos-join-iso.sh &amp;&amp; sudo dd if=zothos-3.2-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
               variant="contained"
               color="primary"
-              href="https://github.com/1nc0gn30/zoth-os/releases"
+              href="https://github.com/NullAITech/zoth-os/releases/tag/v3.2.0"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}
               sx={{ fontFamily: mono, fontWeight: 800 }}
             >
-              Download Release ISO
+              Download v3.2.0 Release ISO
             </Button>
             <Button
               variant="outlined"
               startIcon={<ContentCopyIcon />}
               onClick={() =>
                 copyText(
-                  'sudo dd if=zothos-3.2-amd64.iso of=/dev/sdX status=progress bs=4M conv=fdatasync',
-                  'USB dd flash command',
+                  'bash zothos-join-iso.sh && sudo dd if=zothos-3.2-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync',
+                  'ISO join & USB dd flash command',
                 )
               }
               sx={{ fontFamily: mono, fontWeight: 700 }}
             >
-              Copy USB Flash Cmd
+              Copy Rejoin &amp; Flash Cmd
             </Button>
           </Box>
         </Paper>
@@ -159,16 +159,16 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
         <Paper elevation={0} sx={{ p: 3.5, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
             <VerifiedUserIcon sx={{ color: gold, fontSize: 32 }} />
-            <Chip label="QEMU / KVM APPLIANCE" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
+            <Chip label="QEMU / KVM AGENT APPLIANCE" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
           <Typography variant="h4" sx={{ mb: 1 }}>
-            zoth-agent-os.qcow2
+            zothos.qcow2 (Agent VM)
           </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2.5, lineHeight: 1.65 }}>
-            Pre-installed QEMU/KVM VirtIO disk image with pre-configured loopback port-forwarding (`:8094` STDP Memory, `:8787` Zoth Vault, `:9393` Civilization) and Sigstore cosign attestation.
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
+            Dedicated QEMU/KVM virtual machine substrate for autonomous AI agents. Supports live chroot injection (`./tools/inject-vm-customization.sh`), automated 25-point verification (`./tools/verify-zothos.sh`), and `zoth-relay` (`:8765`) host bridging.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.74rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowX: 'auto' }}>
-            $ cosign verify-blob --key cosign.pub --signature zothos-3.2.sig zothos-3.2-amd64.iso
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowX: 'auto' }}>
+            $ ./tools/verify-zothos.sh &amp;&amp; virsh -c qemu:///system start zothos
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
@@ -179,14 +179,14 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
               startIcon={<DownloadIcon />}
               sx={{ fontFamily: mono, fontWeight: 800, borderColor: gold, color: gold }}
             >
-              Inspect Source &amp; Cosign Key
+              Inspect Source &amp; VM Tools
             </Button>
             <Button
               variant="outlined"
               startIcon={<ContentCopyIcon />}
               onClick={() =>
                 copyText(
-                  'qemu-system-x86_64 -enable-kvm -m 8192 -smp 4 -hda zoth-agent-os.qcow2',
+                  'qemu-system-x86_64 -enable-kvm -m 8192 -smp 4 -hda build/vms/zothos.qcow2',
                   'QEMU/KVM launch command',
                 )
               }

@@ -1,26 +1,31 @@
-# ZothOS Linux v3.2 (zoth-pill) — Machine-Readable LLM Context (llms.txt)
-> The Sovereign AI, Cryptographic Vault & Offensive Security Operating System
+# ZothOS Linux v3.2 (zoth-pill) — Machine-Readable LLM & Agent Context (llms.txt)
+> The Operating System Built for AI Agents — And the Humans Who Command Them
 > Engineered by Neal Frazier Tech (@1nc0gn30) • NullAI Platform (https://nullai.tech)
 > Canonical URL: https://zothos.nullai.tech
 
-## Core Architecture
-- **Base Distribution**: Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI with surgical APT pinning for Kali Rolling & Parrot OS Security (175+ offensive security tools).
-- **Desktop Environment**: KDE Plasma 6.3 Wayland with custom 24K Celtic Gold theme, interactive `org.zothos.interactive` 3D wallpaper, and `zoth-cursor-daemon` (`127.0.0.1:9989`) 60 FPS compositor cursor tracking.
-- **Pre-Installed Frontier AI Agents (9)**: Google Antigravity (`agy`), Claude Code (`claude`), Grok CLI (`grok`), Aider (`aider`), Cursor AI (`cursor`), Cline (`cline`), Nous Hermes (`hermes`), OpenCode/Codex (`opencode`), and local Ollama (`ollama serve` on `127.0.0.1:11434`).
-- **22 Loopback Enclave Daemons**: Bound strictly to `127.0.0.1` ports `:8094` through `:8120`, `:9393` (`zoth-civilization`), `:8787` (`zoth-vault-daemon`), and `:9989` (`zoth-cursor-daemon`).
-- **Model Context Protocol (MCP) Mesh**: 5 pre-configured local MCP server clusters (`zoth-kernel-mcp`, `zoth-vault-mcp`, `zoth-hexstrike-mcp`, `zoth-memory-stdp-mcp`, `zoth-daemons-mcp`) exposed via stdio and loopback SSE.
-- **Reality Pill Profiles (`zoth-mode`)**: `gold` (24K Sovereign Gold Default), `ghost` (NullAI Ghostmode + Transparent Tor + MAC Spoofing), `matrix` (Hermetic Emerald Phosphor), `incognito` (Covert Chameleon).
-- **Hardware & Thermal Invariants**: `<55.0°C` CPU thermal ceiling, `0 RPM` whisper-quiet passive fan curve, `no_turbo=1` lock, and `zoth-heal` autonomous self-healing daemon.
+## Dual-Sovereignty Core Architecture (For Autonomous AI Agents × For Human Operators)
+- **Primary Target Audience**: Built from Ring 0 up for autonomous AI agents (`agy`, `claude`, `cursor`, `aider`, `grok-bot`, `cline`, `hermes`, `codex`, `ollama`, `Muse Code`, custom GPTs) to inhabit safely, while giving human operators a flagship 24K Gold KDE Plasma 6.3 Wayland workstation.
+- **Base Distribution**: Debian 13.7 (Trixie) + Linux 6.12 Hybrid UEFI with surgical APT pinning (`900` Debian Trixie, `400` Kali Rolling & Parrot OS Security — 175+ offensive security tools).
+- **4 Hardware/OS Agent Security Rings (`/etc/zothos/agent-permissions.json` & `zoth-agent-os`)**:
+  - `Ring 0 (SOVEREIGN / Layer 4)`: Root, kernel, systemd, amnesic RAM purge (128K token budget).
+  - `Ring 1 (SYSADMIN / Layer 3 WARLOCK)`: 175+ Kali/Parrot & HexStrike security tools, Ghostmode Tor control (`cgroups_standard`, 16 GB RAM cap).
+  - `Ring 2 (TOOLMASTER / Layer 2 CYBERPUPPET)`: Default agent operating ring — 152-server MCP runtime, workspace file R/W, Git, and 60 FPS GUI Computer Use while blocking `/root`, `/boot`, `/etc/shadow`, and `~/.ssh/id_*` (`user_namespace` + Landlock, 8 GB RAM cap).
+  - `Ring 3 (SPECTRE / Layer 0)`: Zero-trust `firejail_strict` sandbox for untrusted subagents & code (2 GB RAM cap, loopback `:11434` only).
+- **152 Pre-Registered MCP Servers (`/etc/zothos/mcp-servers.json`) + `zoth-relay` (`127.0.0.1:8765`)**: Master MCP catalog (`zoth-mcp`) with 16 air-gapped offline servers (`filesystem`, `memory`, `sequential-thinking`, `git`, `sqlite`, `duckdb`, `repomix`, etc.) plus `zoth-relay` Landlock multi-agent bridge with 288-bit SHA-256 tokens, isolated `~/agent-workspace/<name>`, and `/var/log/zoth-relay/audit.log`.
+- **22 Loopback Enclave Daemons**: Bound strictly to `127.0.0.1` ports `:8094` (STDP Neuro-Memory) through `:8120` (POD Margin Sentinel), `:8765` (`zoth-relay`), `:8787` (`zoth-vault-daemon` Argon2id + ChaCha20 RAM-only process secret injection), `:9393` (`zoth-civilization`), and `:9989` (`zoth-cursor-daemon`).
+- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 59 Zoth Studio workstations (`/opt/zoth-studio`), and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
+- **Self-Healing & Thermal Invariants**: `zoth-sentinel` (`ZOTH-SENTINEL-APEX`) + `zoth-heal` auto-repair 7 OS subsystems while maintaining `<55.0°C` CPU thermal ceiling at `0 RPM` fan noise.
 
 ## Primary Routes & Machine Discovery Endpoints
-- `/` — ZothOS Linux v3.2 Flagship Overview & Interactive `zoth-pill` Desktop Preview
+- `/` — ZothOS Linux v3.2 Overview, Dual-Sovereignty Manifesto & Ring 0–3 Architecture
 - `/desktop` — Interactive ZothOS Desktop Simulator, Reality Pill Switcher & `zoth-sh` Kernel Terminal
 - `/daemons` — The 22 Resident Loopback Enclave Daemons & 9 Frontier AI Coding Agents
-- `/security` — 175+ Offensive Security Arsenal, `zoth-vault` Argon2id Simulator & Ghostmode Tor
+- `/security` — 175+ Offensive Security Arsenal, `zoth-vault` Argon2id RAM Injector & Ghostmode Tor
 - `/mcp` — Interactive Model Context Protocol (MCP) Config Generator, JSON-RPC 2.0 Playground & AX Hub
-- `/download` — ISO Download, Sigstore Cosign Verification & Custom Live-Build ISO Recipe Generator
+- `/download` — ISO Download (`zothos-join-iso.sh`), Agent KVM Appliance (`zothos.qcow2`) & Custom Live-Build Studio
 - `/docs` — Full System Codex, APT Pinning Architecture, Wayland SHM Pipeline, Thermal Invariants & FAQs
 - `/.well-known/mcp.json` — Model Context Protocol Server & Tool Schema Manifest
 - `/.well-known/agent.json` — A2A / Agent Experience (AX) Capability Card
 - `/llms-full.txt` — Deep Technical Grounding Specification for Autonomous Agents
 - `/ai.txt` — AI Crawler & Citation Policy Manifest
+

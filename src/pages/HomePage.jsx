@@ -36,6 +36,7 @@ import InteractiveDesktopPreview from '../components/InteractiveDesktopPreview';
 import SovereignFunnel from '../components/SovereignFunnel';
 import {
   CORE_PILLARS,
+  AGENT_SECURITY_RINGS,
   DESKTOP_SCREENSHOTS,
   COMPARISON_ROWS,
 } from '../data/zothOsData';
@@ -77,7 +78,7 @@ export default function HomePage() {
         <HeroItem>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2, mt: 3, mb: 2, flexWrap: 'wrap' }}>
             <Chip
-              label="ZOTHOS LINUX v3.2 • COSIGN VERIFIED"
+              label="AGENT-NATIVE LINUX v3.2 • RING 0–3 ENFORCED"
               size="small"
               sx={{
                 bgcolor: goldWash,
@@ -89,24 +90,24 @@ export default function HomePage() {
               }}
             />
             <Chip
-              label="DEBIAN 13 + KALI + PARROT PARITY"
+              label="152 MCP SERVERS • ZOTH-RELAY (:8765) • 22 DAEMONS"
               size="small"
               sx={{
-                bgcolor: isDark ? 'rgba(239, 68, 68, 0.12)' : '#FEF2F2',
-                color: isDark ? '#FCA5A5' : '#B91C1C',
-                border: '1px solid rgba(239, 68, 68, 0.35)',
+                bgcolor: isDark ? 'rgba(52, 211, 153, 0.12)' : '#ECFDF3',
+                color: isDark ? '#34D399' : '#047857',
+                border: '1px solid rgba(52, 211, 153, 0.35)',
                 fontWeight: 800,
                 fontFamily: mono,
                 fontSize: '0.72rem',
               }}
             />
             <Chip
-              label="KDE PLASMA 6.3 WAYLAND • 22 DAEMONS"
+              label="KDE PLASMA 6.3 WAYLAND • DEBIAN 13.7 + KALI + PARROT"
               size="small"
               sx={{
-                bgcolor: isDark ? 'rgba(52, 211, 153, 0.12)' : '#ECFDF3',
-                color: isDark ? '#34D399' : '#047857',
-                border: '1px solid rgba(52, 211, 153, 0.35)',
+                bgcolor: isDark ? 'rgba(239, 68, 68, 0.12)' : '#FEF2F2',
+                color: isDark ? '#FCA5A5' : '#B91C1C',
+                border: '1px solid rgba(239, 68, 68, 0.35)',
                 fontWeight: 800,
                 fontFamily: mono,
                 fontSize: '0.72rem',
@@ -119,15 +120,15 @@ export default function HomePage() {
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.35rem', sm: '3.5rem', md: '4.65rem' },
+              fontSize: { xs: '2.25rem', sm: '3.35rem', md: '4.4rem' },
               color: textPrimary,
               lineHeight: 1.06,
               mb: 2.5,
             }}
           >
-            Sovereign AI, Cryptographic Vault &amp;{' '}
+            The Operating System Built for AI Agents —{' '}
             <Box component="span" className="text-gradient-gold">
-              Offensive Security OS
+              And the Humans Who Command Them
             </Box>
           </Typography>
         </HeroItem>
@@ -136,13 +137,18 @@ export default function HomePage() {
           <Typography
             sx={{
               color: textSecondary,
-              fontSize: { xs: '1.02rem', md: '1.18rem' },
-              lineHeight: 1.7,
-              maxWidth: '64ch',
+              fontSize: { xs: '1.02rem', md: '1.16rem' },
+              lineHeight: 1.72,
+              maxWidth: '68ch',
               mb: 4,
             }}
           >
-            Bootable Linux distribution engineered on Debian 13 (Trixie) with surgical Kali Rolling &amp; Parrot OS dual parity, 9 pre-installed Frontier AI coding agents, 22 zero-egress loopback daemons, and the interactive 24K Gold KDE Plasma 6.3 Wayland desktop.
+            Standard Linux was designed for a single human typing into bash.{' '}
+            <strong>ZothOS Linux v3.2</strong> is engineered from Ring 0 up as a{' '}
+            <strong>permission-ringed, self-healing habitat for autonomous AI agents</strong> (
+            <code>zoth-agent-os</code>, 152 pre-registered MCP servers, <code>zoth-relay</code> Landlock multi-agent bridge,{' '}
+            <code>zoth-vault</code> RAM secret injection, and 22 loopback daemons)—while giving{' '}
+            <strong>human operators</strong> a flagship 24K Gold KDE Plasma 6.3 Wayland workstation with Debian 13.7 (Trixie), Kali Rolling, and Parrot Security dual parity.
           </Typography>
         </HeroItem>
 
@@ -164,18 +170,18 @@ export default function HomePage() {
               color="primary"
               size="large"
               component={RouterLink}
-              to="/desktop"
-              startIcon={<TerminalIcon />}
+              to="/mcp"
+              startIcon={<HubIcon />}
               sx={{ px: 3, py: 1.3, fontWeight: 800, fontFamily: mono, borderColor: goldBorder }}
             >
-              Launch Live Desktop Simulator
+              Explore MCP &amp; Agent Hub (/mcp)
             </Button>
             <Button
               variant="outlined"
               size="large"
               component={RouterLink}
-              to="/daemons"
-              startIcon={<HubIcon />}
+              to="/desktop"
+              startIcon={<TerminalIcon />}
               sx={{
                 px: 2.8,
                 py: 1.3,
@@ -185,7 +191,7 @@ export default function HomePage() {
                 borderColor: isDark ? 'rgba(255,255,255,0.16)' : '#D0D5DD',
               }}
             >
-              Inspect 22 Loopback Daemons
+              Live Desktop &amp; Kernel Simulator
             </Button>
             <Button
               variant="outlined"
@@ -239,7 +245,7 @@ export default function HomePage() {
               overflowWrap: 'anywhere',
             }}
           >
-            $ git clone https://github.com/1nc0gn30/zoth-os.git &amp;&amp; cd zoth-os &amp;&amp; sudo ./build_iso.sh
+            $ git clone https://github.com/1nc0gn30/zoth-os.git &amp;&amp; cd zoth-os &amp;&amp; sudo ./build/build-iso.sh
           </Typography>
         </Box>
         <Button
@@ -247,7 +253,7 @@ export default function HomePage() {
           variant="outlined"
           onClick={() =>
             copyCmd(
-              'git clone https://github.com/1nc0gn30/zoth-os.git && cd zoth-os && sudo ./build_iso.sh',
+              'git clone https://github.com/1nc0gn30/zoth-os.git && cd zoth-os && sudo ./build/build-iso.sh',
               'ZothOS ISO build command',
             )
           }
@@ -264,6 +270,173 @@ export default function HomePage() {
           Copy Build Command
         </Button>
       </Paper>
+
+      {/* Dual-Sovereignty Manifesto: For AI Agents First × For Human Operators */}
+      <Box sx={{ mb: 10 }}>
+        <Typography
+          sx={{
+            fontFamily: mono,
+            color: gold,
+            letterSpacing: '0.18em',
+            fontSize: '0.76rem',
+            fontWeight: 800,
+            textTransform: 'uppercase',
+            mb: 1,
+          }}
+        >
+          00 / 04 · DUAL-SOVEREIGNTY PARADIGM
+        </Typography>
+        <Typography variant="h2" sx={{ color: textPrimary, mb: 1.5 }}>
+          Built for <span className="text-gradient-gold">Autonomous AI Agents</span> — Loved by Human Operators
+        </Typography>
+        <Typography sx={{ color: textSecondary, maxWidth: '72ch', mb: 4, lineHeight: 1.7 }}>
+          On conventional operating systems, AI agents either run blind inside sterile containers or run unbridled with root access to your SSH keys and cloud credentials. ZothOS solves both sides of the equation with two purpose-built execution planes sharing one Debian 13.7 + Linux 6.12 kernel.
+        </Typography>
+
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3, mb: 5 }}>
+          <Paper
+            elevation={0}
+            sx={{
+              p: 3.5,
+              borderRadius: 3.5,
+              bgcolor: cardBg,
+              border: `1.5px solid ${gold}`,
+            }}
+          >
+            <Chip
+              label="PRIMARY INHABITANTS • FOR AUTONOMOUS AI AGENTS"
+              size="small"
+              sx={{
+                fontFamily: mono,
+                fontWeight: 800,
+                fontSize: '0.68rem',
+                bgcolor: goldWash,
+                color: goldSoft,
+                border: `1px solid ${goldBorder}`,
+                mb: 2,
+              }}
+            />
+            <Typography variant="h4" sx={{ fontWeight: 800, color: textPrimary, mb: 1.5 }}>
+              Deterministic Ring-Gated Agent Substrate
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
+              {[
+                'zoth-agent-os & 4 Security Rings: Hardware/OS-enforced Ring 0 (SOVEREIGN) through Ring 3 (SPECTRE) governing filesystem paths, cgroups/Firejail/Landlock isolation, and LLM token budgets.',
+                '152 Pre-Registered MCP Servers: /etc/zothos/mcp-servers.json ships with 16 air-gapped local servers and deterministic CLI fallbacks managed via zoth-mcp.',
+                'zoth-relay Multi-Agent Bridge (127.0.0.1:8765): Lets Antigravity, Claude, Cursor, Grok, Muse Code, and GPT Actions work concurrently with 288-bit tokens and isolated ~/agent-workspace/<name> directories.',
+                'Zero-Disk Secret Injection (:8787): zoth-vault run -- <agent> injects decrypted API keys directly into child process RAM so agents never see plaintext keys on disk.',
+                'Autonomous Self-Healing: zoth-sentinel + zoth-heal continuously repair APT locks, compositors, DNS, and zombie threads so 24/7 agent runs never stall.',
+              ].map((bullet) => (
+                <Box key={bullet} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.2 }}>
+                  <CheckCircleIcon sx={{ fontSize: 18, color: gold, mt: 0.3, flexShrink: 0 }} />
+                  <Typography variant="body2" sx={{ color: textSecondary, lineHeight: 1.6 }}>
+                    {bullet}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Paper>
+
+          <Paper
+            elevation={0}
+            sx={{
+              p: 3.5,
+              borderRadius: 3.5,
+              bgcolor: cardBg,
+              border: `1.5px solid ${isDark ? 'rgba(52, 211, 153, 0.4)' : '#10B981'}`,
+            }}
+          >
+            <Chip
+              label="HUMAN COMMAND DECK • FOR SOVEREIGN ENGINEERS"
+              size="small"
+              sx={{
+                fontFamily: mono,
+                fontWeight: 800,
+                fontSize: '0.68rem',
+                bgcolor: isDark ? 'rgba(52, 211, 153, 0.14)' : '#ECFDF3',
+                color: isDark ? '#34D399' : '#047857',
+                border: '1px solid rgba(52, 211, 153, 0.35)',
+                mb: 2,
+              }}
+            />
+            <Typography variant="h4" sx={{ fontWeight: 800, color: textPrimary, mb: 1.5 }}>
+              24K Gold KDE Plasma 6.3 Wayland Workstation
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
+              {[
+                'Bespoke 24K Celtic Gold Desktop: KDE Plasma 6.3 Wayland with Zoth-Hermetic 3D glass icons, 60 FPS interactive QML wallpaper (zoth-pill), and the All-Seeing Eye cursor companion (zoth-desktop-pet).',
+                'zoth-cockpit Operations Center: Flagship Electron dashboard + curses TUI (--tui) with rolling 60s hardware waveforms, 21-Agent Pantheon dispatch, and live daemon log inspection.',
+                'Debian 13.7 + Kali + Parrot Parity: Surgical APT pinning (900 Debian Trixie, 400 Kali/Parrot) gives human red-teamers 175+ offensive security tools without rolling-release breakage.',
+                '59 Zoth Studio Workstations (/opt/zoth-studio): 28 In-Browser WebGPU/Client studios + 31 Sovereign Loopback Enclaves pre-installed for offline engineering.',
+                '4 Instant Reality Modes & Whisper-Quiet Hardware: Flip between gold, ghost (transparent Tor), matrix, and win11 decoy mode while keeping CPU < 55.0°C at 0 RPM.',
+              ].map((bullet) => (
+                <Box key={bullet} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.2 }}>
+                  <CheckCircleIcon sx={{ fontSize: 18, color: '#10B981', mt: 0.3, flexShrink: 0 }} />
+                  <Typography variant="body2" sx={{ color: textSecondary, lineHeight: 1.6 }}>
+                    {bullet}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Paper>
+        </Box>
+
+        {/* 4 Hardware/OS Agent Security Rings (/etc/zothos/agent-permissions.json) */}
+        <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.78rem', color: gold, letterSpacing: '0.12em', mb: 1.5 }}>
+          HARDWARE &amp; KERNEL ENFORCED • /ETC/ZOTHOS/AGENT-PERMISSIONS.JSON (RINGS 0–3)
+        </Typography>
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 2 }}>
+          {AGENT_SECURITY_RINGS.map((r) => (
+            <Paper
+              key={r.ring}
+              elevation={0}
+              sx={{
+                p: 2.5,
+                borderRadius: 3,
+                bgcolor: cardBg,
+                border: `1px solid ${r.accent}66`,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+                <Chip
+                  label={r.ring}
+                  size="small"
+                  sx={{
+                    fontFamily: mono,
+                    fontWeight: 900,
+                    fontSize: '0.68rem',
+                    bgcolor: `${r.accent}20`,
+                    color: r.accent,
+                    border: `1px solid ${r.accent}`,
+                  }}
+                />
+                <Typography variant="caption" sx={{ fontFamily: mono, fontWeight: 700, color: textSecondary, fontSize: '0.66rem' }}>
+                  {r.ramCap}
+                </Typography>
+              </Box>
+              <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem', color: r.accent, mb: 0.4 }}>
+                {r.layer}
+              </Typography>
+              <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.92rem', color: textPrimary, mb: 1 }}>
+                {r.title}
+              </Typography>
+              <Typography variant="body2" sx={{ color: textSecondary, fontSize: '0.78rem', lineHeight: 1.55, flex: 1, mb: 1.5 }}>
+                {r.desc}
+              </Typography>
+              <Box sx={{ pt: 1, borderTop: `1px dashed ${isDark ? 'rgba(255,255,255,0.12)' : '#E2E8F0'}` }}>
+                <Typography variant="caption" sx={{ display: 'block', fontFamily: mono, fontSize: '0.66rem', color: textSecondary }}>
+                  <strong>Sandbox:</strong> {r.isolation}
+                </Typography>
+                <Typography variant="caption" sx={{ display: 'block', fontFamily: mono, fontSize: '0.66rem', color: textSecondary }}>
+                  <strong>Budget:</strong> {r.tokenBudget}
+                </Typography>
+              </Box>
+            </Paper>
+          ))}
+        </Box>
+      </Box>
 
       {/* 6 Core OS Pillars Grid */}
       <Box sx={{ mb: 10 }}>

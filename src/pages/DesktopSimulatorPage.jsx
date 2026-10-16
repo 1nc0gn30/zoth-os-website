@@ -29,23 +29,26 @@ const INITIAL_HISTORY = [
     id: 1,
     type: 'system',
     text: [
-      'ZOTHOS LINUX v3.2.0-RELEASE (Debian 13 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
-      'Host: zoth-pill.local • UFW Default-Deny Active • 22/22 Loopback Daemons Online.',
-      'Type "help" or click any quick-command chip below to interact with the live kernel simulator.',
+      'ZOTHOS LINUX v3.2.0-RELEASE (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
+      'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • 152 MCP Servers • 22/22 Loopback Daemons Online.',
+      'Type "help" or click any quick-command chip below to test both Agent-Native and Human Workstation CLI tools.',
     ].join('\n'),
   },
 ];
 
 const QUICK_CMDS = [
   'zoth status',
+  'zoth-agent-layer status',
+  'zoth-mcp list',
+  'zoth-relay status',
   'zoth-mode ghost',
   'zoth-mode gold',
   'zoth-mode matrix',
+  'zoth-mode win11',
   'zoth doctor',
   'zoth-vault status',
   'zoth-heal --check',
   'ollama list',
-  'uname -a',
   'clear',
 ];
 
@@ -86,7 +89,7 @@ export default function DesktopSimulatorPage() {
 
     if (lower.startsWith('zoth-mode ')) {
       const arg = lower.replace('zoth-mode ', '').trim();
-      const map = { gold: 'gold', default: 'gold', ghost: 'ghost', stealth: 'ghost', matrix: 'matrix', incognito: 'cyan', cyan: 'cyan' };
+      const map = { gold: 'gold', default: 'gold', ghost: 'ghost', stealth: 'ghost', matrix: 'matrix', win11: 'cyan', incognito: 'cyan', cyan: 'cyan' };
       const target = map[arg] || 'gold';
       setActivePill(target);
       const pillInfo = REALITY_PILL_MODES.find((m) => m.id === target);
@@ -108,12 +111,52 @@ export default function DesktopSimulatorPage() {
           '                 ZOTHOS v3.2 SOVEREIGN HOST TELEMETRY                   ',
           '========================================================================',
           `[✓] HOSTNAME & DESKTOP: zoth-pill.local (KDE Plasma 6.3 Wayland • ${activeMode.name})`,
+          '[✓] AGENT AUTHORITY:    Ring 2 (TOOLMASTER) / Layer 2 (CYBERPUPPET)',
+          '[✓] MULTI-AGENT RELAY:  zoth-relay ONLINE (127.0.0.1:8765 • Landlock Sandbox)',
           '[✓] CURSOR COMPOSITOR:  zoth-cursor-daemon ONLINE (127.0.0.1:9989 @ 60 FPS)',
           '[✓] LOOPBACK ENCLAVES:  22 / 22 ACTIVE (:8094 STDP Memory .. :8120 Margin Sentinel)',
           '[✓] SOVEREIGN VAULT:    ONLINE (127.0.0.1:8787 • Argon2id + ChaCha20-Poly1305)',
           '[✓] THERMAL CEILING:    41.2°C / 55.0°C MAX (Fans: 0 RPM • no_turbo=1 Locked)',
-          '[✓] FIREWALL POSTURE:   UFW DEFAULT-DENY (Allowed: lo, tailscale0, UDP 41641)',
           '========================================================================',
+        ].join('\n'),
+      });
+    } else if (lower === 'zoth-agent-layer status') {
+      entries.push({
+        id: Date.now() + 1,
+        type: 'output',
+        text: [
+          'ZOTHOS AUTONOMOUS AGENT PERMISSION & SECURITY RING CONTROLLER (/etc/zothos/agent-permissions.json)',
+          '  Active Security Ring : Ring 2 — TOOLMASTER (Agent Tools & MCP Runtime)',
+          '  Active Hermetic Layer: Layer 2 — CYBERPUPPET (GUI, Mouse, Keyboard & MCP Tools)',
+          '  Filesystem Policy    : R/W [/home/zoth, /var/lib/zothos, /tmp] | FORBIDDEN [/root, /boot, /etc/shadow, ~/.ssh/id_*]',
+          '  Resource & Token Cap : 8192 MB RAM (user_namespace) | 32,000 tokens/req | 250,000 tokens/hr',
+          '  Available Rings      : [Ring 0: SOVEREIGN] [Ring 1: SYSADMIN/WARLOCK] [Ring 2: TOOLMASTER] [Ring 3: SPECTRE]',
+        ].join('\n'),
+      });
+    } else if (lower === 'zoth-mcp list') {
+      entries.push({
+        id: Date.now() + 1,
+        type: 'output',
+        text: [
+          'ZOTHOS MASTER MODEL CONTEXT PROTOCOL (MCP) HUB v3.1 (/etc/zothos/mcp-servers.json)',
+          '  Total Cataloged MCP Servers : 152 (16 100% Air-Gapped Offline • 136 Hybrid/OAuth)',
+          '  Core Offline Servers        : filesystem (Ring 1), memory (Ring 0), sequential-thinking (Ring 2),',
+          '                                git (Ring 2), sqlite (Ring 1), duckdb (Ring 2), repomix (Ring 2)',
+          '  Resident Loopback Clusters  : zoth-kernel (:8105), zoth-vault (:8787), zoth-hexstrike (:8112),',
+          '                                zoth-neuro-memory (:8094), zoth-commerce-pod (:8107–:8120)',
+          '  Enable Any Server           : $ zoth-mcp enable <server-name>',
+        ].join('\n'),
+      });
+    } else if (lower === 'zoth-relay status') {
+      entries.push({
+        id: Date.now() + 1,
+        type: 'output',
+        text: [
+          'ZOTH-RELAY MULTI-AGENT LOCAL BRIDGE (127.0.0.1:8765 • user: zoth-relay)',
+          '  Systemd Hardening : NoNewPrivileges=yes, ProtectSystem=strict, ProtectHome=tmpfs, MemoryMax=2G',
+          '  Active Interfaces : REST (/v1/*), NDJSON Stream, Streamable HTTP (/mcp), mcp-stdio, OpenAPI (/openapi-actions.json)',
+          '  Agent Profiles    : read-only | workspace | exec | dev (Landlock kernel sandbox -> 127.0.0.1:4100-4199)',
+          '  Audit Trail       : /var/log/zoth-relay/audit.log (288-bit SHA-256 scoped agent tokens)',
         ].join('\n'),
       });
     } else if (lower === 'zoth doctor') {
@@ -121,16 +164,16 @@ export default function DesktopSimulatorPage() {
         id: Date.now() + 1,
         type: 'output',
         text: [
-          '>>> Running 10-Point ZothOS Cryptographic & Kernel Invariant Audit...',
-          '[PASS] 01. Debian 13 Trixie + Kali/Parrot APT Pinning Cohesion',
+          '>>> Running 10-Point ZothOS Cryptographic & Agent-Native Invariant Audit...',
+          '[PASS] 01. Debian 13.7 Trixie + Kali/Parrot APT Pinning Cohesion',
           '[PASS] 02. Linux 6.12 Hybrid DRM (i915 + NVIDIA) & KVM Ring-0 VMX',
-          '[PASS] 03. UFW Default-Deny & Zero-EgressSNI Proxy (:8095)',
-          '[PASS] 04. Neuro-Memory STDP Vector Graph (:8094 SQLite WAL)',
-          '[PASS] 05. Zoth Sovereign Vault (:8787 Memory-Only Secret Injection)',
-          '[PASS] 06. 9 Frontier Coding Agents (agy, claude, grok, aider, cursor, cline, hermes, codex, ollama)',
-          '[PASS] 07. Zoth Civilization 3D Society (:9393) & SimpleX Peer Bus (:5225)',
-          '[PASS] 08. KDE Plasma 6.3 org.zothos.interactive QML Wallpaper & Cursor Daemon',
-          '[PASS] 09. Thermal Ceiling < 55.0°C & Kokoro TTS Standby Guard',
+          '[PASS] 03. /etc/zothos/agent-permissions.json (Rings 0–3 & Layers 0–4 Verified)',
+          '[PASS] 04. /etc/zothos/mcp-servers.json (152 MCP Servers & Offline Fallbacks Ready)',
+          '[PASS] 05. Zoth Sovereign Vault (:8787 Memory-Only Process Secret Injection)',
+          '[PASS] 06. zoth-relay (:8765 Multi-Agent Landlock Bridge) & neuro-memory (:8094 STDP)',
+          '[PASS] 07. 9 Frontier Coding Agents (agy, claude, grok-bot, aider, cursor, cline, hermes, codex, ollama)',
+          '[PASS] 08. KDE Plasma 6.3 org.zothos.interactive QML Wallpaper & 60 FPS Cursor Daemon (:9989)',
+          '[PASS] 09. zoth-sentinel + zoth-heal Auto-Repair & Thermal Ceiling < 55.0°C (0 RPM)',
           '[PASS] 10. Sigstore Cosign Release Digest Verified',
           'VERDICT: 10/10 Invariants Satisfied.',
         ].join('\n'),
@@ -144,7 +187,7 @@ export default function DesktopSimulatorPage() {
           '  KDF:        Argon2id (m=65536, t=4, p=4)',
           '  Cipher:     ChaCha20-Poly1305 (256-bit ephemeral key)',
           '  Backends:   [✓] zoth-vault  [✓] Bitwarden CLI (bw)  [✓] KeePassXC  [✓] UNIX Pass',
-          '  Disk Leaks: 0 bytes (Secrets injected via anonymous pipe into child env)',
+          '  Agent Exec: zoth-vault run -- <agent> (0 bytes written to disk; secrets injected into child RAM)',
         ].join('\n'),
       });
     } else if (lower === 'zoth-heal --check') {
@@ -152,11 +195,13 @@ export default function DesktopSimulatorPage() {
         id: Date.now() + 1,
         type: 'output',
         text: [
-          '[zoth-heal] Autonomous Resilience Daemon Check:',
-          '  • PipeWire / WirePlumber Audio Stack .... NOMINAL',
-          '  • KWin Wayland Compositor & Xwayland .... NOMINAL',
-          '  • APT / DPKG Lock & Repository Pinning .. NOMINAL',
-          '  • Btrfs Root Subvolume & NVMe SMART ..... NOMINAL (99% Health)',
+          '[zoth-heal v3.0] Autonomous 7-Subsystem Resilience Sweep (Supervised by ZOTH-SENTINEL-APEX):',
+          '  • [✓ HEALTHY] Display & KWin Wayland Compositor',
+          '  • [✓ HEALTHY] APT / DPKG Locks & Tri-Repo Pinning',
+          '  • [✓ HEALTHY] Network / DNS / Transparent Tor Guard',
+          '  • [✓ HEALTHY] PipeWire / WirePlumber Audio Stack',
+          '  • [✓ HEALTHY] Python / FastMCP Loopback Enclave Dependencies',
+          '  • [✓ HEALTHY] Btrfs Root Subvolume & NVMe SMART (99% Health)',
         ].join('\n'),
       });
     } else if (lower === 'ollama list') {
@@ -167,7 +212,7 @@ export default function DesktopSimulatorPage() {
           'NAME                          ID              SIZE      MODIFIED',
           'qwen2.5-coder:14b-instruct    9b21e4a8d102    9.0 GB    2 hours ago',
           'deepseek-r1:8b                4f8c19e03a11    4.9 GB    5 hours ago',
-          'llama3.2:3b                   a80c4f17acd5    2.0 GB    1 day ago',
+          'llama3.2:latest               a80c4f17acd5    2.0 GB    1 day ago',
           'nomic-embed-text:latest       0a109f422b47    274 MB    2 days ago',
         ].join('\n'),
       });
@@ -175,7 +220,7 @@ export default function DesktopSimulatorPage() {
       entries.push({
         id: Date.now() + 1,
         type: 'output',
-        text: 'Linux zoth-pill 6.12.0-zoth-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.8-1 (2026-10-14) x86_64 GNU/Linux',
+        text: 'Linux zoth-pill 6.12.0-zoth-amd64 #1 SMP PREEMPT_DYNAMIC Debian 13.7 (trixie) x86_64 GNU/Linux',
       });
     } else {
       entries.push({
@@ -183,13 +228,15 @@ export default function DesktopSimulatorPage() {
         type: 'output',
         text: [
           'Available ZothOS Simulator Commands:',
-          '  zoth status                  Inspect host telemetry, thermal ceiling & 22 daemons',
-          '  zoth-mode [gold|ghost|matrix|incognito]  Switch live Reality Pill desktop mode',
-          '  zoth doctor                  Run 10-point cryptographic & kernel invariant audit',
-          '  zoth-vault status            Inspect Argon2id + ChaCha20 secrets vault daemon',
-          '  zoth-heal --check            Run autonomous self-healing diagnostic sweep',
+          '  zoth status                  Inspect host telemetry, active Ring-2 agent state & 22 daemons',
+          '  zoth-agent-layer status      Inspect /etc/zothos/agent-permissions.json Rings 0–3 & Layers 0–4',
+          '  zoth-mcp list                Inspect the 152-server /etc/zothos/mcp-servers.json catalog',
+          '  zoth-relay status            Inspect multi-agent Landlock bridge on 127.0.0.1:8765',
+          '  zoth-mode [gold|ghost|matrix|win11]  Switch live Reality Pill desktop mode',
+          '  zoth doctor                  Run 10-point cryptographic & agent-native invariant audit',
+          '  zoth-vault status            Inspect Argon2id + ChaCha20 RAM-only secrets injector (:8787)',
+          '  zoth-heal --check            Run 7-subsystem autonomous self-healing diagnostic sweep',
           '  ollama list                  List local air-gapped LLMs on 127.0.0.1:11434',
-          '  uname -a                     Print kernel & architecture info',
           '  clear                        Clear terminal output',
         ].join('\n'),
       });

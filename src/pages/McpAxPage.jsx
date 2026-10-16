@@ -433,7 +433,7 @@ export default function McpAxPage() {
         <Box sx={{ mb: 5 }}>
           <Chip
             icon={<HubIcon sx={{ fontSize: 15 }} />}
-            label="MODEL CONTEXT PROTOCOL (MCP 2025-03-26) • AGENT EXPERIENCE (AX) • ZERO-EGRESS LOOPBACK"
+            label="MODEL CONTEXT PROTOCOL (152 SERVERS) • ZOTH-RELAY (:8765) • RING 0–3 AGENT SUBSTRATE"
             sx={{
               mb: 1.5,
               fontFamily: mono,
@@ -445,13 +445,12 @@ export default function McpAxPage() {
             }}
           />
           <Typography variant="h1" sx={{ fontSize: { xs: '2.1rem', md: '3.2rem' }, mb: 1.5, letterSpacing: '-0.03em' }}>
-            MCP & Agent Experience (AX) Hub
+            MCP &amp; Agent Experience (AX) Hub
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 860, fontSize: '1.05rem', lineHeight: 1.7 }}>
-            ZothOS v3.2 treats autonomous coding agents as first-class citizens. Every resident daemon—from the{' '}
-            <strong>Argon2id Sovereign Vault (:8787)</strong> and <strong>Biomorphic STDP Memory (:8094)</strong> to the{' '}
-            <strong>175+ HexStrike Cyber Arsenal (:8112)</strong>—is exposed over local{' '}
-            <code>Model Context Protocol (MCP)</code> stdio and SSE pipes bound strictly to <code>127.0.0.1</code>.
+            ZothOS v3.2 is built from Ring 0 up for autonomous AI agents to inhabit safely. It pairs a{' '}
+            <strong>152-server Master MCP Catalog (<code>/etc/zothos/mcp-servers.json</code>)</strong> and{' '}
+            <strong>5 Local Loopback Enclave Clusters</strong> with <strong><code>zoth-relay</code> (:8765)</strong>—letting multiple AI agents (AGY, Claude, Cursor, Grok, Muse Code, GPT Actions) work concurrently inside Landlock kernel sandboxes and Ring 0–3 permission boundaries.
           </Typography>
         </Box>
 
@@ -459,24 +458,24 @@ export default function McpAxPage() {
         <Grid container spacing={2.5} sx={{ mb: 5 }}>
           {[
             {
-              metric: '100 / 100',
-              title: 'AX Machine Discovery Score',
-              detail: '/llms.txt, /llms-full.txt, /ai.txt, /.well-known/mcp.json & /.well-known/agent.json live',
+              metric: '152 MCP Servers',
+              title: 'Master Registry + 5 Local Clusters',
+              detail: '/etc/zothos/mcp-servers.json (16 air-gapped offline + 5 loopback daemon clusters)',
             },
             {
-              metric: '5 MCP Clusters',
-              title: '22 Loopback Daemons Bridged',
-              detail: 'Kernel, Argon2id Vault, HexStrike Recon, STDP Synaptic Memory & FinOps/POD Daemons',
+              metric: 'Rings 0–3',
+              title: 'zoth-agent-os Permission Guard',
+              detail: 'SOVEREIGN (Ring 0), SYSADMIN (Ring 1), TOOLMASTER (Ring 2), SPECTRE (Ring 3)',
             },
             {
-              metric: '0 Bytes Egress',
-              title: '127.0.0.1 Hardware Isolation',
-              detail: 'All MCP tool calls execute inside local cgroups-v2 and mlockall() memory enclaves',
+              metric: ':8765 Relay',
+              title: 'zoth-relay Landlock Multi-Agent Bus',
+              detail: '288-bit SHA-256 tokens, isolated ~/agent-workspace/<name> & JSON audit log',
             },
             {
               metric: '9 AI IDEs Ready',
               title: 'Pre-Wired Agent Clients',
-              detail: 'Antigravity (agy), Claude Code, Cursor, Cline, Aider, Grok, Hermes, OpenCode & Ollama',
+              detail: 'Antigravity (agy), Claude Code, Cursor, Cline, Aider, Grok, Hermes, Codex & Ollama',
             },
           ].map((card) => (
             <Grid item xs={12} sm={6} md={3} key={card.title}>

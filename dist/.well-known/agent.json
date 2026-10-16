@@ -1,11 +1,11 @@
 {
   "$schema": "https://schemas.nullai.tech/agent-card/v1.json",
   "protocol": "A2A-AX/1.0",
-  "name": "ZothOS Sovereign Operating System Agent",
+  "name": "ZothOS Sovereign Agent-Native Operating System",
   "id": "did:web:zothos.nullai.tech",
   "version": "3.2.0",
   "url": "https://zothos.nullai.tech",
-  "description": "Machine-readable Agent Experience (AX) & Agent-to-Agent (A2A) capability profile for ZothOS Linux v3.2 (zoth-pill) — Debian 13 (Trixie), KDE Plasma 6.3 Wayland, Kali + Parrot dual parity, 9 frontier AI coding agents, and 22 loopback enclave daemons.",
+  "description": "The Operating System Built for AI Agents — And the Humans Who Command Them. Debian 13.7 (Trixie) + Linux 6.12 with Ring 0–3 zoth-agent-os permission rings, 152 pre-registered MCP servers (/etc/zothos/mcp-servers.json), zoth-relay (127.0.0.1:8765) Landlock multi-agent bridge, 22 loopback daemons, and KDE Plasma 6.3 Wayland 24K Gold human workstation.",
   "provider": {
     "organization": "Neal Frazier Tech • NullAI Platform",
     "url": "https://nullai.tech",
@@ -24,22 +24,26 @@
     "streaming": true,
     "mcpStdio": true,
     "mcpSseLoopback": true,
+    "mcpCatalogCount": 152,
+    "securityRings": ["RING_0_SOVEREIGN", "RING_1_SYSADMIN", "RING_2_TOOLMASTER", "RING_3_SPECTRE"],
+    "multiAgentRelay": "http://127.0.0.1:8765",
     "zeroEgressEnclave": true,
     "hardwareVaultInjection": true,
+    "autonomousSelfHealing": true,
     "offlineOllamaInference": true
   },
   "residentAgents": [
     { "name": "Google Antigravity (AGY)", "binary": "agy", "mode": "Hybrid + Local Ollama" },
     { "name": "Claude Code CLI", "binary": "claude", "mode": "Anthropic Frontier API" },
-    { "name": "Grok CLI", "binary": "grok", "mode": "Hybrid + Local Daemon" },
-    { "name": "Aider", "binary": "aider", "mode": "100% Offline Ollama Ready" },
+    { "name": "Grok Bot / CLI", "binary": "grok-bot", "mode": "Hybrid + zoth-relay (:8765)" },
+    { "name": "Aider", "binary": "aider", "mode": "100% Offline Ollama + zoth-vault RAM Inject" },
     { "name": "Nous Hermes", "binary": "hermes", "mode": "Local + 70+ Skills" },
     { "name": "Cursor AI IDE", "binary": "cursor", "mode": "Hybrid Visual IDE + MCP" },
     { "name": "Cline", "binary": "cline", "mode": "Local Ollama / MCP" },
-    { "name": "OpenCode CLI", "binary": "opencode", "mode": "Multi-Model Terminal" },
+    { "name": "OpenAI Codex / OpenCode", "binary": "codex", "mode": "Multi-Model Terminal" },
     { "name": "Ollama", "binary": "ollama", "mode": "127.0.0.1:11434 Air-Gapped" }
   ],
   "authentication": {
-    "schemes": ["local-loopback-unix-uid", "argon2id-vault-lease", "ed25519-capability-token"]
+    "schemes": ["zoth-relay-288bit-sha256-token", "local-loopback-unix-uid", "argon2id-vault-lease", "ed25519-capability-token"]
   }
 }
