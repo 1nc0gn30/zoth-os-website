@@ -237,6 +237,7 @@ export const LOOPBACK_DAEMONS = [
   { port: ':8118', name: 'digital-asset-forge', stack: 'FastMCP / 300 DPI', category: 'Commerce', desc: 'Generates 5-ratio 300 DPI printable wall art master packs with 98% digital profit margins.' },
   { port: ':8119', name: 'pod-mockup-forge', stack: 'FastMCP / Lumen Matrix', category: 'Commerce', desc: 'Photorealistic apparel and canvas mockup studio with displacement map ink blending.' },
   { port: ':8120', name: 'pod-margin-sentinel', stack: 'FastMCP / Math Solver', category: 'FinOps', desc: 'Multi-channel break-even solver and ROAS ad-spend simulator for autonomous commerce swarms.' },
+  { port: ':9335', name: 'zoth-bot (Edge Portal)', stack: 'Electron / WebSocket / Taildrop', category: 'Cross-Device', desc: 'Cross-screen desktop companion that physically leaps off your laptop screen onto your Pixel 10 over Tailscale (:9335/pixel) with native Taildrop file transfer.' },
   { port: ':9393', name: 'zoth-civilization', stack: 'Node.js / Three.js 3D', category: 'Simulation', desc: '21-Agent autonomous society simulation, citizen task dispatcher, and economic velocity telemetry hub.' },
   { port: ':8787', name: 'zoth-vault-daemon', stack: 'Rust / ChaCha20-Poly1305', category: 'Crypto Vault', desc: 'Resident memory-only cryptographic secrets vault (`zoth-vault run -- <agent>`) with Argon2id key derivation and zero disk leaks.' },
   { port: ':8765 / :9989', name: 'zoth-relay & cursor-daemon', stack: 'Systemd Landlock / KWin', category: 'Zero-Egress', desc: 'Multi-agent Landlock-sandboxed HTTP/MCP bridge (`:8765`) paired with 60 FPS Wayland global pointer telemetry (`:9989`).' },
@@ -356,7 +357,7 @@ export const COMPARISON_ROWS = [
   },
   {
     feature: 'Native MCP Registry & Loopback Daemons',
-    zoth: '152 MCP Servers (`/etc/zothos/mcp-servers.json`) + 22 Loopback Daemons (127.0.0.1)',
+    zoth: '152 MCP Servers (`/etc/zothos/mcp-servers.json`) + 23 Loopback Daemons (127.0.0.1)',
     kali: 'None',
     parrot: 'None',
     ubuntu: 'None',
@@ -364,6 +365,13 @@ export const COMPARISON_ROWS = [
   {
     feature: 'Pre-Installed Frontier AI Agents',
     zoth: '9 Agents (AGY, Claude, Grok, Aider, Cursor, Cline, Hermes, Codex, Ollama)',
+    kali: 'None',
+    parrot: 'None',
+    ubuntu: 'None',
+  },
+  {
+    feature: 'Cross-Screen Mobile Portal & Multi-Monitor Lock',
+    zoth: 'Zoth Bot Edge Portal (:9335/pixel Tailscale Leap + Taildrop) & Multi-Monitor Zoth Lock',
     kali: 'None',
     parrot: 'None',
     ubuntu: 'None',

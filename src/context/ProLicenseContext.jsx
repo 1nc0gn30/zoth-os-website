@@ -22,10 +22,14 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 const DEPAY_INTEGRATION_ID = '428790dd-7ad1-407c-8ecf-c048c77a4cb8';
+const STRIPE_ZOTHOS_PRO_URL = 'https://buy.stripe.com/fZu4gyaEleOsb9CdkIfw40K';
+const STRIPE_BUNDLE_URL = 'https://buy.stripe.com/eVq14m5k16hW4Le0xWfw40M';
 const STORAGE_KEY = 'zothos_pro_licensed';
 
 const ProLicenseContext = createContext({
   isPro: false,
+  stripeUrl: STRIPE_ZOTHOS_PRO_URL,
+  stripeBundleUrl: STRIPE_BUNDLE_URL,
   openPaywallModal: () => {},
   openLicenseModal: () => {},
   openDePayCheckout: () => {},
@@ -100,6 +104,8 @@ export function ProLicenseProvider({ children }) {
     <ProLicenseContext.Provider
       value={{
         isPro,
+        stripeUrl: STRIPE_ZOTHOS_PRO_URL,
+        stripeBundleUrl: STRIPE_BUNDLE_URL,
         openPaywallModal: () => setPaywallOpen(true),
         openLicenseModal: () => {
           setPaywallOpen(false);
@@ -166,6 +172,23 @@ export function ProLicenseProvider({ children }) {
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
             <Button
               variant="contained"
+              href={STRIPE_ZOTHOS_PRO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<VerifiedIcon />}
+              sx={{
+                py: 1.35,
+                fontWeight: 800,
+                fontFamily: mono,
+                bgcolor: '#635BFF',
+                color: '#FFFFFF',
+                '&:hover': { bgcolor: '#4F46E5' },
+              }}
+            >
+              💳 Pay with Card / Apple Pay ($19 Lifetime — Stripe)
+            </Button>
+            <Button
+              variant="contained"
               color="primary"
               onClick={openDePayCheckout}
               startIcon={<BoltIcon />}
@@ -176,6 +199,22 @@ export function ProLicenseProvider({ children }) {
               }}
             >
               ⚡ Pay with Solana / USDC ($19 Lifetime — DePay Web3)
+            </Button>
+            <Button
+              variant="outlined"
+              href={STRIPE_BUNDLE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                py: 1.1,
+                fontWeight: 800,
+                fontFamily: mono,
+                borderColor: gold,
+                color: gold,
+                fontSize: '0.78rem',
+              }}
+            >
+              👑 All-Access Sovereign Bundle: ZothOS + Studio v2 + 30 Tools ($49)
             </Button>
           </Box>
 
@@ -188,7 +227,7 @@ export function ProLicenseProvider({ children }) {
               }}
               sx={{ fontFamily: mono, fontSize: '0.75rem', color: 'text.secondary', textDecoration: 'underline' }}
             >
-              Already purchased? Activate with License Key or Transaction Signature →
+              Already purchased? Activate with License Key, Receipt Email, or Tx Signature →
             </Button>
           </Box>
         </DialogContent>
@@ -218,12 +257,12 @@ export function ProLicenseProvider({ children }) {
             </IconButton>
           </Box>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-            Enter your Solana transaction signature or Sovereign Pro license key to unlock all exports permanently in this browser:
+            Enter your Stripe receipt email, Solana transaction signature, or Sovereign Pro license key to unlock all exports permanently in this browser:
           </Typography>
           <TextField
             fullWidth
             size="small"
-            placeholder="Solana Tx Signature or ZOTH-PRO-2026"
+            placeholder="Receipt Email, Solana Tx, or ZOTH-PRO-2026"
             value={keyInput}
             onChange={(e) => setKeyInput(e.target.value)}
             onKeyDown={(e) => {
@@ -330,6 +369,26 @@ export function ProFunnelBanner() {
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <Button
             variant="contained"
+            size="small"
+            href={STRIPE_ZOTHOS_PRO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<VerifiedIcon sx={{ fontSize: 15 }} />}
+            sx={{
+              fontFamily: mono,
+              fontWeight: 800,
+              fontSize: '0.78rem',
+              px: 2.2,
+              py: 0.8,
+              bgcolor: '#635BFF',
+              color: '#FFFFFF',
+              '&:hover': { bgcolor: '#4F46E5' },
+            }}
+          >
+            💳 Card / Apple Pay ($19)
+          </Button>
+          <Button
+            variant="contained"
             color="primary"
             size="small"
             onClick={openDePayCheckout}
@@ -342,7 +401,7 @@ export function ProFunnelBanner() {
               py: 0.8,
             }}
           >
-            ⚡ Pay with SOL ($19 Lifetime)
+            ⚡ Pay with SOL ($19)
           </Button>
         </Box>
 
@@ -359,7 +418,7 @@ export function ProFunnelBanner() {
             '&:hover': { bgcolor: 'transparent', color: gold },
           }}
         >
-          Already purchased? Enter License Key →
+          Already purchased? Enter License Key or Receipt Email →
         </Button>
       </Box>
     </Paper>
@@ -430,6 +489,25 @@ export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest
         <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap', justifyContent: 'center' }}>
           <Button
             variant="contained"
+            size="small"
+            href={STRIPE_ZOTHOS_PRO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<VerifiedIcon sx={{ fontSize: 15 }} />}
+            sx={{
+              fontFamily: mono,
+              fontWeight: 800,
+              px: 2.4,
+              py: 0.95,
+              bgcolor: '#635BFF',
+              color: '#FFFFFF',
+              '&:hover': { bgcolor: '#4F46E5' },
+            }}
+          >
+            💳 Pay with Card ($19 — Stripe)
+          </Button>
+          <Button
+            variant="contained"
             color="primary"
             size="small"
             onClick={openDePayCheckout}
@@ -441,7 +519,7 @@ export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest
               py: 0.95,
             }}
           >
-            ⚡ Pay with Solana ($19 Lifetime)
+            ⚡ Pay with Solana ($19)
           </Button>
         </Box>
         <Button
@@ -449,7 +527,7 @@ export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest
           onClick={openLicenseModal}
           sx={{ mt: 1, fontFamily: mono, fontSize: '0.72rem', color: 'text.secondary', textDecoration: 'underline' }}
         >
-          Have a key? Activate Instantly →
+          Have a key or receipt email? Activate Instantly →
         </Button>
       </Box>
     </Box>
