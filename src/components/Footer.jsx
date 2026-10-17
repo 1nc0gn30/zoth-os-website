@@ -5,6 +5,7 @@ import ShieldIcon from '@mui/icons-material/Shield';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ZothosAsciiLogo from './ZothosAsciiLogo';
+import ProductHuntReviewBadge from './ProductHuntReviewBadge';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -103,6 +104,9 @@ export default function Footer() {
                 }}
               />
             </Stack>
+            <Box sx={{ mt: 2.5 }}>
+              <ProductHuntReviewBadge />
+            </Box>
           </Grid>
 
           <Grid xs={12} sm={4} md={2.5}>

@@ -24,6 +24,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import HubIcon from '@mui/icons-material/Hub';
+import ProductHuntReviewBadge from '../components/ProductHuntReviewBadge';
 import {
   HeroReveal,
   HeroItem,
@@ -193,6 +194,7 @@ export default function HomePage() {
             >
               Live Desktop &amp; Kernel Simulator
             </Button>
+            <ProductHuntReviewBadge />
             <Button
               variant="outlined"
               size="large"
