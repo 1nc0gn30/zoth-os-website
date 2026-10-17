@@ -90,7 +90,7 @@ export default function HomePage() {
               }}
             />
             <Chip
-              label="152 MCP SERVERS • ZOTH-RELAY (:8765) • 22 DAEMONS"
+              label="152 MCP CATALOG (ALL OFF) • ZOTH-RELAY (:8765) • 22 DAEMONS"
               size="small"
               sx={{
                 bgcolor: isDark ? 'rgba(52, 211, 153, 0.12)' : '#ECFDF3',
