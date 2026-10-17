@@ -119,7 +119,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
             <UsbIcon sx={{ color: gold, fontSize: 32 }} />
             <Chip label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
-          <Typography variant="h4" sx={{ mb: 1 }}>
+          <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 700, letterSpacing: 0 }}>
             zothos-3.2-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
