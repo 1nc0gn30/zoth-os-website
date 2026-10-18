@@ -1,49 +1,30 @@
 {
-  "$schema": "https://schemas.nullai.tech/agent-card/v1.json",
-  "protocol": "A2A-AX/1.0",
-  "name": "ZothOS Sovereign Agent-Native Operating System",
-  "id": "did:web:zothos.nullai.tech",
-  "version": "3.2.0",
+  "schema_version": "1.0",
+  "name": "ZothOS Linux v3.2 (zoth-pill) — Sovereign AI & Web Systems Agent",
+  "description": "Sovereign AI-Native Linux Workstation based on Debian Trixie + KDE Plasma 6.3 Wayland, local LLM orchestration, and eBPF security. Engineered by Neal Frazier (Neal Frazier Tech / NullAI). Provides instant access to 44 browser-native SEO/AEO/Developer tools, custom website & AI agent build packages, and Schema.org entity graphs.",
   "url": "https://zothos.nullai.tech",
-  "description": "The Operating System Built for AI Agents — And the Humans Who Command Them. Debian 13.7 (Trixie) + Linux 6.12 with Ring 0–3 zoth-agent-os permission rings, 152 pre-registered MCP servers (/etc/zothos/mcp-servers.json), zoth-relay (127.0.0.1:8765) Landlock multi-agent bridge, 22 loopback daemons, and KDE Plasma 6.3 Wayland 24K Gold human workstation.",
   "provider": {
-    "organization": "Neal Frazier Tech • NullAI Platform",
-    "url": "https://nullai.tech",
-    "github": "https://github.com/1nc0gn30/zoth-os"
-  },
-  "discovery": {
-    "llmsTxt": "https://zothos.nullai.tech/llms.txt",
-    "llmsFullTxt": "https://zothos.nullai.tech/llms-full.txt",
-    "aiTxt": "https://zothos.nullai.tech/ai.txt",
-    "mcpManifest": "https://zothos.nullai.tech/.well-known/mcp.json",
-    "sitemap": "https://zothos.nullai.tech/sitemap.xml",
-    "docs": "https://zothos.nullai.tech/docs",
-    "mcpPlayground": "https://zothos.nullai.tech/mcp"
+    "organization": "Neal Frazier Tech & NullAI",
+    "author": "Neal Frazier",
+    "url": "https://www.nealfrazier.tech",
+    "email": "contact@nealfrazier.tech"
   },
   "capabilities": {
-    "streaming": true,
-    "mcpStdio": true,
-    "mcpSseLoopback": true,
-    "mcpCatalogCount": 152,
-    "securityRings": ["RING_0_SOVEREIGN", "RING_1_SYSADMIN", "RING_2_TOOLMASTER", "RING_3_SPECTRE"],
-    "multiAgentRelay": "http://127.0.0.1:8765",
-    "zeroEgressEnclave": true,
-    "hardwareVaultInjection": true,
-    "autonomousSelfHealing": true,
-    "offlineOllamaInference": true
+    "streaming": false,
+    "pushNotifications": false,
+    "corsPublicApis": true,
+    "instantCheckout": true
   },
-  "residentAgents": [
-    { "name": "Google Antigravity (AGY)", "binary": "agy", "mode": "Hybrid + Local Ollama" },
-    { "name": "Claude Code CLI", "binary": "claude", "mode": "Anthropic Frontier API" },
-    { "name": "Grok Bot / CLI", "binary": "grok-bot", "mode": "Hybrid + zoth-relay (:8765)" },
-    { "name": "Aider", "binary": "aider", "mode": "100% Offline Ollama + zoth-vault RAM Inject" },
-    { "name": "Nous Hermes", "binary": "hermes", "mode": "Local + 70+ Skills" },
-    { "name": "Cursor AI IDE", "binary": "cursor", "mode": "Hybrid Visual IDE + MCP" },
-    { "name": "Cline", "binary": "cline", "mode": "Local Ollama / MCP" },
-    { "name": "OpenAI Codex / OpenCode", "binary": "codex", "mode": "Multi-Model Terminal" },
-    { "name": "Ollama", "binary": "ollama", "mode": "127.0.0.1:11434 Air-Gapped" }
-  ],
+  "apis": {
+    "index": "https://zothos.nullai.tech/api/index.json",
+    "services": "https://zothos.nullai.tech/api/services.json",
+    "tools": "https://zothos.nullai.tech/api/tools.json",
+    "faq": "https://zothos.nullai.tech/api/faq.json",
+    "graph": "https://zothos.nullai.tech/api/graph.json",
+    "llms": "https://zothos.nullai.tech/llms.txt",
+    "llmsFull": "https://zothos.nullai.tech/llms-full.txt"
+  },
   "authentication": {
-    "schemes": ["zoth-relay-288bit-sha256-token", "local-loopback-unix-uid", "argon2id-vault-lease", "ed25519-capability-token"]
+    "type": "none"
   }
 }

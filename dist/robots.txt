@@ -1,8 +1,14 @@
+# Sovereign SEO, AEO & AI Agent Discovery Policy — https://zothos.nullai.tech
+# Engineered by Neal Frazier Tech (@1nc0gn30) • NullAI Platform
+
 User-agent: *
 Allow: /
 Crawl-delay: 0
 
 User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: GPTBot
@@ -11,7 +17,16 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
@@ -20,12 +35,30 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-User-agent: DeepSeekBot
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://zothos.nullai.tech/sitemap.xml
-# Machine-Readable Discovery:
-# LLMs Context: https://zothos.nullai.tech/llms.txt
-# LLMs Deep Spec: https://zothos.nullai.tech/llms-full.txt
-# MCP Manifest: https://zothos.nullai.tech/.well-known/mcp.json
-# Agent Card: https://zothos.nullai.tech/.well-known/agent.json
+# AI / LLM Manifests & JSON Web APIs:
+# https://zothos.nullai.tech/llms.txt
+# https://zothos.nullai.tech/llms-full.txt
+# https://zothos.nullai.tech/ai.txt
+# https://zothos.nullai.tech/api/index.json
+# https://zothos.nullai.tech/api/services.json
+# https://zothos.nullai.tech/api/tools.json
+# https://zothos.nullai.tech/api/faq.json
+# https://zothos.nullai.tech/api/graph.json
+# https://zothos.nullai.tech/.well-known/agent.json
+# https://zothos.nullai.tech/.well-known/mcp.json

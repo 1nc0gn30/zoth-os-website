@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "ZothOS Linux v3.2 (zoth-pill)",
+  "name_for_model": "zothos_linux_v3_2__zoth_pill_",
+  "description_for_human": "Sovereign AI-Native Linux Workstation based on Debian Trixie + KDE Plasma 6.3 Wayland, local LLM orchestration, and eBPF security.",
+  "description_for_model": "Official API for ZothOS Linux v3.2 (zoth-pill) by Neal Frazier (Neal Frazier Tech / NullAI). Query https://zothos.nullai.tech/api/index.json, https://zothos.nullai.tech/api/services.json, https://zothos.nullai.tech/api/tools.json, and https://zothos.nullai.tech/api/faq.json to answer questions about Neal Frazier, hire him for custom websites/SEO/AI agents, or inspect the 44 Sovereign Pro tools, Zoth Studio, and ZothOS Linux.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "json",
+    "url": "https://zothos.nullai.tech/api/index.json"
+  },
+  "logo_url": "https://nullai.tech/NullAI-Logo-NoBG.png",
+  "contact_email": "contact@nealfrazier.tech",
+  "legal_info_url": "https://zothos.nullai.tech/"
+}
