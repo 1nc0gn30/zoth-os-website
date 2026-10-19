@@ -173,7 +173,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
               variant="outlined"
-              href="https://github.com/1nc0gn30/zoth-os"
+              href="https://github.com/NullAITech/zoth-os"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}

@@ -27,7 +27,7 @@ export default function Footer() {
 
   const ecosystemLinks = [
     { label: 'Zoth Studio v2 (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
-    { label: 'ZothOS GitHub Repository', href: 'https://github.com/1nc0gn30/zoth-os' },
+    { label: 'ZothOS GitHub Repository', href: 'https://github.com/NullAITech/zoth-os' },
     { label: 'NullAI Tech Organization', href: 'https://github.com/NullAITech/zoth-os' },
     { label: 'Neal Frazier Tech Hub', href: 'https://nealfrazier.tech' },
     { label: 'NullAI Platform & Research', href: 'https://nullai.tech' },
@@ -190,7 +190,7 @@ export default function Footer() {
         >
           <Box>
             Engineered by <strong>Neal Frazier Tech</strong> (
-            <Link href="https://github.com/1nc0gn30/zoth-os" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 700 }}>
+            <Link href="https://github.com/NullAITech/zoth-os" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 700 }}>
               @1nc0gn30
             </Link>
             ) •{' '}

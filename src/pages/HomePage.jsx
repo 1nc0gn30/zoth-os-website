@@ -198,7 +198,7 @@ export default function HomePage() {
             <Button
               variant="outlined"
               size="large"
-              href="https://github.com/1nc0gn30/zoth-os"
+              href="https://github.com/NullAITech/zoth-os"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<GitHubIcon />}
@@ -247,7 +247,7 @@ export default function HomePage() {
               overflowWrap: 'anywhere',
             }}
           >
-            $ git clone https://github.com/1nc0gn30/zoth-os.git &amp;&amp; cd zoth-os &amp;&amp; sudo ./build/build-iso.sh
+            $ git clone https://github.com/NullAITech/zoth-os.git &amp;&amp; cd zoth-os &amp;&amp; sudo ./build/build-iso.sh
           </Typography>
         </Box>
         <Button
@@ -255,7 +255,7 @@ export default function HomePage() {
           variant="outlined"
           onClick={() =>
             copyCmd(
-              'git clone https://github.com/1nc0gn30/zoth-os.git && cd zoth-os && sudo ./build/build-iso.sh',
+              'git clone https://github.com/NullAITech/zoth-os.git && cd zoth-os && sudo ./build/build-iso.sh',
               'ZothOS ISO build command',
             )
           }
@@ -645,10 +645,10 @@ export default function HomePage() {
         toolTitle="Option 1: ZothOS Linux v3.2 ISO"
         toolTag="HYBRID UEFI ISO"
         toolDescription="Bootable Debian 13 + Kali/Parrot dual-parity Linux OS with KDE Plasma 6.3 Wayland and 22 loopback enclaves."
-        toolRepo="https://github.com/1nc0gn30/zoth-os"
-        toolCommand="git clone https://github.com/1nc0gn30/zoth-os.git && cd zoth-os"
+        toolRepo="https://github.com/NullAITech/zoth-os"
+        toolCommand="git clone https://github.com/NullAITech/zoth-os.git && cd zoth-os"
         studioRepo="https://github.com/NullAITech/zoth-studio-v2"
-        osRepo="https://github.com/1nc0gn30/zoth-os"
+        osRepo="https://github.com/NullAITech/zoth-os"
       />
 
       <Snackbar
