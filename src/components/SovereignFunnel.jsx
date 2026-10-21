@@ -172,11 +172,11 @@ export default function SovereignFunnel({
               fullWidth
               startIcon={<GitHubIcon />}
               sx={{
-                bgcolor: gold,
+                background: gold,
                 color: isDark ? '#08080B' : '#FFFFFF',
                 fontWeight: 800,
                 textTransform: 'none',
-                '&:hover': { bgcolor: isDark ? '#F5E6AB' : '#9A7008' }
+                '&:hover': { background: isDark ? '#F5E6AB' : '#6B4E06' }
               }}
             >
               Inspect Repository
@@ -259,11 +259,11 @@ export default function SovereignFunnel({
               fullWidth
               startIcon={<GitHubIcon />}
               sx={{
-                bgcolor: gold,
+                background: gold,
                 color: isDark ? '#08080B' : '#FFFFFF',
                 fontWeight: 800,
                 textTransform: 'none',
-                '&:hover': { bgcolor: isDark ? '#F5E6AB' : '#9A7008' }
+                '&:hover': { background: isDark ? '#F5E6AB' : '#6B4E06' }
               }}
             >
               Open Studio v2 Repo

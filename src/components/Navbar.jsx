@@ -117,7 +117,7 @@ export default function Navbar({ mode, onToggleTheme }) {
           </Box>
 
           {/* Desktop Navigation Links */}
-          <Box sx={{ display: { xs: 'none', lg: 'flex' }, alignItems: 'center', gap: 0.5, flexShrink: 0 }}>
+          <Box sx={{ display: { xs: 'none', lg: 'flex' }, alignItems: 'center', gap: 0.25, flexShrink: 1, minWidth: 0 }}>
             {PRIMARY_NAV.map((item) => {
               const active =
                 item.path === '/'
@@ -130,13 +130,13 @@ export default function Navbar({ mode, onToggleTheme }) {
                   to={item.path}
                   size="small"
                   sx={{
-                    px: 1.35,
-                    py: 0.7,
+                    px: { lg: 1, xl: 1.25 },
+                    py: 0.65,
                     borderRadius: 2,
                     whiteSpace: 'nowrap',
                     color: active ? navActive : navIdle,
                     fontWeight: active ? 800 : 600,
-                    fontSize: '0.82rem',
+                    fontSize: { lg: '0.78rem', xl: '0.82rem' },
                     bgcolor: active ? (dark ? 'rgba(212,175,55,0.12)' : '#FEF9E7') : 'transparent',
                     border: active ? `1px solid ${dark ? 'rgba(212,175,55,0.35)' : '#E2CE82'}` : '1px solid transparent',
                     '&:hover': {
@@ -151,9 +151,10 @@ export default function Navbar({ mode, onToggleTheme }) {
                       label={item.badge}
                       size="small"
                       sx={{
-                        ml: 0.7,
-                        height: 18,
-                        fontSize: '0.62rem',
+                        display: { xs: 'none', xl: 'inline-flex' },
+                        ml: 0.6,
+                        height: 17,
+                        fontSize: '0.6rem',
                         fontFamily: mono,
                         fontWeight: 800,
                         bgcolor: dark ? 'rgba(212,175,55,0.18)' : '#FEF9E7',
@@ -167,19 +168,20 @@ export default function Navbar({ mode, onToggleTheme }) {
           </Box>
 
           {/* Right Actions: Search, Studio Link, Pro Unlock / Status, Theme Toggle */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.85, flexShrink: 0 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.65, flexShrink: 0 }}>
             <Tooltip title="Search Daemons, Agents & Security Arsenal (⌘K)">
               <Button
                 size="small"
                 variant="outlined"
                 onClick={() => setPaletteOpen(true)}
-                startIcon={<SearchIcon sx={{ fontSize: 16 }} />}
+                startIcon={<SearchIcon sx={{ fontSize: 15 }} />}
                 sx={{
-                  display: { xs: 'none', sm: 'inline-flex' },
+                  display: { xs: 'none', md: 'inline-flex' },
                   fontFamily: mono,
-                  fontSize: '0.74rem',
-                  px: 1.25,
-                  py: 0.55,
+                  fontSize: '0.72rem',
+                  px: 1.1,
+                  py: 0.5,
+                  minWidth: 0,
                   whiteSpace: 'nowrap',
                   borderColor: dark ? 'rgba(255,255,255,0.16)' : '#D0D5DD',
                   color: 'text.secondary',
@@ -199,10 +201,10 @@ export default function Navbar({ mode, onToggleTheme }) {
               sx={{
                 display: { xs: 'none', xl: 'inline-flex' },
                 fontFamily: mono,
-                fontSize: '0.73rem',
+                fontSize: '0.72rem',
                 fontWeight: 700,
-                px: 1.35,
-                py: 0.55,
+                px: 1.2,
+                py: 0.5,
                 whiteSpace: 'nowrap',
                 borderColor: dark ? 'rgba(212,175,55,0.35)' : '#E2CE82',
                 color: goldAccent,
@@ -225,13 +227,13 @@ export default function Navbar({ mode, onToggleTheme }) {
                 }}
               />
             ) : (
-              <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', gap: 0.75 }}>
+              <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', gap: 0.6 }}>
                 <Button
                   size="small"
                   variant="contained"
                   color="primary"
                   onClick={openPaywallModal}
-                  sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem', px: 1.5, py: 0.6, whiteSpace: 'nowrap' }}
+                  sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.73rem', px: 1.35, py: 0.55, whiteSpace: 'nowrap' }}
                 >
                   ✦ Buy Pro ($19)
                 </Button>
@@ -239,13 +241,14 @@ export default function Navbar({ mode, onToggleTheme }) {
                   size="small"
                   variant="outlined"
                   onClick={openDePayCheckout}
-                  startIcon={<BoltIcon sx={{ fontSize: 15 }} />}
+                  startIcon={<BoltIcon sx={{ fontSize: 14 }} />}
                   sx={{
                     fontFamily: mono,
                     fontWeight: 800,
-                    fontSize: '0.74rem',
-                    px: 1.2,
-                    py: 0.55,
+                    fontSize: '0.72rem',
+                    px: 1.05,
+                    py: 0.5,
+                    minWidth: 0,
                     whiteSpace: 'nowrap',
                     borderColor: '#14F195',
                     color: dark ? '#14F195' : '#047857',

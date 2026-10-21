@@ -180,9 +180,9 @@ export function ProLicenseProvider({ children }) {
                 py: 1.35,
                 fontWeight: 800,
                 fontFamily: mono,
-                bgcolor: '#635BFF',
+                background: '#635BFF',
                 color: '#FFFFFF',
-                '&:hover': { bgcolor: '#4F46E5' },
+                '&:hover': { background: '#4F46E5' },
               }}
             >
               💳 Pay with Card / Apple Pay ($19 Lifetime — Stripe)
@@ -198,7 +198,7 @@ export function ProLicenseProvider({ children }) {
                 fontFamily: mono,
               }}
             >
-              ⚡ Pay with Solana / USDC ($19 Lifetime — DePay Web3)
+              Pay with Solana / USDC ($19 Lifetime — DePay Web3)
             </Button>
             <Button
               variant="outlined"
@@ -380,12 +380,12 @@ export function ProFunnelBanner() {
               fontSize: '0.78rem',
               px: 2.2,
               py: 0.8,
-              bgcolor: '#635BFF',
+              background: '#635BFF',
               color: '#FFFFFF',
-              '&:hover': { bgcolor: '#4F46E5' },
+              '&:hover': { background: '#4F46E5' },
             }}
           >
-            💳 Card / Apple Pay ($19)
+            Card / Apple Pay ($19)
           </Button>
           <Button
             variant="contained"
@@ -401,7 +401,7 @@ export function ProFunnelBanner() {
               py: 0.8,
             }}
           >
-            ⚡ Pay with SOL ($19)
+            Pay with SOL ($19)
           </Button>
         </Box>
 
@@ -499,12 +499,12 @@ export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest
               fontWeight: 800,
               px: 2.4,
               py: 0.95,
-              bgcolor: '#635BFF',
+              background: '#635BFF',
               color: '#FFFFFF',
-              '&:hover': { bgcolor: '#4F46E5' },
+              '&:hover': { background: '#4F46E5' },
             }}
           >
-            💳 Pay with Card ($19 — Stripe)
+            Pay with Card ($19 — Stripe)
           </Button>
           <Button
             variant="contained"
@@ -519,7 +519,7 @@ export function ProOutputGate({ title = 'Unlock Full Sovereign Script & Manifest
               py: 0.95,
             }}
           >
-            ⚡ Pay with Solana ($19)
+            Pay with Solana ($19)
           </Button>
         </Box>
         <Button

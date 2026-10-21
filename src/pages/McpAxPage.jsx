@@ -639,7 +639,10 @@ export default function McpAxPage() {
                       fontWeight: 700,
                       fontSize: '0.74rem',
                       bgcolor: ideTarget === t.id ? goldAccent : 'transparent',
-                      color: ideTarget === t.id ? '#FFFFFF' : 'text.primary',
+                      color: ideTarget === t.id ? (dark ? '#08080B' : '#FFFFFF') : 'text.primary',
+                      '& .MuiChip-label': {
+                        color: ideTarget === t.id ? (dark ? '#08080B !important' : '#FFFFFF !important') : undefined,
+                      },
                       border: `1px solid ${goldAccent}`,
                     }}
                   />
@@ -668,7 +671,10 @@ export default function McpAxPage() {
                       fontWeight: 700,
                       fontSize: '0.74rem',
                       bgcolor: transportMode === tr.id ? goldAccent : 'transparent',
-                      color: transportMode === tr.id ? '#FFFFFF' : 'text.primary',
+                      color: transportMode === tr.id ? (dark ? '#08080B' : '#FFFFFF') : 'text.primary',
+                      '& .MuiChip-label': {
+                        color: transportMode === tr.id ? (dark ? '#08080B !important' : '#FFFFFF !important') : undefined,
+                      },
                       border: `1px solid ${goldAccent}`,
                     }}
                   />
