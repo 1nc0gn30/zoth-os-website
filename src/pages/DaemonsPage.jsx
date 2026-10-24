@@ -97,7 +97,7 @@ WantedBy=default.target`;
         </HeroItem>
         <HeroItem>
           <Typography color="text.secondary" sx={{ maxWidth: '65ch', mb: 5 }}>
-            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all 22 resident daemons and the 9 pre-installed Frontier AI coding agents below.
+            Loopback services are documented on 127.0.0.1. The coding tools below are third-party clients named in the ZothOS README (Antigravity, Claude Code, Grok Bot, Aider, Cursor, Cline, Ollama) plus desktop launchers for Hermes and Codex. You sign in with your own accounts. NullAI Tech does not claim a partnership with xAI, Cursor, Anthropic, Google, or Meta.
           </Typography>
         </HeroItem>
       </HeroReveal>
@@ -108,7 +108,7 @@ WantedBy=default.target`;
           01 / 02 · PRE-INSTALLED AUTONOMOUS CODING WORKSTATIONS
         </Typography>
         <Typography variant="h3" sx={{ mb: 3 }}>
-          9 Frontier AI Coding Agents Out of the Box
+          Third-party clients the image can launch
         </Typography>
 
         <StaggerChildren>

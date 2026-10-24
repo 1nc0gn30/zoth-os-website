@@ -33,7 +33,7 @@ const CODEX_SECTIONS = [
     kicker: 'PACKAGE & KERNEL ARCHITECTURE',
     title: 'Surgical Tri-Repository APT Pinning (Debian 13 + Kali + Parrot)',
     summary:
-      'ZothOS v3.2 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so 175+ offensive binaries co-exist with zero glibc or KDE Plasma dependency conflicts.',
+      'ZothOS v3.2 builds on Debian 13 (Trixie) with Debian’s stock Linux 6.12 image and pins Kali Rolling and Parrot Security at priority 400. The curated security lists are 30-opsec and 40-security (75 packages), not the full Kali archive.',
     codeTitle: '/etc/apt/preferences.d/zoth-parity.pref',
     code: `Package: *
 Pin: release n=trixie
@@ -51,8 +51,8 @@ Pin-Priority: 400
 # sudo apt install -t kali-rolling bloodhound certipy-ad netexec caido`,
     invariants: [
       'Core libc6, systemd, and KDE Plasma 6.3 Wayland packages are strictly locked to Debian 13 (Trixie) at Pin-Priority 900.',
-      '175+ Kali Rolling and Parrot Security tools are pulled surgically with isolated dependency trees.',
-      'Verified reproducible live-build pipeline with SHA-256 and Sigstore Cosign keyless attestation.',
+      'Kali and Parrot packages install only when named. Pin 400 is meant to keep them from replacing Debian libc and Plasma.',
+      'v3.2.0 publishes SHA-256 and a keyless cosign bundle over SHA256SUMS. Reproducible builds are in progress and are not bit-for-bit yet (REPRODUCIBLE_BUILDS.md).',
     ],
   },
   {
@@ -105,21 +105,20 @@ sudo zoth-mode ghost
     id: 'argon2id-vault',
     number: '04',
     kicker: 'CRYPTOGRAPHIC SECRETS SANCTUM',
-    title: 'Argon2id + XChaCha20-Poly1305 Ephemeral Memory Vault (:8787)',
+    title: 'Local secrets daemon on 127.0.0.1:8787',
     summary:
-      'Plaintext `.env` files on disk are the #1 attack vector for autonomous coding agents. `zoth-vault-daemon` (:8787) derives keys via Argon2id (`m=65536, t=4, p=4`), locks pages in RAM with `mlockall()`, and injects credentials directly into child process memory.',
-    codeTitle: 'zoth-vault Ephemeral Execution',
-    code: `# Unlock vault sanctum into mlockall() non-swappable RAM
-zoth-vault unlock --kdf argon2id
+      'The README describes zoth-vault as a resident daemon on 127.0.0.1:8787 using Argon2id and ChaCha20-Poly1305, with a front end that can also talk to Bitwarden CLI, KeePassXC, and UNIX pass. The daemon ships as a prebuilt binary. Those cryptographic parameters are not verifiable from the public source tree.',
+    codeTitle: 'What the README actually documents',
+    code: `# Front end named in the hotkey table
+zoth-vault
 
-# Execute Antigravity or Claude Code with zero plaintext .env on disk
-zoth-vault exec --ns prod/stripe-solana --ttl 60s -- agy
-# [✓] Injected 6 secrets into PID 41892 ephemeral environment
-# [✓] Disk bytes written: 0 | Auto-zeroize armed on process exit`,
+# The v3.2.0 README states the daemon is prebuilt.
+# Do not treat Argon2id memory/time settings on this page
+# as measured parameters. They are not published in-tree.`,
     invariants: [
-      'Argon2id key derivation (`64 MiB` memory cost, `4` iterations, `4` lanes) + XChaCha20-Poly1305 authenticated encryption.',
-      'Secrets are held in `mlockall(MCL_CURRENT | MCL_FUTURE)` pages so they can never be written to Linux swap.',
-      'Unified CLI & GUI (`zoth-vault-gui`) also bridges Bitwarden CLI, KeePassXC, and UNIX `pass`.',
+      'Bind address documented by the project: 127.0.0.1:8787.',
+      'Crypto construction is a design description, not an independent audit.',
+      'The vault UI also lists Bitwarden CLI, KeePassXC, and pass as backends.',
     ],
   },
   {
@@ -167,25 +166,27 @@ curl -s https://zothos.nullai.tech/.well-known/agent.json | jq .capabilities`,
     id: 'thermal-governance',
     number: '07',
     kicker: 'SILICON & ACOUSTIC RESILIENCE',
-    title: 'Strict < 55.0°C Thermal Ceiling & `zoth-heal` Self-Healing Daemon',
+    title: 'zoth-heal repair script and zoth-thermal turbo toggle',
     summary:
-      'Autonomous 21-agent swarms and local LLM inference can easily overheat standard Linux laptops. ZothOS enforces a hardware-level `< 55.0°C` ceiling with `no_turbo=1` pstate governance, 0 RPM silent operation, and automatic daemon resurrection.',
-    codeTitle: '/usr/local/bin/zoth-heal --audit',
-    code: `# Lock Intel/AMD pstate turbo boost and enforce < 55.0°C ceiling
-echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
-zoth-heal --status
-# [✓] CPU Package Temp: 46.0°C (Ceiling: 55.0°C)
-# [✓] Acoustic Profile: 0 RPM Passive Whisper Mode
-# [✓] 22/22 Loopback Systemd User Daemons Healthy`,
+      'zoth-heal is a bash repair script. Its header lists APT locks and mirrors, display/compositors, network/DNS/Tor, disk pressure, audio, Python/MCP dependencies, and desktop config. zoth-thermal writes 1 or 0 to Intel pstate no_turbo when that sysfs file exists. Neither script publishes a 55°C ceiling or a 0 RPM fan policy.',
+    codeTitle: '/usr/local/bin/zoth-thermal',
+    code: `# Intel turbo toggle present in the chroot script
+# (no-op when intel_pstate/no_turbo is absent)
+zoth-thermal
+zoth-heal`,
     invariants: [
-      'Continuous 5-second watchdog loop (`zoth-heal`) restarts any crashed loopback daemon in under 150ms.',
-      'Linux Cgroups v2 (`agent-capsule-jail` `:8105`) caps untrusted subagent CPU/RAM spikes automatically.',
-      'Guaranteed whisper-quiet 0 RPM fan operation during normal coding and MCP orchestration.',
+      'Repair coverage is the seven areas named in the zoth-heal header.',
+      'Turbo control is Intel pstate only, and only when sysfs exposes no_turbo.',
+      'Fan curves and temperature caps are not part of these scripts.',
     ],
   },
 ];
 
 const FAQS = [
+  {
+    q: 'Which file do I download, and does it include the 23 Oct CLIs?',
+    a: 'Download every zothos-3.2-amd64.iso.part0N file from the v3.2.0 release (13 Oct 2026), plus zothos-join-iso.sh, SHA256SUMS, and SHA256SUMS.cosign.bundle. Run bash zothos-join-iso.sh, then flash zothos-3.2-amd64.iso to a USB of at least 16 GB. Git main through 23 Oct 2026 is still version 3.2.0 and adds zoth-control-center v2.0, zoth-ascii-magic 2.7.0, and the city-desk, swarm-quorum, gesture-map, surface-sentinel, yara-forge, and theme-forge scripts. Those are not in the tagged ISO. There is no published qcow2. Zoth Studio is npx @nullaitech/zoth studio.',
+  },
   {
     q: 'How does ZothOS combine Debian 13, Kali Rolling, and Parrot Security without breaking packages?',
     a: 'ZothOS uses surgical APT Pin-Priority rules (/etc/apt/preferences.d/zoth-parity.pref). Core system libraries, libc6, systemd, and KDE Plasma 6.3 Wayland are pinned to Debian 13 (Trixie) at priority 900, while offensive security binaries from Kali and Parrot are pinned at 400 so they only install when explicitly requested.',

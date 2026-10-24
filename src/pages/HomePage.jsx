@@ -103,7 +103,7 @@ export default function HomePage() {
               }}
             />
             <Chip
-              label="KDE PLASMA 6.3 WAYLAND • DEBIAN 13.7 + KALI + PARROT"
+              label="KDE PLASMA 6.3 WAYLAND • DEBIAN 13 TRIXIE + KALI + PARROT"
               size="small"
               sx={{
                 bgcolor: isDark ? 'rgba(239, 68, 68, 0.12)' : '#FEF2F2',
@@ -147,9 +147,9 @@ export default function HomePage() {
             Standard Linux was designed for a single human typing into bash.{' '}
             <strong>ZothOS Linux v3.2</strong> is engineered from Ring 0 up as a{' '}
             <strong>permission-ringed, self-healing habitat for autonomous AI agents</strong> (
-            <code>zoth-agent-os</code>, 152 pre-registered MCP servers, <code>zoth-relay</code> Landlock multi-agent bridge,{' '}
-            <code>zoth-vault</code> RAM secret injection, and 22 loopback daemons)—while giving{' '}
-            <strong>human operators</strong> a flagship 24K Gold KDE Plasma 6.3 Wayland workstation with Debian 13.7 (Trixie), Kali Rolling, and Parrot Security dual parity.
+            <code>zoth-agent-os</code>, a 152-entry MCP catalog that stays off until you enable a server, <code>zoth-relay</code> on 127.0.0.1:8765,{' '}
+            <code>zoth-vault</code> on :8787, and 22 loopback daemons)—while giving{' '}
+            <strong>human operators</strong> a KDE Plasma 6.3 Wayland desktop on Debian 13 (Trixie), with Kali Rolling and Parrot Security pinned alongside.
           </Typography>
         </HeroItem>
 
@@ -292,7 +292,7 @@ export default function HomePage() {
           Built for <span className="text-gradient-gold">Autonomous AI Agents</span> — Loved by Human Operators
         </Typography>
         <Typography sx={{ color: textSecondary, maxWidth: '72ch', mb: 4, lineHeight: 1.7 }}>
-          On conventional operating systems, AI agents either run blind inside sterile containers or run unbridled with root access to your SSH keys and cloud credentials. ZothOS solves both sides of the equation with two purpose-built execution planes sharing one Debian 13.7 + Linux 6.12 kernel.
+          ZothOS is a Debian 13 (Trixie) live image with Debian’s stock Linux 6.12 kernel. Agents and the Plasma desktop share that base. The published download is still the 13 Oct 2026 v3.2.0 ISO. Git main through 23 Oct 2026 is the same version number and adds desktop folders plus a few chroot CLIs that are not in that ISO yet.
         </Typography>
 
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3, mb: 5 }}>
@@ -324,10 +324,10 @@ export default function HomePage() {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
               {[
                 'zoth-agent-os & 4 Security Rings: Hardware/OS-enforced Ring 0 (SOVEREIGN) through Ring 3 (SPECTRE) governing filesystem paths, cgroups/Firejail/Landlock isolation, and LLM token budgets.',
-                '152 Pre-Registered MCP Servers: /etc/zothos/mcp-servers.json ships with 16 air-gapped local servers and deterministic CLI fallbacks managed via zoth-mcp.',
-                'zoth-relay Multi-Agent Bridge (127.0.0.1:8765): Lets Antigravity, Claude, Cursor, Grok, Muse Code, and GPT Actions work concurrently with 288-bit tokens and isolated ~/agent-workspace/<name> directories.',
-                'Zero-Disk Secret Injection (:8787): zoth-vault run -- <agent> injects decrypted API keys directly into child process RAM so agents never see plaintext keys on disk.',
-                'Autonomous Self-Healing: zoth-sentinel + zoth-heal continuously repair APT locks, compositors, DNS, and zombie threads so 24/7 agent runs never stall.',
+                '152-entry MCP catalog: /etc/zothos/mcp-servers.json is shipped with every entry disabled until you turn a server on (v3.2.0 release notes).',
+                'zoth-relay (127.0.0.1:8765): loopback bridge for the third-party clients you install and sign into yourself (Antigravity, Claude Code, Cursor, Grok Bot, and others). NullAI Tech is not a partner of xAI, Cursor, Anthropic, Google, or Meta.',
+                'zoth-vault (:8787): local secrets daemon. The README describes Argon2id and ChaCha20-Poly1305, and also says the binary is prebuilt so those claims are not auditable from this source tree.',
+                'zoth-heal: repairs APT locks, display, network/Tor, disk pressure, audio, Python/MCP deps, and desktop config. It does not guarantee uptime.',
               ].map((bullet) => (
                 <Box key={bullet} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.2 }}>
                   <CheckCircleIcon sx={{ fontSize: 18, color: gold, mt: 0.3, flexShrink: 0 }} />
@@ -368,9 +368,9 @@ export default function HomePage() {
               {[
                 'Bespoke 24K Celtic Gold Desktop: KDE Plasma 6.3 Wayland with Zoth-Hermetic 3D glass icons, 60 FPS interactive QML wallpaper (zoth-pill), and the All-Seeing Eye cursor companion (zoth-desktop-pet).',
                 'zoth-cockpit Operations Center: Flagship Electron dashboard + curses TUI (--tui) with rolling 60s hardware waveforms, 21-Agent Pantheon dispatch, and live daemon log inspection.',
-                'Debian 13.7 + Kali + Parrot Parity: Surgical APT pinning (900 Debian Trixie, 400 Kali/Parrot) gives human red-teamers 175+ offensive security tools without rolling-release breakage.',
-                '59 Zoth Studio Workstations (/opt/zoth-studio): 28 In-Browser WebGPU/Client studios + 31 Sovereign Loopback Enclaves pre-installed for offline engineering.',
-                '4 Instant Reality Modes & Whisper-Quiet Hardware: Flip between gold, ghost (transparent Tor), matrix, and win11 decoy mode while keeping CPU < 55.0°C at 0 RPM.',
+                'Debian 13 + Kali + Parrot pins: priority 900 for Trixie and 400 for Kali Rolling and Parrot. The curated set is 75 packages across 30-opsec and 40-security.',
+                'Studio catalog: ZOTHOS_TOOLS_CATALOG.md (22 Oct 2026) lists 62 tools — 45 browser workstations and 17 enclaves. Launch Studio with npx @nullaitech/zoth studio. That catalog sync is newer than the v3.2.0 ISO.',
+                'zoth-mode switches gold, ghost, matrix, and incognito (alias win11). zoth-cockpit on current main also cycles a fifth cyan reality. zoth-thermal can disable Intel turbo; it does not lock fans at 0 RPM or hold 55°C.',
               ].map((bullet) => (
                 <Box key={bullet} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.2 }}>
                   <CheckCircleIcon sx={{ fontSize: 18, color: '#10B981', mt: 0.3, flexShrink: 0 }} />

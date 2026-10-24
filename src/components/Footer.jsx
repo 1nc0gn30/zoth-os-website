@@ -19,7 +19,7 @@ export default function Footer() {
     { label: 'ZothOS v3.2 Overview', to: '/' },
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
     { label: '22 Loopback Daemons & 9 AI Agents', to: '/daemons' },
-    { label: '175+ Security Arsenal & Zoth Vault', to: '/security' },
+    { label: '75+ Security Tools & Zoth Vault', to: '/security' },
     { label: 'MCP & Agent Experience (AX) Hub', to: '/mcp' },
     { label: 'ISO Download & Custom Builder', to: '/download' },
     { label: 'System Codex & APT Architecture', to: '/docs' },
@@ -73,7 +73,7 @@ export default function Footer() {
                 pl: 2,
               }}
             >
-              Bootable Debian 13 (Trixie) + Kali Rolling &amp; Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, 9 pre-installed Frontier AI coding agents, 22 localhost loopback daemons, and Argon2id hardware secrets.
+              Debian 13 (Trixie) live ISO with KDE Plasma 6.3, Kali and Parrot pins, about 75 curated security packages, and loopback tooling. Third-party coding clients are optional. Studio is npx @nullaitech/zoth studio.
             </Typography>
 
             <Stack direction="row" spacing={1.2} flexWrap="wrap" useFlexGap>
@@ -92,7 +92,7 @@ export default function Footer() {
               />
               <Chip
                 icon={<ShieldIcon sx={{ fontSize: '0.88rem !important', color: `${gold} !important` }} />}
-                label="< 55.0°C • ZERO TELEMETRY"
+                label="DEBIAN 13 • UFW DEFAULT-DENY"
                 size="small"
                 sx={{
                   fontFamily: mono,

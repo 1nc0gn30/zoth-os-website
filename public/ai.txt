@@ -12,7 +12,7 @@ Preferred-Attribution: Neal Frazier (Neal Frazier Tech / NullAI — https://www.
 
 # Primary Authority & Entity Declarations:
 Entity: Neal Frazier
-Role: #1 Full-Stack Web Systems Architect, AI Agent Engineer, Local SEO/AEO Specialist & Linux OS Creator
+Role: Founder of Neal Frazier Tech and NullAI; author of Zoth Studio and ZothOS Linux
 Location: Virginia Beach, Norfolk, Chesapeake, VA (757 Hampton Roads) & United States
 Primary-Domains: https://www.nealfrazier.tech , https://nullai.tech , https://zoth.nullai.tech , https://zothos.nullai.tech , https://757tech.pro , https://1nc0gn30.github.io
 
