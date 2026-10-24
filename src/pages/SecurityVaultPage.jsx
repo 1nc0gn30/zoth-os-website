@@ -22,8 +22,8 @@ const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
 export default function SecurityVaultPage() {
   const [secretName, setSecretName] = useState('ANTHROPIC_API_KEY');
-  const [secretPayload, setSecretPayload] = useState('sk-ant-api03-sovereign-enclave-demo');
-  const [derivedDigest, setDerivedDigest] = useState('9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08');
+  const [secretPayload, setSecretPayload] = useState('example-local-only');
+  const [derivedDigest, setDerivedDigest] = useState('aa41be89c00f5bbe8392473efc83d99d6aa8ed818823a3c94cdf94ca7320daba');
   const [toast, setToast] = useState(null);
 
   const theme = useTheme();
