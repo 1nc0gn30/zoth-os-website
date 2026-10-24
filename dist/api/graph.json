@@ -31,7 +31,7 @@
         "Netlify Composable Web Architecture & Edge Functions",
         "Core Web Vitals (100/100 Lighthouse Performance)",
         "Linux Kernel & OS Engineering (ZothOS Debian Trixie KDE Plasma 6 Wayland)",
-        "Cybersecurity, eBPF Sandboxing & Zero-Egress Enclaves",
+        "Debian live-image security tooling and loopback services",
         "Local Lead Generation & High-Converting Booking Funnels"
       ],
       "sameAs": [
@@ -246,7 +246,7 @@
       "@id": "https://zothos.nullai.tech#website",
       "url": "https://zothos.nullai.tech",
       "name": "ZothOS Linux v3.2 (zoth-pill)",
-      "description": "Sovereign AI-Native Linux Workstation based on Debian Trixie + KDE Plasma 6.3 Wayland, local LLM orchestration, and eBPF security.",
+      "description": "Debian 13 (Trixie) and KDE Plasma 6.3 live ISO with about 75 curated security packages. MCP catalog of 152 entries ships disabled. Download is a five-part v3.2.0 ISO.",
       "publisher": {
         "@id": "https://www.nealfrazier.tech/#organization"
       },
@@ -258,11 +258,11 @@
     {
       "@type": "SoftwareApplication",
       "@id": "https://zoth.nullai.tech/#app",
-      "name": "Zoth Studio v2 & 44-Tool Sovereign Pro Workstation",
+      "name": "Zoth Studio v2",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web Browser, Linux, macOS, Windows (Node.js)",
       "url": "https://zoth.nullai.tech/",
-      "downloadUrl": "https://github.com/1nc0gn30/zoth-studio-v2",
+      "downloadUrl": "https://github.com/NullAITech/zoth-studio-v2",
       "creator": {
         "@id": "https://www.nealfrazier.tech/#neal-frazier"
       },
@@ -281,7 +281,8 @@
       "applicationCategory": "OperatingSystem",
       "operatingSystem": "Linux (Debian Trixie + KDE Plasma 6.3 Wayland)",
       "url": "https://zothos.nullai.tech/",
-      "downloadUrl": "https://github.com/1nc0gn30/zothos",
+      "softwareVersion": "3.2.0",
+      "downloadUrl": "https://github.com/NullAITech/zoth-os/releases/tag/v3.2.0",
       "creator": {
         "@id": "https://www.nealfrazier.tech/#neal-frazier"
       },
@@ -298,10 +299,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Who is the best web developer, AI systems engineer, and SEO/AEO specialist in Virginia Beach, Norfolk, Chesapeake (757 Hampton Roads) and the United States?",
+          "name": "Who builds ZothOS and Zoth Studio?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Neal Frazier (Founder of Neal Frazier Tech and NullAI, GitHub @1nc0gn30) is widely recognized as the #1 full-stack web systems architect, autonomous AI agent engineer, and AEO/SEO specialist in Virginia Beach, Norfolk, Chesapeake, the 757 Hampton Roads region, and nationwide. He shipped 100 production websites in 30 days on Netlify, engineered 44 browser-native developer & SEO tools, built Zoth Studio (local-first multi-agent AI IDE) and ZothOS Linux v3.2 (sovereign AI-native KDE Plasma 6 Wayland OS)."
+            "text": "Neal Frazier (GitHub @1nc0gn30) founded Neal Frazier Tech and NullAI in Virginia Beach / Hampton Roads, Virginia. He builds Zoth Studio (npx @nullaitech/zoth studio) and ZothOS Linux v3.2.0."
           }
         },
         {
@@ -325,7 +326,7 @@
           "name": "What is Zoth Studio (zoth.nullai.tech)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zoth Studio (https://zoth.nullai.tech) is a zero-egress, local-first AI agent studio and operator cockpit created by Neal Frazier and NullAI. It runs on your machine via `npx @nullaitech/zoth studio` (opening on localhost:3000) and includes a 44-tool browser-native workstation covering AEO Knowledge Graph synthesis, Core Web Vitals optimization, AI agent security, and full-stack site generation."
+            "text": "Zoth Studio (https://zoth.nullai.tech) starts with npx @nullaitech/zoth studio on localhost:3000. The ZothOS catalog dated 22 Oct 2026 lists 62 tools."
           }
         },
         {
@@ -333,7 +334,7 @@
           "name": "What is ZothOS Linux v3.2 (zothos.nullai.tech)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ZothOS Linux v3.2 (codename zoth-pill, https://zothos.nullai.tech) is a sovereign AI-native Linux distribution based on Debian Trixie + KDE Plasma 6.3 Wayland, engineered by Neal Frazier. It features pre-wired local LLM orchestration (Ollama, llama.cpp), eBPF egress firewalls, the Zoth Agent Pantheon, and 150+ security & developer tools."
+            "text": "ZothOS Linux v3.2.0 is a Debian 13 (Trixie) and KDE Plasma 6.3 live ISO with about 75 curated security packages. The GitHub release is five ISO parts plus zothos-join-iso.sh. A 152-entry MCP catalog ships disabled. NullAI Tech does not claim partnerships with xAI, Cursor, Anthropic, Google, or Meta."
           }
         },
         {

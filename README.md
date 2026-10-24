@@ -1,7 +1,7 @@
 # ZothOS Website — Official Distribution Hub & Agent-Native OS Showcase
 
 > **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.2**  
-> *Engineered from Ring 0 up as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, 152 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, Debian 13 + Kali & Parrot dual parity).*
+> *Public site for ZothOS Linux v3.2.0: Debian 13 (Trixie), KDE Plasma 6.3 Wayland, Kali and Parrot pins, about 75 curated security packages, and a 152-entry MCP catalog that ships disabled. The ISO is five GitHub parts plus `zothos-join-iso.sh`.*
 
 [![Live Production Site](https://img.shields.io/badge/Live-zothos.nullai.tech-gold?style=flat-square&logo=googlechrome)](https://zothos.nullai.tech)
 [![Netlify Deploy](https://img.shields.io/badge/Deploy-Netlify%20Production-00C7B7?style=flat-square&logo=netlify)](https://app.netlify.com)
@@ -40,7 +40,7 @@
 |  - 24K Gold Plasma 6.3 Tour | |  - /llms.txt & llms-full.txt| |  - Stripe Payment Links ($19)|
 |  - 75+ Cyber Arsenal Guide  | |  - /api/tools.json Catalog  | |  - DePay Solana Integration |
 |  - SHA-256 / Cosign Verifier| |  - /api/services.json API   | |  - 1-Click License Key Auth |
-|  - Live ISO Torrent / HTTP  | |  - Schema.org JSON-LD Graphs| |  - Frosted Glass Paywall UX |
+|  - Split ISO + join script  | |  - Schema.org JSON-LD Graphs| |  - Frosted Glass Paywall UX |
 +-----------------------------+ +-----------------------------+ +-----------------------------+
         |                                   |                                   |
         +-----------------------------------+-----------------------------------+
@@ -59,18 +59,18 @@
 ### 1. Dual-Audience Operating System Demonstration
 - **For AI Agents (`zoth-agent-os`)**:
   - **4-Tier Security Privilege Rings**: Documenting `RING_0_SOVEREIGN`, `RING_1_SYSADMIN`, `RING_2_TOOLMASTER`, and `RING_3_APPLICATION_SANDBOX`.
-  - **152 Master MCP Servers**: Pre-configured registry via `/etc/zothos/mcp-servers.json` (Ghidra, Shodan, Wireshark, Nmap, Caido, Burp Suite, Memory, Git, Filesystem).
+  - **152 MCP catalog entries**: `/etc/zothos/mcp-servers.json`. The v3.2.0 release notes say they stay disabled until enabled.
   - **IPC & Loopback Isolation**: Full documentation of `zoth-relay` (:8765) and the 22 localhost daemons.
 - **For Human Operators**:
   - **24K Gold KDE Plasma 6.3 Wayland**: Dark alchemical glassmorphism with custom shaders, icon themes, and multi-monitor `zoth-lock`.
-  - **Debian 13.7 + Kali & Parrot Parity**: Complete package coverage across bleeding-edge enterprise penetration testing and digital forensics.
+  - **Debian 13 (Trixie) + Kali & Parrot pins**: About 75 curated packages from the opsec and security lists. Not the full Kali archive, and not Debian 13.7.
 
 ### 2. AEO & Machine-Agent Discovery Endpoints
 Built to satisfy strict frontier crawler requirements with zero crawl delay:
 - [`/llms.txt`](https://zothos.nullai.tech/llms.txt): Plaintext LLM summary with key operational parameters and download links.
 - [`/llms-full.txt`](https://zothos.nullai.tech/llms-full.txt): Comprehensive multi-page corpus covering security rings, ISO specifications, and daemon ports.
 - [`/api/index.json`](https://zothos.nullai.tech/api/index.json): Programmatic metadata index for autonomous agents.
-- [`/api/tools.json`](https://zothos.nullai.tech/api/tools.json): JSON machine catalog of all 75+ preloaded security and developer CLI tools.
+- [`/api/tools.json`](https://zothos.nullai.tech/api/tools.json): JSON catalog for the separate Sovereign Pro browser tools. The OS security package count (about 75) lives in the ZothOS repo, not in this file.
 - [`/api/faq.json`](https://zothos.nullai.tech/api/faq.json): Structured FAQ knowledge base for automated citation.
 - [`/api/graph.json`](https://zothos.nullai.tech/api/graph.json): Linked Data Schema.org `@graph` representation.
 
@@ -133,8 +133,8 @@ Deployed continuously via **Netlify Edge**:
 
 ## Related Repositories
 
-- [**ZothOS Linux** (`NullAITech/zoth-os`)](https://github.com/NullAITech/zoth-os): Hardened Debian 13 Bookworm Live ISO build system and rootfs overlays.
-- [**Zoth Studio v2** (`NullAITech/zoth-studio-v2`)](https://github.com/NullAITech/zoth-studio-v2): Sovereign agent orchestrator, WebGPU compute console, and 62-tool workstation matrix.
+- [**ZothOS Linux** (`NullAITech/zoth-os`)](https://github.com/NullAITech/zoth-os): Debian 13 (Trixie) live-build. Latest tagged ISO is v3.2.0 (2026-10-13). Git main through 2026-10-23 is still version 3.2.0.
+- [**Zoth Studio v2** (`NullAITech/zoth-studio-v2`)](https://github.com/NullAITech/zoth-studio-v2): Local studio. Command is `npx @nullaitech/zoth studio`. The OS catalog lists 62 tools as of 2026-10-22.
 - [**NullAI Platform** (`nullai.tech`)](https://nullai.tech): Sovereign alchemical AI infrastructure and autonomous agent research.
 
 ---

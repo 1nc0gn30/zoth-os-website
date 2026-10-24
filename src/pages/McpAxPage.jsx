@@ -56,7 +56,7 @@ const MCP_SERVERS = [
     port: ':8105 / :8112',
     transport: 'stdio + cgroups-v2 jail',
     category: 'Offensive Security',
-    desc: 'Sandboxed MCP bridge to 175+ Kali Rolling & Parrot Security binaries (Nuclei, Subfinder, RustScan, Impacket, Certipy-AD, Ghidra headless).',
+    desc: 'MCP bridge toward the curated Kali/Parrot packages (nuclei, subfinder, rustscan, impacket, certipy-ad). The catalog has 152 entries and the v3.2.0 notes say they start disabled.',
     tools: ['hexstrike_recon_scan', 'hexstrike_cve_audit', 'hexstrike_secret_scan'],
   },
   {
@@ -155,7 +155,7 @@ const PLAYGROUND_TOOLS = [
         compositorShader: 'org.zothos.interactive (KDE Plasma 6.3 Wayland)',
         torTransparentProxy: (parsed.mode || 'ghost') === 'ghost' ? 'ACTIVE (127.0.0.1:9040 / DNS :9053)' : 'STANDBY (Clearnet + UFW Loopback)',
         macSpoofState: (parsed.mode || 'ghost') === 'ghost' ? 'ROTATED (02:4c:9a:f1:08:e3)' : 'HARDWARE_DEFAULT',
-        thermalCeiling: '46.2°C (< 55.0°C lock)',
+        thermalCeiling: 'zoth-thermal can set Intel no_turbo',
         latencyMs: 11.8,
       },
     }),
@@ -192,7 +192,7 @@ const PLAYGROUND_TOOLS = [
             engramId: 'eng_cgroups_hexstrike',
             similarity: 0.912,
             weight: 1.52,
-            summary: '175+ offensive binaries isolated inside Linux cgroups-v2 via agent-capsule-jail (:8105).',
+            summary: 'agent-capsule-jail (:8105) is the cgroup helper named for untrusted tasks. The security package lists hold about 75 tools.',
           },
           {
             engramId: 'eng_ufw_zero_egress',

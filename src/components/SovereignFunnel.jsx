@@ -214,7 +214,7 @@ export default function SovereignFunnel({
               />
             </Box>
             <Typography variant="body2" sx={{ color: textSecondary, mb: 2, flexGrow: 1, fontSize: '0.85rem', lineHeight: 1.5 }}>
-              The unified sovereign AI &amp; human developer cockpit featuring 59 interactive workstations (28 In-Browser WebGPU/Client studios + 31 Loopback Enclaves), 3D synaptic memory, and zero cloud telemetry.
+              Local Studio cockpit. Current command is npx @nullaitech/zoth studio (localhost:3000). The ZothOS catalog dated 22 Oct 2026 lists 62 tools (45 browser workstations and 17 enclaves). Source remains NullAITech/zoth-studio-v2.
             </Typography>
 
             <Box
@@ -239,11 +239,11 @@ export default function SovereignFunnel({
                   whiteSpace: 'nowrap'
                 }}
               >
-                git clone https://github.com/NullAITech/zoth-studio-v2.git
+                npx @nullaitech/zoth studio
               </Typography>
               <IconButton aria-label="Copy command"
                 size="small"
-                onClick={() => handleCopy('git clone https://github.com/NullAITech/zoth-studio-v2.git', 'Studio v2 clone')}
+                onClick={() => handleCopy('npx @nullaitech/zoth studio', 'Studio CLI')}
                 sx={{ color: gold, ml: 1, p: 0.5 }}
                 title="Copy command"
               >
@@ -300,7 +300,7 @@ export default function SovereignFunnel({
               />
             </Box>
             <Typography variant="body2" sx={{ color: textSecondary, mb: 2, flexGrow: 1, fontSize: '0.85rem', lineHeight: 1.5 }}>
-              Bare-metal air-gapped operating system kernel for autonomous agent swarms, zero-telemetry hardware enclave execution, and cryptographic seals.
+              Debian 13 (Trixie) live ISO, not an npm package and not a custom kernel. Download the split v3.2.0 image from GitHub. Studio’s CLI stays npx @nullaitech/zoth.
             </Typography>
 
             <Box

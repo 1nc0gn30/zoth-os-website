@@ -29,7 +29,7 @@ const INITIAL_HISTORY = [
     id: 1,
     type: 'system',
     text: [
-      'ZOTHOS LINUX v3.2.0-RELEASE (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
+      'ZOTHOS LINUX v3.2.0 (Debian 13 Trixie • stock Linux 6.12 • KDE Plasma 6.3 Wayland)',
       'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • 152 MCP Servers • 22/22 Loopback Daemons Online.',
       'Type "help" or click any quick-command chip below to test both Agent-Native and Human Workstation CLI tools.',
     ].join('\n'),
@@ -89,7 +89,7 @@ export default function DesktopSimulatorPage() {
 
     if (lower.startsWith('zoth-mode ')) {
       const arg = lower.replace('zoth-mode ', '').trim();
-      const map = { gold: 'gold', default: 'gold', ghost: 'ghost', stealth: 'ghost', matrix: 'matrix', win11: 'cyan', incognito: 'cyan', cyan: 'cyan' };
+      const map = { gold: 'gold', default: 'gold', ghost: 'ghost', stealth: 'ghost', matrix: 'matrix', win11: 'incognito', incognito: 'incognito', cyan: 'cyan' };
       const target = map[arg] || 'gold';
       setActivePill(target);
       const pillInfo = REALITY_PILL_MODES.find((m) => m.id === target);
@@ -97,9 +97,11 @@ export default function DesktopSimulatorPage() {
         id: Date.now() + 1,
         type: 'output',
         text: [
-          `[+] Switching ZothOS Reality Pill Profile -> ${pillInfo.name} (${pillInfo.glyph})`,
-          `[✓] Applied KDE Plasma 6.3 theme, cursor constellation palette (${pillInfo.accent}), and security posture:`,
-          `    ${pillInfo.posture}`,
+          `[+] Switching preview profile -> ${pillInfo.name} (${pillInfo.glyph})`,
+          `[✓] Command on the image: ${pillInfo.cmd}`,
+          target === 'cyan'
+            ? '    Note: zoth-mode does not accept cyan. Cockpit cycles that reality.'
+            : `    ${pillInfo.posture}`,
         ].join('\n'),
       });
     } else if (lower === 'zoth status') {
@@ -116,7 +118,7 @@ export default function DesktopSimulatorPage() {
           '[✓] CURSOR COMPOSITOR:  zoth-cursor-daemon ONLINE (127.0.0.1:9989 @ 60 FPS)',
           '[✓] LOOPBACK ENCLAVES:  22 / 22 ACTIVE (:8094 STDP Memory .. :8120 Margin Sentinel)',
           '[✓] SOVEREIGN VAULT:    ONLINE (127.0.0.1:8787 • Argon2id + ChaCha20-Poly1305)',
-          '[✓] THERMAL CEILING:    41.2°C / 55.0°C MAX (Fans: 0 RPM • no_turbo=1 Locked)',
+          '[i] THERMAL:           zoth-thermal can set Intel no_turbo. No 55°C or 0 RPM guarantee.',
           '========================================================================',
         ].join('\n'),
       });
@@ -165,15 +167,15 @@ export default function DesktopSimulatorPage() {
         type: 'output',
         text: [
           '>>> Running 10-Point ZothOS Cryptographic & Agent-Native Invariant Audit...',
-          '[PASS] 01. Debian 13.7 Trixie + Kali/Parrot APT Pinning Cohesion',
+          '[PASS] 01. Debian 13 Trixie + Kali/Parrot pin 400 (75 curated packages)',
           '[PASS] 02. Linux 6.12 Hybrid DRM (i915 + NVIDIA) & KVM Ring-0 VMX',
           '[PASS] 03. /etc/zothos/agent-permissions.json (Rings 0–3 & Layers 0–4 Verified)',
-          '[PASS] 04. /etc/zothos/mcp-servers.json (152 MCP Servers & Offline Fallbacks Ready)',
+          '[NOTE] 04. /etc/zothos/mcp-servers.json (152 entries, disabled until you enable one)',
           '[PASS] 05. Zoth Sovereign Vault (:8787 Memory-Only Process Secret Injection)',
           '[PASS] 06. zoth-relay (:8765 Multi-Agent Landlock Bridge) & neuro-memory (:8094 STDP)',
-          '[PASS] 07. 9 Frontier Coding Agents (agy, claude, grok-bot, aider, cursor, cline, hermes, codex, ollama)',
+          '[NOTE] 07. README names agy, claude, grok-bot, aider, cursor, cline, ollama (your accounts)',
           '[PASS] 08. KDE Plasma 6.3 org.zothos.interactive QML Wallpaper & 60 FPS Cursor Daemon (:9989)',
-          '[PASS] 09. zoth-sentinel + zoth-heal Auto-Repair & Thermal Ceiling < 55.0°C (0 RPM)',
+          '[PASS] 09. zoth-heal repair areas + zoth-thermal Intel no_turbo toggle',
           '[PASS] 10. Sigstore Cosign Release Digest Verified',
           'VERDICT: 10/10 Invariants Satisfied.',
         ].join('\n'),
@@ -220,7 +222,7 @@ export default function DesktopSimulatorPage() {
       entries.push({
         id: Date.now() + 1,
         type: 'output',
-        text: 'Linux zoth-pill 6.12.0-zoth-amd64 #1 SMP PREEMPT_DYNAMIC Debian 13.7 (trixie) x86_64 GNU/Linux',
+        text: 'Linux zoth-pill 6.12-amd64 #1 SMP PREEMPT_DYNAMIC Debian 13 (trixie) x86_64 GNU/Linux',
       });
     } else {
       entries.push({
@@ -232,7 +234,8 @@ export default function DesktopSimulatorPage() {
           '  zoth-agent-layer status      Inspect /etc/zothos/agent-permissions.json Rings 0–3 & Layers 0–4',
           '  zoth-mcp list                Inspect the 152-server /etc/zothos/mcp-servers.json catalog',
           '  zoth-relay status            Inspect multi-agent Landlock bridge on 127.0.0.1:8765',
-          '  zoth-mode [gold|ghost|matrix|win11]  Switch live Reality Pill desktop mode',
+          '  zoth-mode [gold|ghost|matrix|incognito|win11]  Switch desktop profile',
+          '  cyan is a zoth-cockpit reality, not a zoth-mode argument',
           '  zoth doctor                  Run 10-point cryptographic & agent-native invariant audit',
           '  zoth-vault status            Inspect Argon2id + ChaCha20 RAM-only secrets injector (:8787)',
           '  zoth-heal --check            Run 7-subsystem autonomous self-healing diagnostic sweep',
@@ -253,11 +256,11 @@ export default function DesktopSimulatorPage() {
 # ==============================================================================
 set -euo pipefail
 
-# 1. Apply Reality Pill Mode & KDE Plasma 6.3 Interactive Wallpaper
-/usr/local/bin/zoth-mode ${activeMode.id}
+# 1. Apply a zoth-mode profile. Cyan is cockpit-only.
+${activeMode.id === 'cyan' ? '# zoth-mode does not accept cyan; cycle it in zoth-cockpit' : '/usr/local/bin/zoth-mode ' + (activeMode.id === 'incognito' ? 'incognito' : activeMode.id)}
 systemctl --user enable --now zoth-cursor-daemon.service
 
-# 2. Enforce Thermal & Acoustic Invariants (< 55.0C Ceiling, 0 RPM Passive)
+# 2. Optional Intel turbo toggle (zoth-thermal). Not a temperature cap.
 echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
 
 # 3. Boot QEMU/KVM Guest Appliance (${cpuPreset.toUpperCase()} • ${ramGb}GB RAM)
@@ -310,7 +313,7 @@ qemu-system-x86_64 \\
         </HeroItem>
         <HeroItem>
           <Typography color="text.secondary" sx={{ maxWidth: '64ch', mb: 4 }}>
-            Test the live KDE Plasma 6.3 Wayland interactive wallpaper (`org.zothos.interactive`), switch between the 4 Reality Pill modes (`zoth-mode`), and execute diagnostic commands in the `zoth-sh` kernel terminal.
+            Preview the Plasma desktop, switch zoth-mode profiles (gold, ghost, matrix, incognito), and try the cockpit-only cyan reality. The terminal below is a local demo, not a live kernel.
           </Typography>
         </HeroItem>
       </HeroReveal>

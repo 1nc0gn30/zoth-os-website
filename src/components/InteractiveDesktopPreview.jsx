@@ -484,7 +484,7 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
             <Box sx={{ color: '#34D399', fontWeight: 700, display: { xs: 'none', md: 'inline' } }}>
-              CPU 41.2°C (0 RPM) • 22/22 Daemons UP
+              Debian 13 • Plasma 6.3 • 22 loopback daemons
             </Box>
             <Box
               sx={{
