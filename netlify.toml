@@ -7,8 +7,8 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
-  NPM_FLAGS = "--no-audit"
+  # Vite 7 requires Node ^20.19 or >=22.12. Pin 22 so the patched toolchain installs.
+  NODE_VERSION = "22"
 
 [[redirects]]
   from = "/terms"
@@ -30,13 +30,35 @@
   to = "/index.html"
   status = 200
 
+# Security headers for every CDN response.
+# CSP is derived from what this site actually loads:
+#   script  — same-origin Vite bundle, https://integrate.depay.com/widgets/v13.js,
+#             which then loads the pinned widget from https://sdk.depay.com
+#   style   — inline <style> / MUI Emotion / Framer style attributes + fonts.googleapis.com
+#   font    — /fonts/CelticGaramond.ttf + fonts.gstatic.com
+#   img     — same-origin brand/wallpaper/screenshots, Product Hunt badge SVGs,
+#             and DePay wallet/token images (many HTTPS CDNs, returned at runtime)
+#   media   — same-origin /intros/*.webm and *.mp4 only
+#   connect — DePay calls public.depay.com plus an unpinned set of chain RPCs and
+#             WalletConnect relays inside the floating v13 widget, so HTTPS and WSS
+#             are allowed. script-src stays limited to self, integrate.depay.com,
+#             and sdk.depay.com.
+# Download and outbound links (GitHub releases, Stripe Checkout) are navigations,
+# which this policy does not restrict. frame-ancestors matches the existing
+# SAMEORIGIN frame policy. HSTS includeSubDomains applies only to hosts under
+# zothos.nullai.tech. preload is omitted because this is not the apex zone.
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' https://integrate.depay.com https://sdk.depay.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self'; connect-src 'self' https: wss:; frame-src 'self' https://verify.walletconnect.com https://verify.walletconnect.org; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
+    X-Permitted-Cross-Domain-Policies = "none"
+    X-XSS-Protection = "0"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(self), microphone=(self), geolocation=()"
+    Permissions-Policy = "accelerometer=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), hid=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-create=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), xr-spatial-tracking=()"
     Link = "</llms.txt>; rel=\"alternate\"; type=\"text/plain\", </llms-full.txt>; rel=\"alternate\"; type=\"text/plain\", </api/index.json>; rel=\"alternate\"; type=\"application/json\""
 
 [[headers]]
