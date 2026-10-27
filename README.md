@@ -64,6 +64,9 @@
 - **For Human Operators**:
   - **24K Gold KDE Plasma 6.3 Wayland**: Dark alchemical glassmorphism with custom shaders, icon themes, and multi-monitor `zoth-lock`.
   - **Debian 13.7 + Kali & Parrot Parity**: Complete package coverage across bleeding-edge enterprise penetration testing and digital forensics.
+  - **[ZothOS-Lite v1.0 (`1nc0gn30/zothos-lite`)](https://github.com/1nc0gn30/zothos-lite)**: Companion Amnesic Monotone RAM-Only Operating System featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time mouth phoneme lip-sync), **[Chain of Thoughts (`zoth-cot` — `1nc0gn30/chain-of-thoughts`)](https://github.com/1nc0gn30/chain-of-thoughts)** cryptographic SHA-256 Merkle working memory DAG, **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Tunnel Matrix**, and **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`).
+- **Chain of Thoughts (`zoth-cot`) Working Memory DAG**:
+  - Standalone open-source engine ([`1nc0gn30/chain-of-thoughts`](https://github.com/1nc0gn30/chain-of-thoughts)) that provides persistent multi-turn `/api/chat` context, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and a 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) with cryptographic parent-to-child Merkle links (`N00 -> N01 -> N02...`).
 
 ### 2. AEO & Machine-Agent Discovery Endpoints
 Built to satisfy strict frontier crawler requirements with zero crawl delay:
