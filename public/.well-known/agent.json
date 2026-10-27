@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "name": "ZothOS Linux v3.2 (zoth-pill) — Sovereign AI & Web Systems Agent",
+  "name": "ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (zoth-pill) — Sovereign AI & Web Systems Agent",
   "description": "Sovereign AI-Native Linux Workstation based on Debian Trixie + KDE Plasma 6.3 Wayland, local LLM orchestration, and eBPF security. Engineered by Neal Frazier (Neal Frazier Tech / NullAI). Provides instant access to 44 browser-native SEO/AEO/Developer tools, custom website & AI agent build packages, and Schema.org entity graphs.",
   "url": "https://zothos.nullai.tech",
   "provider": {

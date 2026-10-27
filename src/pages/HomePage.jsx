@@ -35,6 +35,7 @@ import {
 import { ProFunnelBanner } from '../context/ProLicenseContext';
 import InteractiveDesktopPreview from '../components/InteractiveDesktopPreview';
 import SovereignFunnel from '../components/SovereignFunnel';
+import UncommonTelemetryDeck from '../components/UncommonTelemetryDeck';
 import {
   CORE_PILLARS,
   AGENT_SECURITY_RINGS,
@@ -79,7 +80,7 @@ export default function HomePage() {
         <HeroItem>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2, mt: 3, mb: 2, flexWrap: 'wrap' }}>
             <Chip
-              label="AGENT-NATIVE LINUX v3.2 • RING 0–3 ENFORCED"
+              label="AGENT-NATIVE LINUX v3.3.0 + ZOTHOS-LITE v1.0 • RING 0–3 ENFORCED"
               size="small"
               sx={{
                 bgcolor: goldWash,
@@ -145,7 +146,7 @@ export default function HomePage() {
             }}
           >
             Standard Linux was designed for a single human typing into bash.{' '}
-            <strong>ZothOS Linux v3.2</strong> is engineered from Ring 0 up as a{' '}
+            <strong>ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</strong> is engineered from Ring 0 up as a{' '}
             <strong>permission-ringed, self-healing habitat for autonomous AI agents</strong> (
             <code>zoth-agent-os</code>, 152 pre-registered MCP servers, <code>zoth-relay</code> Landlock multi-agent bridge,{' '}
             <code>zoth-vault</code> RAM secret injection, and 22 loopback daemons)—while giving{' '}
@@ -164,7 +165,7 @@ export default function HomePage() {
               startIcon={<DownloadIcon />}
               sx={{ px: 3.2, py: 1.3, fontWeight: 800, fontFamily: mono }}
             >
-              Download ISO &amp; Custom Builder →
+              Download ISO & Custom Builder →
             </Button>
             <Button
               variant="outlined"
@@ -175,7 +176,7 @@ export default function HomePage() {
               startIcon={<HubIcon />}
               sx={{ px: 3, py: 1.3, fontWeight: 800, fontFamily: mono, borderColor: goldBorder }}
             >
-              Explore MCP &amp; Agent Hub (/mcp)
+              Explore MCP & Agent Hub (/mcp)
             </Button>
             <Button
               variant="outlined"
@@ -192,7 +193,7 @@ export default function HomePage() {
                 borderColor: isDark ? 'rgba(255,255,255,0.16)' : '#D0D5DD',
               }}
             >
-              Live Desktop &amp; Kernel Simulator
+              Live Desktop & Kernel Simulator
             </Button>
             <ProductHuntBadges />
             <Button
@@ -216,6 +217,11 @@ export default function HomePage() {
           </Box>
         </HeroItem>
       </HeroReveal>
+
+      {/* Live Unicode U+2800 Braille + Bayer 8x8 Dither Telemetry Deck */}
+      <Box sx={{ mb: 6 }}>
+        <UncommonTelemetryDeck />
+      </Box>
 
       {/* Live Interactive Zoth-Pill Desktop & Cursor Constellation Showcase */}
       <InteractiveDesktopPreview activePillId={activePill} onSelectPill={setActivePill} />
@@ -247,7 +253,7 @@ export default function HomePage() {
               overflowWrap: 'anywhere',
             }}
           >
-            $ git clone https://github.com/NullAITech/zoth-os.git &amp;&amp; cd zoth-os &amp;&amp; sudo ./build/build-iso.sh
+            $ git clone https://github.com/NullAITech/zoth-os.git && cd zoth-os && sudo ./build/build-iso.sh
           </Typography>
         </Box>
         <Button
@@ -385,7 +391,7 @@ export default function HomePage() {
 
         {/* 4 Hardware/OS Agent Security Rings (/etc/zothos/agent-permissions.json) */}
         <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.78rem', color: gold, letterSpacing: '0.12em', mb: 1.5 }}>
-          HARDWARE &amp; KERNEL ENFORCED • /ETC/ZOTHOS/AGENT-PERMISSIONS.JSON (RINGS 0–3)
+          HARDWARE & KERNEL ENFORCED • /ETC/ZOTHOS/AGENT-PERMISSIONS.JSON (RINGS 0–3)
         </Typography>
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }, gap: 2 }}>
           {AGENT_SECURITY_RINGS.map((r) => (
@@ -456,7 +462,7 @@ export default function HomePage() {
           01 / 04 · ARCHITECTURAL FOUNDATION
         </Typography>
         <Typography variant="h2" sx={{ color: textPrimary, mb: 4 }}>
-          Six Sovereign Pillars of <span className="text-gradient-gold">ZothOS Linux v3.2</span>
+          Six Sovereign Pillars of <span className="text-gradient-gold">ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</span>
         </Typography>
 
         <StaggerChildren>
@@ -595,7 +601,7 @@ export default function HomePage() {
           03 / 04 · DISTRO BENCHMARK MATRIX
         </Typography>
         <Typography variant="h2" sx={{ color: textPrimary, mb: 4 }}>
-          Why Engineers Switch to <span className="text-gradient-gold">ZothOS v3.2</span>
+          Why Engineers Switch to <span className="text-gradient-gold">ZothOS v3.3.0</span>
         </Typography>
 
         <TableContainer
@@ -640,9 +646,9 @@ export default function HomePage() {
 
       {/* Sovereign Ecosystem Funnel */}
       <SovereignFunnel
-        title="Deploy ZothOS Linux v3.2 & Sovereign Ecosystem"
-        subtitle="Flash ZothOS v3.2 to bare metal or KVM, launch the Zoth Studio v2 web cockpit, or build a custom live-build ISO tailored to your agent swarm."
-        toolTitle="Option 1: ZothOS Linux v3.2 ISO"
+        title="Deploy ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 & Sovereign Ecosystem"
+        subtitle="Flash ZothOS v3.3.0 to bare metal or KVM, launch the Zoth Studio v2 web cockpit, or build a custom live-build ISO tailored to your agent swarm."
+        toolTitle="Option 1: ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 ISO"
         toolTag="HYBRID UEFI ISO"
         toolDescription="Bootable Debian 13 + Kali/Parrot dual-parity Linux OS with KDE Plasma 6.3 Wayland and 22 loopback enclaves."
         toolRepo="https://github.com/NullAITech/zoth-os"

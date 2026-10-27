@@ -3,7 +3,7 @@
   "private": true,
   "version": "3.2.0",
   "type": "module",
-  "description": "ZothOS Linux v3.2 — Public Portal & Interactive Sovereign AI Operating System Showcase",
+  "description": "ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 — Public Portal & Interactive Sovereign AI Operating System Showcase",
   "scripts": {
     "dev": "vite --port 4320",
     "build": "vite build",

@@ -39,8 +39,8 @@ const PRIMARY_NAV = [
   { label: 'Desktop Lab', path: '/desktop', badge: 'LIVE' },
   { label: '22 Daemons', path: '/daemons', badge: '22' },
   { label: 'Security Vault', path: '/security', badge: '175+' },
-  { label: 'MCP & AX', path: '/mcp', badge: 'MCP' },
-  { label: 'Download ISO', path: '/download', badge: 'v3.2' },
+  { label: 'MCP & AX', path: '/mcp', badge: '152' },
+  { label: 'Download ISO', path: '/download', badge: 'v3.3' },
   { label: 'Codex', path: '/docs' },
 ];
 
@@ -213,51 +213,38 @@ export default function Navbar({ mode, onToggleTheme }) {
               Zoth Studio
             </Button>
 
-            {isPro ? (
-              <Chip
-                label="★ PRO ACTIVE"
-                size="small"
-                sx={{
-                  fontFamily: mono,
-                  fontWeight: 800,
-                  fontSize: '0.72rem',
-                  bgcolor: 'rgba(16, 185, 129, 0.16)',
-                  color: '#10B981',
-                  border: '1px solid #10B981',
-                }}
-              />
-            ) : (
-              <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', gap: 0.6 }}>
-                <Button
-                  size="small"
-                  variant="contained"
-                  color="primary"
-                  onClick={openPaywallModal}
-                  sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.73rem', px: 1.35, py: 0.55, whiteSpace: 'nowrap' }}
-                >
-                  ✦ Buy Pro ($19)
-                </Button>
-                <Button
-                  size="small"
-                  variant="outlined"
-                  onClick={openDePayCheckout}
-                  startIcon={<BoltIcon sx={{ fontSize: 14 }} />}
-                  sx={{
-                    fontFamily: mono,
-                    fontWeight: 800,
-                    fontSize: '0.72rem',
-                    px: 1.05,
-                    py: 0.5,
-                    minWidth: 0,
-                    whiteSpace: 'nowrap',
-                    borderColor: '#14F195',
-                    color: dark ? '#14F195' : '#047857',
-                  }}
-                >
-                  SOL
-                </Button>
-              </Box>
-            )}
+            <Button
+              size="small"
+              variant="outlined"
+              onClick={() => window.dispatchEvent(new CustomEvent('zoth:replay-intro', { detail: { mode: 'wipe' } }))}
+              sx={{
+                display: { xs: 'none', sm: 'inline-flex' },
+                fontFamily: mono,
+                fontWeight: 800,
+                fontSize: '0.7rem',
+                px: 1.2,
+                py: 0.5,
+                whiteSpace: 'nowrap',
+                borderColor: dark ? 'rgba(212,175,55,0.4)' : '#8A6508',
+                color: goldAccent,
+              }}
+            >
+              ⣿ Braille Intro
+            </Button>
+
+            <Chip
+              label="v3.3.0 + LITE"
+              size="small"
+              sx={{
+                display: { xs: 'none', md: 'inline-flex' },
+                fontFamily: mono,
+                fontWeight: 800,
+                fontSize: '0.68rem',
+                bgcolor: dark ? 'rgba(16, 185, 129, 0.16)' : '#ECFDF5',
+                color: dark ? '#10B981' : '#047857',
+                border: '1px solid rgba(16, 185, 129, 0.45)',
+              }}
+            />
 
             <IconButton
               aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -323,16 +310,16 @@ export default function Navbar({ mode, onToggleTheme }) {
         </List>
         <Divider sx={{ my: 1 }} />
         <Box sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
-          {!isPro && (
-            <>
-              <Button variant="contained" color="primary" fullWidth onClick={() => { setMobileOpen(false); openPaywallModal(); }}>
-                💳 Unlock Pro ($19)
-              </Button>
-              <Button variant="outlined" fullWidth onClick={() => { setMobileOpen(false); openDePayCheckout(); }} sx={{ borderColor: '#14F195', color: '#14F195' }}>
-                ⚡ Pay with SOL
-              </Button>
-            </>
-          )}
+          <Button
+            variant="outlined"
+            fullWidth
+            onClick={() => {
+              setMobileOpen(false);
+              window.dispatchEvent(new CustomEvent('zoth:replay-intro', { detail: { mode: 'wipe' } }));
+            }}
+          >
+            ⣿ Replay Braille Intro
+          </Button>
           <Button
             variant="outlined"
             fullWidth

@@ -95,7 +95,7 @@ sudo zoth-mode ghost && zoth-ghost status`;
         </HeroItem>
         <HeroItem>
           <Typography variant="h2" sx={{ mb: 1.5 }}>
-            Offensive Security Arsenal &amp; <span className="text-gradient-gold">Sovereign Vault</span>
+            Offensive Security Arsenal & <span className="text-gradient-gold">Sovereign Vault</span>
           </Typography>
         </HeroItem>
         <HeroItem>

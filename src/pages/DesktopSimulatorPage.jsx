@@ -305,7 +305,7 @@ qemu-system-x86_64 \\
         </HeroItem>
         <HeroItem>
           <Typography variant="h2" sx={{ mb: 1.5 }}>
-            Interactive <span className="text-gradient-gold">Zoth-Pill Desktop</span> &amp; Kernel Shell
+            Interactive <span className="text-gradient-gold">Zoth-Pill Desktop</span> & Kernel Shell
           </Typography>
         </HeroItem>
         <HeroItem>
@@ -458,7 +458,7 @@ qemu-system-x86_64 \\
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 2, mb: 2.5 }}>
           <Box>
             <Typography variant="h5" sx={{ fontWeight: 800 }}>
-              Synthesized Reality Profile &amp; KVM Launch Script
+              Synthesized Reality Profile & KVM Launch Script
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Customize vCPU cores and RAM buffer below, then copy or export your automated ZothOS launch script.

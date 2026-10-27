@@ -333,7 +333,7 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
             }}
           />
           <Typography variant="caption" sx={{ fontFamily: mono, color: 'text.secondary' }}>
-            Move cursor or click inside screen to trigger 60 FPS constellation ley-lines &amp; 3D letter tilt
+            Move cursor or click inside screen to trigger 60 FPS constellation ley-lines & 3D letter tilt
           </Typography>
         </Box>
 

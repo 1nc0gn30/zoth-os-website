@@ -310,7 +310,7 @@ const AX_ENDPOINTS = [
     mime: 'text/markdown',
     purpose: 'Concise LLM Grounding Summary for Perplexity, ClaudeBot, GPTBot & AGY',
     tokens: '~510 tokens',
-    preview: `# ZothOS Linux v3.2 (zoth-pill) — Machine-Readable LLM Context (llms.txt)
+    preview: `# ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (zoth-pill) — Machine-Readable LLM Context (llms.txt)
 > The Sovereign AI, Cryptographic Vault & Offensive Security Operating System
 - Base: Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI + Kali & Parrot APT Pinning
 - Desktop: KDE Plasma 6.3 Wayland (org.zothos.interactive 3D wallpaper + :9989 cursor daemon)
@@ -322,7 +322,7 @@ const AX_ENDPOINTS = [
     mime: 'text/markdown',
     purpose: 'Complete Deep-Context Specification (APT Pinning, 22 Ports, 4 Reality Pills, MCP)',
     tokens: '~1,850 tokens',
-    preview: `# ZothOS Linux v3.2 (zoth-pill) — Complete Technical Grounding Specification
+    preview: `# ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (zoth-pill) — Complete Technical Grounding Specification
 SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
 SECTION 2: FOUR REALITY PILL OPERATIONAL MODES (zoth-mode gold|ghost|matrix|incognito)
 SECTION 3: 22 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
@@ -445,10 +445,10 @@ export default function McpAxPage() {
             }}
           />
           <Typography variant="h1" sx={{ fontSize: { xs: '2.1rem', md: '3.2rem' }, mb: 1.5, letterSpacing: '-0.03em' }}>
-            MCP &amp; Agent Experience (AX) Hub
+            MCP & Agent Experience (AX) Hub
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 860, fontSize: '1.05rem', lineHeight: 1.7 }}>
-            ZothOS v3.2 is built from Ring 0 up for autonomous AI agents to inhabit safely. It pairs a{' '}
+            ZothOS v3.3.0 is built from Ring 0 up for autonomous AI agents to inhabit safely. It pairs a{' '}
             <strong>152-server Master MCP Catalog (<code>/etc/zothos/mcp-servers.json</code>)</strong> and{' '}
             <strong>5 Local Loopback Enclave Clusters</strong> with <strong><code>zoth-relay</code> (:8765)</strong>—letting multiple AI agents (AGY, Claude, Cursor, Grok, Muse Code, GPT Actions) work concurrently inside Landlock kernel sandboxes and Ring 0–3 permission boundaries.
           </Typography>

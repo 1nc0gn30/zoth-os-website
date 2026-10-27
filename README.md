@@ -77,7 +77,7 @@ Built to satisfy strict frontier crawler requirements with zero crawl delay:
 ### 3. Dual Monetization Rails & Treasury
 - **Founding Member Pass**: $19 lifetime sovereign access ($79 standard retail).
 - **Stripe Rail**: Credit cards, Apple Pay, and Google Pay via verified payment links.
-- **Solana DePay Rail**: Instant Web3 crypto checkout to receiver `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`.
+- **Solana DePay Rail**: Instant Web3 crypto checkout to receiver `open-source-zothos`.
 - **Instant Client-Side Activation**: Unlocks via `?licensed=true` URL query parameter or 1-click license key confirmation, saving state permanently in `localStorage`.
 
 ---

@@ -29,6 +29,7 @@ import {
 import { useMediaQuery, useTheme } from '@mui/material';
 import { IntroGateContext, useIntroPhase } from './IntroGate';
 import { resolveRouteIntro, clipSources } from './routeIntros';
+import { AsciiBrailleIntroStage, useGlyphScramble } from './AsciiBrailleDitherEngine';
 
 const SEEN_KEY = 'zoth-intros-seen-v2';
 // Every rendered cut ends on a light "title card" that settles ~1s before the
@@ -80,6 +81,7 @@ function decideMode(intro, reduced, search) {
   const flag = new URLSearchParams(search || '').get('intro');
   if (flag === '0') return 'none';
   if (flag === '1') return 'full';
+  if (flag === 'wipe' || flag === 'ascii' || flag === 'braille') return 'wipe';
   if (reduced || isAutomated()) return 'none';
   return readSeen().has(intro.key) ? 'wipe' : 'full';
 }
@@ -102,12 +104,30 @@ export function IntroDirector({ children }) {
   const routeKey = intro ? intro.key : location.pathname;
 
   const [run, setRun] = useState(() => makeRun(intro, reduced, location.search, location.pathname));
+  const [replayNonce, setReplayNonce] = useState(0);
 
   // Route changed → arm a new run before paint so the new page never flashes.
   useLayoutEffect(() => {
     if (run.key !== routeKey) setRun(makeRun(intro, reduced, location.search, location.pathname));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [routeKey]);
+
+  // Allow any tool or showcase button to trigger a live replay of the full cinema cut or ASCII/Braille wipe.
+  useEffect(() => {
+    const onReplay = (e) => {
+      if (!intro) return;
+      const requestedMode = e?.detail?.mode || 'full';
+      setReplayNonce((n) => n + 1);
+      setRun({
+        key: intro.key,
+        intro,
+        mode: requestedMode,
+        phase: 'intro',
+      });
+    };
+    window.addEventListener('zoth:replay-intro', onReplay);
+    return () => window.removeEventListener('zoth:replay-intro', onReplay);
+  }, [intro]);
 
   // Same render as a route change, before the layout effect lands: preview the run.
   const current = run.key === routeKey ? run : makeRun(intro, reduced, location.search, location.pathname);
@@ -134,10 +154,10 @@ export function IntroDirector({ children }) {
       {children}
       {showOverlay && (
         <IntroOverlay
-          key={current.key}
+          key={`${current.key}-${replayNonce}`}
           intro={current.intro}
           mode={current.mode}
-          enter={enter}
+          enter={enter || replayNonce > 0}
           onHandoff={() => handleHandoff(current.key)}
           onDone={() => handleDone(current.key)}
         />
@@ -162,19 +182,18 @@ export function PageStage({ children }) {
     <motion.div
       key={key}
       className="page-stage"
-      initial={phase === 'idle' ? false : { opacity: 0, y: 22, scale: 0.988, filter: 'blur(6px)' }}
+      initial={phase === 'idle' ? false : { opacity: 0, y: 22, scale: 0.988 }}
       animate={
         released
           ? {
               opacity: 1,
               y: 0,
               scale: 1,
-              filter: 'blur(0px)',
-              // Clear transform/filter afterwards so position:fixed descendants
+              // Clear transform afterwards so position:fixed descendants
               // (HUDs, modals, floating pets) are not trapped in this layer.
-              transitionEnd: { transform: 'none', filter: 'none' },
+              transitionEnd: { transform: 'none' },
             }
-          : { opacity: 0, y: 22, scale: 0.988, filter: 'blur(6px)' }
+          : { opacity: 0, y: 22, scale: 0.988 }
       }
       transition={{ duration: 0.9, ease: EASE_OUT_EXPO, delay: phase === 'handoff' ? 0.1 : 0 }}
       style={{ transformOrigin: '50% 35vh' }}
@@ -340,6 +359,9 @@ function IntroOverlay({ intro, mode, enter, onHandoff, onDone }) {
           maskImage: mask,
         }}
       >
+        {/* Live 60fps Unicode U+2800 Braille + Ordered Bayer 8x8 Dither procedural layer */}
+        <AsciiBrailleIntroStage intro={intro} dark={dark} handing={handing} fullVideoMode={mode === 'full'} />
+
         {mode === 'full' ? (
           <motion.video
             key={cut}
@@ -436,6 +458,8 @@ function IntroOverlay({ intro, mode, enter, onHandoff, onDone }) {
 }
 
 function TitleCard({ intro, handing, dark, text }) {
+  const scrambledLabel = useGlyphScramble(intro.label, 420, !handing);
+  const scrambledKicker = useGlyphScramble(intro.kicker || 'Sovereign AI Workstation', 380, !handing);
   return (
     <motion.div
       aria-hidden="true"
@@ -477,7 +501,7 @@ function TitleCard({ intro, handing, dark, text }) {
           padding: '4px 14px',
           borderRadius: 999,
           border: `1px solid ${intro.accent}${dark ? '44' : '33'}`,
-          background: dark ? 'rgba(8,8,11,0.65)' : 'rgba(255,255,255,0.75)',
+          background: dark ? 'rgba(8,8,11,0.72)' : 'rgba(255,255,255,0.85)',
           fontFamily: mono,
           fontSize: 10.5,
           fontWeight: 700,
@@ -500,9 +524,11 @@ function TitleCard({ intro, handing, dark, text }) {
         {intro.kicker && (
           <>
             <span style={{ opacity: 0.4 }}>·</span>
-            <span style={{ opacity: 0.9 }}>{intro.kicker}</span>
+            <span style={{ opacity: 0.9 }}>{scrambledKicker}</span>
           </>
         )}
+        <span style={{ opacity: 0.4 }}>·</span>
+        <span style={{ opacity: 0.85 }}>⣿ U+2800 DITHER</span>
       </div>
       <div
         style={{
@@ -513,10 +539,10 @@ function TitleCard({ intro, handing, dark, text }) {
           lineHeight: 1.04,
           color: text,
           letterSpacing: '0.015em',
-          textShadow: dark ? `0 0 34px ${intro.accent}33` : 'none',
+          textShadow: dark ? `0 0 34px ${intro.accent}33` : '0 1px 0 rgba(255,255,255,0.9)',
         }}
       >
-        {intro.label}
+        {scrambledLabel}
       </div>
       {/* Architectural GlowLine rule beneath title */}
       <div
@@ -539,6 +565,7 @@ function TitleCard({ intro, handing, dark, text }) {
 function IntroHud({ intro, progress, handing, onSkip }) {
   const RING = 2 * Math.PI * 15;
   const dash = useTransform(progress, (p) => RING * (1 - p));
+  const scrambledLabel = useGlyphScramble(intro.label, 520, !handing);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -558,7 +585,7 @@ function IntroHud({ intro, progress, handing, onSkip }) {
           padding: '6px 14px',
           borderRadius: 999,
           border: '1px solid rgba(245,241,230,0.16)',
-          background: 'rgba(8,8,11,0.58)',
+          background: 'rgba(8,8,11,0.68)',
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',
           color: '#F5F1E6',
@@ -580,7 +607,9 @@ function IntroHud({ intro, progress, handing, onSkip }) {
         />
         <span style={{ color: intro.accent }}>{intro.index} / {intro.total}</span>
         <span style={{ opacity: 0.35 }}>·</span>
-        <span>{intro.label}</span>
+        <span>{scrambledLabel}</span>
+        <span style={{ opacity: 0.35 }}>·</span>
+        <span style={{ color: intro.accent, opacity: 0.9 }}>⣿ BRAILLE · BAYER 8×8</span>
       </div>
 
       <button

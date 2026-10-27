@@ -33,7 +33,7 @@ const CODEX_SECTIONS = [
     kicker: 'PACKAGE & KERNEL ARCHITECTURE',
     title: 'Surgical Tri-Repository APT Pinning (Debian 13 + Kali + Parrot)',
     summary:
-      'ZothOS v3.2 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so 175+ offensive binaries co-exist with zero glibc or KDE Plasma dependency conflicts.',
+      'ZothOS v3.3.0 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so 175+ offensive binaries co-exist with zero glibc or KDE Plasma dependency conflicts.',
     codeTitle: '/etc/apt/preferences.d/zoth-parity.pref',
     code: `Package: *
 Pin: release n=trixie
@@ -255,7 +255,7 @@ export default function DocsPage() {
             }}
           />
           <Typography variant="h1" sx={{ fontSize: { xs: '2.1rem', md: '3.2rem' }, mb: 1.5, letterSpacing: '-0.03em' }}>
-            ZothOS Linux v3.2 System Codex
+            ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 System Codex
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 840, fontSize: '1.05rem', lineHeight: 1.7 }}>
             Complete technical reference covering surgical Debian 13 + Kali + Parrot APT pinning, the 60 FPS KWin Wayland SHM cursor pipeline, Argon2id memory-only secret injection, STDP synaptic vector math, and Model Context Protocol (MCP) specifications.

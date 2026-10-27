@@ -159,6 +159,9 @@ const GlobalStyles = ({ T }) => (
 export default function App() {
   const [mode, setMode] = useState(() => {
     try {
+      const params = new URLSearchParams(window.location.search);
+      const urlTheme = params.get('theme');
+      if (urlTheme === 'light' || urlTheme === 'dark') return urlTheme;
       return localStorage.getItem('zothos_theme_light_v2') || 'light';
     } catch {
       return 'light';

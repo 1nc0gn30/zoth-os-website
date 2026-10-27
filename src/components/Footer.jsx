@@ -16,7 +16,7 @@ export default function Footer() {
   const linkColor = isDark ? '#94A3B8' : '#1E293B';
 
   const osSections = [
-    { label: 'ZothOS v3.2 Overview', to: '/' },
+    { label: 'ZothOS v3.3.0 Overview', to: '/' },
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
     { label: '22 Loopback Daemons & 9 AI Agents', to: '/daemons' },
     { label: '175+ Security Arsenal & Zoth Vault', to: '/security' },
@@ -73,7 +73,7 @@ export default function Footer() {
                 pl: 2,
               }}
             >
-              Bootable Debian 13 (Trixie) + Kali Rolling &amp; Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, 9 pre-installed Frontier AI coding agents, 22 localhost loopback daemons, and Argon2id hardware secrets.
+              Bootable Debian 13 (Trixie) + Kali Rolling & Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, 9 pre-installed Frontier AI coding agents, 22 localhost loopback daemons, and Argon2id hardware secrets.
             </Typography>
 
             <Stack direction="row" spacing={1.2} flexWrap="wrap" useFlexGap>
@@ -157,7 +157,7 @@ export default function Footer() {
 
           <Grid xs={12} sm={4} md={2}>
             <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem', color: gold, letterSpacing: '0.12em', mb: 2 }}>
-              LEGAL &amp; INDEXATION
+              LEGAL & INDEXATION
             </Typography>
             <Stack spacing={1.1}>
               {trustAndStandards.map((item) => (

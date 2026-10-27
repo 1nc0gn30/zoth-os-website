@@ -60,7 +60,7 @@ ${includeOllamaModels ? '# Pre-seed Local Ollama Models (qwen2.5-coder:14b, deep
 ${enableLuks2 ? '# Enable Calamares LUKS2 Argon2id Full-Disk Encryption\nexport ZOTH_CALAMARES_LUKS2=1' : ''}
 
 sudo lb build 2>&1 | tee zothos-custom-build.log
-sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
+sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
 
   const handleCopyRecipe = () => {
     if (!isPro) {
@@ -68,7 +68,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
       return;
     }
     navigator.clipboard?.writeText(customIsoRecipe);
-    setToast('Copied Custom ZothOS v3.2 Live-Build ISO Recipe!');
+    setToast('Copied Custom ZothOS v3.3.0 Live-Build ISO Recipe!');
   };
 
   const copyText = (txt, label) => {
@@ -102,7 +102,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
         </HeroItem>
         <HeroItem>
           <Typography variant="h2" sx={{ mb: 1.5 }}>
-            Download <span className="text-gradient-gold">ZothOS Linux v3.2</span> &amp; ISO Studio
+            Download <span className="text-gradient-gold">ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</span> & ISO Studio
           </Typography>
         </HeroItem>
         <HeroItem>
@@ -120,13 +120,13 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
             <Chip label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
           <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 700, letterSpacing: 0 }}>
-            zothos-3.2-amd64.iso
+            zothos-3.3.0-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
-            Hybrid UEFI + Legacy BIOS Live &amp; Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 152 MCP catalog that stays off until you enable a server, 175+ Kali/Parrot tools, and 22 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
+            Hybrid UEFI + Legacy BIOS Live & Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 152 MCP catalog that stays off until you enable a server, 175+ Kali/Parrot tools, and 22 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
           </Typography>
           <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
-            $ bash zothos-join-iso.sh &amp;&amp; sudo dd if=zothos-3.2-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
+            $ bash zothos-join-iso.sh && sudo dd if=zothos-3.3.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
@@ -145,13 +145,13 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
               startIcon={<ContentCopyIcon />}
               onClick={() =>
                 copyText(
-                  'bash zothos-join-iso.sh && sudo dd if=zothos-3.2-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync',
+                  'bash zothos-join-iso.sh && sudo dd if=zothos-3.3.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync',
                   'ISO join & USB dd flash command',
                 )
               }
               sx={{ fontFamily: mono, fontWeight: 700 }}
             >
-              Copy Rejoin &amp; Flash Cmd
+              Copy Rejoin & Flash Cmd
             </Button>
           </Box>
         </Paper>
@@ -168,7 +168,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
             Dedicated QEMU/KVM virtual machine substrate for autonomous AI agents. Supports live chroot injection (`./tools/inject-vm-customization.sh`), automated 25-point verification (`./tools/verify-zothos.sh`), and `zoth-relay` (`:8765`) host bridging.
           </Typography>
           <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowX: 'auto' }}>
-            $ ./tools/verify-zothos.sh &amp;&amp; virsh -c qemu:///system start zothos
+            $ ./tools/verify-zothos.sh && virsh -c qemu:///system start zothos
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
@@ -179,7 +179,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.2-amd64.iso.sha256`;
               startIcon={<DownloadIcon />}
               sx={{ fontFamily: mono, fontWeight: 800, borderColor: gold, color: gold }}
             >
-              Inspect Source &amp; VM Tools
+              Inspect Source & VM Tools
             </Button>
             <Button
               variant="outlined"
