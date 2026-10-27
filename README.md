@@ -16,7 +16,7 @@
 
 ## Overview
 
-`zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os) and [ZothOS-Lite v1.0](https://github.com/1nc0gn30/zothos-lite). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
+`zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os) and [ZothOS-Lite v1.0](https://github.com/NullAITech/zothos-lite). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
 
 ### Key Highlights
 - **Dual-Surface Showcase**: Articulates ZothOS's unique dual-audience design—a hardened, permission-ringed execution substrate for coding agents on the backend, paired with an avant-garde 24K Gold KDE Plasma 6.3 Wayland desktop and Amnesic ZothOS-Lite v1.0 for human operators.
@@ -64,9 +64,9 @@
 - **For Human Operators**:
   - **24K Gold KDE Plasma 6.3 Wayland**: Dark alchemical glassmorphism with custom shaders, icon themes, and multi-monitor `zoth-lock`.
   - **Debian 13.7 + Kali & Parrot Parity**: Complete package coverage across bleeding-edge enterprise penetration testing and digital forensics.
-  - **[ZothOS-Lite v1.0 (`1nc0gn30/zothos-lite`)](https://github.com/1nc0gn30/zothos-lite)**: Companion Amnesic Monotone RAM-Only Operating System featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time mouth phoneme lip-sync), **[Chain of Thoughts (`zoth-cot` — `1nc0gn30/chain-of-thoughts`)](https://github.com/1nc0gn30/chain-of-thoughts)** cryptographic SHA-256 Merkle working memory DAG, **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Tunnel Matrix**, and **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`).
+  - **[ZothOS-Lite v1.0 (`1nc0gn30/zothos-lite`)](https://github.com/NullAITech/zothos-lite)**: Companion Amnesic Monotone RAM-Only Operating System featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time mouth phoneme lip-sync), **[Chain of Thoughts (`zoth-cot` — `1nc0gn30/chain-of-thoughts`)](https://github.com/NullAITech/chain-of-thoughts)** cryptographic SHA-256 Merkle working memory DAG, **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Tunnel Matrix**, and **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`).
 - **Chain of Thoughts (`zoth-cot`) Working Memory DAG**:
-  - Standalone open-source engine ([`1nc0gn30/chain-of-thoughts`](https://github.com/1nc0gn30/chain-of-thoughts)) that provides persistent multi-turn `/api/chat` context, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and a 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) with cryptographic parent-to-child Merkle links (`N00 -> N01 -> N02...`).
+  - Standalone open-source engine ([`1nc0gn30/chain-of-thoughts`](https://github.com/NullAITech/chain-of-thoughts)) that provides persistent multi-turn `/api/chat` context, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and a 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) with cryptographic parent-to-child Merkle links (`N00 -> N01 -> N02...`).
 
 ### 2. AEO & Machine-Agent Discovery Endpoints
 Built to satisfy strict frontier crawler requirements with zero crawl delay:

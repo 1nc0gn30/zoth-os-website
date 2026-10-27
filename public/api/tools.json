@@ -7,8 +7,8 @@
       "version": "1.0.0",
       "category": "AI Memory & Context DAG",
       "description": "Sovereign Multi-Turn Context, Cryptographic SHA-256 Merkle Working Memory DAG & 60fps Unicode Braille/Bayer Synaptic Visualizer for Local & Cloud AI Agents.",
-      "repo": "https://github.com/1nc0gn30/chain-of-thoughts",
-      "pull": "git clone https://github.com/1nc0gn30/chain-of-thoughts.git && cd chain-of-thoughts && ./bin/zoth-cot status",
+      "repo": "https://github.com/NullAITech/chain-of-thoughts",
+      "pull": "git clone https://github.com/NullAITech/chain-of-thoughts.git && cd chain-of-thoughts && ./bin/zoth-cot status",
       "local_url": "http://127.0.0.1:8145",
       "license": "MIT",
       "price": "0.00"
@@ -19,8 +19,8 @@
       "version": "1.0.0",
       "category": "Amnesic Operating System",
       "description": "Amnesic Monotone RAM-Only Linux OS with AZOTH Embodied Braille AI Agent, Chain of Thoughts (zoth-cot) Working Memory DAG, Kokoro 82M ONNX Neural TTS, 3D Perspective Braille Matrix & 75+ Kali/Parrot CLI Tools.",
-      "repo": "https://github.com/1nc0gn30/zothos-lite",
-      "pull": "git clone https://github.com/1nc0gn30/zothos-lite.git && cd zothos-lite && npm start",
+      "repo": "https://github.com/NullAITech/zothos-lite",
+      "pull": "git clone https://github.com/NullAITech/zothos-lite.git && cd zothos-lite && npm start",
       "local_url": "http://127.0.0.1:8145",
       "license": "MIT",
       "price": "0.00"

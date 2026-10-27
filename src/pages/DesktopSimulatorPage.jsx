@@ -129,7 +129,7 @@ export default function DesktopSimulatorPage() {
         type: 'output',
         text: [
           '[◈] CHAIN OF THOUGHTS (zoth-cot) // WORKING MEMORY & MERKLE CONTEXT DAG',
-          '  Session ID     : zoth-cot-default (https://github.com/1nc0gn30/chain-of-thoughts)',
+          '  Session ID     : zoth-cot-default (https://github.com/NullAITech/chain-of-thoughts)',
           '  Merkle Nodes   : 2 (N00 [93d81fa8c410] -> N01 [59df89ef7082])',
           '  Pinned Facts   : 4 ([IDENTITY] codename: FALCON-7 | [MISSION] target: 10.0.2.15)',
           '  4-Stage Trace  : 1. PERCEPTION -> 2. RECALL -> 3. SYNTHESIS -> 4. VERIFICATION',

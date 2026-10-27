@@ -631,7 +631,7 @@ export default function HomePage() {
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
             <Button
               component="a"
-              href="https://github.com/1nc0gn30/chain-of-thoughts"
+              href="https://github.com/NullAITech/chain-of-thoughts"
               target="_blank"
               rel="noopener noreferrer"
               size="small"
@@ -651,7 +651,7 @@ export default function HomePage() {
             </Button>
             <Button
               component="a"
-              href="https://github.com/1nc0gn30/zothos-lite"
+              href="https://github.com/NullAITech/zothos-lite"
               target="_blank"
               rel="noopener noreferrer"
               size="small"
