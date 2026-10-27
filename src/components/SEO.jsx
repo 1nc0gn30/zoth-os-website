@@ -108,7 +108,7 @@ function buildRouteJsonLd(pathname, meta) {
                 '@type': 'HowToStep',
                 position: 1,
                 name: 'Verify SHA-256 & Sigstore Cosign Signature',
-                text: 'Run sha256sum -c zothos-3.2.0-amd64.iso.sha256 and cosign verify-blob to cryptographically authenticate the image.',
+                text: 'Run sha256sum -c zothos-3.3.0-amd64.iso.sha256 and cosign verify-blob to cryptographically authenticate the image.',
               },
               {
                 '@type': 'HowToStep',

@@ -27,8 +27,9 @@ export default function Footer() {
 
   const ecosystemLinks = [
     { label: 'Zoth Studio v2 (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
-    { label: 'ZothOS GitHub Repository', href: 'https://github.com/NullAITech/zoth-os' },
-    { label: 'NullAI Tech Organization', href: 'https://github.com/NullAITech/zoth-os' },
+    { label: 'ZothOS GitHub Repository', href: 'https://github.com/1nc0gn30/zoth-os' },
+    { label: 'ZothOS-Lite v1.0 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
+    { label: 'Chain of Thoughts (zoth-cot) Repo', href: 'https://github.com/1nc0gn30/chain-of-thoughts' },
     { label: 'Neal Frazier Tech Hub', href: 'https://nealfrazier.tech' },
     { label: 'NullAI Platform & Research', href: 'https://nullai.tech' },
     { label: '757 Tech Pro', href: 'https://757tech.pro' },
@@ -198,7 +199,18 @@ export default function Footer() {
               NullAI Platform
             </Link>
           </Box>
-          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
+            <Link
+              href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: gold, fontWeight: 800, textDecoration: 'none' }}
+            >
+              ☕ Buy Us a Coffee
+            </Link>
+            <Typography component="span" sx={{ fontSize: '0.7rem', color: linkColor }}>
+              SOL Tip: <code>GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK</code>
+            </Typography>
             <Link href="/terms.html" sx={{ color: linkColor, textDecoration: 'none' }}>Terms</Link>
             <Link href="/privacy.html" sx={{ color: linkColor, textDecoration: 'none' }}>Privacy</Link>
             <Link href="/support.html" sx={{ color: linkColor, textDecoration: 'none' }}>Support</Link>

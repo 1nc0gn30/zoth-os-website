@@ -330,6 +330,7 @@ export default function HomePage() {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
               {[
                 'zoth-agent-os & 4 Security Rings: Hardware/OS-enforced Ring 0 (SOVEREIGN) through Ring 3 (SPECTRE) governing filesystem paths, cgroups/Firejail/Landlock isolation, and LLM token budgets.',
+                'Chain of Thoughts (zoth-cot) Working Memory DAG: True multi-turn /api/chat context assembly, automatic semantic fact extraction (IDENTITY, MEMORY, MISSION, SECRET), and cryptographic SHA-256 Merkle thought chains (N00 -> N01 -> N02...).',
                 '152 Pre-Registered MCP Servers: /etc/zothos/mcp-servers.json ships with 16 air-gapped local servers and deterministic CLI fallbacks managed via zoth-mcp.',
                 'zoth-relay Multi-Agent Bridge (127.0.0.1:8765): Lets Antigravity, Claude, Cursor, Grok, Muse Code, and GPT Actions work concurrently with 288-bit tokens and isolated ~/agent-workspace/<name> directories.',
                 'Zero-Disk Secret Injection (:8787): zoth-vault run -- <agent> injects decrypted API keys directly into child process RAM so agents never see plaintext keys on disk.',
@@ -585,6 +586,168 @@ export default function HomePage() {
         </Box>
       </Box>
 
+      {/* ZothOS-Lite v1.0 & Chain of Thoughts (zoth-cot) Monotone Showcase */}
+      <Box
+        sx={{
+          mb: 10,
+          p: { xs: 2.5, md: 4 },
+          bgcolor: '#000000',
+          color: '#FFFFFF',
+          border: '2px solid #FFFFFF',
+          boxShadow: '6px 6px 0px #D4AF37',
+          fontFamily: mono,
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 1.5,
+            pb: 2,
+            mb: 3,
+            borderBottom: '1px solid #FFFFFF',
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
+            <Box
+              sx={{
+                px: 1.2,
+                py: 0.4,
+                bgcolor: '#FFFFFF',
+                color: '#000000',
+                fontWeight: 900,
+                fontSize: '0.74rem',
+                letterSpacing: '0.12em',
+              }}
+            >
+              ▓▒░ ZOTHOS-LITE v1.0 + CHAIN OF THOUGHTS (zoth-cot) ░▒▓
+            </Box>
+            <Typography sx={{ fontFamily: mono, fontSize: '0.76rem', color: '#FFFFFF', letterSpacing: '0.06em' }}>
+              AMNESIC RAM-ONLY OS • AZOTH BRAILLE AI • KOKORO 82M ONNX VOICE • MERKLE WORKING MEMORY DAG
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+            <Button
+              component="a"
+              href="https://github.com/1nc0gn30/chain-of-thoughts"
+              target="_blank"
+              rel="noopener noreferrer"
+              size="small"
+              sx={{
+                bgcolor: '#FFFFFF',
+                color: '#000000',
+                fontFamily: mono,
+                fontWeight: 800,
+                fontSize: '0.72rem',
+                borderRadius: 0,
+                border: '1px solid #FFFFFF',
+                px: 1.8,
+                '&:hover': { bgcolor: '#D4AF37', color: '#000000' },
+              }}
+            >
+              [ ◈ CHAIN OF THOUGHTS REPO ↗ ]
+            </Button>
+            <Button
+              component="a"
+              href="https://github.com/1nc0gn30/zothos-lite"
+              target="_blank"
+              rel="noopener noreferrer"
+              size="small"
+              sx={{
+                bgcolor: '#000000',
+                color: '#FFFFFF',
+                fontFamily: mono,
+                fontWeight: 800,
+                fontSize: '0.72rem',
+                borderRadius: 0,
+                border: '1px solid #FFFFFF',
+                px: 1.8,
+                '&:hover': { bgcolor: '#FFFFFF', color: '#000000' },
+              }}
+            >
+              [ ZOTHOS-LITE v1.0 REPO ↗ ]
+            </Button>
+          </Box>
+        </Box>
+
+        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '7fr 5fr' }, gap: 3 }}>
+          <Box>
+            <Typography sx={{ fontFamily: mono, fontWeight: 900, fontSize: { xs: '1.15rem', md: '1.4rem' }, color: '#FFFFFF', mb: 1, textTransform: 'uppercase' }}>
+              Amnesic Monotone Workstation (`toram noswap`) + Cryptographic Working Memory DAG
+            </Typography>
+            <Typography sx={{ fontFamily: mono, fontSize: '0.82rem', color: '#E2E8F0', lineHeight: 1.65, mb: 2.5 }}>
+              ZothOS-Lite v1.0 boots an amnesic RAM-only Debian/Kali/Parrot substrate (`:8145`) featuring <strong>AZOTH</strong> (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time phoneme lip-sync), <strong>Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT</strong>, a <strong>3D Perspective Tunnel Matrix</strong>, the <strong>Sovereign Horology Niche Clock</strong> (`[⠅⠉] ⠴ @264.9 • 0x3925 • UTC`), and <strong>Chain of Thoughts (`zoth-cot`)</strong> — our multi-turn working memory & SHA-256 Merkle thought chain engine.
+            </Typography>
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 1.2 }}>
+              {[
+                { code: 'COT-DAG', name: '◈ Chain of Thoughts (zoth-cot)', desc: 'Multi-turn /api/chat context, auto semantic fact extraction & SHA-256 Merkle chain (N00 -> N01...)' },
+                { code: 'AZOTH-AI', name: 'AZOTH Embodied Braille AI', desc: '6 full-body mood rigs, real-time mouth phoneme lip-sync & 8 LLM provider connectors' },
+                { code: 'KOKORO', name: 'Kokoro 82M ONNX Voice + Mic STT', desc: 'Offline 24kHz neural voice synthesis (af_bella, am_adam) + full-duplex microphone speech-to-text' },
+                { code: 'HOROLOGY', name: 'Sovereign Horology Niche Clock', desc: '8-dot U+2800 Braille BCD matrix, 16-bit Hex-Chron, Swatch .beats, GMST Sidereal & Julian Date' },
+              ].map((item) => (
+                <Box key={item.code} sx={{ p: 1.4, border: '1px solid #FFFFFF', bgcolor: '#050505' }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5 }}>
+                    <Typography sx={{ fontFamily: mono, fontSize: '0.74rem', fontWeight: 800, color: '#FFFFFF' }}>
+                      {item.name}
+                    </Typography>
+                    <Box sx={{ px: 0.6, bgcolor: '#FFFFFF', color: '#000000', fontSize: '0.62rem', fontWeight: 900 }}>
+                      {item.code}
+                    </Box>
+                  </Box>
+                  <Typography sx={{ fontFamily: mono, fontSize: '0.7rem', color: '#CBD5E1', lineHeight: 1.45 }}>
+                    {item.desc}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+
+          <Box sx={{ p: 2, border: '1px solid #FFFFFF', bgcolor: '#050505', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <Box>
+              <Typography sx={{ fontFamily: mono, fontSize: '0.74rem', fontWeight: 800, color: '#D4AF37', mb: 1, letterSpacing: '0.08em' }}>
+                ┌─ CHAIN OF THOUGHTS (zoth-cot) TERMINAL ─┐
+              </Typography>
+              <Box
+                component="pre"
+                sx={{
+                  m: 0,
+                  p: 1.5,
+                  border: '1px solid #FFFFFF',
+                  bgcolor: '#000000',
+                  color: '#FFFFFF',
+                  fontFamily: mono,
+                  fontSize: '0.72rem',
+                  lineHeight: 1.55,
+                  overflowX: 'auto',
+                }}
+              >
+{`$ zoth-cot status
+[◈] CHAIN OF THOUGHTS // WORKING MEMORY DAG
+[◈] Active Session : zoth-cot-default
+[◈] Thought Nodes  : 2 (N00 -> N01 -> N02)
+[◈] Pinned Facts   : 4 ([IDENTITY] codename: FALCON-7)
+
+$ zoth-cot pin TARGET_HOST "10.0.2.15 (QEMU Bridge)"
+[+] Pinned fact [MEMORY] TARGET_HOST = "10.0.2.15"
+
+$ zoth-cot recall FALCON-7
+[✓] Node N01 (hash: 93d81fa8c410) -> codename FALCON-7`}
+              </Box>
+            </Box>
+            <Box sx={{ mt: 1.5, pt: 1.2, borderTop: '1px dashed #FFFFFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
+              <Typography sx={{ fontFamily: mono, fontSize: '0.68rem', color: '#FFFFFF' }}>
+                ⣿ [⠅⠉] ⠴ @264.9 • 0x3925 • 100% OPEN ACCESS
+              </Typography>
+              <Typography sx={{ fontFamily: mono, fontSize: '0.68rem', fontWeight: 800, color: '#D4AF37' }}>
+                75+ KALI & PARROT CLI TOOLS
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
       {/* Feature Comparison Matrix */}
       <Box sx={{ mb: 10 }}>
         <Typography
@@ -618,7 +781,7 @@ export default function HomePage() {
             <TableHead sx={{ bgcolor: isDark ? 'rgba(212, 175, 55, 0.08)' : '#FEF9E7' }}>
               <TableRow>
                 <TableCell sx={{ fontFamily: mono, fontWeight: 800, color: textPrimary }}>Capability</TableCell>
-                <TableCell sx={{ fontFamily: mono, fontWeight: 900, color: gold }}>ZothOS Linux 3.2</TableCell>
+                <TableCell sx={{ fontFamily: mono, fontWeight: 900, color: gold }}>ZothOS Linux v3.3.0</TableCell>
                 <TableCell sx={{ fontFamily: mono, fontWeight: 700, color: textSecondary }}>Kali Linux</TableCell>
                 <TableCell sx={{ fontFamily: mono, fontWeight: 700, color: textSecondary }}>Parrot OS</TableCell>
                 <TableCell sx={{ fontFamily: mono, fontWeight: 700, color: textSecondary }}>Ubuntu LTS</TableCell>

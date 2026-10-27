@@ -1,7 +1,7 @@
 {
   "name": "zoth-os-website",
   "private": true,
-  "version": "3.2.0",
+  "version": "3.3.0",
   "type": "module",
   "description": "ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 — Public Portal & Interactive Sovereign AI Operating System Showcase",
   "scripts": {

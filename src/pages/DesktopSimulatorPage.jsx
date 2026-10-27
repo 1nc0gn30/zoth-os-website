@@ -29,8 +29,8 @@ const INITIAL_HISTORY = [
     id: 1,
     type: 'system',
     text: [
-      'ZOTHOS LINUX v3.2.0-RELEASE (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
-      'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • 152 MCP Servers • 22/22 Loopback Daemons Online.',
+      'ZOTHOS LINUX v3.3.0-RELEASE + ZOTHOS-LITE v1.0 (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
+      'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • Chain of Thoughts (zoth-cot) DAG • 152 MCP Servers • 22/22 Loopback Daemons Online.',
       'Type "help" or click any quick-command chip below to test both Agent-Native and Human Workstation CLI tools.',
     ].join('\n'),
   },
@@ -38,6 +38,8 @@ const INITIAL_HISTORY = [
 
 const QUICK_CMDS = [
   'zoth status',
+  'zoth-cot status',
+  'zoth-cot pin',
   'zoth-agent-layer status',
   'zoth-mcp list',
   'zoth-relay status',
@@ -108,17 +110,36 @@ export default function DesktopSimulatorPage() {
         type: 'output',
         text: [
           '========================================================================',
-          '                 ZOTHOS v3.2 SOVEREIGN HOST TELEMETRY                   ',
+          '                 ZOTHOS v3.3.0 SOVEREIGN HOST TELEMETRY                 ',
           '========================================================================',
           `[✓] HOSTNAME & DESKTOP: zoth-pill.local (KDE Plasma 6.3 Wayland • ${activeMode.name})`,
           '[✓] AGENT AUTHORITY:    Ring 2 (TOOLMASTER) / Layer 2 (CYBERPUPPET)',
+          '[✓] WORKING MEMORY DAG: zoth-cot ONLINE (SHA-256 Merkle Chain N00 -> N01 -> N02)',
           '[✓] MULTI-AGENT RELAY:  zoth-relay ONLINE (127.0.0.1:8765 • Landlock Sandbox)',
           '[✓] CURSOR COMPOSITOR:  zoth-cursor-daemon ONLINE (127.0.0.1:9989 @ 60 FPS)',
-          '[✓] LOOPBACK ENCLAVES:  22 / 22 ACTIVE (:8094 STDP Memory .. :8120 Margin Sentinel)',
+          '[✓] LOOPBACK ENCLAVES:  22 / 22 ACTIVE (:8094 STDP Memory .. :8145 ZothOS-Lite)',
           '[✓] SOVEREIGN VAULT:    ONLINE (127.0.0.1:8787 • Argon2id + ChaCha20-Poly1305)',
           '[✓] THERMAL CEILING:    41.2°C / 55.0°C MAX (Fans: 0 RPM • no_turbo=1 Locked)',
           '========================================================================',
         ].join('\n'),
+      });
+    } else if (lower === 'zoth-cot status') {
+      entries.push({
+        id: Date.now() + 1,
+        type: 'output',
+        text: [
+          '[◈] CHAIN OF THOUGHTS (zoth-cot) // WORKING MEMORY & MERKLE CONTEXT DAG',
+          '  Session ID     : zoth-cot-default (https://github.com/1nc0gn30/chain-of-thoughts)',
+          '  Merkle Nodes   : 2 (N00 [93d81fa8c410] -> N01 [59df89ef7082])',
+          '  Pinned Facts   : 4 ([IDENTITY] codename: FALCON-7 | [MISSION] target: 10.0.2.15)',
+          '  4-Stage Trace  : 1. PERCEPTION -> 2. RECALL -> 3. SYNTHESIS -> 4. VERIFICATION',
+        ].join('\n'),
+      });
+    } else if (lower.startsWith('zoth-cot pin')) {
+      entries.push({
+        id: Date.now() + 1,
+        type: 'output',
+        text: '[+] Pinned semantic fact [MEMORY] TARGET_SUBNET = "10.0.2.0/24" into Working Memory Vault.',
       });
     } else if (lower === 'zoth-agent-layer status') {
       entries.push({
@@ -128,7 +149,7 @@ export default function DesktopSimulatorPage() {
           'ZOTHOS AUTONOMOUS AGENT PERMISSION & SECURITY RING CONTROLLER (/etc/zothos/agent-permissions.json)',
           '  Active Security Ring : Ring 2 — TOOLMASTER (Agent Tools & MCP Runtime)',
           '  Active Hermetic Layer: Layer 2 — CYBERPUPPET (GUI, Mouse, Keyboard & MCP Tools)',
-          '  Filesystem Policy    : R/W [/home/zoth, /var/lib/zothos, /tmp] | FORBIDDEN [/root, /boot, /etc/shadow, ~/.ssh/id_*]',
+          '  Filesystem Policy    : R/W [~/workspace, /var/lib/zothos, /tmp] | FORBIDDEN [/root, /boot, /etc/shadow, ~/.ssh/id_*]',
           '  Resource & Token Cap : 8192 MB RAM (user_namespace) | 32,000 tokens/req | 250,000 tokens/hr',
           '  Available Rings      : [Ring 0: SOVEREIGN] [Ring 1: SYSADMIN/WARLOCK] [Ring 2: TOOLMASTER] [Ring 3: SPECTRE]',
         ].join('\n'),

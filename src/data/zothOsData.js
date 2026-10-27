@@ -214,9 +214,26 @@ export const FRONTIER_AGENTS = [
     desc: 'Serves Qwen 2.5 Coder, DeepSeek-R1, Llama 3.2, and Nomic-Embed-Text locally on loopback with zero cloud egress.',
     accent: '#D4AF37',
   },
+  {
+    name: 'Chain of Thoughts (zoth-cot)',
+    cmd: 'zoth-cot status',
+    mode: '100% Offline Merkle Working Memory DAG',
+    role: 'Multi-Turn Context & Cryptographic Thought Chain',
+    desc: 'Eliminates stateless LLM amnesia with true multi-turn /api/chat context, automatic semantic fact extraction (IDENTITY/MEMORY/MISSION/SECRET), and SHA-256 Merkle thought nodes (N00 -> N01...).',
+    accent: '#38BDF8',
+  },
+  {
+    name: 'AZOTH Embodied Braille AI',
+    cmd: 'zothos-lite (:8145)',
+    mode: 'Kokoro 82M ONNX Voice + Mic STT',
+    role: 'Animated U+2800 Braille & Bayer Dither Agent',
+    desc: 'Embodied monotone AI agent on ZothOS-Lite v1.0 with 6 full-body mood rigs, real-time mouth phoneme lip-sync, Kokoro 82M ONNX Neural TTS (af_bella, am_adam), and full-duplex mic STT.',
+    accent: '#10B981',
+  },
 ];
 
 export const LOOPBACK_DAEMONS = [
+  { port: ':8145', name: 'zothos-lite-workstation', stack: 'Node.js / U+2800 Braille + Kokoro ONNX', category: 'AI Memory', desc: 'ZothOS-Lite v1.0 Amnesic Monotone Desktop (:8145) hosting AZOTH Embodied Braille AI, Chain of Thoughts (winCoT) Working Memory DAG, Kokoro 82M Neural TTS, 3D Perspective Matrix & Sovereign Horology Niche Clock.' },
   { port: ':8094', name: 'neuro-memory-daemon', stack: 'Python / SQLite STDP', category: 'AI Memory', desc: 'Biomorphic Spike-Timing-Dependent Plasticity (STDP) synaptic vector memory & 3D Cosmic Nebula graph for persistent cross-agent recall.' },
   { port: ':8095 / :8096', name: 'agent-egress-sentinel', stack: 'Python / TLS SNI Proxy', category: 'Zero-Egress', desc: 'Autonomous zero-dependency network proxy, outbound packet inspector, and telemetry blocker for resident AI agents.' },
   { port: ':8097', name: 'agent-mock-twin', stack: 'Python / JSON-RPC', category: 'Simulation', desc: 'Deterministic offline API replay twin for testing autonomous subagents without external network calls.' },
@@ -363,8 +380,15 @@ export const COMPARISON_ROWS = [
     ubuntu: 'None',
   },
   {
-    feature: 'Pre-Installed Frontier AI Agents',
-    zoth: '9 Agents (AGY, Claude, Grok, Aider, Cursor, Cline, Hermes, Codex, Ollama)',
+    feature: 'Pre-Installed Frontier AI Agents & Working Memory',
+    zoth: '11 Agents & Engines (AGY, Claude, Grok, Aider, Cursor, Cline, Hermes, Codex, Ollama, AZOTH Braille AI, Chain of Thoughts zoth-cot)',
+    kali: 'None',
+    parrot: 'None',
+    ubuntu: 'None',
+  },
+  {
+    feature: 'Amnesic Monotone Companion Edition (ZothOS-Lite v1.0)',
+    zoth: 'Tails-Style RAM-Only OS (:8145) • AZOTH Braille AI + Kokoro ONNX Voice + Chain of Thoughts DAG + Horology Clock',
     kali: 'None',
     parrot: 'None',
     ubuntu: 'None',

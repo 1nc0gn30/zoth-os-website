@@ -2,6 +2,30 @@
   "count": 60,
   "tools": [
     {
+      "id": "chain-of-thoughts",
+      "name": "Chain of Thoughts (zoth-cot)",
+      "version": "1.0.0",
+      "category": "AI Memory & Context DAG",
+      "description": "Sovereign Multi-Turn Context, Cryptographic SHA-256 Merkle Working Memory DAG & 60fps Unicode Braille/Bayer Synaptic Visualizer for Local & Cloud AI Agents.",
+      "repo": "https://github.com/1nc0gn30/chain-of-thoughts",
+      "pull": "git clone https://github.com/1nc0gn30/chain-of-thoughts.git && cd chain-of-thoughts && ./bin/zoth-cot status",
+      "local_url": "http://127.0.0.1:8145",
+      "license": "MIT",
+      "price": "0.00"
+    },
+    {
+      "id": "zothos-lite",
+      "name": "ZothOS-Lite v1.0",
+      "version": "1.0.0",
+      "category": "Amnesic Operating System",
+      "description": "Amnesic Monotone RAM-Only Linux OS with AZOTH Embodied Braille AI Agent, Chain of Thoughts (zoth-cot) Working Memory DAG, Kokoro 82M ONNX Neural TTS, 3D Perspective Braille Matrix & 75+ Kali/Parrot CLI Tools.",
+      "repo": "https://github.com/1nc0gn30/zothos-lite",
+      "pull": "git clone https://github.com/1nc0gn30/zothos-lite.git && cd zothos-lite && npm start",
+      "local_url": "http://127.0.0.1:8145",
+      "license": "MIT",
+      "price": "0.00"
+    },
+    {
       "id": "adytum-alchemist-ai-workflow",
       "name": "Adytum Planner",
       "description": "The 22-key hermetic planning rite. Intention, five-minute incubation, and a local-model gate.",
@@ -39,7 +63,7 @@
       "description": "E2EE WebSocket signal protocol and Simplex peer mesh IPC communicator.",
       "category": "Swarm & Core",
       "github": "https://github.com/NullAITech/sovereign-agent-bridge",
-      "version": "3.2.0",
+      "version": "3.3.0",
       "pull": "npx @nullaitech/zoth pull sovereign-agent-bridge",
       "execution_type": "local_cli",
       "runtimes": [
@@ -69,11 +93,11 @@
     },
     {
       "id": "zoth-os",
-      "name": "Zoth OS v3.2",
+      "name": "Zoth OS v3.3.0",
       "description": "Debian 13 + KDE Plasma 6.3 sovereign AI distro. Kali + Parrot parity, Studio v2, Ollama on 127.0.0.1, 152 MCP servers all off. Eight named virtual desktops; zoth-workspaces puts a Samsung / DP monitor on its own screen. Live users zoth / azoth / root password zoth.",
       "category": "Swarm & Core",
       "github": "https://github.com/NullAITech/zoth-os",
-      "version": "3.2.0",
+      "version": "3.3.0",
       "pull": "git clone https://github.com/NullAITech/zoth-os.git && cd zoth-os",
       "execution_type": "local_cli",
       "live_url": "https://zothos.nullai.tech",
@@ -120,7 +144,7 @@
       "description": "100% in-browser prompt engineering and meta-optimization studio with real-time AST linting, multi-model rewrites (Claude, ChatGPT, Gemini), tri-model constellation brand media, and dual Stripe + Solana rails.",
       "category": "AI & Knowledge",
       "github": "https://github.com/1nc0gn30/promptmaster-studio",
-      "version": "3.2.0",
+      "version": "3.3.0",
       "pull": "git clone https://github.com/1nc0gn30/promptmaster-studio.git && cd promptmaster-studio && python3 -m http.server 8123 --directory public",
       "execution_type": "browser",
       "live_url": "https://promptmaster-studio.netlify.app",
@@ -840,7 +864,7 @@
       "category": "Voice & Real-Time",
       "github": "https://github.com/1nc0gn30/likeness-desk",
       "version": "1.0.0",
-      "pull": "cd /home/zoth/NullAITech/likeness-desk && python3 server.py",
+      "pull": "cd ~/NullAITech/likeness-desk && python3 server.py",
       "execution_type": "local_cli",
       "local_url": "http://127.0.0.1:9395",
       "runtimes": [
@@ -853,7 +877,7 @@
     {
       "id": "osint-scout-skill",
       "name": "Domain Intel OSINT Scout",
-      "description": "100% in-browser passive domain intelligence & attack surface reconnaissance engine auditing Certificate Transparency logs, DoH DNS records, and SPF/DMARC posture with dual Stripe + Solana rails ($19).",
+      "description": "100% in-browser passive domain intelligence & attack surface reconnaissance engine auditing Certificate Transparency logs, DoH DNS records, and SPF/DMARC posture 100% free and open-access.",
       "category": "Security & Recon",
       "github": "https://github.com/NullAITech/osint-scout-skill",
       "version": "2.5.0",
@@ -888,7 +912,7 @@
       "category": "Swarm & Core",
       "github": "https://github.com/1nc0gn30/zoth-civilization",
       "version": "1.0.0",
-      "pull": "cd /home/zoth/NullAITech/zoth-civilization && ENABLE_KOKORO_VOICE=0 node server.js",
+      "pull": "cd ~/NullAITech/zoth-civilization && ENABLE_KOKORO_VOICE=0 node server.js",
       "execution_type": "local_cli",
       "local_url": "http://127.0.0.1:9393",
       "runtimes": [

@@ -1,7 +1,7 @@
 # ZothOS Website — Official Distribution Hub & Agent-Native OS Showcase
 
-> **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.2**  
-> *Engineered from Ring 0 up as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, 152 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, Debian 13 + Kali & Parrot dual parity).*
+> **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.3.0 & ZothOS-Lite v1.0**  
+> *Engineered from Ring 0 up as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, Chain of Thoughts `zoth-cot` Merkle Working Memory DAG, 152 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, ZothOS-Lite v1.0 Amnesic Monotone Edition, Debian 13 + Kali & Parrot dual parity).*
 
 [![Live Production Site](https://img.shields.io/badge/Live-zothos.nullai.tech-gold?style=flat-square&logo=googlechrome)](https://zothos.nullai.tech)
 [![Netlify Deploy](https://img.shields.io/badge/Deploy-Netlify%20Production-00C7B7?style=flat-square&logo=netlify)](https://app.netlify.com)
@@ -9,20 +9,20 @@
 [![React 19](https://img.shields.io/badge/Framework-React%2019-blue?style=flat-square)](https://react.dev)
 [![Material-UI v5](https://img.shields.io/badge/UI-Material--UI%20v5-007FFF?style=flat-square)](https://mui.com)
 [![AEO / AX Machine Ready](https://img.shields.io/badge/AEO-llms.txt%20%2B%20JSON--LD-blueviolet?style=flat-square)](#aeo--machine-agent-discovery-endpoints)
-[![Dual Monetization Rails](https://img.shields.io/badge/Treasury-Stripe%20%2B%20Solana%20DePay-success?style=flat-square)](#dual-monetization-rails--treasury)
+[![100% Open Access](https://img.shields.io/badge/Access-100%25%20Free%20%26%20Open-success?style=flat-square)](#3-100-open-access--buy-us-a-coffee-support)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 ---
 
 ## Overview
 
-`zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
+`zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os) and [ZothOS-Lite v1.0](https://github.com/1nc0gn30/zothos-lite). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
 
 ### Key Highlights
-- **Dual-Surface Showcase**: Articulates ZothOS's unique dual-audience design—a hardened, permission-ringed execution substrate for coding agents on the backend, paired with an avant-garde 24K Gold KDE Plasma 6.3 Wayland desktop for human operators.
+- **Dual-Surface Showcase**: Articulates ZothOS's unique dual-audience design—a hardened, permission-ringed execution substrate for coding agents on the backend, paired with an avant-garde 24K Gold KDE Plasma 6.3 Wayland desktop and Amnesic ZothOS-Lite v1.0 for human operators.
 - **100% In-Browser Interactive Demos**: Interactive terminal simulators, MCP inspector previews, and live telemetry widgets with zero fake work.
 - **Machine Discovery (AEO & AX)**: Structured `/llms.txt`, `/llms-full.txt`, and programmatic `/api/` endpoints enabling LLMs (Perplexity, GPTBot, ClaudeBot, Google SGE) to accurately cite and index ZothOS capabilities.
-- **Dual Sovereign Checkout Rails**: Integrated Stripe ($19 founding pass) and Web3 Solana DePay widget for sovereign treasury expansion.
+- **100% Free & Open-Access**: All tools, ISO builders, and configurations are unlocked by default with zero paywalls, supported via optional "☕ Buy Us a Coffee" (Stripe + Solana tip address).
 
 ---
 
@@ -36,11 +36,11 @@
         |                                   |                                   |
         v                                   v                                   v
 +-----------------------------+ +-----------------------------+ +-----------------------------+
-|    HUMAN OPERATOR UX        | |   AI AGENT DISCOVERY (AEO)  | |   DUAL MONETIZATION RAILS   |
-|  - 24K Gold Plasma 6.3 Tour | |  - /llms.txt & llms-full.txt| |  - Stripe Payment Links ($19)|
-|  - 75+ Cyber Arsenal Guide  | |  - /api/tools.json Catalog  | |  - DePay Solana Integration |
-|  - SHA-256 / Cosign Verifier| |  - /api/services.json API   | |  - 1-Click License Key Auth |
-|  - Live ISO Torrent / HTTP  | |  - Schema.org JSON-LD Graphs| |  - Frosted Glass Paywall UX |
+|    HUMAN OPERATOR UX        | |   AI AGENT DISCOVERY (AEO)  | | 100% OPEN-ACCESS & SUPPORT  |
+|  - 24K Gold Plasma 6.3 Tour | |  - /llms.txt & llms-full.txt| |  - 100% Unlocked By Default |
+|  - ZothOS-Lite v1.0 (:8145) | |  - /api/tools.json Catalog  | |  - Chain of Thoughts DAG    |
+|  - SHA-256 / Cosign Verifier| |  - /api/services.json API   | |  - Stripe Buy Us a Coffee   |
+|  - Live ISO Torrent / HTTP  | |  - Schema.org JSON-LD Graphs| |  - Solana Tip Address       |
 +-----------------------------+ +-----------------------------+ +-----------------------------+
         |                                   |                                   |
         +-----------------------------------+-----------------------------------+
@@ -77,11 +77,10 @@ Built to satisfy strict frontier crawler requirements with zero crawl delay:
 - [`/api/faq.json`](https://zothos.nullai.tech/api/faq.json): Structured FAQ knowledge base for automated citation.
 - [`/api/graph.json`](https://zothos.nullai.tech/api/graph.json): Linked Data Schema.org `@graph` representation.
 
-### 3. Dual Monetization Rails & Treasury
-- **Founding Member Pass**: $19 lifetime sovereign access ($79 standard retail).
-- **Stripe Rail**: Credit cards, Apple Pay, and Google Pay via verified payment links.
-- **Solana DePay Rail**: Instant Web3 crypto checkout to receiver `open-source-zothos`.
-- **Instant Client-Side Activation**: Unlocks via `?licensed=true` URL query parameter or 1-click license key confirmation, saving state permanently in `localStorage`.
+### 3. 100% Open-Access & "Buy Us a Coffee" Support
+- **100% Free & Unlocked**: Every interactive tool, custom ISO builder, and systemd unit exporter on `zothos.nullai.tech` is 100% free and open-access by default with zero paywalls.
+- **☕ Buy Us a Coffee (Stripe)**: [`https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X`](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
+- **Solana Wallet Tip Address**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK` (`solana:GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`)
 
 ---
 

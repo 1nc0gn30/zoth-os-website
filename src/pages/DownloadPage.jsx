@@ -34,7 +34,7 @@ export default function DownloadPage() {
 
   const customIsoRecipe = `#!/usr/bin/env bash
 # ==============================================================================
-# ZOTHOS v3.2 CUSTOM LIVE-BUILD ISO & COSIGN MANIFEST GENERATOR
+# ZOTHOS v3.3.0 CUSTOM LIVE-BUILD ISO & COSIGN MANIFEST GENERATOR
 # Profile: ${defaultPill.toUpperCase()} | Kali+Parrot: ${includeKaliFull ? 'ENABLED' : 'MINIMAL'} | LUKS2: ${enableLuks2 ? 'ON' : 'OFF'}
 # ==============================================================================
 set -euo pipefail
@@ -43,7 +43,7 @@ lb config \\
   --distribution trixie \\
   --archive-areas "main contrib non-free non-free-firmware" \\
   --bootappend-live "boot=live components quiet splash username=zoth hostname=zoth-pill zoth_mode=${defaultPill}" \\
-  --iso-volume "ZOTHOS_3_2_SOVEREIGN"
+  --iso-volume "ZOTHOS_3_3_SOVEREIGN"
 
 # Pin Kali Rolling & Parrot OS Security APT Priorities
 cat << 'EOF' > config/archives/zoth-pinning.pref.chroot
@@ -132,13 +132,13 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
             <Button
               variant="contained"
               color="primary"
-              href="https://github.com/NullAITech/zoth-os/releases/tag/v3.2.0"
+              href="https://github.com/NullAITech/zoth-os/releases/tag/v3.3.0"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}
               sx={{ fontFamily: mono, fontWeight: 800 }}
             >
-              Download v3.2.0 Release ISO
+              Download v3.3.0 Release ISO
             </Button>
             <Button
               variant="outlined"

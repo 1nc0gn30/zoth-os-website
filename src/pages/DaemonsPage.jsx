@@ -44,7 +44,7 @@ After=network-online.target
 [Service]
 Type=simple
 User=zoth
-WorkingDirectory=/home/zoth/NullAITech/${selectedDaemon.name}
+WorkingDirectory=/opt/${selectedDaemon.name}
 ExecStart=/usr/local/bin/${selectedDaemon.name} serve --host 127.0.0.1
 Restart=always
 RestartSec=3
