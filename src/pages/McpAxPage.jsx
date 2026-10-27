@@ -270,7 +270,7 @@ const AX_ENDPOINTS = [
   "$schema": "https://modelcontextprotocol.io/schemas/2025-03-26/mcp-manifest.json",
   "protocolVersion": "2025-03-26",
   "name": "zothos-linux-mcp-mesh",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "securityInvariants": {
     "zeroEgress": true,
     "loopbackBindOnly": "127.0.0.1",
@@ -294,7 +294,7 @@ const AX_ENDPOINTS = [
   "protocol": "A2A-AX/1.0",
   "name": "ZothOS Sovereign Operating System Agent",
   "id": "did:web:zothos.nullai.tech",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "capabilities": {
     "streaming": true,
     "mcpStdio": true,
@@ -745,51 +745,10 @@ export default function McpAxPage() {
                     lineHeight: 1.6,
                     overflowX: 'auto',
                     minHeight: 380,
-                    filter: isPro ? 'none' : 'blur(6px)',
-                    userSelect: isPro ? 'text' : 'none',
-                    transition: 'filter 0.3s ease',
                   }}
                 >
                   {generatedMcpConfig}
                 </Box>
-
-                {!isPro && (
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      inset: 0,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      p: 3,
-                      textAlign: 'center',
-                      bgcolor: 'rgba(8, 8, 11, 0.72)',
-                      backdropFilter: 'blur(4px)',
-                    }}
-                  >
-                    <LockIcon sx={{ fontSize: 40, color: '#D4AF37', mb: 1 }} />
-                    <Typography variant="h6" sx={{ color: '#FFFFFF', fontWeight: 800, mb: 0.5 }}>
-                      Pro MCP Bundle & Auto-Provisioning Locked
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: '#D1D5DB', maxWidth: 440, mb: 2.5, fontSize: '0.85rem' }}>
-                      Unlock full copy/export access to the 5-cluster ZothOS MCP manifest, custom Live-Build ISO scripts, and Argon2id Vault policies for $19 lifetime.
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1.2 }}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={openDePayCheckout}
-                        sx={{ fontFamily: mono, fontWeight: 800 }}
-                      >
-                        ⚡ Pay with Solana ($19 — DePay)
-                      </Button>
-                      <Button variant="text" onClick={openPaywallModal} sx={{ fontFamily: mono, color: '#F5E6AB', fontSize: '0.76rem' }}>
-                        Have a Pro License Key? Activate →
-                      </Button>
-                    </Box>
-                  </Box>
-                )}
               </Box>
             </Grid>
           </Grid>

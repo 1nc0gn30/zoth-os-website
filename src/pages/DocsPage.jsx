@@ -203,8 +203,8 @@ const FAQS = [
     a: 'Visit the interactive /mcp hub on this site to generate a ready-to-use mcpServers JSON configuration for Antigravity, Claude Desktop/Code, Cursor, or Cline using either stdio binary pipes or 127.0.0.1 SSE endpoints.',
   },
   {
-    q: 'How do I unlock the Pro Custom ISO Live-Build Script, MCP Bundle, and Vault Policy Exporter?',
-    a: 'Click the Solana DePay ($19 Founding Lifetime) button in the sales banner above, or enter your Pro license key / transaction signature in the activation modal. Activation is instant, verified client-side, and persisted in localStorage.',
+    q: 'Are ZothOS Linux v3.3.0, ZothOS-Lite v1.0, Chain of Thoughts (zoth-cot), and the ISO Live-Build Exporter 100% free?',
+    a: 'Yes! Every operating system script, custom Live-Build ISO generator, 5-cluster MCP bundle, and Argon2id Vault policy exporter is 100% free and unlocked by default with zero paywalls. Optional support is available via Buy Us a Coffee (Stripe) or Solana tip address GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK.',
   },
 ];
 

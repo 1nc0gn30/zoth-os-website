@@ -55,7 +55,7 @@ export default function SecurityVaultPage() {
 printf '%s' '${secretPayload}' | zoth-vault set ${secretName} --memory-only --ttl 14400
 
 # 2. Spawn autonomous agent with ephemeral environment variable injection
-zoth-vault exec --secret ${secretName} -- agy --workspace /home/zoth/NullAITech
+zoth-vault exec --secret ${secretName} -- agy --workspace ~/NullAITech
 
 # 3. Engage NullAI Ghostmode Transparent Tor Proxy & MAC Cloak
 sudo zoth-mode ghost && zoth-ghost status`;

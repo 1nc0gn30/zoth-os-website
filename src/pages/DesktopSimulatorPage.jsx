@@ -204,7 +204,7 @@ export default function DesktopSimulatorPage() {
         id: Date.now() + 1,
         type: 'output',
         text: [
-          'ZOTH SOVEREIGN VAULT DAEMON v3.2 (127.0.0.1:8787)',
+          'ZOTH SOVEREIGN VAULT DAEMON v3.3.0 (127.0.0.1:8787)',
           '  KDF:        Argon2id (m=65536, t=4, p=4)',
           '  Cipher:     ChaCha20-Poly1305 (256-bit ephemeral key)',
           '  Backends:   [✓] zoth-vault  [✓] Bitwarden CLI (bw)  [✓] KeePassXC  [✓] UNIX Pass',
@@ -269,7 +269,7 @@ export default function DesktopSimulatorPage() {
 
   const generatedProfileScript = `#!/usr/bin/env bash
 # ==============================================================================
-# ZOTHOS v3.2 SOVEREIGN REALITY PROFILE & KVM HYPERVISOR CONFIG
+# ZOTHOS v3.3.0 SOVEREIGN REALITY PROFILE & KVM HYPERVISOR CONFIG
 # Generated for Reality Pill: ${activeMode.name} (${activeMode.id})
 # ==============================================================================
 set -euo pipefail
@@ -283,7 +283,7 @@ echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
 
 # 3. Boot QEMU/KVM Guest Appliance (${cpuPreset.toUpperCase()} • ${ramGb}GB RAM)
 qemu-system-x86_64 \\
-  -name "zothos-v3.2-${activeMode.id}" \\
+  -name "zothos-v3.3.0-${activeMode.id}" \\
   -enable-kvm -cpu host \\
   -smp ${cpuPreset === '2c4t' ? '4,cores=2,threads=2' : cpuPreset === '4c8t' ? '8,cores=4,threads=2' : '16,cores=8,threads=2'} \\
   -m ${ramGb * 1024} \\
