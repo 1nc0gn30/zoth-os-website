@@ -9,7 +9,7 @@ export const REALITY_PILL_MODES = [
     secondary: '#FFF8DC',
     bgGlow: 'rgba(212, 175, 55, 0.24)',
     desc: 'Default 24K Celtic Gold KDE Plasma 6.3 Wayland desktop for human operators and Ring-2 AI agents — featuring interactive 3D embossed ZOTHOS wallpaper, 60 FPS cursor ley-lines, and UFW loopback isolation.',
-    posture: 'UFW Default-Deny • Ring-2 CYBERPUPPET Active • 22 Loopback Daemons Online',
+    posture: 'UFW Default-Deny • Ring-2 CYBERPUPPET Active • 23 Loopback Daemons Online',
     audioCue: '/usr/share/sounds/zothos/gold-sanctum.wav',
   },
   {
@@ -82,7 +82,7 @@ export const AGENT_SECURITY_RINGS = [
     tokenBudget: '32K / req • 250K / hr',
     ramCap: '8 GB RAM • 80% CPU',
     accent: '#3B82F6',
-    desc: 'Default operating ring for coding agents: full 152-server MCP tool invocation, workspace read/write, Git ops, and 60 FPS GUI Computer Use (mouse, keyboard, screenshots, browser automation) while blocking `/etc/shadow` and `~/.ssh` keys.',
+    desc: 'Default operating ring for coding agents: full 163-server MCP tool invocation, workspace read/write, Git ops, and 60 FPS GUI Computer Use (mouse, keyboard, screenshots, browser automation) while blocking `/etc/shadow` and `~/.ssh` keys.',
   },
   {
     ring: 'Ring 3',
@@ -106,23 +106,23 @@ export const CORE_PILLARS = [
   },
   {
     id: 'mcp-relay',
-    badge: '152 MCP SERVERS • ZOTH-RELAY',
+    badge: '163 MCP SERVERS • ZOTH-RELAY',
     title: 'Multi-Agent MCP Bus & Landlock Relay (:8765)',
-    desc: 'Ships with `/etc/zothos/mcp-servers.json` (152 pre-registered MCP servers with offline CLI fallbacks) and `zoth-relay` (`127.0.0.1:8765`), letting multiple AI agents work concurrently with 288-bit scoped tokens, isolated workspaces, and JSON audit trails.',
+    desc: 'Ships with `/etc/zothos/mcp-servers.json` (163 pre-registered MCP servers with offline CLI fallbacks) and `zoth-relay` (`127.0.0.1:8765`), letting multiple AI agents work concurrently with 288-bit scoped tokens, isolated workspaces, and JSON audit trails.',
     accent: '#00F0FF',
   },
   {
     id: 'daemons',
     badge: '22 LOOPBACK DAEMONS + 9 AGENTS',
     title: 'Zero-Egress 127.0.0.1 Enclave Mesh',
-    desc: 'Installer scripts for 9 AI coding agents (`agy`, `claude`, `grok`, `aider`, `cursor`, `cline`, `hermes`, `codex`, `ollama`; not affiliated with their vendors) wired to 22 localhost daemons (`:8094` STDP Synaptic Memory through `:8120` Margin Sentinel, `:9393` Civilization, `:8787` Vault).',
+    desc: 'Installer scripts for 9 AI coding agents (`agy`, `claude`, `grok`, `aider`, `cursor`, `cline`, `hermes`, `codex`, `ollama`; not affiliated with their vendors) wired to 23 localhost daemons (`:8094` STDP Synaptic Memory through `:8120` Margin Sentinel, `:9393` Civilization, `:8787` Vault).',
     accent: '#34D399',
   },
   {
     id: 'desktop',
     badge: 'KDE PLASMA 6.3 WAYLAND',
     title: '24K Gold Workstation for Human Operators',
-    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 59 Zoth Studio workstations.',
+    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 71 Studio tools / 43 workstations.',
     accent: '#F59E0B',
   },
   {
@@ -374,7 +374,7 @@ export const COMPARISON_ROWS = [
   },
   {
     feature: 'Native MCP Registry & Loopback Daemons',
-    zoth: '152 MCP Servers (`/etc/zothos/mcp-servers.json`) + 23 Loopback Daemons (127.0.0.1)',
+    zoth: '163 MCP Servers (`/etc/zothos/mcp-servers.json`) + 23 Loopback Daemons (127.0.0.1)',
     kali: 'None',
     parrot: 'None',
     ubuntu: 'None',

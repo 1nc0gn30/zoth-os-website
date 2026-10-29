@@ -18,7 +18,7 @@ export default function Footer() {
   const osSections = [
     { label: 'ZothOS v3.3.0 Overview', to: '/' },
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
-    { label: '22 Loopback Daemons & 9 AI Agents', to: '/daemons' },
+    { label: '23 Loopback Daemons & 11 AI Agents', to: '/daemons' },
     { label: '175+ Security Arsenal & Zoth Vault', to: '/security' },
     { label: 'MCP & Agent Experience (AX) Hub', to: '/mcp' },
     { label: 'ISO Download & Custom Builder', to: '/download' },

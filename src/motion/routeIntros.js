@@ -14,7 +14,7 @@ export const ACCENTS = {
 const ROUTES = [
   { match: /^\/$/, clip: 'zoth-os', label: 'ZothOS Linux 3.3.0', kicker: 'Sovereign AI + Security OS · ZothOS-Lite v1.0', accent: 'gold', brailleShape: 'shield' },
   { match: /^\/desktop\/?$/, clip: 'home', label: 'Zoth-Pill Desktop', kicker: 'KDE Plasma 6.3 + Multi-Size Xcursor + Lite GUI', accent: 'gold', brailleShape: 'astrolabe' },
-  { match: /^\/daemons\/?$/, clip: 'bridges', label: '22 Loopback Daemons', kicker: '17 Active Fleet Enclaves + Vaelor L1 (:8140)', accent: 'emerald', brailleShape: 'quorum' },
+  { match: /^\/daemons\/?$/, clip: 'bridges', label: '23 Loopback Daemons', kicker: '17 Active Fleet Enclaves + Vaelor L1 (:8140)', accent: 'emerald', brailleShape: 'quorum' },
   { match: /^\/security\/?$/, clip: 'hexstrike', label: 'Cyber Arsenal + Vault', kicker: 'Kali + Parrot Parity + Argon2id Vault', accent: 'crimson', brailleShape: 'hex' },
   { match: /^\/mcp\/?$/, clip: 'bridges', label: 'MCP + AX Hub', kicker: '152 Model Context Protocol Servers + AX', accent: 'emerald', brailleShape: 'dag' },
   { match: /^\/download\/?$/, clip: 'arsenal', label: 'ISO + Custom Builder', kicker: 'UEFI Live-Build v3.3.0 + ZothOS-Lite v1.0', accent: 'cyan', brailleShape: 'grid' },

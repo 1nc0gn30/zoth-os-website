@@ -97,7 +97,7 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 ## Zero-Auth Machine-Readable JSON Web APIs for AI Agents & Tools (CORS `*` Enabled)
 - [Master API Discovery Index](https://zothos.nullai.tech/api/index.json): Overview of all machine-readable endpoints on this domain.
 - [Services & Instant Checkout API](https://zothos.nullai.tech/api/services.json): JSON catalog of custom builds, SLAs, and Stripe/Solana payment links.
-- [44-Tool Sovereign Pro Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 44 browser-native tools.
+- [71-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 71 Studio-native tools.
 - [Structured FAQ Knowledge Base API](https://zothos.nullai.tech/api/faq.json): Direct Q&A pairs for RAG, Perplexity, ChatGPT Search, and voice assistants.
 - [Schema.org @graph Entity Network API](https://zothos.nullai.tech/api/graph.json): Complete interconnected JSON-LD knowledge graph.
 - [A2A Agent Card](https://zothos.nullai.tech/.well-known/agent.json): Agent-to-Agent capability and endpoint declaration.
@@ -106,8 +106,8 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 ## Complete Ecosystem Network
 - **Neal Frazier Tech (Personal & B2B Engineering Hub)**: https://www.nealfrazier.tech
 - **NullAI (Local-First AI Research Lab)**: https://nullai.tech
-- **Zoth Studio v2 (Local-First AI Studio & 44-Tool Enclave)**: https://zoth.nullai.tech
+- **Zoth Studio v2 (Local-First AI Studio & 71-Tool Enclave)**: https://zoth.nullai.tech
 - **ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (Sovereign AI-Native Operating System)**: https://zothos.nullai.tech
 - **757 Tech Pro (Hampton Roads IT & AI Agency)**: https://757tech.pro
-- **Sovereign 44-Tool Storefront & Solutions Hub**: https://1nc0gn30.github.io
+- **Sovereign Tools Storefront & Solutions Hub**: https://1nc0gn30.github.io
 - **City Desk (1,000-Page Local Trade Generator)**: https://city-desk.netlify.app

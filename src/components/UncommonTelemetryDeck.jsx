@@ -457,7 +457,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
                 label="AGENT PROTOCOL HUB"
-                value="152 MCP SERVERS"
+                value="163 MCP SERVERS"
                 sub="Ring 0–3 Permission Enforced · zoth-relay (:8765) · All Off By Default"
                 dark={dark}
                 to="/mcp"

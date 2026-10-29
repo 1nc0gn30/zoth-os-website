@@ -9,11 +9,11 @@
 - **4 Hardware/OS Agent Security Rings (`/etc/zothos/agent-permissions.json` & `zoth-agent-os`)**:
   - `Ring 0 (SOVEREIGN / Layer 4)`: Root, kernel, systemd, amnesic RAM purge (128K token budget).
   - `Ring 1 (SYSADMIN / Layer 3 WARLOCK)`: 175+ Kali/Parrot & HexStrike security tools, Ghostmode Tor control (`cgroups_standard`, 16 GB RAM cap).
-  - `Ring 2 (TOOLMASTER / Layer 2 CYBERPUPPET)`: Default agent operating ring — 152-server MCP runtime, workspace file R/W, Git, and 60 FPS GUI Computer Use while blocking `/root`, `/boot`, `/etc/shadow`, and `~/.ssh/id_*` (`user_namespace` + Landlock, 8 GB RAM cap).
+  - `Ring 2 (TOOLMASTER / Layer 2 CYBERPUPPET)`: Default agent operating ring — 163-server MCP runtime, workspace file R/W, Git, and 60 FPS GUI Computer Use while blocking `/root`, `/boot`, `/etc/shadow`, and `~/.ssh/id_*` (`user_namespace` + Landlock, 8 GB RAM cap).
   - `Ring 3 (SPECTRE / Layer 0)`: Zero-trust `firejail_strict` sandbox for untrusted subagents & code (2 GB RAM cap, loopback `:11434` only).
 - **152 Pre-Registered MCP Servers (`/etc/zothos/mcp-servers.json`) + `zoth-relay` (`127.0.0.1:8765`)**: Master MCP catalog (`zoth-mcp`) with 16 air-gapped offline servers (`filesystem`, `memory`, `sequential-thinking`, `git`, `sqlite`, `duckdb`, `repomix`, etc.) plus `zoth-relay` Landlock multi-agent bridge with 288-bit SHA-256 tokens, isolated `~/agent-workspace/<name>`, and `/var/log/zoth-relay/audit.log`.
-- **22 Loopback Enclave Daemons**: Bound strictly to `127.0.0.1` ports `:8094` (STDP Neuro-Memory) through `:8120` (POD Margin Sentinel), `:8765` (`zoth-relay`), `:8787` (`zoth-vault-daemon` Argon2id + ChaCha20 RAM-only process secret injection), `:9393` (`zoth-civilization`), and `:9989` (`zoth-cursor-daemon`).
-- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 59 Zoth Studio workstations (`/opt/zoth-studio`), and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
+- **23 Loopback Enclave Daemons**: Bound strictly to `127.0.0.1` ports `:8094` (STDP Neuro-Memory) through `:8120` (POD Margin Sentinel), `:8765` (`zoth-relay`), `:8787` (`zoth-vault-daemon` Argon2id + ChaCha20 RAM-only process secret injection), `:9393` (`zoth-civilization`), and `:9989` (`zoth-cursor-daemon`).
+- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 71 Studio tools / 43 workstations (`/opt/zoth-studio`), and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
 - **Companion Monotone RAM-Only OS & Working Memory DAG**:
   - **ZothOS-Lite v1.0 (`https://github.com/1nc0gn30/zothos-lite`)**: Amnesic RAM-only (`toram noswap`) operating system (`:8145`) featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & phoneme lip-sync), **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Braille Matrix**, **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`), and **75+ Kali/Parrot CLI tools**.
   - **Chain of Thoughts (`zoth-cot` — `https://github.com/1nc0gn30/chain-of-thoughts`)**: Multi-turn `/api/chat` context assembly, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) linked by SHA-256 Merkle hashes (`N00 -> N01 -> N02...`).
@@ -54,7 +54,7 @@
 ## Zero-Auth Machine-Readable JSON Web APIs for AI Agents & Tools (CORS `*` Enabled)
 - [Master API Discovery Index](https://zothos.nullai.tech/api/index.json): Overview of all machine-readable endpoints on this domain.
 - [Services & Instant Checkout API](https://zothos.nullai.tech/api/services.json): JSON catalog of custom builds, SLAs, and Stripe/Solana payment links.
-- [44-Tool Sovereign Pro Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 44 browser-native tools.
+- [71-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 71 Studio-native tools.
 - [Structured FAQ Knowledge Base API](https://zothos.nullai.tech/api/faq.json): Direct Q&A pairs for RAG, Perplexity, ChatGPT Search, and voice assistants.
 - [Schema.org @graph Entity Network API](https://zothos.nullai.tech/api/graph.json): Complete interconnected JSON-LD knowledge graph.
 - [A2A Agent Card](https://zothos.nullai.tech/.well-known/agent.json): Agent-to-Agent capability and endpoint declaration.
@@ -63,8 +63,8 @@
 ## Complete Ecosystem Network
 - **Neal Frazier Tech (Personal & B2B Engineering Hub)**: https://www.nealfrazier.tech
 - **NullAI (Local-First AI Research Lab)**: https://nullai.tech
-- **Zoth Studio v2 (Local-First AI Studio & 44-Tool Enclave)**: https://zoth.nullai.tech
+- **Zoth Studio v2 (Local-First AI Studio & 71-Tool Enclave)**: https://zoth.nullai.tech
 - **ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (Sovereign AI-Native Operating System)**: https://zothos.nullai.tech
 - **757 Tech Pro (Hampton Roads IT & AI Agency)**: https://757tech.pro
-- **Sovereign 44-Tool Storefront & Solutions Hub**: https://1nc0gn30.github.io
+- **Sovereign Tools Storefront & Solutions Hub**: https://1nc0gn30.github.io
 - **City Desk (1,000-Page Local Trade Generator)**: https://city-desk.netlify.app

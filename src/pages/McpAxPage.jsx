@@ -449,7 +449,7 @@ export default function McpAxPage() {
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 860, fontSize: '1.05rem', lineHeight: 1.7 }}>
             ZothOS v3.3.0 is a Debian 13-based distro built for autonomous AI agents to inhabit safely. It pairs a{' '}
-            <strong>152-server Master MCP Catalog (<code>/etc/zothos/mcp-servers.json</code>)</strong> and{' '}
+            <strong>163-server Master MCP Catalog (<code>/etc/zothos/mcp-servers.json</code>)</strong> and{' '}
             <strong>5 Local Loopback Enclave Clusters</strong> with <strong><code>zoth-relay</code> (:8765)</strong>—letting multiple AI agents (AGY, Claude, Cursor, Grok, Muse Code, GPT Actions) work concurrently inside Landlock kernel sandboxes and Ring 0–3 permission boundaries.
           </Typography>
         </Box>
@@ -458,7 +458,7 @@ export default function McpAxPage() {
         <Grid container spacing={2.5} sx={{ mb: 5 }}>
           {[
             {
-              metric: '152 MCP Servers',
+              metric: '163 MCP Servers',
               title: 'Master Registry + 5 Local Clusters',
               detail: '/etc/zothos/mcp-servers.json (16 air-gapped offline + 5 loopback daemon clusters)',
             },

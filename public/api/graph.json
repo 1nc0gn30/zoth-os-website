@@ -240,7 +240,7 @@
     {
       "@type": "SoftwareApplication",
       "@id": "https://zoth.nullai.tech/#app",
-      "name": "Zoth Studio v2 & 44-Tool Sovereign Pro Workstation",
+      "name": "Zoth Studio v2 & 71 Studio Tools",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web Browser, Linux, macOS, Windows (Node.js)",
       "url": "https://zoth.nullai.tech/",

@@ -7,8 +7,8 @@ const OG_IMAGE = 'https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg';
 const ROUTE_META = {
   '/': {
     title: 'ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 — The Operating System Built for AI Agents & Human Operators',
-    desc: 'ZothOS Linux v3.3.0 & ZothOS-Lite v1.0: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 152 MCP servers, zoth-relay :8765, 22 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and 175+ Kali/Parrot tools for humans.',
-    keywords: 'ZothOS, Agent-Native Linux OS, OS for AI agents, zoth-agent-os, zoth-relay, 152 MCP servers, Debian 13 Trixie, Kali Parrot dual parity, KDE Plasma 6.3 Wayland, 22 loopback daemons',
+    desc: 'ZothOS Linux v3.3.0 & ZothOS-Lite v1.0: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 163 MCP servers, zoth-relay :8765, 22 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and 175+ Kali/Parrot tools for humans.',
+    keywords: 'ZothOS, Agent-Native Linux OS, OS for AI agents, zoth-agent-os, zoth-relay, 163 MCP servers, Debian 13 Trixie, Kali Parrot dual parity, KDE Plasma 6.3 Wayland, 22 loopback daemons',
     schemaType: 'SoftwareApplication',
     breadcrumb: 'Overview',
   },
@@ -20,7 +20,7 @@ const ROUTE_META = {
     breadcrumb: 'Desktop Lab',
   },
   '/daemons': {
-    title: '22 Loopback Enclave Daemons & 9 Frontier AI Coding Agents — ZothOS v3.3.0',
+    title: '23 Loopback Enclave Daemons & 9 Frontier AI Coding Agents — ZothOS v3.3.0',
     desc: 'Explore the 22 zero-egress localhost daemons (:8094 STDP Memory through :8120 POD Margin Sentinel, :9393 Zoth Civilization, :8787 Vault) and installer scripts for 9 AI coding agents (not affiliated with their vendors).',
     keywords: '22 loopback daemons, zero-egress localhost mesh, neuro-memory-daemon STDP, Google Antigravity agy, Claude Code, Aider Ollama, ZothOS daemons',
     schemaType: 'TechArticle',
@@ -119,7 +119,7 @@ function buildRouteJsonLd(pathname, meta) {
               {
                 '@type': 'HowToStep',
                 position: 3,
-                name: 'Boot Sovereign Gold Master & Activate 22 Loopback Daemons',
+                name: 'Boot Sovereign Gold Master & Activate 23 Loopback Daemons',
                 text: 'Boot into KDE Plasma 6.3 Wayland and verify all 22 localhost enclaves with zoth-status.',
               },
             ],

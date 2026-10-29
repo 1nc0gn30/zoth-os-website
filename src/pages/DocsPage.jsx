@@ -176,7 +176,7 @@ echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
 zoth-heal --status
 # [✓] CPU Package Temp: 46.0°C (Ceiling: 55.0°C)
 # [✓] Acoustic Profile: 0 RPM Passive Whisper Mode
-# [✓] 22/22 Loopback Systemd User Daemons Healthy`,
+# [✓] 23/23 Loopback Systemd User Daemons Healthy`,
     invariants: [
       'Continuous 5-second watchdog loop (`zoth-heal`) restarts any crashed loopback daemon in under 150ms.',
       'Linux Cgroups v2 (`agent-capsule-jail` `:8105`) caps untrusted subagent CPU/RAM spikes automatically.',
