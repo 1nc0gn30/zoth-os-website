@@ -219,24 +219,6 @@
               },
               "url": "https://1nc0gn30.github.io/solutions/custom-ai-swarm-997.html"
             }
-          },
-          {
-            "@type": "Offer",
-            "position": 6,
-            "name": "All-Access Sovereign Pro Bundle (Lifetime Pro License to All 44 Tools)",
-            "description": "Unlocks unlimited production exports, full source code downloads, and unblurred outputs across all 44 browser-native SEO, AEO, Core Web Vitals, Cybersecurity, AI Agent Governance, and E-Commerce tools.",
-            "price": "0.00",
-            "priceCurrency": "USD",
-            "url": "https://github.com/1nc0gn30/zoth-os",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "All-Access Sovereign Pro Bundle (Lifetime Pro License to All 44 Tools)",
-              "description": "Unlocks unlimited production exports, full source code downloads, and unblurred outputs across all 44 browser-native SEO, AEO, Core Web Vitals, Cybersecurity, AI Agent Governance, and E-Commerce tools.",
-              "provider": {
-                "@id": "https://www.nealfrazier.tech/#organization"
-              },
-              "url": "https://1nc0gn30.github.io/"
-            }
           }
         ]
       }
@@ -265,13 +247,6 @@
       "downloadUrl": "https://github.com/1nc0gn30/zoth-studio-v2",
       "creator": {
         "@id": "https://www.nealfrazier.tech/#neal-frazier"
-      },
-      "offers": {
-        "@type": "Offer",
-        "name": "All-Access Sovereign Pro Bundle (44 Tools Lifetime)",
-        "price": "0.00",
-        "priceCurrency": "USD",
-        "url": "https://github.com/1nc0gn30/zoth-os"
       }
     },
     {

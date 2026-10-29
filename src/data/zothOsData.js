@@ -338,7 +338,7 @@ export const DESKTOP_SCREENSHOTS = [
   },
   {
     title: 'ZothOS Cockpit Pro & Studio v2',
-    badge: '59 WORKSTATIONS + 21-AGENT DECK',
+    badge: '71 STUDIO TOOLS + 21-AGENT DECK',
     src: '/screenshots/zoth-cockpit-gold.png',
     desc: 'Pre-installed `zoth-cockpit` operations center and `/opt/zoth-studio` with live loopback bindings to all 22 resident daemons and 28 WebGPU client tools.',
   },
