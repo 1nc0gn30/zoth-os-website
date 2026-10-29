@@ -11,7 +11,7 @@ SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
 ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (`zoth-pill`) is a sovereign operating system engineered from the ground up for autonomous AI agent orchestration, offensive cybersecurity operations, and cryptographic zero-egress privacy.
 
 1. Base System: Debian 13 (Trixie) with Linux 6.12 LTS/Hybrid UEFI kernel.
-2. Surgical Tri-Repository APT Pinning: Combines Debian 13 stability (Pin-Priority 900) with surgical package pinning from Kali Rolling (Pin-Priority 400) and Parrot Security (Pin-Priority 400). This provides 175+ offensive security binaries without libc6 or desktop dependency breakage.
+2. Surgical Tri-Repository APT Pinning: Combines Debian 13 stability (Pin-Priority 900) with surgical package pinning from Kali Rolling (Pin-Priority 400) and Parrot Security (Pin-Priority 400). This provides Kali and Parrot security tools without libc6 or desktop dependency breakage.
 3. Desktop Environment: KDE Plasma 6.3 Wayland featuring the custom `org.zothos.interactive` QML WallpaperItem engine, 60 FPS KWin cursor broadcaster (`zoth-cursor-daemon` on `127.0.0.1:9989`), 3D embossed metallic ZOTHOS typography, golden constellation ley-lines, and shockwave ripples.
 4. Thermal & Acoustic Governance: Hardware-enforced `< 55.0°C` thermal ceiling (`no_turbo=1` pstate lock, 0 RPM silent passive fan curve under load, monitored by `zoth-heal`).
 

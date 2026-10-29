@@ -7,7 +7,7 @@ const OG_IMAGE = 'https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg';
 const ROUTE_META = {
   '/': {
     title: 'ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 — The Operating System Built for AI Agents & Human Operators',
-    desc: 'ZothOS Linux v3.3.0 & ZothOS-Lite v1.0: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 163 MCP servers, zoth-relay :8765, 22 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and 175+ Kali/Parrot tools for humans.',
+    desc: 'ZothOS Linux v3.3.0 & ZothOS-Lite v1.0: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 163 MCP servers, zoth-relay :8765, 22 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and Kali and Parrot security tools for humans.',
     keywords: 'ZothOS, Agent-Native Linux OS, OS for AI agents, zoth-agent-os, zoth-relay, 163 MCP servers, Debian 13 Trixie, Kali Parrot dual parity, KDE Plasma 6.3 Wayland, 22 loopback daemons',
     schemaType: 'SoftwareApplication',
     breadcrumb: 'Overview',
@@ -27,7 +27,7 @@ const ROUTE_META = {
     breadcrumb: '22 Daemons & 9 Agents',
   },
   '/security': {
-    title: '175+ Offensive Security Arsenal & Argon2id Sovereign Vault — ZothOS v3.3.0',
+    title: 'Kali and Parrot security tools & Argon2id Sovereign Vault — ZothOS v3.3.0',
     desc: 'Surgical APT pinning across Debian 13, Kali Rolling, and Parrot Security. Test the interactive zoth-vault (:8787) Argon2id + ChaCha20-Poly1305 memory-only secret injector.',
     keywords: 'ZothOS security arsenal, Kali Parrot APT pinning, zoth-vault Argon2id ChaCha20, NullAI Ghostmode Tor, BloodHound, Certipy-AD, ProjectDiscovery',
     schemaType: 'TechArticle',

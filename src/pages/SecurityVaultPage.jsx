@@ -79,7 +79,7 @@ sudo zoth-mode ghost && zoth-ghost status`;
         </HeroItem>
         <HeroItem>
           <Chip
-            label="175+ KALI + PARROT TOOLS • ZOTH VAULT (:8787)"
+            label="Kali and Parrot security tools • ZOTH VAULT (:8787)"
             size="small"
             sx={{
               mt: 2.5,
@@ -173,7 +173,7 @@ sudo zoth-mode ghost && zoth-ghost status`;
         </ProOutputGate>
       </Paper>
 
-      {/* 175+ Offensive Security Arsenal Categories */}
+      {/* Kali and Parrot security tools Categories */}
       {SECURITY_ARSENAL_CATEGORIES.map((group) => (
         <Box key={group.category} sx={{ mb: 6 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2, flexWrap: 'wrap' }}>

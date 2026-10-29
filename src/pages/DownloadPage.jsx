@@ -123,7 +123,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
             zothos-3.3.0-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
-            Hybrid UEFI + Legacy BIOS Live & Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 163 MCP catalog that stays off until you enable a server, 175+ Kali/Parrot tools, and 22 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
+            Hybrid UEFI + Legacy BIOS Live & Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 163 MCP catalog that stays off until you enable a server, Kali and Parrot security tools, and 23 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
           </Typography>
           <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
             $ bash zothos-join-iso.sh && sudo dd if=zothos-3.3.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
@@ -221,7 +221,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
             onClick={() => setIncludeKaliFull((v) => !v)}
             sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
           >
-            Kali + Parrot 175+ Arsenal: {includeKaliFull ? 'ON' : 'MINIMAL'}
+            Kali and Parrot security tools: {includeKaliFull ? 'ON' : 'MINIMAL'}
           </Button>
           <Button
             size="small"

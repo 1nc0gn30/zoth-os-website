@@ -19,7 +19,7 @@ export default function Footer() {
     { label: 'ZothOS v3.3.0 Overview', to: '/' },
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
     { label: '23 Loopback Daemons & 11 AI Agents', to: '/daemons' },
-    { label: '175+ Security Arsenal & Zoth Vault', to: '/security' },
+    { label: 'Kali and Parrot security tools & Zoth Vault', to: '/security' },
     { label: 'MCP & Agent Experience (AX) Hub', to: '/mcp' },
     { label: 'ISO Download & Custom Builder', to: '/download' },
     { label: 'System Codex & APT Architecture', to: '/docs' },

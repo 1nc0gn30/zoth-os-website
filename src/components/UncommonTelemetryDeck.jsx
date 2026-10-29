@@ -13,7 +13,7 @@ const SHAPES = [
   { id: 'astrolabe', label: 'Astrolabe SDF', sub: 'Orbital Armillary' },
   { id: 'dag', label: 'Vaelor L1 DAG', sub: '100-Agent PoUW' },
   { id: 'synapse', label: 'STDP Synapse', sub: 'Biomorphic Memory' },
-  { id: 'hex', label: 'HexStrike Radar', sub: '175+ Sec Arsenal' },
+  { id: 'hex', label: 'HexStrike Radar', sub: 'Kali and Parrot security tools' },
   { id: 'quorum', label: 'Byzantine Quorum', sub: '3-Model Consensus' },
 ];
 
@@ -448,7 +448,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
                 label="CYBER ARSENAL & VAULT"
-                value="175+ SEC TOOLS"
+                value="Kali and Parrot security tools"
                 sub="Kali + Parrot Dual Parity · Argon2id + AES-256-GCM Zoth Vault"
                 dark={dark}
                 to="/security"

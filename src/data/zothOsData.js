@@ -35,7 +35,7 @@ export const REALITY_PILL_MODES = [
     secondary: '#A7F3D0',
     bgGlow: 'rgba(52, 211, 153, 0.24)',
     desc: 'High-contrast emerald phosphor cyber-deck profile optimized for multi-hour autonomous agent swarms, HexStrike terminal auditing, and zero-glare nocturnal human engineering.',
-    posture: 'HexStrike AI Terminal Ready • 175+ Kali/Parrot Tools Indexed • <55°C Thermal Lock',
+    posture: 'HexStrike AI Terminal Ready • Kali and Parrot security tools indexed • <55°C Thermal Lock',
     audioCue: '/usr/share/sounds/zothos/matrix-chirp.wav',
   },
   {
@@ -72,7 +72,7 @@ export const AGENT_SECURITY_RINGS = [
     tokenBudget: '64K / req • 1M / hr',
     ramCap: '16 GB RAM • 90% CPU',
     accent: '#A855F7',
-    desc: 'Authorized to orchestrate the 175+ Kali/Parrot & HexStrike security tools (`run_sec_tool`), toggle NullAI Ghostmode Tor routing, randomize MACs, and query systemd.',
+    desc: 'Authorized to orchestrate the Kali and Parrot security tools (`run_sec_tool`), toggle NullAI Ghostmode Tor routing, randomize MACs, and query systemd.',
   },
   {
     ring: 'Ring 2',
@@ -129,7 +129,7 @@ export const CORE_PILLARS = [
     id: 'parity',
     badge: 'DEBIAN 13.7 + KALI + PARROT',
     title: 'Surgical Tri-Repository Security Parity',
-    desc: 'Engineered on Debian 13.7 (Trixie) with Linux 6.12 kernel and surgical APT pinning (`900` Debian base, `400` Kali Rolling & Parrot Security) — giving both red-team humans and `WARLOCK`-ring agents 175+ offensive security tools with zero package breakage.',
+    desc: 'Engineered on Debian 13.7 (Trixie) with Linux 6.12 kernel and surgical APT pinning (`900` Debian base, `400` Kali Rolling & Parrot Security) — giving both red-team humans and `WARLOCK`-ring agents Kali and Parrot security tools with zero package breakage.',
     accent: '#EF4444',
   },
   {

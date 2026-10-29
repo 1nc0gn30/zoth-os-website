@@ -56,7 +56,7 @@ const MCP_SERVERS = [
     port: ':8105 / :8112',
     transport: 'stdio + cgroups-v2 jail',
     category: 'Offensive Security',
-    desc: 'Sandboxed MCP bridge to 175+ Kali Rolling & Parrot Security binaries (Nuclei, Subfinder, RustScan, Impacket, Certipy-AD, Ghidra headless).',
+    desc: 'Sandboxed MCP bridge to Kali and Parrot security tools (Nuclei, Subfinder, RustScan, Impacket, Certipy-AD, Ghidra headless).',
     tools: ['hexstrike_recon_scan', 'hexstrike_cve_audit', 'hexstrike_secret_scan'],
   },
   {
@@ -192,7 +192,7 @@ const PLAYGROUND_TOOLS = [
             engramId: 'eng_cgroups_hexstrike',
             similarity: 0.912,
             weight: 1.52,
-            summary: '175+ offensive binaries isolated inside Linux cgroups-v2 via agent-capsule-jail (:8105).',
+            summary: 'Kali and Parrot security tools isolated inside Linux cgroups-v2 via agent-capsule-jail (:8105).',
           },
           {
             engramId: 'eng_ufw_zero_egress',

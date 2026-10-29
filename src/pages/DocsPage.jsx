@@ -33,7 +33,7 @@ const CODEX_SECTIONS = [
     kicker: 'PACKAGE & KERNEL ARCHITECTURE',
     title: 'Surgical Tri-Repository APT Pinning (Debian 13 + Kali + Parrot)',
     summary:
-      'ZothOS v3.3.0 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so 175+ offensive binaries co-exist with zero glibc or KDE Plasma dependency conflicts.',
+      'ZothOS v3.3.0 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so Kali and Parrot security tools co-exist with zero glibc or KDE Plasma dependency conflicts.',
     codeTitle: '/etc/apt/preferences.d/zoth-parity.pref',
     code: `Package: *
 Pin: release n=trixie
@@ -51,7 +51,7 @@ Pin-Priority: 400
 # sudo apt install -t kali-rolling bloodhound certipy-ad netexec caido`,
     invariants: [
       'Core libc6, systemd, and KDE Plasma 6.3 Wayland packages are strictly locked to Debian 13 (Trixie) at Pin-Priority 900.',
-      '175+ Kali Rolling and Parrot Security tools are pulled surgically with isolated dependency trees.',
+      'Kali and Parrot security tools are pulled surgically with isolated dependency trees.',
       'Verified reproducible live-build pipeline with SHA-256 and Sigstore Cosign keyless attestation.',
     ],
   },

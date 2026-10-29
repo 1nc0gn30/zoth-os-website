@@ -375,7 +375,7 @@ export default function HomePage() {
               {[
                 'Bespoke 24K Celtic Gold Desktop: KDE Plasma 6.3 Wayland with Zoth-Hermetic 3D glass icons, 60 FPS interactive QML wallpaper (zoth-pill), and the All-Seeing Eye cursor companion (zoth-desktop-pet).',
                 'zoth-cockpit Operations Center: Flagship Electron dashboard + curses TUI (--tui) with rolling 60s hardware waveforms, 21-Agent Pantheon dispatch, and live daemon log inspection.',
-                'Debian 13.7 + Kali + Parrot Parity: Surgical APT pinning (900 Debian Trixie, 400 Kali/Parrot) gives human red-teamers 175+ offensive security tools without rolling-release breakage.',
+                'Debian 13.7 + Kali + Parrot Parity: Surgical APT pinning (900 Debian Trixie, 400 Kali/Parrot) gives human red-teamers Kali and Parrot security tools without rolling-release breakage.',
                 '71 Studio tools (54 in-browser + 17 local CLI; 59 with public repos) and 43 workstations pre-installed for offline engineering.',
                 '4 Instant Reality Modes & Whisper-Quiet Hardware: Flip between gold, ghost (transparent Tor), matrix, and win11 decoy mode while keeping CPU < 55.0°C at 0 RPM.',
               ].map((bullet) => (

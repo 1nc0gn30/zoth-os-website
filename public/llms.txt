@@ -5,10 +5,10 @@
 
 ## Dual-Sovereignty Core Architecture (For Autonomous AI Agents × For Human Operators)
 - **Primary Target Audience**: A Debian 13-based distro built for autonomous AI agents (`agy`, `claude`, `cursor`, `aider`, `grok-bot`, `cline`, `hermes`, `codex`, `ollama`, `Muse Code`, custom GPTs; not affiliated with their vendors) to inhabit safely, while giving human operators a flagship 24K Gold KDE Plasma 6.3 Wayland workstation.
-- **Base Distribution**: Debian 13.7 (Trixie) + Linux 6.12 Hybrid UEFI with surgical APT pinning (`900` Debian Trixie, `400` Kali Rolling & Parrot OS Security — 175+ offensive security tools).
+- **Base Distribution**: Debian 13.7 (Trixie) + Linux 6.12 Hybrid UEFI with surgical APT pinning (`900` Debian Trixie, `400` Kali Rolling & Parrot OS Security — Kali and Parrot security tools).
 - **4 Hardware/OS Agent Security Rings (`/etc/zothos/agent-permissions.json` & `zoth-agent-os`)**:
   - `Ring 0 (SOVEREIGN / Layer 4)`: Root, kernel, systemd, amnesic RAM purge (128K token budget).
-  - `Ring 1 (SYSADMIN / Layer 3 WARLOCK)`: 175+ Kali/Parrot & HexStrike security tools, Ghostmode Tor control (`cgroups_standard`, 16 GB RAM cap).
+  - `Ring 1 (SYSADMIN / Layer 3 WARLOCK)`: Kali and Parrot security tools, Ghostmode Tor control (`cgroups_standard`, 16 GB RAM cap).
   - `Ring 2 (TOOLMASTER / Layer 2 CYBERPUPPET)`: Default agent operating ring — 163-server MCP runtime, workspace file R/W, Git, and 60 FPS GUI Computer Use while blocking `/root`, `/boot`, `/etc/shadow`, and `~/.ssh/id_*` (`user_namespace` + Landlock, 8 GB RAM cap).
   - `Ring 3 (SPECTRE / Layer 0)`: Zero-trust `firejail_strict` sandbox for untrusted subagents & code (2 GB RAM cap, loopback `:11434` only).
 - **152 Pre-Registered MCP Servers (`/etc/zothos/mcp-servers.json`) + `zoth-relay` (`127.0.0.1:8765`)**: Master MCP catalog (`zoth-mcp`) with 16 air-gapped offline servers (`filesystem`, `memory`, `sequential-thinking`, `git`, `sqlite`, `duckdb`, `repomix`, etc.) plus `zoth-relay` Landlock multi-agent bridge with 288-bit SHA-256 tokens, isolated `~/agent-workspace/<name>`, and `/var/log/zoth-relay/audit.log`.
@@ -23,7 +23,7 @@
 - `/` — ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 Overview, Dual-Sovereignty Manifesto & Ring 0–3 Architecture
 - `/desktop` — Interactive ZothOS Desktop Simulator, Reality Pill Switcher & `zoth-sh` Kernel Terminal
 - `/daemons` — The 22 Resident Loopback Enclave Daemons & 9 Frontier AI Coding Agents
-- `/security` — 175+ Offensive Security Arsenal, `zoth-vault` Argon2id RAM Injector & Ghostmode Tor
+- `/security` — Kali and Parrot security tools, `zoth-vault` Argon2id RAM Injector & Ghostmode Tor
 - `/mcp` — Interactive Model Context Protocol (MCP) Config Generator, JSON-RPC 2.0 Playground & AX Hub
 - `/download` — ISO Download (`zothos-join-iso.sh`), Agent KVM Appliance (`zothos.qcow2`) & Custom Live-Build Studio
 - `/docs` — Full System Codex, APT Pinning Architecture, Wayland SHM Pipeline, Thermal Invariants & FAQs
