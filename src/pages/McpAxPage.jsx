@@ -326,7 +326,7 @@ const AX_ENDPOINTS = [
 SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
 SECTION 2: FOUR REALITY PILL OPERATIONAL MODES (zoth-mode gold|ghost|matrix|incognito)
 SECTION 3: 22 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
-SECTION 4: 9 PRE-INSTALLED FRONTIER AI CODING AGENTS
+SECTION 4: INSTALLER SCRIPTS FOR 9 AI CODING AGENTS (NOT AFFILIATED WITH THEIR VENDORS)
 SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)`,
   },
 ];
@@ -448,7 +448,7 @@ export default function McpAxPage() {
             MCP & Agent Experience (AX) Hub
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 860, fontSize: '1.05rem', lineHeight: 1.7 }}>
-            ZothOS v3.3.0 is built from Ring 0 up for autonomous AI agents to inhabit safely. It pairs a{' '}
+            ZothOS v3.3.0 is a Debian 13-based distro built for autonomous AI agents to inhabit safely. It pairs a{' '}
             <strong>152-server Master MCP Catalog (<code>/etc/zothos/mcp-servers.json</code>)</strong> and{' '}
             <strong>5 Local Loopback Enclave Clusters</strong> with <strong><code>zoth-relay</code> (:8765)</strong>—letting multiple AI agents (AGY, Claude, Cursor, Grok, Muse Code, GPT Actions) work concurrently inside Landlock kernel sandboxes and Ring 0–3 permission boundaries.
           </Typography>

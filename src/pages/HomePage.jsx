@@ -146,7 +146,7 @@ export default function HomePage() {
             }}
           >
             Standard Linux was designed for a single human typing into bash.{' '}
-            <strong>ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</strong> is engineered from Ring 0 up as a{' '}
+            <strong>ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</strong> is a Debian 13-based distro built as a{' '}
             <strong>permission-ringed, self-healing habitat for autonomous AI agents</strong> (
             <code>zoth-agent-os</code>, 152 pre-registered MCP servers, <code>zoth-relay</code> Landlock multi-agent bridge,{' '}
             <code>zoth-vault</code> RAM secret injection, and 22 loopback daemons)—while giving{' '}

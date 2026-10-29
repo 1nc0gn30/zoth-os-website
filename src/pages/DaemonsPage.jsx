@@ -97,7 +97,7 @@ WantedBy=default.target`;
         </HeroItem>
         <HeroItem>
           <Typography color="text.secondary" sx={{ maxWidth: '65ch', mb: 5 }}>
-            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all 22 resident daemons and the 9 pre-installed Frontier AI coding agents below.
+            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all 22 resident daemons and the installer scripts for 9 AI coding agents (not affiliated with their vendors) below.
           </Typography>
         </HeroItem>
       </HeroReveal>

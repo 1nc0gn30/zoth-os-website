@@ -74,7 +74,7 @@ export default function Footer() {
                 pl: 2,
               }}
             >
-              Bootable Debian 13 (Trixie) + Kali Rolling & Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, 9 pre-installed Frontier AI coding agents, 22 localhost loopback daemons, and Argon2id hardware secrets.
+              Bootable Debian 13 (Trixie) + Kali Rolling & Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, installer scripts for 9 AI coding agents (not affiliated with their vendors), 22 localhost loopback daemons, and Argon2id hardware secrets.
             </Typography>
 
             <Stack direction="row" spacing={1.2} flexWrap="wrap" useFlexGap>

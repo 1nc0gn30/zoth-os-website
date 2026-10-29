@@ -115,7 +115,7 @@ export const CORE_PILLARS = [
     id: 'daemons',
     badge: '22 LOOPBACK DAEMONS + 9 AGENTS',
     title: 'Zero-Egress 127.0.0.1 Enclave Mesh',
-    desc: '9 pre-installed Frontier AI coding agents (`agy`, `claude`, `grok`, `aider`, `cursor`, `cline`, `hermes`, `codex`, `ollama`) wired to 22 localhost daemons (`:8094` STDP Synaptic Memory through `:8120` Margin Sentinel, `:9393` Civilization, `:8787` Vault).',
+    desc: 'Installer scripts for 9 AI coding agents (`agy`, `claude`, `grok`, `aider`, `cursor`, `cline`, `hermes`, `codex`, `ollama`; not affiliated with their vendors) wired to 22 localhost daemons (`:8094` STDP Synaptic Memory through `:8120` Margin Sentinel, `:9393` Civilization, `:8787` Vault).',
     accent: '#34D399',
   },
   {
@@ -380,7 +380,7 @@ export const COMPARISON_ROWS = [
     ubuntu: 'None',
   },
   {
-    feature: 'Pre-Installed Frontier AI Agents & Working Memory',
+    feature: 'AI Agent Installer Scripts & Working Memory',
     zoth: '11 Agents & Engines (AGY, Claude, Grok, Aider, Cursor, Cline, Hermes, Codex, Ollama, AZOTH Braille AI, Chain of Thoughts zoth-cot)',
     kali: 'None',
     parrot: 'None',

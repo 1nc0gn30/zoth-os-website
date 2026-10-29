@@ -53,7 +53,7 @@ Every ZothOS daemon binds strictly to `127.0.0.1` and never exposes public netwo
 - `:9989` — `zoth-cursor-daemon` (Python / KWin DBus): 60 FPS Wayland/X11 global cursor broadcaster (`127.0.0.1:9989` + `/dev/shm/zoth_cursor_pos`) powering desktop constellation & aura physics.
 
 ================================================================================
-SECTION 4: 9 PRE-INSTALLED FRONTIER AI CODING AGENTS
+SECTION 4: INSTALLER SCRIPTS FOR 9 AI CODING AGENTS (NOT AFFILIATED WITH THEIR VENDORS)
 ================================================================================
 1. Google Antigravity (`agy`) — Flagship Agentic IDE, subagent orchestrator, and Chrome CDP verification harness.
 2. Claude Code CLI (`claude`) — Deep architectural refactoring and multi-file AST terminal agent.

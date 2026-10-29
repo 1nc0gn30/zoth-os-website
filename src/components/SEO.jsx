@@ -21,7 +21,7 @@ const ROUTE_META = {
   },
   '/daemons': {
     title: '22 Loopback Enclave Daemons & 9 Frontier AI Coding Agents — ZothOS v3.3.0',
-    desc: 'Explore the 22 zero-egress localhost daemons (:8094 STDP Memory through :8120 POD Margin Sentinel, :9393 Zoth Civilization, :8787 Vault) and 9 pre-installed AI coding agents.',
+    desc: 'Explore the 22 zero-egress localhost daemons (:8094 STDP Memory through :8120 POD Margin Sentinel, :9393 Zoth Civilization, :8787 Vault) and installer scripts for 9 AI coding agents (not affiliated with their vendors).',
     keywords: '22 loopback daemons, zero-egress localhost mesh, neuro-memory-daemon STDP, Google Antigravity agy, Claude Code, Aider Ollama, ZothOS daemons',
     schemaType: 'TechArticle',
     breadcrumb: '22 Daemons & 9 Agents',

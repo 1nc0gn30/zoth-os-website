@@ -1,7 +1,7 @@
 # ZothOS Website — Official Distribution Hub & Agent-Native OS Showcase
 
 > **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.3.0 & ZothOS-Lite v1.0**  
-> *Engineered from Ring 0 up as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, Chain of Thoughts `zoth-cot` Merkle Working Memory DAG, 152 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, ZothOS-Lite v1.0 Amnesic Monotone Edition, Debian 13 + Kali & Parrot dual parity).*
+> *A Debian 13-based distro built as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, Chain of Thoughts `zoth-cot` Merkle Working Memory DAG, 152 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, ZothOS-Lite v1.0 Amnesic Monotone Edition, Debian 13 + Kali & Parrot dual parity).*
 
 [![Live Production Site](https://img.shields.io/badge/Live-zothos.nullai.tech-gold?style=flat-square&logo=googlechrome)](https://zothos.nullai.tech)
 [![Netlify Deploy](https://img.shields.io/badge/Deploy-Netlify%20Production-00C7B7?style=flat-square&logo=netlify)](https://app.netlify.com)

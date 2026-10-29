@@ -4,7 +4,7 @@
 > Canonical URL: https://zothos.nullai.tech
 
 ## Dual-Sovereignty Core Architecture (For Autonomous AI Agents × For Human Operators)
-- **Primary Target Audience**: Built from Ring 0 up for autonomous AI agents (`agy`, `claude`, `cursor`, `aider`, `grok-bot`, `cline`, `hermes`, `codex`, `ollama`, `Muse Code`, custom GPTs) to inhabit safely, while giving human operators a flagship 24K Gold KDE Plasma 6.3 Wayland workstation.
+- **Primary Target Audience**: A Debian 13-based distro built for autonomous AI agents (`agy`, `claude`, `cursor`, `aider`, `grok-bot`, `cline`, `hermes`, `codex`, `ollama`, `Muse Code`, custom GPTs; not affiliated with their vendors) to inhabit safely, while giving human operators a flagship 24K Gold KDE Plasma 6.3 Wayland workstation.
 - **Base Distribution**: Debian 13.7 (Trixie) + Linux 6.12 Hybrid UEFI with surgical APT pinning (`900` Debian Trixie, `400` Kali Rolling & Parrot OS Security — 175+ offensive security tools).
 - **4 Hardware/OS Agent Security Rings (`/etc/zothos/agent-permissions.json` & `zoth-agent-os`)**:
   - `Ring 0 (SOVEREIGN / Layer 4)`: Root, kernel, systemd, amnesic RAM purge (128K token budget).
