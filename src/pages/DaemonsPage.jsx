@@ -76,7 +76,7 @@ WantedBy=default.target`;
         </HeroItem>
         <HeroItem>
           <Chip
-            label="22 LOOPBACK DAEMONS + 9 FRONTIER AI AGENTS"
+            label="23 LOOPBACK DAEMONS + 9 CODING AGENTS (11 WITH AZOTH + ZOTH-COT)"
             size="small"
             sx={{
               mt: 2.5,
@@ -97,7 +97,7 @@ WantedBy=default.target`;
         </HeroItem>
         <HeroItem>
           <Typography color="text.secondary" sx={{ maxWidth: '65ch', mb: 5 }}>
-            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all 22 resident daemons and the installer scripts for 9 AI coding agents (not affiliated with their vendors) below.
+            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all 23 resident daemons and the installer scripts for 9 AI coding agents (not affiliated with their vendors) below.
           </Typography>
         </HeroItem>
       </HeroReveal>
@@ -157,13 +157,13 @@ WantedBy=default.target`;
         </StaggerChildren>
       </Box>
 
-      {/* 22 Resident Loopback Daemons Matrix */}
+      {/* 23 Resident Loopback Daemons Matrix */}
       <Box sx={{ mb: 6 }}>
         <Typography sx={{ fontFamily: mono, color: '#34D399', fontWeight: 800, fontSize: '0.76rem', letterSpacing: '0.16em', mb: 1 }}>
           02 / 02 · 127.0.0.1 LOOPBACK SERVICE REGISTRY
         </Typography>
         <Typography variant="h3" sx={{ mb: 2.5 }}>
-          The 22 Resident Loopback Daemons
+          The 23 Resident Loopback Daemons
         </Typography>
 
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 3 }}>
@@ -239,7 +239,7 @@ WantedBy=default.target`;
             </Button>
           </Box>
 
-          <ProOutputGate title={`Unlock ${selectedDaemon.name}.service & 22-Daemon Systemd Bundle`}>
+          <ProOutputGate title={`${selectedDaemon.name}.service & 23-Daemon Systemd Bundle`}>
             <Box
               component="pre"
               sx={{

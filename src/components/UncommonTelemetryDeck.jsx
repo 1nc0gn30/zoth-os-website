@@ -199,7 +199,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
               }}
             />
             <Chip
-              label="KERNEL 6.12 · DEBIAN 13.7 · 17/17 DAEMONS ACTIVE"
+              label="KERNEL 6.12 · DEBIAN 13.7 · 23 LOOPBACK DAEMONS (LOCAL)"
               size="small"
               sx={{
                 fontFamily: mono,
@@ -439,7 +439,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
                 label="LOOPBACK ENCLAVE MESH"
-                value="22 DAEMONS · 17 UP"
+                value="23 LOOPBACK DAEMONS"
                 sub="Adytum :3000 · WebGen :5173 · Memory :8094 · Consensus :8096 · Civ :9393"
                 dark={dark}
                 to="/daemons"

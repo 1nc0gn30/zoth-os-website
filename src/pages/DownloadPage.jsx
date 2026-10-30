@@ -252,7 +252,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
           ))}
         </Box>
 
-        <ProOutputGate title="Unlock Custom Live-Build ISO Synthesis Script & APT Pinning Config">
+        <ProOutputGate title="Custom Live-Build ISO Synthesis Script & APT Pinning Config">
           <Box
             component="pre"
             sx={{

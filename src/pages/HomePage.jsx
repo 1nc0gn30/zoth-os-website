@@ -149,7 +149,7 @@ export default function HomePage() {
             <strong>ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</strong> is a Debian 13-based distro built as a{' '}
             <strong>permission-ringed, self-healing habitat for autonomous AI agents</strong> (
             <code>zoth-agent-os</code>, 163 pre-registered MCP servers, <code>zoth-relay</code> Landlock multi-agent bridge,{' '}
-            <code>zoth-vault</code> RAM secret injection, and 22 loopback daemons)—while giving{' '}
+            <code>zoth-vault</code> RAM secret injection, and 23 loopback daemons)—while giving{' '}
             <strong>human operators</strong> a flagship 24K Gold KDE Plasma 6.3 Wayland workstation with Debian 13.7 (Trixie), Kali Rolling, and Parrot Security dual parity.
           </Typography>
         </HeroItem>
@@ -741,7 +741,7 @@ $ zoth-cot recall FALCON-7
                 ⣿ [⠅⠉] ⠴ @264.9 • 0x3925 • 100% OPEN ACCESS
               </Typography>
               <Typography sx={{ fontFamily: mono, fontSize: '0.68rem', fontWeight: 800, color: '#D4AF37' }}>
-                75+ KALI & PARROT CLI TOOLS
+                KALI AND PARROT SECURITY TOOLS
               </Typography>
             </Box>
           </Box>
@@ -813,7 +813,7 @@ $ zoth-cot recall FALCON-7
         subtitle="Flash ZothOS v3.3.0 to bare metal or KVM, launch the Zoth Studio v2 web cockpit, or build a custom live-build ISO tailored to your agent swarm."
         toolTitle="Option 1: ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 ISO"
         toolTag="HYBRID UEFI ISO"
-        toolDescription="Bootable Debian 13 + Kali/Parrot dual-parity Linux OS with KDE Plasma 6.3 Wayland and 22 loopback enclaves."
+        toolDescription="Bootable Debian 13 + Kali/Parrot dual-parity Linux OS with KDE Plasma 6.3 Wayland and 23 loopback enclaves."
         toolRepo="https://github.com/NullAITech/zoth-os"
         toolCommand="git clone https://github.com/NullAITech/zoth-os.git && cd zoth-os"
         studioRepo="https://github.com/NullAITech/zoth-studio-v2"

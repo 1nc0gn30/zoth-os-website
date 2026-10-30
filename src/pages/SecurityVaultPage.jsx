@@ -151,7 +151,7 @@ sudo zoth-mode ghost && zoth-ghost status`;
           </Button>
         </Box>
 
-        <ProOutputGate title="Unlock Zoth-Vault Memory-Only Injection & Ghostmode Pipeline">
+        <ProOutputGate title="Zoth-Vault Memory-Only Injection & Ghostmode Pipeline">
           <Box
             component="pre"
             sx={{

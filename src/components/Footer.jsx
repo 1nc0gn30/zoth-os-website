@@ -18,7 +18,7 @@ export default function Footer() {
   const osSections = [
     { label: 'ZothOS v3.3.0 Overview', to: '/' },
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
-    { label: '23 Loopback Daemons & 11 AI Agents', to: '/daemons' },
+    { label: '23 Loopback Daemons & 9 Coding Agents (11 with AZOTH + zoth-cot)', to: '/daemons' },
     { label: 'Kali and Parrot security tools & Zoth Vault', to: '/security' },
     { label: 'MCP & Agent Experience (AX) Hub', to: '/mcp' },
     { label: 'ISO Download & Custom Builder', to: '/download' },
@@ -74,13 +74,13 @@ export default function Footer() {
                 pl: 2,
               }}
             >
-              Bootable Debian 13 (Trixie) + Kali Rolling & Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, installer scripts for 9 AI coding agents (not affiliated with their vendors), 22 localhost loopback daemons, and Argon2id hardware secrets.
+              Bootable Debian 13 (Trixie) + Kali Rolling & Parrot OS dual-parity operating system featuring KDE Plasma 6.3 Wayland, installer scripts for 9 AI coding agents (not affiliated with their vendors), 23 localhost loopback daemons, and Argon2id hardware secrets.
             </Typography>
 
             <Stack direction="row" spacing={1.2} flexWrap="wrap" useFlexGap>
               <Chip
                 icon={<TerminalIcon sx={{ fontSize: '0.88rem !important', color: `${isDark ? '#34D399' : '#047857'} !important` }} />}
-                label="22 LOOPBACK DAEMONS"
+                label="23 LOOPBACK DAEMONS"
                 size="small"
                 sx={{
                   fontFamily: mono,

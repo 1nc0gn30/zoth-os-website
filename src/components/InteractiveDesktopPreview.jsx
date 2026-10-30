@@ -302,7 +302,7 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
     { label: 'Zoth Terminal', icon: <TerminalIcon sx={{ fontSize: 18 }} />, route: '/desktop' },
     { label: 'HexStrike Sec', icon: <SecurityIcon sx={{ fontSize: 18 }} />, route: '/security' },
     { label: 'Zoth Vault', icon: <LockIcon sx={{ fontSize: 18 }} />, route: '/security' },
-    { label: '22 Daemons', icon: <HubIcon sx={{ fontSize: 18 }} />, route: '/daemons' },
+    { label: '23 Daemons', icon: <HubIcon sx={{ fontSize: 18 }} />, route: '/daemons' },
     { label: 'Get ISO', icon: <DownloadIcon sx={{ fontSize: 18 }} />, route: '/download' },
   ];
 
@@ -484,7 +484,7 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
             <Box sx={{ color: '#34D399', fontWeight: 700, display: { xs: 'none', md: 'inline' } }}>
-              CPU 41.2°C (0 RPM) • 23/23 Daemons UP
+              Demo preview • 23 Loopback Daemons
             </Box>
             <Box
               sx={{

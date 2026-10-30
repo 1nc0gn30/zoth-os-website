@@ -30,7 +30,7 @@ const INITIAL_HISTORY = [
     type: 'system',
     text: [
       'ZOTHOS LINUX v3.3.0-RELEASE + ZOTHOS-LITE v1.0 (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
-      'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • Chain of Thoughts (zoth-cot) DAG • 163 MCP Servers • 22/22 Loopback Daemons Online.',
+      'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • Chain of Thoughts (zoth-cot) DAG • 163 MCP Servers • 23 Loopback Daemons.',
       'Type "help" or click any quick-command chip below to test both Agent-Native and Human Workstation CLI tools.',
     ].join('\n'),
   },
@@ -117,7 +117,7 @@ export default function DesktopSimulatorPage() {
           '[✓] WORKING MEMORY DAG: zoth-cot ONLINE (SHA-256 Merkle Chain N00 -> N01 -> N02)',
           '[✓] MULTI-AGENT RELAY:  zoth-relay ONLINE (127.0.0.1:8765 • Landlock Sandbox)',
           '[✓] CURSOR COMPOSITOR:  zoth-cursor-daemon ONLINE (127.0.0.1:9989 @ 60 FPS)',
-          '[✓] LOOPBACK ENCLAVES:  22 / 22 ACTIVE (:8094 STDP Memory .. :8145 ZothOS-Lite)',
+          '[✓] LOOPBACK ENCLAVES:  23 DEFINED (live state: zoth status)',
           '[✓] SOVEREIGN VAULT:    ONLINE (127.0.0.1:8787 • Argon2id + ChaCha20-Poly1305)',
           '[✓] THERMAL CEILING:    41.2°C / 55.0°C MAX (Fans: 0 RPM • no_turbo=1 Locked)',
           '========================================================================',
@@ -249,7 +249,7 @@ export default function DesktopSimulatorPage() {
         type: 'output',
         text: [
           'Available ZothOS Simulator Commands:',
-          '  zoth status                  Inspect host telemetry, active Ring-2 agent state & 22 daemons',
+          '  zoth status                  Inspect host telemetry, active Ring-2 agent state & 23 daemons',
           '  zoth-agent-layer status      Inspect /etc/zothos/agent-permissions.json Rings 0–3 & Layers 0–4',
           '  zoth-mcp list                Inspect the 163-server /etc/zothos/mcp-servers.json catalog',
           '  zoth-relay status            Inspect multi-agent Landlock bridge on 127.0.0.1:8765',
@@ -520,7 +520,7 @@ qemu-system-x86_64 \\
           </Box>
         </Box>
 
-        <ProOutputGate title="Unlock Custom KVM & Reality Pill Automation Script">
+        <ProOutputGate title="Custom KVM & Reality Pill Automation Script">
           <Box
             component="pre"
             sx={{

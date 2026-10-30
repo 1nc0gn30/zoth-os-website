@@ -73,7 +73,7 @@ const MCP_SERVERS = [
     name: 'zoth-daemons-mcp',
     port: ':8094–:8120',
     transport: 'stdio + loopback SSE',
-    category: '22 Loopback Enclaves',
+    category: '23 Loopback Enclaves',
     desc: 'Unified health matrix, token budget circuit breaker (:8110), flight recorder (:8104), and POD commerce connectors (:8107–:8120).',
     tools: ['daemon_health_matrix', 'budget_sentinel_status', 'flight_recorder_tail'],
   },
@@ -234,7 +234,7 @@ const PLAYGROUND_TOOLS = [
   {
     id: 'daemon_health_matrix',
     server: 'zoth-daemons-mcp (:8109)',
-    description: 'Inspect live bind status, memory footprint, and zero-egress compliance across all 22 loopback daemons.',
+    description: 'Inspect live bind status, memory footprint, and zero-egress compliance across all 23 loopback daemons.',
     defaultArgs: JSON.stringify(
       {
         category: 'all',
@@ -325,7 +325,7 @@ const AX_ENDPOINTS = [
     preview: `# ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (zoth-pill) — Complete Technical Grounding Specification
 SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
 SECTION 2: FOUR REALITY PILL OPERATIONAL MODES (zoth-mode gold|ghost|matrix|incognito)
-SECTION 3: 22 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
+SECTION 3: 23 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
 SECTION 4: INSTALLER SCRIPTS FOR 9 AI CODING AGENTS (NOT AFFILIATED WITH THEIR VENDORS)
 SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)`,
   },

@@ -11,7 +11,7 @@ SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
 ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (`zoth-pill`) is a sovereign operating system engineered from the ground up for autonomous AI agent orchestration, offensive cybersecurity operations, and cryptographic zero-egress privacy.
 
 1. Base System: Debian 13 (Trixie) with Linux 6.12 LTS/Hybrid UEFI kernel.
-2. Surgical Tri-Repository APT Pinning: Combines Debian 13 stability (Pin-Priority 900) with surgical package pinning from Kali Rolling (Pin-Priority 400) and Parrot Security (Pin-Priority 400). This provides 175+ offensive security binaries without libc6 or desktop dependency breakage.
+2. Surgical Tri-Repository APT Pinning: Combines Debian 13 stability (Pin-Priority 900) with surgical package pinning from Kali Rolling (Pin-Priority 400) and Parrot Security (Pin-Priority 400). This provides Kali and Parrot security tools without libc6 or desktop dependency breakage.
 3. Desktop Environment: KDE Plasma 6.3 Wayland featuring the custom `org.zothos.interactive` QML WallpaperItem engine, 60 FPS KWin cursor broadcaster (`zoth-cursor-daemon` on `127.0.0.1:9989`), 3D embossed metallic ZOTHOS typography, golden constellation ley-lines, and shockwave ripples.
 4. Thermal & Acoustic Governance: Hardware-enforced `< 55.0°C` thermal ceiling (`no_turbo=1` pstate lock, 0 RPM silent passive fan curve under load, monitored by `zoth-heal`).
 
@@ -53,7 +53,7 @@ Every ZothOS daemon binds strictly to `127.0.0.1` and never exposes public netwo
 - `:9989` — `zoth-cursor-daemon` (Python / KWin DBus): 60 FPS Wayland/X11 global cursor broadcaster (`127.0.0.1:9989` + `/dev/shm/zoth_cursor_pos`) powering desktop constellation & aura physics.
 
 ================================================================================
-SECTION 4: 9 PRE-INSTALLED FRONTIER AI CODING AGENTS
+SECTION 4: INSTALLER SCRIPTS FOR 9 AI CODING AGENTS (NOT AFFILIATED WITH THEIR VENDORS)
 ================================================================================
 1. Google Antigravity (`agy`) — Flagship Agentic IDE, subagent orchestrator, and Chrome CDP verification harness.
 2. Claude Code CLI (`claude`) — Deep architectural refactoring and multi-file AST terminal agent.
@@ -97,7 +97,7 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 ## Zero-Auth Machine-Readable JSON Web APIs for AI Agents & Tools (CORS `*` Enabled)
 - [Master API Discovery Index](https://zothos.nullai.tech/api/index.json): Overview of all machine-readable endpoints on this domain.
 - [Services & Instant Checkout API](https://zothos.nullai.tech/api/services.json): JSON catalog of custom builds, SLAs, and Stripe/Solana payment links.
-- [44-Tool Sovereign Pro Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 44 browser-native tools.
+- [71-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 71 Studio-native tools.
 - [Structured FAQ Knowledge Base API](https://zothos.nullai.tech/api/faq.json): Direct Q&A pairs for RAG, Perplexity, ChatGPT Search, and voice assistants.
 - [Schema.org @graph Entity Network API](https://zothos.nullai.tech/api/graph.json): Complete interconnected JSON-LD knowledge graph.
 - [A2A Agent Card](https://zothos.nullai.tech/.well-known/agent.json): Agent-to-Agent capability and endpoint declaration.
@@ -106,8 +106,8 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 ## Complete Ecosystem Network
 - **Neal Frazier Tech (Personal & B2B Engineering Hub)**: https://www.nealfrazier.tech
 - **NullAI (Local-First AI Research Lab)**: https://nullai.tech
-- **Zoth Studio v2 (Local-First AI Studio & 44-Tool Enclave)**: https://zoth.nullai.tech
+- **Zoth Studio v2 (Local-First AI Studio & 71-Tool Enclave)**: https://zoth.nullai.tech
 - **ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (Sovereign AI-Native Operating System)**: https://zothos.nullai.tech
 - **757 Tech Pro (Hampton Roads IT & AI Agency)**: https://757tech.pro
-- **Sovereign 44-Tool Storefront & Solutions Hub**: https://1nc0gn30.github.io
+- **Sovereign Tools Storefront & Solutions Hub**: https://1nc0gn30.github.io
 - **City Desk (1,000-Page Local Trade Generator)**: https://city-desk.netlify.app

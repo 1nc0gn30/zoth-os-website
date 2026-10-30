@@ -37,7 +37,7 @@ const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 const PRIMARY_NAV = [
   { label: 'Overview', path: '/' },
   { label: 'Desktop Lab', path: '/desktop', badge: 'LIVE' },
-  { label: '22 Daemons', path: '/daemons', badge: '22' },
+  { label: '23 Daemons', path: '/daemons', badge: '23' },
   { label: 'Security Vault', path: '/security', badge: 'Kali+Parrot' },
   { label: 'MCP & AX', path: '/mcp', badge: '152' },
   { label: 'Download ISO', path: '/download', badge: 'v3.3' },
@@ -167,7 +167,7 @@ export default function Navbar({ mode, onToggleTheme }) {
             })}
           </Box>
 
-          {/* Right Actions: Search, Studio Link, Pro Unlock / Status, Theme Toggle */}
+          {/* Right Actions: Search, Studio Link, Status, Theme Toggle */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.65, flexShrink: 0 }}>
             <Tooltip title="Search Daemons, Agents & Security Arsenal (⌘K)">
               <Button
@@ -352,7 +352,7 @@ export default function Navbar({ mode, onToggleTheme }) {
             <InputBase
               autoFocus
               fullWidth
-              placeholder="Search ZothOS routes, 22 loopback daemons (:8094–:8120), or AI agents..."
+              placeholder="Search ZothOS routes, 23 loopback daemons (:8094–:8120), or AI agents..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               sx={{ fontFamily: mono, fontSize: '0.88rem' }}

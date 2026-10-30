@@ -9,7 +9,7 @@ export const REALITY_PILL_MODES = [
     secondary: '#FFF8DC',
     bgGlow: 'rgba(212, 175, 55, 0.24)',
     desc: 'Default 24K Celtic Gold KDE Plasma 6.3 Wayland desktop for human operators and Ring-2 AI agents — featuring interactive 3D embossed ZOTHOS wallpaper, 60 FPS cursor ley-lines, and UFW loopback isolation.',
-    posture: 'UFW Default-Deny • Ring-2 CYBERPUPPET Active • 23 Loopback Daemons Online',
+    posture: 'UFW Default-Deny • Ring-2 CYBERPUPPET Active • 23 Loopback Daemons',
     audioCue: '/usr/share/sounds/zothos/gold-sanctum.wav',
   },
   {
@@ -113,7 +113,7 @@ export const CORE_PILLARS = [
   },
   {
     id: 'daemons',
-    badge: '22 LOOPBACK DAEMONS + 9 AGENTS',
+    badge: '23 LOOPBACK DAEMONS + 9 CODING AGENTS',
     title: 'Zero-Egress 127.0.0.1 Enclave Mesh',
     desc: 'Installer scripts for 9 AI coding agents (`agy`, `claude`, `grok`, `aider`, `cursor`, `cline`, `hermes`, `codex`, `ollama`; not affiliated with their vendors) wired to 23 localhost daemons (`:8094` STDP Synaptic Memory through `:8120` Margin Sentinel, `:9393` Civilization, `:8787` Vault).',
     accent: '#34D399',
@@ -340,7 +340,7 @@ export const DESKTOP_SCREENSHOTS = [
     title: 'ZothOS Cockpit Pro & Studio v2',
     badge: '71 STUDIO TOOLS + 21-AGENT DECK',
     src: '/screenshots/zoth-cockpit-gold.png',
-    desc: 'Pre-installed `zoth-cockpit` operations center and `/opt/zoth-studio` with live loopback bindings to all 22 resident daemons and 28 WebGPU client tools.',
+    desc: 'Pre-installed `zoth-cockpit` operations center and `/opt/zoth-studio` with live loopback bindings to all 23 resident daemons and 28 WebGPU client tools.',
   },
   {
     title: 'Netlify Serverless & Edge Ops Deck',

@@ -84,7 +84,7 @@ curl -s http://127.0.0.1:9989/cursor
     kicker: 'NETWORK & GHOSTMODE STEALTH',
     title: 'UFW Default-Deny Enclaves & NullAI Ghostmode Tor Routing',
     summary:
-      'All 22 resident AI, memory, and commerce daemons bind exclusively to `127.0.0.1`. When operators engage `zoth-mode ghost`, nftables routes all outbound TCP/DNS traffic through a transparent Tor circuit (9040/9053) while spoofing hardware MAC addresses.',
+      'All 23 resident AI, memory, and commerce daemons bind exclusively to `127.0.0.1`. When operators engage `zoth-mode ghost`, nftables routes all outbound TCP/DNS traffic through a transparent Tor circuit (9040/9053) while spoofing hardware MAC addresses.',
     codeTitle: 'zoth-ghost & UFW Enclave Verification',
     code: `sudo ufw default deny incoming
 sudo ufw allow in on lo to 127.0.0.1 port 8094:8120 proto tcp
@@ -96,7 +96,7 @@ sudo zoth-mode ghost
 # [✓] nftables Tor transparent proxy armed (127.0.0.1:9040 / DNS :9053)
 # [✓] agent-egress-sentinel (:8095) blocking non-loopback telemetry`,
     invariants: [
-      'Zero LAN or WAN exposure for any of the 22 resident daemons (`127.0.0.1` loopback bind only).',
+      'Zero LAN or WAN exposure for any of the 23 resident daemons (`127.0.0.1` loopback bind only).',
       'DNS leak prevention enforced via nftables drop rules on port 53 outside loopback Tor DNSPort `:9053`.',
       'Automatic RAM tmpfs wipe on system shutdown or emergency panic keychord.',
     ],
@@ -191,7 +191,7 @@ const FAQS = [
     a: 'ZothOS uses surgical APT Pin-Priority rules (/etc/apt/preferences.d/zoth-parity.pref). Core system libraries, libc6, systemd, and KDE Plasma 6.3 Wayland are pinned to Debian 13 (Trixie) at priority 900, while offensive security binaries from Kali and Parrot are pinned at 400 so they only install when explicitly requested.',
   },
   {
-    q: 'Are the 22 AI & Security daemons exposed to my local network or the internet?',
+    q: 'Are the 23 AI & Security daemons exposed to my local network or the internet?',
     a: 'Never. Every resident daemon (:8094 STDP Memory through :8120 POD Margin Sentinel, :9393 Zoth Civilization, :9989 Cursor Daemon, and :8787 Vault) binds strictly to 127.0.0.1 (localhost) and is protected by UFW default-deny inbound firewall rules.',
   },
   {
