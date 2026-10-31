@@ -93,12 +93,12 @@ function buildRouteJsonLd(pathname, meta) {
       dateModified: '2026-10-15',
       author: {
         '@type': 'Organization',
-        name: 'Neal Frazier Tech (NullAI Platform)',
+        name: 'NullAI (NullAI Platform)',
         url: 'https://nullai.tech',
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Neal Frazier Tech',
+        name: 'NullAI',
         url: 'https://nullai.tech',
       },
       ...(meta.schemaType === 'HowTo'

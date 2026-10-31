@@ -143,5 +143,5 @@ Deployed continuously via **Netlify Edge**:
 
 ## Attribution & License
 
-- **Engineered by**: Neal Frazier ([@1nc0gn30](https://github.com/1nc0gn30)) • **Neal Frazier Tech** & **NullAI Platform**.
+- **Engineered by**: 1nc0gn30 ([@1nc0gn30](https://github.com/1nc0gn30)) • **NullAI** & **NullAI Platform**.
 - **License**: [MIT](LICENSE)

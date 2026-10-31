@@ -30,7 +30,7 @@ export default function Footer() {
     { label: 'ZothOS GitHub Repository', href: 'https://github.com/1nc0gn30/zoth-os' },
     { label: 'ZothOS-Lite v1.0 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
     { label: 'Chain of Thoughts (zoth-cot) Repo', href: 'https://github.com/1nc0gn30/chain-of-thoughts' },
-    { label: 'Neal Frazier Tech Hub', href: 'https://nealfrazier.tech' },
+    { label: 'NullAI Hub', href: 'https://nullai.tech' },
     { label: 'NullAI Platform & Research', href: 'https://nullai.tech' },
     { label: '757 Tech Pro', href: 'https://757tech.pro' },
   ];
@@ -190,7 +190,7 @@ export default function Footer() {
           }}
         >
           <Box>
-            Engineered by <strong>Neal Frazier Tech</strong> (
+            Engineered by <strong>NullAI</strong> (
             <Link href="https://github.com/NullAITech/zoth-os" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 700 }}>
               @1nc0gn30
             </Link>
