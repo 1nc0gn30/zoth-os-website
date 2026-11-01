@@ -9,7 +9,7 @@ const ProLicenseContext = createContext({
   stripeBundleUrl: GITHUB_ZOTHOS_URL,
   openPaywallModal: () => {},
   openLicenseModal: () => {},
-  openDePayCheckout: () => {},
+  openSolanaTipCheckout: () => {},
   activateLicense: () => {},
 });
 
@@ -26,7 +26,7 @@ export function ProLicenseProvider({ children }) {
         stripeBundleUrl: GITHUB_ZOTHOS_URL,
         openPaywallModal: () => {},
         openLicenseModal: () => {},
-        openDePayCheckout: () => {},
+        openSolanaTipCheckout: () => {},
         activateLicense: () => {},
       }}
     >

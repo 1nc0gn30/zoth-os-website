@@ -33,7 +33,7 @@ const CODEX_SECTIONS = [
     kicker: 'PACKAGE & KERNEL ARCHITECTURE',
     title: 'Surgical Tri-Repository APT Pinning (Debian 13 + Kali + Parrot)',
     summary:
-      'ZothOS v3.3.0 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so Kali and Parrot security tools co-exist with zero glibc or KDE Plasma dependency conflicts.',
+      'ZothOS v3.4.0 builds on Debian 13 (Trixie) with Linux 6.12 Hybrid UEFI and pins Kali Rolling and Parrot Security at priority 400 so Kali and Parrot security tools co-exist with zero glibc or KDE Plasma dependency conflicts.',
     codeTitle: '/etc/apt/preferences.d/zoth-parity.pref',
     code: `Package: *
 Pin: release n=trixie
@@ -203,7 +203,7 @@ const FAQS = [
     a: 'Visit the interactive /mcp hub on this site to generate a ready-to-use mcpServers JSON configuration for Antigravity, Claude Desktop/Code, Cursor, or Cline using either stdio binary pipes or 127.0.0.1 SSE endpoints.',
   },
   {
-    q: 'Are ZothOS Linux v3.3.0, ZothOS-Lite v1.0, Chain of Thoughts (zoth-cot), and the ISO Live-Build Exporter 100% free?',
+    q: 'Are ZothOS Linux v3.4.0, ZothOS-Lite v1.1, Chain of Thoughts (zoth-cot), and the ISO Live-Build Exporter 100% free?',
     a: 'Yes! Every operating system script, custom Live-Build ISO generator, 5-cluster MCP bundle, and Argon2id Vault policy exporter is 100% free and unlocked by default with zero paywalls. Optional support is available via Buy Us a Coffee (Stripe) or Solana tip address GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK.',
   },
 ];
@@ -255,7 +255,7 @@ export default function DocsPage() {
             }}
           />
           <Typography variant="h1" sx={{ fontSize: { xs: '2.1rem', md: '3.2rem' }, mb: 1.5, letterSpacing: '-0.03em' }}>
-            ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 System Codex
+            ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 System Codex
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 840, fontSize: '1.05rem', lineHeight: 1.7 }}>
             Complete technical reference covering surgical Debian 13 + Kali + Parrot APT pinning, the 60 FPS KWin Wayland SHM cursor pipeline, Argon2id memory-only secret injection, STDP synaptic vector math, and Model Context Protocol (MCP) specifications.

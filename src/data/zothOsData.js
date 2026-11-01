@@ -122,7 +122,7 @@ export const CORE_PILLARS = [
     id: 'desktop',
     badge: 'KDE PLASMA 6.3 WAYLAND',
     title: '24K Gold Workstation for Human Operators',
-    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 71 Studio tools / 43 workstations.',
+    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 72 Studio tools / 43 workstations.',
     accent: '#F59E0B',
   },
   {
@@ -227,13 +227,13 @@ export const FRONTIER_AGENTS = [
     cmd: 'zothos-lite (:8145)',
     mode: 'Kokoro 82M ONNX Voice + Mic STT',
     role: 'Animated U+2800 Braille & Bayer Dither Agent',
-    desc: 'Embodied monotone AI agent on ZothOS-Lite v1.0 with 6 full-body mood rigs, real-time mouth phoneme lip-sync, Kokoro 82M ONNX Neural TTS (af_bella, am_adam), and full-duplex mic STT.',
+    desc: 'Embodied monotone AI agent on ZothOS-Lite v1.1 with 6 full-body mood rigs, real-time mouth phoneme lip-sync, Kokoro 82M ONNX Neural TTS (af_bella, am_adam), and full-duplex mic STT.',
     accent: '#10B981',
   },
 ];
 
 export const LOOPBACK_DAEMONS = [
-  { port: ':8145', name: 'zothos-lite-workstation', stack: 'Node.js / U+2800 Braille + Kokoro ONNX', category: 'AI Memory', desc: 'ZothOS-Lite v1.0 Amnesic Monotone Desktop (:8145) hosting AZOTH Embodied Braille AI, Chain of Thoughts (winCoT) Working Memory DAG, Kokoro 82M Neural TTS, 3D Perspective Matrix & Sovereign Horology Niche Clock.' },
+  { port: ':8145', name: 'zothos-lite-workstation', stack: 'Node.js / U+2800 Braille + Kokoro ONNX', category: 'AI Memory', desc: 'ZothOS-Lite v1.1 Amnesic Monotone Desktop (:8145) hosting AZOTH Embodied Braille AI, Chain of Thoughts (winCoT) Working Memory DAG, Kokoro 82M Neural TTS, 3D Perspective Matrix & Sovereign Horology Niche Clock.' },
   { port: ':8094', name: 'neuro-memory-daemon', stack: 'Python / SQLite STDP', category: 'AI Memory', desc: 'Biomorphic Spike-Timing-Dependent Plasticity (STDP) synaptic vector memory & 3D Cosmic Nebula graph for persistent cross-agent recall.' },
   { port: ':8095 / :8096', name: 'agent-egress-sentinel', stack: 'Python / TLS SNI Proxy', category: 'Zero-Egress', desc: 'Autonomous zero-dependency network proxy, outbound packet inspector, and telemetry blocker for resident AI agents.' },
   { port: ':8097', name: 'agent-mock-twin', stack: 'Python / JSON-RPC', category: 'Simulation', desc: 'Deterministic offline API replay twin for testing autonomous subagents without external network calls.' },
@@ -338,7 +338,7 @@ export const DESKTOP_SCREENSHOTS = [
   },
   {
     title: 'ZothOS Cockpit Pro & Studio v2',
-    badge: '71 STUDIO TOOLS + 21-AGENT DECK',
+    badge: '72 STUDIO TOOLS + 21-AGENT DECK',
     src: '/screenshots/zoth-cockpit-gold.png',
     desc: 'Pre-installed `zoth-cockpit` operations center and `/opt/zoth-studio` with live loopback bindings to all 23 resident daemons and 28 WebGPU client tools.',
   },
@@ -387,7 +387,7 @@ export const COMPARISON_ROWS = [
     ubuntu: 'None',
   },
   {
-    feature: 'Amnesic Monotone Companion Edition (ZothOS-Lite v1.0)',
+    feature: 'Amnesic Monotone Companion Edition (ZothOS-Lite v1.1)',
     zoth: 'Tails-Style RAM-Only OS (:8145) • AZOTH Braille AI + Kokoro ONNX Voice + Chain of Thoughts DAG + Horology Clock',
     kali: 'None',
     parrot: 'None',

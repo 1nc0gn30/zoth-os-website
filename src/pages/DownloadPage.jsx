@@ -34,7 +34,7 @@ export default function DownloadPage() {
 
   const customIsoRecipe = `#!/usr/bin/env bash
 # ==============================================================================
-# ZOTHOS v3.3.0 CUSTOM LIVE-BUILD ISO & COSIGN MANIFEST GENERATOR
+# ZOTHOS v3.4.0 CUSTOM LIVE-BUILD ISO & COSIGN MANIFEST GENERATOR
 # Profile: ${defaultPill.toUpperCase()} | Kali+Parrot: ${includeKaliFull ? 'ENABLED' : 'MINIMAL'} | LUKS2: ${enableLuks2 ? 'ON' : 'OFF'}
 # ==============================================================================
 set -euo pipefail
@@ -60,7 +60,7 @@ ${includeOllamaModels ? '# Pre-seed Local Ollama Models (qwen2.5-coder:14b, deep
 ${enableLuks2 ? '# Enable Calamares LUKS2 Argon2id Full-Disk Encryption\nexport ZOTH_CALAMARES_LUKS2=1' : ''}
 
 sudo lb build 2>&1 | tee zothos-custom-build.log
-sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
+sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
 
   const handleCopyRecipe = () => {
     if (!isPro) {
@@ -68,7 +68,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
       return;
     }
     navigator.clipboard?.writeText(customIsoRecipe);
-    setToast('Copied Custom ZothOS v3.3.0 Live-Build ISO Recipe!');
+    setToast('Copied Custom ZothOS v3.4.0 Live-Build ISO Recipe!');
   };
 
   const copyText = (txt, label) => {
@@ -102,7 +102,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
         </HeroItem>
         <HeroItem>
           <Typography variant="h2" sx={{ mb: 1.5 }}>
-            Download <span className="text-gradient-gold">ZothOS Linux v3.3.0 & ZothOS-Lite v1.0</span> & ISO Studio
+            Download <span className="text-gradient-gold">ZothOS Linux v3.4.0 & ZothOS-Lite v1.1</span> & ISO Studio
           </Typography>
         </HeroItem>
         <HeroItem>
@@ -120,32 +120,32 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.3.0-amd64.iso.sha256`;
             <Chip label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
           <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 700, letterSpacing: 0 }}>
-            zothos-3.3.0-amd64.iso
+            zothos-3.4.0-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
             Hybrid UEFI + Legacy BIOS Live & Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 163 MCP catalog that stays off until you enable a server, Kali and Parrot security tools, and 23 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
           </Typography>
           <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
-            $ bash zothos-join-iso.sh && sudo dd if=zothos-3.3.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
+            $ bash zothos-join-iso.sh && sudo dd if=zothos-3.4.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
               variant="contained"
               color="primary"
-              href="https://github.com/NullAITech/zoth-os/releases/tag/v3.3.0"
+              href="https://github.com/NullAITech/zoth-os/releases/tag/v3.4.0"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}
               sx={{ fontFamily: mono, fontWeight: 800 }}
             >
-              Download v3.3.0 Release ISO
+              Download v3.4.0 Release ISO
             </Button>
             <Button
               variant="outlined"
               startIcon={<ContentCopyIcon />}
               onClick={() =>
                 copyText(
-                  'bash zothos-join-iso.sh && sudo dd if=zothos-3.3.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync',
+                  'bash zothos-join-iso.sh && sudo dd if=zothos-3.4.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync',
                   'ISO join & USB dd flash command',
                 )
               }

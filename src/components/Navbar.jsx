@@ -53,7 +53,7 @@ export default function Navbar({ mode, onToggleTheme }) {
   const navigate = useNavigate();
   const theme = useTheme();
   const dark = theme.palette.mode === 'dark';
-  const { isPro, openPaywallModal, openDePayCheckout } = useProLicense();
+  const { isPro, openPaywallModal, openSolanaTipCheckout } = useProLicense();
 
   const goldAccent = dark ? '#D4AF37' : '#8A6508';
   const brandColor = dark ? '#F5E6AB' : '#0A0D14';
@@ -233,7 +233,7 @@ export default function Navbar({ mode, onToggleTheme }) {
             </Button>
 
             <Chip
-              label="v3.3.0 + LITE"
+              label="v3.4.0 + LITE"
               size="small"
               sx={{
                 display: { xs: 'none', md: 'inline-flex' },

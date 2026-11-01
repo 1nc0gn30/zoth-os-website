@@ -16,7 +16,7 @@ export default function Footer() {
   const linkColor = isDark ? '#94A3B8' : '#1E293B';
 
   const osSections = [
-    { label: 'ZothOS v3.3.0 Overview', to: '/' },
+    { label: 'ZothOS v3.4.0 Overview', to: '/' },
     { label: 'Zoth-Pill Live Desktop & Terminal', to: '/desktop' },
     { label: '23 Loopback Daemons & 9 Coding Agents (11 with AZOTH + zoth-cot)', to: '/daemons' },
     { label: 'Kali and Parrot security tools & Zoth Vault', to: '/security' },
@@ -28,7 +28,7 @@ export default function Footer() {
   const ecosystemLinks = [
     { label: 'Zoth Studio v2 (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
     { label: 'ZothOS GitHub Repository', href: 'https://github.com/1nc0gn30/zoth-os' },
-    { label: 'ZothOS-Lite v1.0 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
+    { label: 'ZothOS-Lite v1.1 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
     { label: 'Chain of Thoughts (zoth-cot) Repo', href: 'https://github.com/1nc0gn30/chain-of-thoughts' },
     { label: 'NullAI Hub', href: 'https://nullai.tech' },
     { label: 'NullAI Platform & Research', href: 'https://nullai.tech' },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.4.0",
-  "site": "ZothOS Linux v3.3.0 & ZothOS-Lite v1.0 (zoth-pill)",
+  "site": "ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 (zoth-pill)",
   "baseUrl": "https://zothos.nullai.tech",
   "endpoints": {
     "llmsTxt": "https://zothos.nullai.tech/llms.txt",
@@ -23,7 +23,7 @@
     {
       "name": "Zoth Studio",
       "url": "https://zoth.nullai.tech",
-      "role": "Local-first AI studio: 71 tools, 43 workstations"
+      "role": "Local-first AI studio: 72 tools, 43 workstations"
     },
     {
       "name": "ZothOS",
