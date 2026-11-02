@@ -31,8 +31,7 @@ export default function Footer() {
     { label: 'ZothOS-Lite v1.1 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
     { label: 'Chain of Thoughts (zoth-cot) Repo', href: 'https://github.com/1nc0gn30/chain-of-thoughts' },
     { label: 'NullAI Hub', href: 'https://nullai.tech' },
-    { label: 'NullAI Platform & Research', href: 'https://nullai.tech' },
-    { label: '757 Tech Pro', href: 'https://757tech.pro' },
+    { label: '1nc0gn30 (1nc0gn30.si)', href: 'https://1nc0gn30.si' },
   ];
 
   const trustAndStandards = [
