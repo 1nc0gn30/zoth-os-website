@@ -766,45 +766,47 @@ export default function McpAxPage() {
             Autonomous search engines (PerplexityBot, ClaudeBot, GPTBot, Google SGE) and A2A coding agents index these canonical machine-readable endpoints with zero crawl delay.
           </Typography>
 
-          <Table size="small" sx={{ mb: 3 }}>
-            <TableHead>
-              <TableRow>
-                <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>Endpoint URI</TableCell>
-                <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>MIME Type</TableCell>
-                <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>Payload Budget</TableCell>
-                <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>Specification Purpose</TableCell>
-                <TableCell align="right" sx={{ fontFamily: mono, fontWeight: 800 }}>Action</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {AX_ENDPOINTS.map((ep) => (
-                <TableRow
-                  key={ep.path}
-                  hover
-                  selected={selectedAxPath === ep.path}
-                  onClick={() => setSelectedAxPath(ep.path)}
-                  sx={{ cursor: 'pointer' }}
-                >
-                  <TableCell sx={{ fontFamily: mono, fontWeight: 800, color: goldAccent }}>{ep.path}</TableCell>
-                  <TableCell sx={{ fontFamily: mono, fontSize: '0.78rem' }}>{ep.mime}</TableCell>
-                  <TableCell sx={{ fontFamily: mono, fontSize: '0.78rem' }}>{ep.tokens}</TableCell>
-                  <TableCell sx={{ fontSize: '0.84rem' }}>{ep.purpose}</TableCell>
-                  <TableCell align="right">
-                    <Button
-                      size="small"
-                      href={ep.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      endIcon={<OpenInNewIcon sx={{ fontSize: 13 }} />}
-                      sx={{ fontFamily: mono, fontSize: '0.72rem' }}
-                    >
-                      Raw
-                    </Button>
-                  </TableCell>
+          <Box sx={{ overflowX: 'auto', maxWidth: '100%', mb: 3 }}>
+            <Table size="small" sx={{ minWidth: 580 }}>
+              <TableHead>
+                <TableRow>
+                  <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>Endpoint URI</TableCell>
+                  <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>MIME Type</TableCell>
+                  <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>Payload Budget</TableCell>
+                  <TableCell sx={{ fontFamily: mono, fontWeight: 800 }}>Specification Purpose</TableCell>
+                  <TableCell align="right" sx={{ fontFamily: mono, fontWeight: 800 }}>Action</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHead>
+              <TableBody>
+                {AX_ENDPOINTS.map((ep) => (
+                  <TableRow
+                    key={ep.path}
+                    hover
+                    selected={selectedAxPath === ep.path}
+                    onClick={() => setSelectedAxPath(ep.path)}
+                    sx={{ cursor: 'pointer' }}
+                  >
+                    <TableCell sx={{ fontFamily: mono, fontWeight: 800, color: goldAccent }}>{ep.path}</TableCell>
+                    <TableCell sx={{ fontFamily: mono, fontSize: '0.78rem' }}>{ep.mime}</TableCell>
+                    <TableCell sx={{ fontFamily: mono, fontSize: '0.78rem' }}>{ep.tokens}</TableCell>
+                    <TableCell sx={{ fontSize: '0.84rem' }}>{ep.purpose}</TableCell>
+                    <TableCell align="right">
+                      <Button
+                        size="small"
+                        href={ep.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        endIcon={<OpenInNewIcon sx={{ fontSize: 13 }} />}
+                        sx={{ fontFamily: mono, fontSize: '0.72rem' }}
+                      >
+                        Raw
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Box>
 
           <Divider sx={{ my: 2 }} />
           <Typography variant="caption" sx={{ fontFamily: mono, fontWeight: 800, color: goldAccent, display: 'block', mb: 1 }}>
