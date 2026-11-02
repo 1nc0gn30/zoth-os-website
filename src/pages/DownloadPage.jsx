@@ -113,19 +113,30 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
       </HeroReveal>
 
       {/* Primary Download Cards */}
-      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, gap: 3, mb: 6 }}>
-        <Paper elevation={0} sx={{ p: 3.5, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-            <UsbIcon sx={{ color: gold, fontSize: 32 }} />
-            <Chip label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }, gap: 3, mb: 6 }}>
+        <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}`, minWidth: 0 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+            <UsbIcon sx={{ color: gold, fontSize: 32, flexShrink: 0 }} />
+            <Chip
+              label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)"
+              size="small"
+              sx={{
+                height: 'auto',
+                maxWidth: '100%',
+                fontFamily: mono,
+                fontWeight: 800,
+                color: gold,
+                '& .MuiChip-label': { whiteSpace: 'normal', py: 0.35 },
+              }}
+            />
           </Box>
-          <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 700, letterSpacing: 0 }}>
+          <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 700, letterSpacing: 0, overflowWrap: 'anywhere' }}>
             zothos-3.4.0-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
             Hybrid UEFI + Legacy BIOS Live & Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 163 MCP catalog that stays off until you enable a server, Kali and Parrot security tools, and 23 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowX: 'auto' }}>
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
             $ bash zothos-join-iso.sh && sudo dd if=zothos-3.4.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
@@ -156,18 +167,18 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
           </Box>
         </Paper>
 
-        <Paper elevation={0} sx={{ p: 3.5, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-            <VerifiedUserIcon sx={{ color: gold, fontSize: 32 }} />
+        <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}`, minWidth: 0 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+            <VerifiedUserIcon sx={{ color: gold, fontSize: 32, flexShrink: 0 }} />
             <Chip label="QEMU / KVM AGENT APPLIANCE" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
-          <Typography variant="h4" sx={{ mb: 1 }}>
+          <Typography variant="h4" sx={{ mb: 1, overflowWrap: 'anywhere' }}>
             zothos.qcow2 (Agent VM)
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
             Dedicated QEMU/KVM virtual machine substrate for autonomous AI agents. Supports live chroot injection (`./tools/inject-vm-customization.sh`), automated 25-point verification (`./tools/verify-zothos.sh`), and `zoth-relay` (`:8765`) host bridging.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowX: 'auto' }}>
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
             $ ./tools/verify-zothos.sh && virsh -c qemu:///system start zothos
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>

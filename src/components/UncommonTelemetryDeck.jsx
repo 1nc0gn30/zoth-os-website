@@ -183,32 +183,38 @@ export default function UncommonTelemetryDeck({ compact = false }) {
         sx={{ mb: 3 }}
       >
         <Box>
-          <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mb: 0.75 }}>
+          <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap sx={{ mb: 0.75, minWidth: 0 }}>
             <Chip
               label="⣿ U+2800 SUB-PIXEL BRAILLE · BAYER 8×8 DITHER"
               size="small"
               sx={{
+                height: 'auto',
+                maxWidth: '100%',
                 fontFamily: mono,
-                fontSize: '0.66rem',
+                fontSize: '0.64rem',
                 fontWeight: 800,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.06em',
                 bgcolor: dark ? 'rgba(212, 175, 55, 0.14)' : '#FEF9E7',
                 color: dark ? '#F5E6AB' : '#8A6508',
                 border: '1px solid',
                 borderColor: dark ? 'rgba(212, 175, 55, 0.35)' : '#E8D48B',
+                '& .MuiChip-label': { whiteSpace: 'normal', py: 0.35 },
               }}
             />
             <Chip
               label="KERNEL 6.12 · DEBIAN 13.7 · 23 LOOPBACK DAEMONS (LOCAL)"
               size="small"
               sx={{
+                height: 'auto',
+                maxWidth: '100%',
                 fontFamily: mono,
-                fontSize: '0.66rem',
+                fontSize: '0.64rem',
                 fontWeight: 800,
                 bgcolor: dark ? 'rgba(16, 185, 129, 0.14)' : '#ECFDF5',
                 color: dark ? '#34D399' : '#047857',
                 border: '1px solid',
                 borderColor: dark ? 'rgba(16, 185, 129, 0.35)' : '#A7F3D0',
+                '& .MuiChip-label': { whiteSpace: 'normal', py: 0.35 },
               }}
             />
           </Stack>
@@ -342,18 +348,19 @@ export default function UncommonTelemetryDeck({ compact = false }) {
               sx={{
                 m: 0,
                 py: 1.5,
-                px: 1,
+                px: { xs: 0.5, sm: 1 },
                 borderRadius: 2,
                 bgcolor: dark ? '#040507' : '#F3EFE6',
                 border: '1px solid',
                 borderColor: dark ? 'rgba(255,255,255,0.06)' : '#E2DDD0',
                 fontFamily: mono,
-                fontSize: { xs: '0.58rem', sm: '0.72rem', md: '0.76rem' },
+                fontSize: { xs: '0.47rem', sm: '0.68rem', md: '0.74rem' },
                 lineHeight: 1.15,
-                letterSpacing: '0.04em',
+                letterSpacing: { xs: '0em', sm: '0.03em' },
                 color: dark ? '#D4AF37' : '#101828',
                 textAlign: 'center',
-                overflowX: 'auto',
+                overflowX: 'hidden',
+                maxWidth: '100%',
                 userSelect: 'none',
               }}
             >
