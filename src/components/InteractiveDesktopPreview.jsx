@@ -321,7 +321,7 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
       >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
           <Chip
-            label="LIVE INTERACTIVE DESKTOP (zoth-pill)"
+            label="LIVE INTERACTIVE DESKTOP"
             size="small"
             sx={{
               fontFamily: mono,
@@ -476,7 +476,7 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
             <Box sx={{ color: activeMode.accent, fontWeight: 800 }}>
-              {activeMode.glyph} zoth-pill.local
+              {activeMode.glyph} zothos.local
             </Box>
             <Box sx={{ color: 'rgba(255,255,255,0.55)', display: { xs: 'none', sm: 'inline' } }}>
               KDE Plasma 6.3 Wayland • Kernel 6.12-amd64

@@ -1,6 +1,6 @@
 {
   "schema": "zoth/tools-static/v1",
-  "generated_at": "2026-11-01T14:59:00.000Z",
+  "generated_at": "2026-11-03T14:55:00.000Z",
   "tool_count": 72,
   "tools": [
     {
@@ -21,7 +21,9 @@
         "zero-egress"
       ],
       "port": 8148,
-      "local_url": "http://127.0.0.1:8148"
+      "local_url": "http://127.0.0.1:8148",
+      "tui_cmd": "pixel-cast-tui --status",
+      "desktop_cmd": "pixel-cast desktop"
     },
     {
       "id": "adytum-alchemist-ai-workflow",
@@ -41,7 +43,9 @@
         "zero-egress"
       ],
       "port": 8135,
-      "local_url": "http://127.0.0.1:8135"
+      "local_url": "http://127.0.0.1:8135",
+      "tui_cmd": "adytum-alchemist-ai-workflow-tui --status",
+      "desktop_cmd": "adytum-alchemist-ai-workflow desktop"
     },
     {
       "id": "azoth-local-agent",
@@ -61,7 +65,9 @@
         "zero-egress"
       ],
       "port": 8136,
-      "local_url": "http://127.0.0.1:8136"
+      "local_url": "http://127.0.0.1:8136",
+      "tui_cmd": "azoth-local-agent-tui --status",
+      "desktop_cmd": "azoth-local-agent desktop"
     },
     {
       "id": "sovereign-agent-bridge",
@@ -81,7 +87,9 @@
         "zero-egress"
       ],
       "port": 8102,
-      "local_url": "http://127.0.0.1:8102"
+      "local_url": "http://127.0.0.1:8102",
+      "tui_cmd": "sovereign-agent-bridge-tui --status",
+      "desktop_cmd": "sovereign-agent-bridge desktop"
     },
     {
       "id": "neuro-memory-daemon",
@@ -101,7 +109,9 @@
         "zero-egress"
       ],
       "port": 8094,
-      "local_url": "http://127.0.0.1:8094"
+      "local_url": "http://127.0.0.1:8094",
+      "tui_cmd": "neuro-memory-daemon-tui --status",
+      "desktop_cmd": "neuro-memory-daemon desktop"
     },
     {
       "id": "zoth-os",
@@ -121,7 +131,9 @@
         "zero-egress"
       ],
       "port": 8137,
-      "local_url": "http://127.0.0.1:8137"
+      "local_url": "http://127.0.0.1:8137",
+      "tui_cmd": "zoth-os-tui --status",
+      "desktop_cmd": "zoth-os desktop"
     },
     {
       "id": "vector-search-engine",
@@ -141,7 +153,9 @@
         "zero-egress"
       ],
       "port": 8121,
-      "local_url": "http://127.0.0.1:8121"
+      "local_url": "http://127.0.0.1:8121",
+      "tui_cmd": "vector-search-engine-tui --status",
+      "desktop_cmd": "vector-search-engine desktop"
     },
     {
       "id": "deepsearch-research-agent",
@@ -161,7 +175,9 @@
         "zero-egress"
       ],
       "port": 8122,
-      "local_url": "http://127.0.0.1:8122"
+      "local_url": "http://127.0.0.1:8122",
+      "tui_cmd": "deepsearch-research-agent-tui --status",
+      "desktop_cmd": "deepsearch-research-agent desktop"
     },
     {
       "id": "promptmaster-studio",
@@ -181,7 +197,9 @@
         "zero-egress"
       ],
       "port": 8123,
-      "local_url": "http://127.0.0.1:8123"
+      "local_url": "http://127.0.0.1:8123",
+      "tui_cmd": "promptmaster-studio-tui --status",
+      "desktop_cmd": "promptmaster-studio desktop"
     },
     {
       "id": "hexstrike-arsenal",
@@ -201,7 +219,9 @@
         "zero-egress"
       ],
       "port": 8138,
-      "local_url": "http://127.0.0.1:8138"
+      "local_url": "http://127.0.0.1:8138",
+      "tui_cmd": "hexstrike-arsenal-tui --status",
+      "desktop_cmd": "hexstrike-arsenal desktop"
     },
     {
       "id": "envguard-secrets-vault",
@@ -221,7 +241,9 @@
         "zero-egress"
       ],
       "port": 8088,
-      "local_url": "http://127.0.0.1:8088"
+      "local_url": "http://127.0.0.1:8088",
+      "tui_cmd": "envguard-secrets-vault-tui --status",
+      "desktop_cmd": "envguard-secrets-vault desktop"
     },
     {
       "id": "jwt-inspector-guard",
@@ -241,7 +263,9 @@
         "zero-egress"
       ],
       "port": 8124,
-      "local_url": "http://127.0.0.1:8124"
+      "local_url": "http://127.0.0.1:8124",
+      "tui_cmd": "jwt-inspector-guard-tui --status",
+      "desktop_cmd": "jwt-inspector-guard desktop"
     },
     {
       "id": "payload-entropy-studio",
@@ -261,7 +285,9 @@
         "zero-egress"
       ],
       "port": 8080,
-      "local_url": "http://127.0.0.1:8080"
+      "local_url": "http://127.0.0.1:8080",
+      "tui_cmd": "payload-entropy-studio-tui --status",
+      "desktop_cmd": "payload-entropy-studio desktop"
     },
     {
       "id": "web-security-guard",
@@ -281,7 +307,9 @@
         "zero-egress"
       ],
       "port": 8125,
-      "local_url": "http://127.0.0.1:8125"
+      "local_url": "http://127.0.0.1:8125",
+      "tui_cmd": "web-security-guard-tui --status",
+      "desktop_cmd": "web-security-guard desktop"
     },
     {
       "id": "polyglot-framework-exporter",
@@ -301,7 +329,9 @@
         "zero-egress"
       ],
       "port": 8126,
-      "local_url": "http://127.0.0.1:8126"
+      "local_url": "http://127.0.0.1:8126",
+      "tui_cmd": "polyglot-framework-exporter-tui --status",
+      "desktop_cmd": "polyglot-framework-exporter desktop"
     },
     {
       "id": "aeo-graph-engine",
@@ -321,7 +351,9 @@
         "zero-egress"
       ],
       "port": 8127,
-      "local_url": "http://127.0.0.1:8127"
+      "local_url": "http://127.0.0.1:8127",
+      "tui_cmd": "aeo-graph-engine-tui --status",
+      "desktop_cmd": "aeo-graph-engine desktop"
     },
     {
       "id": "cwv-speed-engine",
@@ -341,7 +373,9 @@
         "zero-egress"
       ],
       "port": 8128,
-      "local_url": "http://127.0.0.1:8128"
+      "local_url": "http://127.0.0.1:8128",
+      "tui_cmd": "cwv-speed-engine-tui --status",
+      "desktop_cmd": "cwv-speed-engine desktop"
     },
     {
       "id": "vision-gesture-control",
@@ -361,7 +395,9 @@
         "zero-egress"
       ],
       "port": 8089,
-      "local_url": "http://127.0.0.1:8089"
+      "local_url": "http://127.0.0.1:8089",
+      "tui_cmd": "vision-gesture-control-tui --status",
+      "desktop_cmd": "vision-gesture-control desktop"
     },
     {
       "id": "subsweep-lead-scanner",
@@ -381,7 +417,9 @@
         "zero-egress"
       ],
       "port": 8090,
-      "local_url": "http://127.0.0.1:8090"
+      "local_url": "http://127.0.0.1:8090",
+      "tui_cmd": "subsweep-lead-scanner-tui --status",
+      "desktop_cmd": "subsweep-lead-scanner desktop"
     },
     {
       "id": "omnipost-social-engine",
@@ -401,7 +439,9 @@
         "zero-egress"
       ],
       "port": 8091,
-      "local_url": "http://127.0.0.1:8091"
+      "local_url": "http://127.0.0.1:8091",
+      "tui_cmd": "omnipost-social-engine-tui --status",
+      "desktop_cmd": "omnipost-social-engine desktop"
     },
     {
       "id": "cron-rhythm-studio",
@@ -421,7 +461,9 @@
         "zero-egress"
       ],
       "port": 5174,
-      "local_url": "http://127.0.0.1:5174"
+      "local_url": "http://127.0.0.1:5174",
+      "tui_cmd": "cron-rhythm-studio-tui --status",
+      "desktop_cmd": "cron-rhythm-studio desktop"
     },
     {
       "id": "certpath-roadmap-studio",
@@ -441,7 +483,9 @@
         "zero-egress"
       ],
       "port": 8093,
-      "local_url": "http://127.0.0.1:8093"
+      "local_url": "http://127.0.0.1:8093",
+      "tui_cmd": "certpath-roadmap-studio-tui --status",
+      "desktop_cmd": "certpath-roadmap-studio desktop"
     },
     {
       "id": "pwa-manifest-builder",
@@ -461,7 +505,9 @@
         "zero-egress"
       ],
       "port": 8100,
-      "local_url": "http://127.0.0.1:8100"
+      "local_url": "http://127.0.0.1:8100",
+      "tui_cmd": "pwa-manifest-builder-tui --status",
+      "desktop_cmd": "pwa-manifest-builder desktop"
     },
     {
       "id": "regex-droid-builder",
@@ -481,7 +527,9 @@
         "zero-egress"
       ],
       "port": 8101,
-      "local_url": "http://127.0.0.1:8101"
+      "local_url": "http://127.0.0.1:8101",
+      "tui_cmd": "regex-droid-builder-tui --status",
+      "desktop_cmd": "regex-droid-builder desktop"
     },
     {
       "id": "schema-illustrator-studio",
@@ -501,7 +549,9 @@
         "zero-egress"
       ],
       "port": 8099,
-      "local_url": "http://127.0.0.1:8099"
+      "local_url": "http://127.0.0.1:8099",
+      "tui_cmd": "schema-illustrator-studio-tui --status",
+      "desktop_cmd": "schema-illustrator-studio desktop"
     },
     {
       "id": "zoth-webgen",
@@ -521,7 +571,9 @@
         "zero-egress"
       ],
       "port": 8092,
-      "local_url": "http://127.0.0.1:8092"
+      "local_url": "http://127.0.0.1:8092",
+      "tui_cmd": "zoth-webgen-tui --status",
+      "desktop_cmd": "zoth-webgen desktop"
     },
     {
       "id": "zoth-swarm-multiplexer",
@@ -541,7 +593,9 @@
         "zero-egress"
       ],
       "port": 8141,
-      "local_url": "http://127.0.0.1:8141"
+      "local_url": "http://127.0.0.1:8141",
+      "tui_cmd": "zoth-swarm-multiplexer-tui --status",
+      "desktop_cmd": "zoth-swarm-multiplexer desktop"
     },
     {
       "id": "webmcp-protocol-inspector",
@@ -561,7 +615,9 @@
         "zero-egress"
       ],
       "port": 8142,
-      "local_url": "http://127.0.0.1:8142"
+      "local_url": "http://127.0.0.1:8142",
+      "tui_cmd": "webmcp-protocol-inspector-tui --status",
+      "desktop_cmd": "webmcp-protocol-inspector desktop"
     },
     {
       "id": "anderson-security-sentinel",
@@ -581,7 +637,9 @@
         "zero-egress"
       ],
       "port": 8103,
-      "local_url": "http://127.0.0.1:8103"
+      "local_url": "http://127.0.0.1:8103",
+      "tui_cmd": "anderson-security-sentinel-tui --status",
+      "desktop_cmd": "anderson-security-sentinel desktop"
     },
     {
       "id": "badge3d-coin-generator",
@@ -601,7 +659,9 @@
         "zero-egress"
       ],
       "port": 8084,
-      "local_url": "http://127.0.0.1:8084"
+      "local_url": "http://127.0.0.1:8084",
+      "tui_cmd": "badge3d-coin-generator-tui --status",
+      "desktop_cmd": "badge3d-coin-generator desktop"
     },
     {
       "id": "robots-txt-auditor",
@@ -621,7 +681,9 @@
         "zero-egress"
       ],
       "port": 8086,
-      "local_url": "http://127.0.0.1:8086"
+      "local_url": "http://127.0.0.1:8086",
+      "tui_cmd": "robots-txt-auditor-tui --status",
+      "desktop_cmd": "robots-txt-auditor desktop"
     },
     {
       "id": "city-desk",
@@ -641,7 +703,9 @@
         "zero-egress"
       ],
       "port": 8087,
-      "local_url": "http://127.0.0.1:8087"
+      "local_url": "http://127.0.0.1:8087",
+      "tui_cmd": "city-desk-tui --status",
+      "desktop_cmd": "city-desk desktop"
     },
     {
       "id": "agent-egress-sentinel",
@@ -661,7 +725,9 @@
         "zero-egress"
       ],
       "port": 8095,
-      "local_url": "http://127.0.0.1:8095"
+      "local_url": "http://127.0.0.1:8095",
+      "tui_cmd": "agent-egress-sentinel-tui --status",
+      "desktop_cmd": "agent-egress-sentinel desktop"
     },
     {
       "id": "agent-mock-twin",
@@ -681,7 +747,9 @@
         "zero-egress"
       ],
       "port": 8097,
-      "local_url": "http://127.0.0.1:8097"
+      "local_url": "http://127.0.0.1:8097",
+      "tui_cmd": "agent-mock-twin-tui --status",
+      "desktop_cmd": "agent-mock-twin desktop"
     },
     {
       "id": "agent-prompt-firewall",
@@ -701,7 +769,9 @@
         "zero-egress"
       ],
       "port": 8098,
-      "local_url": "http://127.0.0.1:8098"
+      "local_url": "http://127.0.0.1:8098",
+      "tui_cmd": "agent-prompt-firewall-tui --status",
+      "desktop_cmd": "agent-prompt-firewall desktop"
     },
     {
       "id": "agent-flight-recorder",
@@ -721,7 +791,9 @@
         "zero-egress"
       ],
       "port": 8104,
-      "local_url": "http://127.0.0.1:8104"
+      "local_url": "http://127.0.0.1:8104",
+      "tui_cmd": "agent-flight-recorder-tui --status",
+      "desktop_cmd": "agent-flight-recorder desktop"
     },
     {
       "id": "agent-capsule-jail",
@@ -741,7 +813,9 @@
         "zero-egress"
       ],
       "port": 8105,
-      "local_url": "http://127.0.0.1:8105"
+      "local_url": "http://127.0.0.1:8105",
+      "tui_cmd": "agent-capsule-jail-tui --status",
+      "desktop_cmd": "agent-capsule-jail desktop"
     },
     {
       "id": "agent-policy-auditor",
@@ -761,7 +835,9 @@
         "zero-egress"
       ],
       "port": 8106,
-      "local_url": "http://127.0.0.1:8106"
+      "local_url": "http://127.0.0.1:8106",
+      "tui_cmd": "agent-policy-auditor-tui --status",
+      "desktop_cmd": "agent-policy-auditor desktop"
     },
     {
       "id": "etsy-pod-forge",
@@ -781,7 +857,9 @@
         "zero-egress"
       ],
       "port": 8107,
-      "local_url": "http://127.0.0.1:8107"
+      "local_url": "http://127.0.0.1:8107",
+      "tui_cmd": "etsy-pod-forge-tui --status",
+      "desktop_cmd": "etsy-pod-forge desktop"
     },
     {
       "id": "etsy-connector",
@@ -801,7 +879,9 @@
         "zero-egress"
       ],
       "port": 8108,
-      "local_url": "http://127.0.0.1:8108"
+      "local_url": "http://127.0.0.1:8108",
+      "tui_cmd": "etsy-connector-tui --status",
+      "desktop_cmd": "etsy-connector desktop"
     },
     {
       "id": "mcp-lens",
@@ -821,7 +901,9 @@
         "zero-egress"
       ],
       "port": 8109,
-      "local_url": "http://127.0.0.1:8109"
+      "local_url": "http://127.0.0.1:8109",
+      "tui_cmd": "mcp-lens-tui --status",
+      "desktop_cmd": "mcp-lens desktop"
     },
     {
       "id": "agent-budget-sentinel",
@@ -841,7 +923,9 @@
         "zero-egress"
       ],
       "port": 8110,
-      "local_url": "http://127.0.0.1:8110"
+      "local_url": "http://127.0.0.1:8110",
+      "tui_cmd": "agent-budget-sentinel-tui --status",
+      "desktop_cmd": "agent-budget-sentinel desktop"
     },
     {
       "id": "agent-gods-eye",
@@ -861,7 +945,9 @@
         "zero-egress"
       ],
       "port": 8112,
-      "local_url": "http://127.0.0.1:8112"
+      "local_url": "http://127.0.0.1:8112",
+      "tui_cmd": "agent-gods-eye-tui --status",
+      "desktop_cmd": "agent-gods-eye desktop"
     },
     {
       "id": "shopify-connector",
@@ -881,7 +967,9 @@
         "zero-egress"
       ],
       "port": 8113,
-      "local_url": "http://127.0.0.1:8113"
+      "local_url": "http://127.0.0.1:8113",
+      "tui_cmd": "shopify-connector-tui --status",
+      "desktop_cmd": "shopify-connector desktop"
     },
     {
       "id": "printify-connector",
@@ -901,7 +989,9 @@
         "zero-egress"
       ],
       "port": 8115,
-      "local_url": "http://127.0.0.1:8115"
+      "local_url": "http://127.0.0.1:8115",
+      "tui_cmd": "printify-connector-tui --status",
+      "desktop_cmd": "printify-connector desktop"
     },
     {
       "id": "gelato-connector",
@@ -921,7 +1011,9 @@
         "zero-egress"
       ],
       "port": 8116,
-      "local_url": "http://127.0.0.1:8116"
+      "local_url": "http://127.0.0.1:8116",
+      "tui_cmd": "gelato-connector-tui --status",
+      "desktop_cmd": "gelato-connector desktop"
     },
     {
       "id": "agent-voice-call",
@@ -941,7 +1033,9 @@
         "zero-egress"
       ],
       "port": 8114,
-      "local_url": "http://127.0.0.1:8114"
+      "local_url": "http://127.0.0.1:8114",
+      "tui_cmd": "agent-voice-call-tui --status",
+      "desktop_cmd": "agent-voice-call desktop"
     },
     {
       "id": "pod-smart-router",
@@ -961,7 +1055,9 @@
         "zero-egress"
       ],
       "port": 8117,
-      "local_url": "http://127.0.0.1:8117"
+      "local_url": "http://127.0.0.1:8117",
+      "tui_cmd": "pod-smart-router-tui --status",
+      "desktop_cmd": "pod-smart-router desktop"
     },
     {
       "id": "digital-asset-forge",
@@ -981,7 +1077,9 @@
         "zero-egress"
       ],
       "port": 8118,
-      "local_url": "http://127.0.0.1:8118"
+      "local_url": "http://127.0.0.1:8118",
+      "tui_cmd": "digital-asset-forge-tui --status",
+      "desktop_cmd": "digital-asset-forge desktop"
     },
     {
       "id": "pod-mockup-forge",
@@ -1001,7 +1099,9 @@
         "zero-egress"
       ],
       "port": 8119,
-      "local_url": "http://127.0.0.1:8119"
+      "local_url": "http://127.0.0.1:8119",
+      "tui_cmd": "pod-mockup-forge-tui --status",
+      "desktop_cmd": "pod-mockup-forge desktop"
     },
     {
       "id": "pod-margin-sentinel",
@@ -1021,7 +1121,9 @@
         "zero-egress"
       ],
       "port": 8120,
-      "local_url": "http://127.0.0.1:8120"
+      "local_url": "http://127.0.0.1:8120",
+      "tui_cmd": "pod-margin-sentinel-tui --status",
+      "desktop_cmd": "pod-margin-sentinel desktop"
     },
     {
       "id": "audiocipher-stego-engine",
@@ -1041,7 +1143,9 @@
         "zero-egress"
       ],
       "port": 8096,
-      "local_url": "http://127.0.0.1:8096"
+      "local_url": "http://127.0.0.1:8096",
+      "tui_cmd": "audiocipher-stego-engine-tui --status",
+      "desktop_cmd": "audiocipher-stego-engine desktop"
     },
     {
       "id": "cyber-turtle-studio",
@@ -1061,7 +1165,9 @@
         "zero-egress"
       ],
       "port": 8129,
-      "local_url": "http://127.0.0.1:8129"
+      "local_url": "http://127.0.0.1:8129",
+      "tui_cmd": "cyber-turtle-studio-tui --status",
+      "desktop_cmd": "cyber-turtle-studio desktop"
     },
     {
       "id": "datamosh-glitch-studio",
@@ -1081,7 +1187,9 @@
         "zero-egress"
       ],
       "port": 8081,
-      "local_url": "http://127.0.0.1:8081"
+      "local_url": "http://127.0.0.1:8081",
+      "tui_cmd": "datamosh-glitch-studio-tui --status",
+      "desktop_cmd": "datamosh-glitch-studio desktop"
     },
     {
       "id": "nexus-3d-scene-studio",
@@ -1101,7 +1209,9 @@
         "zero-egress"
       ],
       "port": 8082,
-      "local_url": "http://127.0.0.1:8082"
+      "local_url": "http://127.0.0.1:8082",
+      "tui_cmd": "nexus-3d-scene-studio-tui --status",
+      "desktop_cmd": "nexus-3d-scene-studio desktop"
     },
     {
       "id": "ufo-sacred-geometry",
@@ -1121,7 +1231,9 @@
         "zero-egress"
       ],
       "port": 8083,
-      "local_url": "http://127.0.0.1:8083"
+      "local_url": "http://127.0.0.1:8083",
+      "tui_cmd": "ufo-sacred-geometry-tui --status",
+      "desktop_cmd": "ufo-sacred-geometry desktop"
     },
     {
       "id": "likeness-desk",
@@ -1141,7 +1253,9 @@
         "zero-egress"
       ],
       "port": 9395,
-      "local_url": "http://127.0.0.1:9395"
+      "local_url": "http://127.0.0.1:9395",
+      "tui_cmd": "likeness-desk-tui --status",
+      "desktop_cmd": "likeness-desk desktop"
     },
     {
       "id": "osint-scout-skill",
@@ -1161,18 +1275,20 @@
         "zero-egress"
       ],
       "port": 8085,
-      "local_url": "http://127.0.0.1:8085"
+      "local_url": "http://127.0.0.1:8085",
+      "tui_cmd": "osint-scout-skill-tui --status",
+      "desktop_cmd": "osint-scout-skill desktop"
     },
     {
-      "id": "bolt.diy",
+      "id": "zoth-bolt",
       "name": "Zoth Bolt",
       "description": "Flagship Full-Stack AI Web & Motion Architect on 127.0.0.1:5173. Supports 23+ AI providers, local CLI agents (AGY, Hermes, Grok, Claude, OpenCode, Cline, Aider), 6 Motion Edit templates, 200k+ free SVG & 16-bit Pixel Art icons, MCP asset bridge, and live WebContainers.",
       "category": "Autonomous Web",
       "github": "https://github.com/stackblitz-labs/bolt.diy",
       "published": true,
-      "studio_url": "https://zoth.nullai.tech/tools/bolt.diy/",
+      "studio_url": "https://zoth.nullai.tech/tools/zoth-bolt/",
       "version": "3.5.0",
-      "pull": "cd ~/NullAITech/bolt.diy && python3 server.py --port 5173  # or: bolt.diy --status",
+      "pull": "zoth-bolt dev  # or: zoth-bolt desktop | zoth-bolt-tui",
       "execution_type": "local_cli",
       "runtimes": [
         "python",
@@ -1181,7 +1297,10 @@
         "zero-egress"
       ],
       "port": 5173,
-      "local_url": "http://127.0.0.1:5173"
+      "local_url": "http://127.0.0.1:5173",
+      "alias": "bolt.diy",
+      "tui_cmd": "zoth-bolt-tui --status",
+      "desktop_cmd": "zoth-bolt desktop"
     },
     {
       "id": "zoth-civilization",
@@ -1201,7 +1320,9 @@
         "zero-egress"
       ],
       "port": 9393,
-      "local_url": "http://127.0.0.1:9393"
+      "local_url": "http://127.0.0.1:9393",
+      "tui_cmd": "zoth-civilization-tui --status",
+      "desktop_cmd": "zoth-civilization desktop"
     },
     {
       "id": "storefront-catalog",
@@ -1221,7 +1342,9 @@
         "zero-egress"
       ],
       "port": 8143,
-      "local_url": "http://127.0.0.1:8143"
+      "local_url": "http://127.0.0.1:8143",
+      "tui_cmd": "storefront-catalog-tui --status",
+      "desktop_cmd": "storefront-catalog desktop"
     },
     {
       "id": "shodan-surface-sentinel",
@@ -1241,7 +1364,9 @@
         "zero-egress"
       ],
       "port": 8130,
-      "local_url": "http://127.0.0.1:8130"
+      "local_url": "http://127.0.0.1:8130",
+      "tui_cmd": "shodan-surface-sentinel-tui --status",
+      "desktop_cmd": "shodan-surface-sentinel desktop"
     },
     {
       "id": "ghidra-mcp-bridge",
@@ -1261,7 +1386,9 @@
         "zero-egress"
       ],
       "port": 8131,
-      "local_url": "http://127.0.0.1:8131"
+      "local_url": "http://127.0.0.1:8131",
+      "tui_cmd": "ghidra-mcp-bridge-tui --status",
+      "desktop_cmd": "ghidra-mcp-bridge desktop"
     },
     {
       "id": "zoth-ascii-magic",
@@ -1281,7 +1408,9 @@
         "zero-egress"
       ],
       "port": 8132,
-      "local_url": "http://127.0.0.1:8132"
+      "local_url": "http://127.0.0.1:8132",
+      "tui_cmd": "zoth-ascii-magic-tui --status",
+      "desktop_cmd": "zoth-ascii-magic desktop"
     },
     {
       "id": "yara-sigma-forge",
@@ -1301,7 +1430,9 @@
         "zero-egress"
       ],
       "port": 8133,
-      "local_url": "http://127.0.0.1:8133"
+      "local_url": "http://127.0.0.1:8133",
+      "tui_cmd": "yara-sigma-forge-tui --status",
+      "desktop_cmd": "yara-sigma-forge desktop"
     },
     {
       "id": "reality-shader-forge",
@@ -1321,7 +1452,9 @@
         "zero-egress"
       ],
       "port": 8134,
-      "local_url": "http://127.0.0.1:8134"
+      "local_url": "http://127.0.0.1:8134",
+      "tui_cmd": "reality-shader-forge-tui --status",
+      "desktop_cmd": "reality-shader-forge desktop"
     },
     {
       "id": "producthunt-connector",
@@ -1341,7 +1474,9 @@
         "zero-egress"
       ],
       "port": 8139,
-      "local_url": "http://127.0.0.1:8139"
+      "local_url": "http://127.0.0.1:8139",
+      "tui_cmd": "producthunt-connector-tui --status",
+      "desktop_cmd": "producthunt-connector desktop"
     },
     {
       "id": "zoth-relay",
@@ -1361,7 +1496,9 @@
         "zero-egress"
       ],
       "port": 8765,
-      "local_url": "http://127.0.0.1:8765/dashboard"
+      "local_url": "http://127.0.0.1:8765/dashboard",
+      "tui_cmd": "zoth-relay-tui --status",
+      "desktop_cmd": "zoth-relay desktop"
     },
     {
       "id": "zela-glasses-guide",
@@ -1381,7 +1518,9 @@
         "zero-egress"
       ],
       "port": 8144,
-      "local_url": "http://127.0.0.1:8144"
+      "local_url": "http://127.0.0.1:8144",
+      "tui_cmd": "zela-glasses-guide-tui --status",
+      "desktop_cmd": "zela-glasses-guide desktop"
     },
     {
       "id": "zoth-bot",
@@ -1401,7 +1540,9 @@
         "zero-egress"
       ],
       "port": 8146,
-      "local_url": "http://127.0.0.1:8146"
+      "local_url": "http://127.0.0.1:8146",
+      "tui_cmd": "zoth-bot-tui --status",
+      "desktop_cmd": "zoth-bot desktop"
     },
     {
       "id": "zoth-bounty",
@@ -1421,7 +1562,9 @@
         "zero-egress"
       ],
       "port": 9494,
-      "local_url": "http://127.0.0.1:9494"
+      "local_url": "http://127.0.0.1:9494",
+      "tui_cmd": "zoth-bounty-tui --status",
+      "desktop_cmd": "zoth-bounty desktop"
     },
     {
       "id": "zoth-scene-foundry",
@@ -1441,7 +1584,9 @@
         "zero-egress"
       ],
       "port": 8823,
-      "local_url": "http://127.0.0.1:8823"
+      "local_url": "http://127.0.0.1:8823",
+      "tui_cmd": "zoth-scene-foundry-tui --status",
+      "desktop_cmd": "zoth-scene-foundry desktop"
     }
   ]
 }

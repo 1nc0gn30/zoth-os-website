@@ -42,7 +42,7 @@ set -euo pipefail
 lb config \\
   --distribution trixie \\
   --archive-areas "main contrib non-free non-free-firmware" \\
-  --bootappend-live "boot=live components quiet splash username=zoth hostname=zoth-pill zoth_mode=${defaultPill}" \\
+  --bootappend-live "boot=live components quiet splash username=zoth hostname=zothos zoth_mode=${defaultPill}" \\
   --iso-volume "ZOTHOS_3_3_SOVEREIGN"
 
 # Pin Kali Rolling & Parrot OS Security APT Priorities

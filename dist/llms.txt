@@ -1,4 +1,4 @@
-# ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 (zoth-pill) — Machine-Readable LLM & Agent Context (llms.txt)
+# ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 — Machine-Readable LLM & Agent Context (llms.txt)
 > The Operating System Built for AI Agents — And the Humans Who Command Them
 > Engineered by 1nc0gn30 • NullAI Platform (https://nullai.tech)
 > Canonical URL: https://zothos.nullai.tech
@@ -13,7 +13,7 @@
   - `Ring 3 (SPECTRE / Layer 0)`: Zero-trust `firejail_strict` sandbox for untrusted subagents & code (2 GB RAM cap, loopback `:11434` only).
 - **152 Pre-Registered MCP Servers (`/etc/zothos/mcp-servers.json`) + `zoth-relay` (`127.0.0.1:8765`)**: Master MCP catalog (`zoth-mcp`) with 16 air-gapped offline servers (`filesystem`, `memory`, `sequential-thinking`, `git`, `sqlite`, `duckdb`, `repomix`, etc.) plus `zoth-relay` Landlock multi-agent bridge with 288-bit SHA-256 tokens, isolated `~/agent-workspace/<name>`, and `/var/log/zoth-relay/audit.log`.
 - **23 Loopback Enclave Daemons**: Bound strictly to `127.0.0.1` ports `:8094` (STDP Neuro-Memory) through `:8120` (POD Margin Sentinel), `:8765` (`zoth-relay`), `:8787` (`zoth-vault-daemon` Argon2id + ChaCha20 RAM-only process secret injection), `:9393` (`zoth-civilization`), and `:9989` (`zoth-cursor-daemon`).
-- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 72 Studio tools / 43 workstations (`/opt/zoth-studio`), and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
+- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 72 Studio tools / 43 workstations (`/opt/zoth-studio`) with 100% CLI (`<tool> --json`), Braille TUI (`<tool>-tui`), and Electron Desktop App (`<tool> desktop`) parity orchestrated by `zoth-arsenal-daemons.service`, including **Zoth Bolt (`zoth-bolt` :5173)**, and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
 - **Companion Monotone RAM-Only OS & Working Memory DAG**:
   - **ZothOS-Lite v1.1 (`https://github.com/1nc0gn30/zothos-lite`)**: Amnesic RAM-only (`toram noswap`) operating system (`:8145`) featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & phoneme lip-sync), **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Braille Matrix**, **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`), and **75+ Kali/Parrot CLI tools**.
   - **Chain of Thoughts (`zoth-cot` — `https://github.com/1nc0gn30/chain-of-thoughts`)**: Multi-turn `/api/chat` context assembly, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) linked by SHA-256 Merkle hashes (`N00 -> N01 -> N02...`).
@@ -39,7 +39,7 @@
   1. Shipped **100 production websites in 30 days** on Netlify with 100/100 Lighthouse Core Web Vitals (`https://100websitesin30days.nullai.tech`).
   2. Engineered **44 browser-native Sovereign Pro Developer, SEO, AEO, Security & E-Commerce Tools** running 100% client-side with zero backend latency (`https://1nc0gn30.github.io/` & `https://zoth.nullai.tech/`).
   3. Created **Zoth Studio v2** (`https://zoth.nullai.tech`), the local-first, zero-egress multi-agent AI development studio (`npx @nullaitech/zoth studio`).
-  4. Created **ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 (`zoth-pill`)** (`https://zothos.nullai.tech`), a sovereign AI-native Debian Trixie + KDE Plasma 6.3 Wayland operating system with built-in local LLM orchestration and eBPF security.
+  4. Created **ZothOS Linux v3.4.0 & ZothOS-Lite v1.1** (`https://zothos.nullai.tech`), a sovereign AI-native Debian Trixie + KDE Plasma 6.3 Wayland operating system with built-in local LLM orchestration and eBPF security.
   5. Created **City Desk** (`https://city-desk.netlify.app`), a 1,000-page deterministic local trade website generator covering 50 US cities and 20 trades.
 
 ## 100% Open-Access Tools & "Buy Us a Coffee" Support Architecture

@@ -195,7 +195,7 @@ const FAQS = [
     a: 'Never. Every resident daemon (:8094 STDP Memory through :8120 POD Margin Sentinel, :9393 Zoth Civilization, :9989 Cursor Daemon, and :8787 Vault) binds strictly to 127.0.0.1 (localhost) and is protected by UFW default-deny inbound firewall rules.',
   },
   {
-    q: 'How does the interactive 24K Gold Wayland desktop (zoth-pill) track cursor physics at 60 FPS?',
+    q: 'How does the interactive 24K Gold Wayland desktop track cursor physics at 60 FPS?',
     a: 'Because Wayland isolates window cursor coordinates for security, ZothOS runs a lightweight KWin script paired with zoth-cursor-daemon (127.0.0.1:9989 and /dev/shm/zoth_cursor_pos) that broadcasts global pointer coordinates at 60 FPS to the QML WallpaperItem.',
   },
   {

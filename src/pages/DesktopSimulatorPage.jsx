@@ -112,7 +112,7 @@ export default function DesktopSimulatorPage() {
           '========================================================================',
           '                 ZOTHOS v3.4.0 SOVEREIGN HOST TELEMETRY                 ',
           '========================================================================',
-          `[✓] HOSTNAME & DESKTOP: zoth-pill.local (KDE Plasma 6.3 Wayland • ${activeMode.name})`,
+          `[✓] HOSTNAME & DESKTOP: zothos.local (KDE Plasma 6.3 Wayland • ${activeMode.name})`,
           '[✓] AGENT AUTHORITY:    Ring 2 (TOOLMASTER) / Layer 2 (CYBERPUPPET)',
           '[✓] WORKING MEMORY DAG: zoth-cot ONLINE (SHA-256 Merkle Chain N00 -> N01 -> N02)',
           '[✓] MULTI-AGENT RELAY:  zoth-relay ONLINE (127.0.0.1:8765 • Landlock Sandbox)',
@@ -241,7 +241,7 @@ export default function DesktopSimulatorPage() {
       entries.push({
         id: Date.now() + 1,
         type: 'output',
-        text: 'Linux zoth-pill 6.12.0-zoth-amd64 #1 SMP PREEMPT_DYNAMIC Debian 13.7 (trixie) x86_64 GNU/Linux',
+        text: 'Linux zothos 6.12.0-zoth-amd64 #1 SMP PREEMPT_DYNAMIC Debian 13.7 (trixie) x86_64 GNU/Linux',
       });
     } else {
       entries.push({
@@ -355,7 +355,7 @@ qemu-system-x86_64 \\
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <TerminalIcon sx={{ color: activeMode.accent }} />
             <Typography sx={{ fontFamily: mono, fontWeight: 800, color: '#EDEFF2', fontSize: '0.9rem' }}>
-              zoth@zoth-pill:~ ({activeMode.name})
+              zoth@zothos:~ ({activeMode.name})
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -421,7 +421,7 @@ qemu-system-x86_64 \\
             <Box key={item.id} sx={{ mb: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
               {item.type === 'input' ? (
                 <Typography sx={{ fontFamily: mono, fontSize: '0.8rem', fontWeight: 800, color: activeMode.accent }}>
-                  zoth@zoth-pill:~$ {item.text}
+                  zoth@zothos:~$ {item.text}
                 </Typography>
               ) : (
                 <Typography sx={{ fontFamily: mono, fontSize: '0.78rem', color: item.type === 'system' ? '#F5E6AB' : '#CBD5E1' }}>
@@ -452,7 +452,7 @@ qemu-system-x86_64 \\
           }}
         >
           <Typography sx={{ fontFamily: mono, fontSize: '0.8rem', fontWeight: 800, color: activeMode.accent }}>
-            zoth@zoth-pill:~$
+            zoth@zothos:~$
           </Typography>
           <InputBase
             fullWidth
