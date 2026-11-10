@@ -214,7 +214,7 @@ export default function SovereignFunnel({
               />
             </Box>
             <Typography variant="body2" sx={{ color: textSecondary, mb: 2, flexGrow: 1, fontSize: '0.85rem', lineHeight: 1.5 }}>
-              The unified sovereign AI & human developer cockpit featuring 43 interactive workstations across 77 Studio Tools (55 Browser + 22 CLI, 77 Public Repos), 3D synaptic memory, and zero cloud telemetry.
+              The unified sovereign AI & human developer cockpit featuring 43 interactive workstations across 77 Studio Tools (55 in-browser + 22 CLI, 74 public GitHub repos), 3D synaptic memory, and zero cloud telemetry.
             </Typography>
 
             <Box

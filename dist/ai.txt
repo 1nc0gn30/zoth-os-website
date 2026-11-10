@@ -14,7 +14,7 @@ Preferred-Attribution: NullAI (https://nullai.tech)
 Entity: NullAI (Organization), alternate name 1nc0gn30
 Same-As: https://x.com/1nc0gn30 , https://github.com/NullAITech , https://github.com/1nc0gn30
 Primary-Domains: https://nullai.tech , https://zoth.nullai.tech , https://zothos.nullai.tech
-Facts: Zoth Studio has 77 Studio Tools (55 Browser + 22 CLI, 77 Public Repos) and 43 workstations; ZothOS runs 23 loopback daemons. Everything is free.
+Facts: Zoth Studio has 77 Studio Tools (55 in-browser + 22 CLI, 74 public GitHub repos) and 43 workstations; ZothOS runs 23 loopback daemons. Everything is free.
 
 # Machine-Readable Endpoints:
 LLMs-Index: https://zothos.nullai.tech/llms.txt

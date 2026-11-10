@@ -122,7 +122,7 @@ export const CORE_PILLARS = [
     id: 'desktop',
     badge: 'KDE PLASMA 6.3 WAYLAND',
     title: '24K Gold Workstation for Human Operators',
-    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 77 Studio Tools (55 Browser + 22 CLI, 77 Public Repos) / 43 workstations.',
+    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 77 Studio Tools (55 in-browser + 22 CLI, 74 public GitHub repos) / 43 workstations.',
     accent: '#F59E0B',
   },
   {
