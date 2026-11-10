@@ -1,5 +1,5 @@
 /**
- * Route → motion-edit intro map for ZothOS Linux v3.4.0 + ZothOS-Lite v1.1 Public Website.
+ * Route → motion-edit intro map for ZothOS Linux v3.4.0 + ZothOS-Lite v1.2 Public Website.
  */
 
 export const ACCENTS = {
@@ -12,12 +12,12 @@ export const ACCENTS = {
 };
 
 const ROUTES = [
-  { match: /^\/$/, clip: 'zoth-os', label: 'ZothOS Linux 3.4.0', kicker: 'Sovereign AI + Security OS · ZothOS-Lite v1.1', accent: 'gold', brailleShape: 'shield' },
+  { match: /^\/$/, clip: 'zoth-os', label: 'ZothOS Linux 3.4.0', kicker: 'Sovereign AI + Security OS · ZothOS-Lite v1.2', accent: 'gold', brailleShape: 'shield' },
   { match: /^\/desktop\/?$/, clip: 'home', label: 'Zoth-Pill Desktop', kicker: 'KDE Plasma 6.3 + Multi-Size Xcursor + Lite GUI', accent: 'gold', brailleShape: 'astrolabe' },
   { match: /^\/daemons\/?$/, clip: 'bridges', label: '23 Loopback Daemons', kicker: '17 Active Fleet Enclaves + Vaelor L1 (:8140)', accent: 'emerald', brailleShape: 'quorum' },
   { match: /^\/security\/?$/, clip: 'hexstrike', label: 'Cyber Arsenal + Vault', kicker: 'Kali + Parrot Parity + Argon2id Vault', accent: 'crimson', brailleShape: 'hex' },
   { match: /^\/mcp\/?$/, clip: 'bridges', label: 'MCP + AX Hub', kicker: '163 Model Context Protocol Servers + AX', accent: 'emerald', brailleShape: 'dag' },
-  { match: /^\/download\/?$/, clip: 'arsenal', label: 'ISO + Custom Builder', kicker: 'UEFI Live-Build v3.4.0 + ZothOS-Lite v1.1', accent: 'cyan', brailleShape: 'grid' },
+  { match: /^\/download\/?$/, clip: 'arsenal', label: 'ISO + Custom Builder', kicker: 'UEFI Live-Build v3.4.0 + ZothOS-Lite v1.2', accent: 'cyan', brailleShape: 'grid' },
   { match: /^\/docs\/?$/, clip: 'docs', label: 'System Codex', kicker: 'Architecture, APT Pinning + Desktop Invariants', accent: 'gold', brailleShape: 'shield' },
 ];
 
@@ -36,7 +36,7 @@ export function resolveRouteIntro(pathname) {
     key: path.replace(/\/$/, '') || '/',
     clip: route.clip,
     label: route.label,
-    kicker: route.kicker || 'ZothOS Linux v3.4.0 + ZothOS-Lite v1.1',
+    kicker: route.kicker || 'ZothOS Linux v3.4.0 + ZothOS-Lite v1.2',
     brailleShape: route.brailleShape || 'shield',
     index: String(idx + 1).padStart(2, '0'),
     total: String(ROUTES.length).padStart(2, '0'),

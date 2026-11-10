@@ -102,7 +102,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
         </HeroItem>
         <HeroItem>
           <Typography variant="h2" sx={{ mb: 1.5 }}>
-            Download <span className="text-gradient-gold">ZothOS Linux v3.4.0 & ZothOS-Lite v1.1</span> & ISO Studio
+            Download <span className="text-gradient-gold">ZothOS Linux v3.4.0 & ZothOS-Lite v1.2</span> & ISO Studio
           </Typography>
         </HeroItem>
         <HeroItem>

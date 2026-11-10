@@ -227,7 +227,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
               letterSpacing: '0.01em',
             }}
           >
-            ZothOS v3.4.0 + ZothOS-Lite v1.1 · Live Braille Dither Telemetry
+            ZothOS v3.4.0 + ZothOS-Lite v1.2 · Live Braille Dither Telemetry
           </Typography>
         </Box>
 
@@ -428,7 +428,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
                 label="AMNESIC MONOTONE OS"
-                value="ZOTHOS-LITE v1.1"
+                value="ZOTHOS-LITE v1.2"
                 sub="Tails-Style RAM-Only OS · 60fps Braille + Bayer Dither Windowed GUI (:8145)"
                 dark={dark}
                 to="/desktop"

@@ -310,7 +310,7 @@ const AX_ENDPOINTS = [
     mime: 'text/markdown',
     purpose: 'Concise LLM Grounding Summary for Perplexity, ClaudeBot, GPTBot & AGY',
     tokens: '~510 tokens',
-    preview: `# ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 — Machine-Readable LLM Context (llms.txt)
+    preview: `# ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — Machine-Readable LLM Context (llms.txt)
 > The Sovereign AI, Cryptographic Vault & Offensive Security Operating System
 - Base: Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI + Kali & Parrot APT Pinning
 - Desktop: KDE Plasma 6.3 Wayland (org.zothos.interactive 3D wallpaper + :9989 cursor daemon)
@@ -322,7 +322,7 @@ const AX_ENDPOINTS = [
     mime: 'text/markdown',
     purpose: 'Complete Deep-Context Specification (APT Pinning, 22 Ports, 4 Reality Pills, MCP)',
     tokens: '~1,850 tokens',
-    preview: `# ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 — Complete Technical Grounding Specification
+    preview: `# ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — Complete Technical Grounding Specification
 SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
 SECTION 2: FOUR REALITY PILL OPERATIONAL MODES (zoth-mode gold|ghost|matrix|incognito)
 SECTION 3: 23 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)

@@ -1,7 +1,7 @@
 # ZothOS Website — Official Distribution Hub & Agent-Native OS Showcase
 
-> **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.4.0 & ZothOS-Lite v1.1**  
-> *A Debian 13-based distro built as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, Chain of Thoughts `zoth-cot` Merkle Working Memory DAG, 163 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, ZothOS-Lite v1.1 Amnesic Monotone Edition, Debian 13 + Kali & Parrot dual parity).*
+> **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.4.0 & ZothOS-Lite v1.2**  
+> *A Debian 13-based distro built as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, Chain of Thoughts `zoth-cot` Merkle Working Memory DAG, 163 Model Context Protocol servers, zoth-relay :8765, 22 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, ZothOS-Lite v1.2 Amnesic Monotone Edition, Debian 13 + Kali & Parrot dual parity).*
 
 [![Live Production Site](https://img.shields.io/badge/Live-zothos.nullai.tech-gold?style=flat-square&logo=googlechrome)](https://zothos.nullai.tech)
 [![Netlify Deploy](https://img.shields.io/badge/Deploy-Netlify%20Production-00C7B7?style=flat-square&logo=netlify)](https://app.netlify.com)
@@ -16,10 +16,10 @@
 
 ## Overview
 
-`zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os) and [ZothOS-Lite v1.1](https://github.com/NullAITech/zothos-lite). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
+`zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os) and [ZothOS-Lite v1.2](https://github.com/NullAITech/zothos-lite). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
 
 ### Key Highlights
-- **Dual-Surface Showcase**: Articulates ZothOS's unique dual-audience design—a hardened, permission-ringed execution substrate for coding agents on the backend, paired with an avant-garde 24K Gold KDE Plasma 6.3 Wayland desktop and Amnesic ZothOS-Lite v1.1 for human operators.
+- **Dual-Surface Showcase**: Articulates ZothOS's unique dual-audience design—a hardened, permission-ringed execution substrate for coding agents on the backend, paired with an avant-garde 24K Gold KDE Plasma 6.3 Wayland desktop and Amnesic ZothOS-Lite v1.2 for human operators.
 - **100% In-Browser Interactive Demos**: Interactive terminal simulators, MCP inspector previews, and live telemetry widgets with zero fake work.
 - **Machine Discovery (AEO & AX)**: Structured `/llms.txt`, `/llms-full.txt`, and programmatic `/api/` endpoints enabling LLMs (Perplexity, GPTBot, ClaudeBot, Google SGE) to accurately cite and index ZothOS capabilities.
 - **100% Free & Open-Access**: All tools, ISO builders, and configurations are unlocked by default with zero paywalls, supported via optional "☕ Buy Us a Coffee" (Stripe + Solana tip address).
@@ -38,7 +38,7 @@
 +-----------------------------+ +-----------------------------+ +-----------------------------+
 |    HUMAN OPERATOR UX        | |   AI AGENT DISCOVERY (AEO)  | | 100% OPEN-ACCESS & SUPPORT  |
 |  - 24K Gold Plasma 6.3 Tour | |  - /llms.txt & llms-full.txt| |  - 100% Unlocked By Default |
-|  - ZothOS-Lite v1.1 (:8145) | |  - /api/tools.json Catalog  | |  - Chain of Thoughts DAG    |
+|  - ZothOS-Lite v1.2 (:8145) | |  - /api/tools.json Catalog  | |  - Chain of Thoughts DAG    |
 |  - SHA-256 / Cosign Verifier| |  - /api/services.json API   | |  - Stripe Buy Us a Coffee   |
 |  - Live ISO Torrent / HTTP  | |  - Schema.org JSON-LD Graphs| |  - Solana Tip Address       |
 +-----------------------------+ +-----------------------------+ +-----------------------------+
@@ -64,7 +64,7 @@
 - **For Human Operators**:
   - **24K Gold KDE Plasma 6.3 Wayland**: Dark alchemical glassmorphism with custom shaders, icon themes, and multi-monitor `zoth-lock`.
   - **Debian 13.7 + Kali & Parrot Parity**: Complete package coverage across bleeding-edge enterprise penetration testing and digital forensics.
-  - **[ZothOS-Lite v1.1 (`1nc0gn30/zothos-lite`)](https://github.com/NullAITech/zothos-lite)**: Companion Amnesic Monotone RAM-Only Operating System featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time mouth phoneme lip-sync), **[Chain of Thoughts (`zoth-cot` — `1nc0gn30/chain-of-thoughts`)](https://github.com/NullAITech/chain-of-thoughts)** cryptographic SHA-256 Merkle working memory DAG, **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Tunnel Matrix**, and **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`).
+  - **[ZothOS-Lite v1.2 (`1nc0gn30/zothos-lite`)](https://github.com/NullAITech/zothos-lite)**: Companion Amnesic Monotone RAM-Only Operating System featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time mouth phoneme lip-sync), **[Chain of Thoughts (`zoth-cot` — `1nc0gn30/chain-of-thoughts`)](https://github.com/NullAITech/chain-of-thoughts)** cryptographic SHA-256 Merkle working memory DAG, **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, **3D Perspective Tunnel Matrix**, and **Sovereign Horology Niche Clock** (`8-dot Braille BCD + Swatch .beats + GMST`).
 - **Chain of Thoughts (`zoth-cot`) Working Memory DAG**:
   - Standalone open-source engine ([`1nc0gn30/chain-of-thoughts`](https://github.com/NullAITech/chain-of-thoughts)) that provides persistent multi-turn `/api/chat` context, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and a 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) with cryptographic parent-to-child Merkle links (`N00 -> N01 -> N02...`).
 

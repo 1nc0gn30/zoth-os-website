@@ -6,14 +6,14 @@ const OG_IMAGE = 'https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg';
 
 const ROUTE_META = {
   '/': {
-    title: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 — The Operating System Built for AI Agents & Human Operators',
-    desc: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.1: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 163 MCP servers, zoth-relay :8765, 23 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and Kali and Parrot security tools for humans.',
+    title: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — The Operating System Built for AI Agents & Human Operators',
+    desc: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.2: Permission-ringed Debian 13.7 (Trixie) OS built for autonomous AI agents (Ring 0–3 zoth-agent-os, 163 MCP servers, zoth-relay :8765, 23 loopback daemons) with a 24K Gold KDE Plasma 6.3 Wayland workstation and Kali and Parrot security tools for humans.',
     keywords: 'ZothOS, Agent-Native Linux OS, OS for AI agents, zoth-agent-os, zoth-relay, 163 MCP servers, Debian 13 Trixie, Kali Parrot dual parity, KDE Plasma 6.3 Wayland, 23 loopback daemons',
     schemaType: 'SoftwareApplication',
     breadcrumb: 'Overview',
   },
   '/desktop': {
-    title: 'Interactive Desktop Lab & Reality Pill Switcher — ZothOS Linux v3.4.0 & ZothOS-Lite v1.1',
+    title: 'Interactive Desktop Lab & Reality Pill Switcher — ZothOS Linux v3.4.0 & ZothOS-Lite v1.2',
     desc: 'Experience the ZothOS KDE Plasma 6.3 Wayland desktop in your browser. Switch between Gold Master, NullAI Ghostmode Tor, Matrix Phosphor, and Covert guises with live zoth-sh terminal execution.',
     keywords: 'ZothOS desktop simulator, KDE Plasma 6.3 Wayland, zoth-mode, Reality Pill switcher, zoth-cursor-daemon, interactive QML wallpaper',
     schemaType: 'TechArticle',
@@ -41,7 +41,7 @@ const ROUTE_META = {
     breadcrumb: 'MCP & AX Hub',
   },
   '/download': {
-    title: 'Download ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 ISO & Custom Live-Build Recipe Generator',
+    title: 'Download ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 ISO & Custom Live-Build Recipe Generator',
     desc: 'Download the ZothOS v3.4.0 Hybrid UEFI Live/Install ISO (SHA-256 & Sigstore Cosign verified) or generate a custom Debian 13 Trixie live-build bootstrap script.',
     keywords: 'Download ZothOS ISO, Debian 13 live-build script, Sigstore Cosign verification, custom AI Linux ISO builder',
     schemaType: 'HowTo',
@@ -49,7 +49,7 @@ const ROUTE_META = {
   },
   '/docs': {
     title: 'System Codex — Kernel, APT Pinning, Wayland SHM, MCP & Thermal Specs | ZothOS v3.4.0',
-    desc: 'Complete engineering codex for ZothOS Linux v3.4.0 & ZothOS-Lite v1.1: surgical tri-repo APT pinning, 60 FPS KWin Wayland SHM cursor pipeline, UFW zero-egress rules, Argon2id vault math, and <55°C thermal governance.',
+    desc: 'Complete engineering codex for ZothOS Linux v3.4.0 & ZothOS-Lite v1.2: surgical tri-repo APT pinning, 60 FPS KWin Wayland SHM cursor pipeline, UFW zero-egress rules, Argon2id vault math, and <55°C thermal governance.',
     keywords: 'ZothOS documentation, System Codex, Debian Kali Parrot APT pinning, KWin Wayland cursor daemon, Argon2id mlockall, zero-egress UFW nftables',
     schemaType: 'TechArticle',
     breadcrumb: 'System Codex',
@@ -66,7 +66,7 @@ function buildRouteJsonLd(pathname, meta) {
         {
           '@type': 'ListItem',
           position: 1,
-          name: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.1',
+          name: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.2',
           item: SITE_URL,
         },
         ...(pathname !== '/'

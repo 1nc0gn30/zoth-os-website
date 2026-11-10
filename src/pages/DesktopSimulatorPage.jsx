@@ -29,7 +29,7 @@ const INITIAL_HISTORY = [
     id: 1,
     type: 'system',
     text: [
-      'ZOTHOS LINUX v3.4.0-RELEASE + ZOTHOS-LITE v1.1 (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
+      'ZOTHOS LINUX v3.4.0-RELEASE + ZOTHOS-LITE v1.2 (Debian 13.7 Trixie • Linux 6.12-amd64 • KDE Plasma 6.3 Wayland)',
       'Agent Substrate: Ring-2 TOOLMASTER (CYBERPUPPET) Active • Chain of Thoughts (zoth-cot) DAG • 163 MCP Servers • 23 Loopback Daemons.',
       'Type "help" or click any quick-command chip below to test both Agent-Native and Human Workstation CLI tools.',
     ].join('\n'),

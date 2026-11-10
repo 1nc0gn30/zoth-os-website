@@ -28,7 +28,7 @@ export default function Footer() {
   const ecosystemLinks = [
     { label: 'Zoth Studio v2 (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
     { label: 'ZothOS GitHub Repository', href: 'https://github.com/1nc0gn30/zoth-os' },
-    { label: 'ZothOS-Lite v1.1 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
+    { label: 'ZothOS-Lite v1.2 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
     { label: 'Chain of Thoughts (zoth-cot) Repo', href: 'https://github.com/1nc0gn30/chain-of-thoughts' },
     { label: 'NullAI Hub', href: 'https://nullai.tech' },
     { label: '1nc0gn30 (1nc0gn30.si)', href: 'https://1nc0gn30.si' },
@@ -189,8 +189,12 @@ export default function Footer() {
           }}
         >
           <Box>
-            Engineered by <strong>NullAI</strong> (
-            <Link href="https://github.com/NullAITech/zoth-os" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 700 }}>
+            Engineered by{' '}
+            <Link href="https://1nc0gn30.si" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 700 }}>
+              1nc0gn30
+            </Link>{' '}
+            (
+            <Link href="https://github.com/1nc0gn30/zoth-os" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 700 }}>
               @1nc0gn30
             </Link>
             ) •{' '}

@@ -92,7 +92,7 @@ export default function HomePage() {
             <HeroItem>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2, flexWrap: 'wrap' }}>
                 <Chip
-                  label="AGENT-NATIVE LINUX v3.4.0 + ZOTHOS-LITE v1.1 • RING 0–3 ENFORCED"
+                  label="AGENT-NATIVE LINUX v3.4.0 + ZOTHOS-LITE v1.2 • RING 0–3 ENFORCED"
                   size="small"
                   sx={{
                     height: 'auto',
@@ -167,7 +167,7 @@ export default function HomePage() {
                 }}
               >
                 Standard Linux was designed for a single human typing into bash.{' '}
-                <strong>ZothOS Linux v3.4.0 & ZothOS-Lite v1.1</strong> is a Debian 13-based distro built as a{' '}
+                <strong>ZothOS Linux v3.4.0 & ZothOS-Lite v1.2</strong> is a Debian 13-based distro built as a{' '}
                 <strong>permission-ringed, self-healing habitat for autonomous AI agents</strong> (
                 <code>zoth-agent-os</code>, 163 pre-registered MCP servers, <code>zoth-relay</code> Landlock multi-agent bridge,{' '}
                 <code>zoth-vault</code> RAM secret injection, and 23 loopback daemons)—while giving{' '}
@@ -414,7 +414,7 @@ export default function HomePage() {
                 'Bespoke 24K Celtic Gold Desktop: KDE Plasma 6.3 Wayland with Zoth-Hermetic 3D glass icons, 60 FPS interactive QML wallpaper, and the All-Seeing Eye cursor companion (zoth-desktop-pet).',
                 'zoth-cockpit Operations Center: Flagship Electron dashboard + curses TUI (--tui) with rolling 60s hardware waveforms, 21-Agent Pantheon dispatch, and live daemon log inspection.',
                 'Debian 13.7 + Kali + Parrot Parity: Surgical APT pinning (900 Debian Trixie, 400 Kali/Parrot) gives human red-teamers Kali and Parrot security tools without rolling-release breakage.',
-                '72 Studio tools (53 in-browser + 19 local CLI; 72 with public repos) and 43 workstations pre-installed for offline engineering.',
+                '77 Studio Tools (55 Browser + 22 CLI, 77 Public Repos) and 43 workstations pre-installed for offline engineering.',
                 '4 Instant Reality Modes & Whisper-Quiet Hardware: Flip between gold, ghost (transparent Tor), matrix, and win11 decoy mode while keeping CPU < 55.0°C at 0 RPM.',
               ].map((bullet) => (
                 <Box key={bullet} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.2 }}>
@@ -501,7 +501,7 @@ export default function HomePage() {
           01 / 04 · ARCHITECTURAL FOUNDATION
         </Typography>
         <Typography variant="h2" sx={{ color: textPrimary, mb: 4 }}>
-          Six Sovereign Pillars of <span className="text-gradient-gold">ZothOS Linux v3.4.0 & ZothOS-Lite v1.1</span>
+          Six Sovereign Pillars of <span className="text-gradient-gold">ZothOS Linux v3.4.0 & ZothOS-Lite v1.2</span>
         </Typography>
 
         <StaggerChildren>
@@ -624,7 +624,7 @@ export default function HomePage() {
         </Box>
       </Box>
 
-      {/* ZothOS-Lite v1.1 & Chain of Thoughts (zoth-cot) Monotone Showcase */}
+      {/* ZothOS-Lite v1.2 & Chain of Thoughts (zoth-cot) Monotone Showcase */}
       <Box
         sx={{
           mb: 10,
@@ -669,7 +669,7 @@ export default function HomePage() {
                 wordBreak: 'break-word',
               }}
             >
-              ▓▒░ ZOTHOS-LITE v1.1 + CHAIN OF THOUGHTS (zoth-cot) ░▒▓
+              ▓▒░ ZOTHOS-LITE v1.2 + CHAIN OF THOUGHTS (zoth-cot) ░▒▓
             </Box>
             <Typography
               sx={{
@@ -730,7 +730,7 @@ export default function HomePage() {
                 '&:hover': { bgcolor: '#FFFFFF', color: '#000000' },
               }}
             >
-              [ ZOTHOS-LITE v1.1 REPO ↗ ]
+              [ ZOTHOS-LITE v1.2 REPO ↗ ]
             </Button>
           </Box>
         </Box>
@@ -770,7 +770,7 @@ export default function HomePage() {
                 wordBreak: 'break-word',
               }}
             >
-              ZothOS-Lite v1.1 boots an amnesic RAM-only Debian/Kali/Parrot substrate (`:8145`) featuring <strong>AZOTH</strong> (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time phoneme lip-sync), <strong>Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT</strong>, a <strong>3D Perspective Tunnel Matrix</strong>, the <strong>Sovereign Horology Niche Clock</strong> (`[⠅⠉] ⠴ @264.9 • 0x3925 • UTC`), and <strong>Chain of Thoughts (`zoth-cot`)</strong> — our multi-turn working memory & SHA-256 Merkle thought chain engine.
+              ZothOS-Lite v1.2 boots an amnesic RAM-only Debian/Kali/Parrot substrate (`:8145`) featuring <strong>AZOTH</strong> (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time phoneme lip-sync), <strong>Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT</strong>, a <strong>3D Perspective Tunnel Matrix</strong>, the <strong>Sovereign Horology Niche Clock</strong> (`[⠅⠉] ⠴ @264.9 • 0x3925 • UTC`), and <strong>Chain of Thoughts (`zoth-cot`)</strong> — our multi-turn working memory & SHA-256 Merkle thought chain engine.
             </Typography>
             <Box
               sx={{
@@ -999,9 +999,9 @@ $ zoth-cot recall FALCON-7
 
       {/* Sovereign Ecosystem Funnel */}
       <SovereignFunnel
-        title="Deploy ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 & Sovereign Ecosystem"
+        title="Deploy ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 & Sovereign Ecosystem"
         subtitle="Flash ZothOS v3.4.0 to bare metal or KVM, launch the Zoth Studio v2 web cockpit, or build a custom live-build ISO tailored to your agent swarm."
-        toolTitle="Option 1: ZothOS Linux v3.4.0 & ZothOS-Lite v1.1 ISO"
+        toolTitle="Option 1: ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 ISO"
         toolTag="HYBRID UEFI ISO"
         toolDescription="Bootable Debian 13 + Kali/Parrot dual-parity Linux OS with KDE Plasma 6.3 Wayland and 23 loopback enclaves."
         toolRepo="https://github.com/NullAITech/zoth-os"
