@@ -24,7 +24,9 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import HubIcon from '@mui/icons-material/Hub';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ProductHuntBadges from '../components/ProductHuntBadges';
+import { safeCopyText } from '../utils/clipboard';
 import {
   HeroReveal,
   HeroItem,
@@ -60,11 +62,9 @@ export default function HomePage() {
   const textSecondary = isDark ? '#94A3B8' : '#475467';
   const cardBg = isDark ? '#0D0E17' : '#FFFFFF';
 
-  const copyCmd = (text, label) => {
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard.writeText(text);
-      setToast(`Copied ${label} to clipboard!`);
-    }
+  const copyCmd = async (text, label) => {
+    await safeCopyText(text);
+    setToast(`Copied ${label} to clipboard!`);
   };
 
   return (
@@ -365,7 +365,7 @@ export default function HomePage() {
               {[
                 'zoth-agent-os & 4 Security Rings: Hardware/OS-enforced Ring 0 (SOVEREIGN) through Ring 3 (SPECTRE) governing filesystem paths, cgroups/Firejail/Landlock isolation, and LLM token budgets.',
                 'Chain of Thoughts (zoth-cot) Working Memory DAG: True multi-turn /api/chat context assembly, automatic semantic fact extraction (IDENTITY, MEMORY, MISSION, SECRET), and cryptographic SHA-256 Merkle thought chains (N00 -> N01 -> N02...).',
-                '152 Pre-Registered MCP Servers: /etc/zothos/mcp-servers.json ships with 16 air-gapped local servers and deterministic CLI fallbacks managed via zoth-mcp.',
+                '163 Pre-Registered MCP Servers: /etc/zothos/mcp-servers.json ships with 16 air-gapped local servers and deterministic CLI fallbacks managed via zoth-mcp.',
                 'zoth-relay Multi-Agent Bridge (127.0.0.1:8765): Lets Antigravity, Claude, Cursor, Grok, Muse Code, and GPT Actions work concurrently with 288-bit tokens and isolated ~/agent-workspace/<name> directories.',
                 'Zero-Disk Secret Injection (:8787): zoth-vault run -- <agent> injects decrypted API keys directly into child process RAM so agents never see plaintext keys on disk.',
                 'Autonomous Self-Healing: zoth-sentinel + zoth-heal continuously repair APT locks, compositors, DNS, and zombie threads so 24/7 agent runs never stall.',
@@ -412,7 +412,7 @@ export default function HomePage() {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
               {[
                 'Bespoke 24K Celtic Gold Desktop: KDE Plasma 6.3 Wayland with Zoth-Hermetic 3D glass icons, 60 FPS interactive QML wallpaper, and the All-Seeing Eye cursor companion (zoth-desktop-pet).',
-                'zoth-cockpit Operations Center: Flagship Electron dashboard + curses TUI (--tui) with rolling 60s hardware waveforms, 21-Agent Pantheon dispatch, and live daemon log inspection.',
+                'zoth-cockpit Operations Center: Flagship Electron dashboard + curses TUI (--tui) with rolling 60s hardware waveforms, 23-Agent Pantheon dispatch, and live daemon log inspection.',
                 'Debian 13.7 + Kali + Parrot Parity: Surgical APT pinning (900 Debian Trixie, 400 Kali/Parrot) gives human red-teamers Kali and Parrot security tools without rolling-release breakage.',
                 '77 Studio Tools (55 in-browser + 22 CLI, 74 public GitHub repos) and 43 workstations pre-installed for offline engineering.',
                 '4 Instant Reality Modes & Whisper-Quiet Hardware: Flip between gold, ghost (transparent Tor), matrix, and win11 decoy mode while keeping CPU < 55.0°C at 0 RPM.',
@@ -770,8 +770,47 @@ export default function HomePage() {
                 wordBreak: 'break-word',
               }}
             >
-              ZothOS-Lite v1.2 boots an amnesic RAM-only Debian/Kali/Parrot substrate (`:8145`) featuring <strong>AZOTH</strong> (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time phoneme lip-sync), <strong>Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT</strong>, a <strong>3D Perspective Tunnel Matrix</strong>, the <strong>Sovereign Horology Niche Clock</strong> (`[⠅⠉] ⠴ @264.9 • 0x3925 • UTC`), and <strong>Chain of Thoughts (`zoth-cot`)</strong> — our multi-turn working memory & SHA-256 Merkle thought chain engine.
+              ZothOS-Lite v1.2 boots an amnesic RAM-only Tails-style Monotone Debian/Kali/Parrot substrate (`:8145`) compatible with <strong>56 curated AI models across 8 providers</strong> (including <strong>DeepSeek Flash</strong> via <strong>Hermes Agent by Nous Research</strong> + local <strong>Ollama</strong>), featuring <strong>AZOTH</strong> (Embodied `U+2800` Braille AI Agent with 6 mood rigs & real-time phoneme lip-sync), <strong>Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT</strong>, and <strong>Chain of Thoughts (`zoth-cot`)</strong> — our multi-turn working memory & SHA-256 Merkle thought chain engine.
             </Typography>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.2, mb: 2.2 }}>
+              <Button
+                size="small"
+                variant="contained"
+                href="https://zothos-lite.nullai.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                endIcon={<OpenInNewIcon sx={{ fontSize: 15 }} />}
+                sx={{
+                  fontFamily: mono,
+                  fontWeight: 900,
+                  fontSize: '0.73rem',
+                  bgcolor: '#F7F7F4',
+                  color: '#000000',
+                  border: '1.5px solid #FFFFFF',
+                  '&:hover': { bgcolor: '#FFFFFF', color: '#000000' },
+                }}
+              >
+                Launch ZothOS-Lite v1.2 Portal
+              </Button>
+              <Button
+                size="small"
+                variant="outlined"
+                href="https://github.com/1nc0gn30/zothos-lite"
+                target="_blank"
+                rel="noopener noreferrer"
+                endIcon={<GitHubIcon sx={{ fontSize: 15 }} />}
+                sx={{
+                  fontFamily: mono,
+                  fontWeight: 800,
+                  fontSize: '0.73rem',
+                  color: '#FFFFFF',
+                  borderColor: '#FFFFFF',
+                  '&:hover': { borderColor: '#D4AF37', color: '#D4AF37' },
+                }}
+              >
+                ZothOS-Lite ISO Source
+              </Button>
+            </Box>
             <Box
               sx={{
                 display: 'grid',
@@ -782,10 +821,10 @@ export default function HomePage() {
               }}
             >
               {[
+                { code: '56-MODELS', name: 'zoth-lite-models (8 Providers)', desc: '56 curated models: Ollama Local, Hermes/Nous (DeepSeek Flash), DeepSeek, OpenRouter, OpenAI, Anthropic, Gemini & Groq' },
                 { code: 'COT-DAG', name: '◈ Chain of Thoughts (zoth-cot)', desc: 'Multi-turn /api/chat context, auto semantic fact extraction & SHA-256 Merkle chain (N00 -> N01...)' },
-                { code: 'AZOTH-AI', name: 'AZOTH Embodied Braille AI', desc: '6 full-body mood rigs, real-time mouth phoneme lip-sync & 8 LLM provider connectors' },
-                { code: 'KOKORO', name: 'Kokoro 82M ONNX Voice + Mic STT', desc: 'Offline 24kHz neural voice synthesis (af_bella, am_adam) + full-duplex microphone speech-to-text' },
-                { code: 'HOROLOGY', name: 'Sovereign Horology Niche Clock', desc: '8-dot U+2800 Braille BCD matrix, 16-bit Hex-Chron, Swatch .beats, GMST Sidereal & Julian Date' },
+                { code: 'AZOTH-AI', name: 'AZOTH Embodied Braille AI', desc: '6 full-body mood rigs, real-time mouth phoneme lip-sync & Kokoro 82M ONNX Neural TTS + Mic STT' },
+                { code: 'TORAM', name: 'Amnesic RAM-Only Hygiene', desc: '100% volatile RAM execution (toram noswap) with zoth-lite-welcome tour & zoth-lite-storage encrypted sync' },
               ].map((item) => (
                 <Box
                   key={item.code}

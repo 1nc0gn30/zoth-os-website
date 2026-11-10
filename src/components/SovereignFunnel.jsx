@@ -16,6 +16,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import StorageIcon from '@mui/icons-material/Storage';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { safeCopyText } from '../utils/clipboard';
 
 export default function SovereignFunnel({
   title = "Sovereign Installation & Ecosystem Deployment",
@@ -35,12 +36,10 @@ export default function SovereignFunnel({
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMsg, setSnackbarMsg] = useState('');
 
-  const handleCopy = (text, label) => {
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard.writeText(text);
-      setSnackbarMsg(`Copied ${label || 'command'} to clipboard!`);
-      setSnackbarOpen(true);
-    }
+  const handleCopy = async (text, label) => {
+    await safeCopyText(text);
+    setSnackbarMsg(`Copied ${label || 'command'} to clipboard!`);
+    setSnackbarOpen(true);
   };
 
   const gold = isDark ? '#D4AF37' : '#8A6508';

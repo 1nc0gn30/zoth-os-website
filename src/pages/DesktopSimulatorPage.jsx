@@ -21,6 +21,7 @@ import { HeroReveal, HeroItem, GlowLine } from '../components/MotionReveal';
 import InteractiveDesktopPreview from '../components/InteractiveDesktopPreview';
 import { ProFunnelBanner, ProOutputGate, useProLicense } from '../context/ProLicenseContext';
 import { REALITY_PILL_MODES } from '../data/zothOsData';
+import { safeCopyText, downloadTextFile } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -50,6 +51,7 @@ const QUICK_CMDS = [
   'zoth doctor',
   'zoth-vault status',
   'zoth-heal --check',
+  'zoth-lite-models --list',
   'ollama list',
   'clear',
 ];
@@ -159,8 +161,8 @@ export default function DesktopSimulatorPage() {
         id: Date.now() + 1,
         type: 'output',
         text: [
-          'ZOTHOS MASTER MODEL CONTEXT PROTOCOL (MCP) HUB v3.1 (/etc/zothos/mcp-servers.json)',
-          '  Total Cataloged MCP Servers : 152 (16 100% Air-Gapped Offline • 136 Hybrid/OAuth)',
+          'ZOTHOS MASTER MODEL CONTEXT PROTOCOL (MCP) HUB v3.4 (/etc/zothos/mcp-servers.json)',
+          '  Total Cataloged MCP Servers : 163 (16 100% Air-Gapped Offline • 147 Hybrid/OAuth)',
           '  Core Offline Servers        : filesystem (Ring 1), memory (Ring 0), sequential-thinking (Ring 2),',
           '                                git (Ring 2), sqlite (Ring 1), duckdb (Ring 2), repomix (Ring 2)',
           '  Resident Loopback Clusters  : zoth-kernel (:8105), zoth-vault (:8787), zoth-hexstrike (:8112),',
@@ -225,6 +227,19 @@ export default function DesktopSimulatorPage() {
           '  • [✓ HEALTHY] Btrfs Root Subvolume & NVMe SMART (99% Health)',
         ].join('\n'),
       });
+    } else if (lower === 'zoth-lite-models --list') {
+      entries.push({
+        id: Date.now() + 1,
+        type: 'output',
+        text: [
+          'ZOTHOS-LITE v1.2 UNIVERSAL AI MODEL ROUTER (56 Curated Models • 8 Providers)',
+          '  ★ Recommended Cloud Light : DeepSeek Flash via Hermes Agent by Nous Research (hermes/deepseek-flash)',
+          '  ★ Recommended Air-Gapped  : Ollama Local qwen2.5-coder:7b (127.0.0.1:11434)',
+          '  Providers [8]             : Ollama Local (10) | Hermes/Nous (5) | DeepSeek (4) | OpenRouter (11)',
+          '                              OpenAI (7) | Anthropic (6) | Google Gemini (6) | Groq (7)',
+          '  Switch Active Model       : $ zoth-lite-models --set hermes/deepseek-flash',
+        ].join('\n'),
+      });
     } else if (lower === 'ollama list') {
       entries.push({
         id: Date.now() + 1,
@@ -257,6 +272,7 @@ export default function DesktopSimulatorPage() {
           '  zoth doctor                  Run 10-point cryptographic & agent-native invariant audit',
           '  zoth-vault status            Inspect Argon2id + ChaCha20 RAM-only secrets injector (:8787)',
           '  zoth-heal --check            Run 7-subsystem autonomous self-healing diagnostic sweep',
+          '  zoth-lite-models --list      Inspect 56 curated models across 8 providers (ZothOS-Lite v1.2)',
           '  ollama list                  List local air-gapped LLMs on 127.0.0.1:11434',
           '  clear                        Clear terminal output',
         ].join('\n'),
@@ -291,13 +307,18 @@ qemu-system-x86_64 \\
   -nic user,model=virtio-net-pci,hostfwd=tcp:127.0.0.1:8094-:8094,hostfwd=tcp:127.0.0.1:8787-:8787
 `;
 
-  const handleCopyProfile = () => {
+  const handleCopyProfile = async () => {
     if (!isPro) {
       openPaywallModal();
       return;
     }
-    navigator.clipboard?.writeText(generatedProfileScript);
+    await safeCopyText(generatedProfileScript);
     setToast('Copied custom ZothOS KVM & Reality Profile script!');
+  };
+
+  const handleDownloadProfile = () => {
+    downloadTextFile(`zothos-kvm-${activeMode.id}-${cpuPreset}-${ramGb}gb.sh`, generatedProfileScript, 'text/x-shellscript;charset=utf-8');
+    setToast(`Downloaded zothos-kvm-${activeMode.id}-${cpuPreset}-${ramGb}gb.sh!`);
   };
 
   return (
@@ -516,6 +537,15 @@ qemu-system-x86_64 \\
               sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
             >
               Copy Script
+            </Button>
+            <Button
+              size="small"
+              variant="contained"
+              startIcon={<DownloadIcon />}
+              onClick={handleDownloadProfile}
+              sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
+            >
+              Download .sh
             </Button>
           </Box>
         </Box>

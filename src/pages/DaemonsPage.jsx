@@ -6,6 +6,7 @@ import {
   Paper,
   Button,
   Chip,
+  TextField,
   Snackbar,
   Alert,
   useTheme,
@@ -13,9 +14,11 @@ import {
 import HubIcon from '@mui/icons-material/Hub';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import DownloadIcon from '@mui/icons-material/Download';
 import { HeroReveal, HeroItem, GlowLine, StaggerChildren, StaggerItem } from '../components/MotionReveal';
 import { ProFunnelBanner, ProOutputGate, useProLicense } from '../context/ProLicenseContext';
 import { LOOPBACK_DAEMONS, FRONTIER_AGENTS } from '../data/zothOsData';
+import { safeCopyText, downloadTextFile } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -23,6 +26,7 @@ const CATEGORIES = ['All', 'AI Memory', 'Zero-Egress', 'Security', 'Commerce', '
 
 export default function DaemonsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedDaemon, setSelectedDaemon] = useState(LOOPBACK_DAEMONS[0]);
   const [toast, setToast] = useState(null);
 
@@ -32,10 +36,17 @@ export default function DaemonsPage() {
   const cardBg = isDark ? '#0D0E17' : '#FFFFFF';
   const { isPro, openPaywallModal } = useProLicense();
 
-  const filteredDaemons =
-    selectedCategory === 'All'
-      ? LOOPBACK_DAEMONS
-      : LOOPBACK_DAEMONS.filter((d) => d.category === selectedCategory);
+  const filteredDaemons = LOOPBACK_DAEMONS.filter((d) => {
+    const matchesCat = selectedCategory === 'All' || d.category === selectedCategory;
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch =
+      !q ||
+      d.name.toLowerCase().includes(q) ||
+      d.port.toLowerCase().includes(q) ||
+      d.stack.toLowerCase().includes(q) ||
+      d.desc.toLowerCase().includes(q);
+    return matchesCat && matchesSearch;
+  });
 
   const systemdUnitPreview = `[Unit]
 Description=ZothOS Sovereign Enclave — ${selectedDaemon.name} (${selectedDaemon.port})
@@ -57,13 +68,19 @@ PrivateTmp=true
 [Install]
 WantedBy=default.target`;
 
-  const handleCopyUnit = () => {
+  const handleCopyUnit = async () => {
     if (!isPro) {
       openPaywallModal();
       return;
     }
-    navigator.clipboard?.writeText(systemdUnitPreview);
+    await safeCopyText(systemdUnitPreview);
     setToast(`Copied ${selectedDaemon.name}.service systemd unit!`);
+  };
+
+  const handleDownloadUnit = () => {
+    const cleanName = selectedDaemon.name.replace(/[^a-zA-Z0-9_-]/g, '-');
+    downloadTextFile(`${cleanName}.service`, systemdUnitPreview, 'text/plain;charset=utf-8');
+    setToast(`Downloaded ${cleanName}.service unit file!`);
   };
 
   return (
@@ -166,18 +183,27 @@ WantedBy=default.target`;
           The 23 Resident Loopback Daemons
         </Typography>
 
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 3 }}>
-          {CATEGORIES.map((cat) => (
-            <Button
-              key={cat}
-              size="small"
-              variant={selectedCategory === cat ? 'contained' : 'outlined'}
-              onClick={() => setSelectedCategory(cat)}
-              sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
-            >
-              {cat}
-            </Button>
-          ))}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, mb: 3 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+            {CATEGORIES.map((cat) => (
+              <Button
+                key={cat}
+                size="small"
+                variant={selectedCategory === cat ? 'contained' : 'outlined'}
+                onClick={() => setSelectedCategory(cat)}
+                sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
+              >
+                {cat}
+              </Button>
+            ))}
+          </Box>
+          <TextField
+            size="small"
+            placeholder="Filter 23 daemons by port, name, stack..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            sx={{ minWidth: { xs: '100%', sm: 290 }, '& input': { fontFamily: mono, fontSize: '0.8rem' } }}
+          />
         </Box>
 
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, gap: 2, mb: 4 }}>
@@ -228,15 +254,26 @@ WantedBy=default.target`;
                 Click any daemon card above to inspect its hardened localhost systemd service configuration.
               </Typography>
             </Box>
-            <Button
-              size="small"
-              variant="outlined"
-              startIcon={<ContentCopyIcon />}
-              onClick={handleCopyUnit}
-              sx={{ fontFamily: mono, fontWeight: 800 }}
-            >
-              Copy Unit File
-            </Button>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <Button
+                size="small"
+                variant="outlined"
+                startIcon={<ContentCopyIcon />}
+                onClick={handleCopyUnit}
+                sx={{ fontFamily: mono, fontWeight: 800 }}
+              >
+                Copy Unit File
+              </Button>
+              <Button
+                size="small"
+                variant="contained"
+                startIcon={<DownloadIcon />}
+                onClick={handleDownloadUnit}
+                sx={{ fontFamily: mono, fontWeight: 800 }}
+              >
+                Download .service
+              </Button>
+            </Box>
           </Box>
 
           <ProOutputGate title={`${selectedDaemon.name}.service & 23-Daemon Systemd Bundle`}>

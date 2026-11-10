@@ -14,9 +14,11 @@ import {
 import LockIcon from '@mui/icons-material/Lock';
 import SecurityIcon from '@mui/icons-material/Security';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import DownloadIcon from '@mui/icons-material/Download';
 import { HeroReveal, HeroItem, GlowLine } from '../components/MotionReveal';
 import { ProFunnelBanner, ProOutputGate, useProLicense } from '../context/ProLicenseContext';
 import { SECURITY_ARSENAL_CATEGORIES } from '../data/zothOsData';
+import { safeCopyText, downloadTextFile } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -60,13 +62,18 @@ zoth-vault exec --secret ${secretName} -- agy --workspace ~/NullAITech
 # 3. Engage NullAI Ghostmode Transparent Tor Proxy & MAC Cloak
 sudo zoth-mode ghost && zoth-ghost status`;
 
-  const handleCopyVault = () => {
+  const handleCopyVault = async () => {
     if (!isPro) {
       openPaywallModal();
       return;
     }
-    navigator.clipboard?.writeText(vaultCommandPreview);
+    await safeCopyText(vaultCommandPreview);
     setToast('Copied Zoth Sovereign Vault & Ghostmode execution pipeline!');
+  };
+
+  const handleDownloadVault = () => {
+    downloadTextFile('zoth-vault-pipeline.sh', `#!/usr/bin/env bash\nset -euo pipefail\n\n${vaultCommandPreview}\n`, 'text/x-shellscript;charset=utf-8');
+    setToast('Downloaded zoth-vault-pipeline.sh!');
   };
 
   return (
@@ -146,9 +153,14 @@ sudo zoth-mode ghost && zoth-ghost status`;
             size="small"
             sx={{ fontFamily: mono, fontWeight: 700, bgcolor: 'rgba(52,211,153,0.12)', color: '#34D399' }}
           />
-          <Button size="small" variant="outlined" startIcon={<ContentCopyIcon />} onClick={handleCopyVault} sx={{ fontFamily: mono, fontWeight: 800 }}>
-            Copy Vault Pipeline
-          </Button>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+            <Button size="small" variant="outlined" startIcon={<ContentCopyIcon />} onClick={handleCopyVault} sx={{ fontFamily: mono, fontWeight: 800 }}>
+              Copy Vault Pipeline
+            </Button>
+            <Button size="small" variant="contained" startIcon={<DownloadIcon />} onClick={handleDownloadVault} sx={{ fontFamily: mono, fontWeight: 800 }}>
+              Download .sh Pipeline
+            </Button>
+          </Box>
         </Box>
 
         <ProOutputGate title="Zoth-Vault Memory-Only Injection & Ghostmode Pipeline">

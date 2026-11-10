@@ -14,8 +14,10 @@ import DownloadIcon from '@mui/icons-material/Download';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import UsbIcon from '@mui/icons-material/Usb';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { HeroReveal, HeroItem, GlowLine } from '../components/MotionReveal';
 import { ProFunnelBanner, ProOutputGate, useProLicense } from '../context/ProLicenseContext';
+import { safeCopyText, downloadTextFile } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -43,7 +45,7 @@ lb config \\
   --distribution trixie \\
   --archive-areas "main contrib non-free non-free-firmware" \\
   --bootappend-live "boot=live components quiet splash username=zoth hostname=zothos zoth_mode=${defaultPill}" \\
-  --iso-volume "ZOTHOS_3_3_SOVEREIGN"
+  --iso-volume "ZOTHOS_3_4_SOVEREIGN"
 
 # Pin Kali Rolling & Parrot OS Security APT Priorities
 cat << 'EOF' > config/archives/zoth-pinning.pref.chroot
@@ -62,17 +64,41 @@ ${enableLuks2 ? '# Enable Calamares LUKS2 Argon2id Full-Disk Encryption\nexport 
 sudo lb build 2>&1 | tee zothos-custom-build.log
 sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
 
-  const handleCopyRecipe = () => {
+  const handleCopyRecipe = async () => {
     if (!isPro) {
       openPaywallModal();
       return;
     }
-    navigator.clipboard?.writeText(customIsoRecipe);
+    await safeCopyText(customIsoRecipe);
     setToast('Copied Custom ZothOS v3.4.0 Live-Build ISO Recipe!');
   };
 
-  const copyText = (txt, label) => {
-    navigator.clipboard?.writeText(txt);
+  const handleDownloadRecipe = () => {
+    downloadTextFile(`build-zothos-3.4.0-${defaultPill}.sh`, customIsoRecipe, 'text/x-shellscript;charset=utf-8');
+    setToast(`Downloaded build-zothos-3.4.0-${defaultPill}.sh!`);
+  };
+
+  const handleExportProfileJson = () => {
+    const profileJson = JSON.stringify(
+      {
+        distro: 'ZothOS Linux',
+        version: '3.4.0',
+        isoVolume: 'ZOTHOS_3_4_SOVEREIGN',
+        base: 'Debian 13.7 (trixie)',
+        defaultRealityPill: defaultPill,
+        includeKaliParrotFull: includeKaliFull,
+        preloadLocalOllamaModels: includeOllamaModels,
+        calamaresLuks2Argon2id: enableLuks2,
+      },
+      null,
+      2,
+    );
+    downloadTextFile(`zothos-3.4.0-profile-${defaultPill}.json`, profileJson, 'application/json;charset=utf-8');
+    setToast(`Exported zothos-3.4.0-profile-${defaultPill}.json!`);
+  };
+
+  const copyText = async (txt, label) => {
+    await safeCopyText(txt);
     setToast(`Copied ${label} to clipboard!`);
   };
 
@@ -209,6 +235,78 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
         </Paper>
       </Box>
 
+      {/* Companion Amnesic Monotone Edition Card */}
+      <Paper
+        elevation={0}
+        sx={{
+          p: { xs: 2.5, md: 3.5 },
+          mb: 6,
+          borderRadius: 3.5,
+          bgcolor: isDark ? '#0B0C12' : '#F7F7F4',
+          border: `1.5px solid ${isDark ? '#F7F7F4' : '#000000'}`,
+          minWidth: 0,
+        }}
+      >
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1.5, mb: 1.5 }}>
+          <Chip
+            label="AMNESIC RAM-ONLY EDITION • TORAM NOSWAP • 56 CURATED MODELS"
+            size="small"
+            sx={{
+              fontFamily: mono,
+              fontWeight: 800,
+              fontSize: '0.7rem',
+              bgcolor: isDark ? '#F7F7F4' : '#000000',
+              color: isDark ? '#000000' : '#F7F7F4',
+              '& .MuiChip-label': { color: isDark ? '#000000 !important' : '#F7F7F4 !important' },
+            }}
+          />
+          <Typography sx={{ fontFamily: mono, fontSize: '0.74rem', fontWeight: 800, color: gold }}>
+            zothos-lite-1.2-amd64.iso (~400 MB)
+          </Typography>
+        </Box>
+        <Typography variant="h5" sx={{ fontWeight: 800, mb: 1 }}>
+          ZothOS-Lite v1.2 — Tails-Style Amnesic Monotone Live OS
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
+          Need ultra-lightweight ephemeral hardware privacy? ZothOS-Lite boots 100% into volatile RAM (`toram noswap`), wiping all session state on power-off unless saved via `zoth-lite-storage`. Ships with `zoth-lite-models` supporting <strong>56 curated AI models across 8 providers</strong> (including <strong>DeepSeek Flash</strong> via <strong>Hermes Agent by Nous Research</strong> and air-gapped local <strong>Ollama</strong>), `zoth-lite-welcome`, and ZothNet P2P messaging.
+        </Typography>
+        <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
+          <Button
+            variant="contained"
+            href="https://zothos-lite.nullai.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            endIcon={<OpenInNewIcon />}
+            sx={{ fontFamily: mono, fontWeight: 800 }}
+          >
+            Open ZothOS-Lite Hub & Tools
+          </Button>
+          <Button
+            variant="outlined"
+            href="https://github.com/1nc0gn30/zothos-lite"
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<DownloadIcon />}
+            sx={{ fontFamily: mono, fontWeight: 700 }}
+          >
+            ZothOS-Lite ISO Builder Repo
+          </Button>
+          <Button
+            variant="outlined"
+            startIcon={<ContentCopyIcon />}
+            onClick={() =>
+              copyText(
+                'git clone https://github.com/1nc0gn30/zothos-lite.git && cd zothos-lite && sudo bash vm/build-vm-image.sh',
+                'ZothOS-Lite ISO build command',
+              )
+            }
+            sx={{ fontFamily: mono, fontWeight: 700 }}
+          >
+            Copy Lite ISO Build Cmd
+          </Button>
+        </Box>
+      </Paper>
+
       {/* Interactive Custom Live-Build ISO Studio */}
       <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mb: 2.5 }}>
@@ -220,9 +318,17 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
               Toggle build flags below to synthesize a custom `live-build` ISO script for your hardware profile.
             </Typography>
           </Box>
-          <Button size="small" variant="outlined" startIcon={<ContentCopyIcon />} onClick={handleCopyRecipe} sx={{ fontFamily: mono, fontWeight: 800 }}>
-            Copy Custom ISO Script
-          </Button>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+            <Button size="small" variant="outlined" startIcon={<ContentCopyIcon />} onClick={handleCopyRecipe} sx={{ fontFamily: mono, fontWeight: 800 }}>
+              Copy Custom ISO Script
+            </Button>
+            <Button size="small" variant="contained" startIcon={<DownloadIcon />} onClick={handleDownloadRecipe} sx={{ fontFamily: mono, fontWeight: 800 }}>
+              Download .sh Script
+            </Button>
+            <Button size="small" variant="outlined" onClick={handleExportProfileJson} sx={{ fontFamily: mono, fontWeight: 800 }}>
+              Export .json Profile
+            </Button>
+          </Box>
         </Box>
 
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 3 }}>

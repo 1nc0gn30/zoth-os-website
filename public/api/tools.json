@@ -525,8 +525,8 @@
     },
     {
       "id": "zoth-swarm-multiplexer",
-      "name": "21-Agent Swarm Multiplexer",
-      "description": "21-terminal autonomous agent multiplexer daemon with hot-swappable AI harnesses, PWD control, and SSE telemetry.",
+      "name": "23-Agent Swarm Multiplexer",
+      "description": "23-terminal autonomous agent multiplexer daemon with hot-swappable AI harnesses, PWD control, and SSE telemetry.",
       "category": "Swarm & Core",
       "github": "https://github.com/NullAITech/zoth-swarm-multiplexer",
       "published": true,
@@ -1226,7 +1226,7 @@
     {
       "id": "zoth-civilization",
       "name": "Zoth Civilization Hub",
-      "description": "The living heart of the 21-agent society. Runs the GameBoy pixel world simulation, Adytum Initiation Deck, and meditation art catalog.",
+      "description": "The living heart of the 23-agent Pantheon society (https://zoth-civilization.netlify.app). Runs the GameBoy pixel world simulation, 22-Key Sanctuary, Adytum Initiation Deck, and meditation art catalog.",
       "category": "Swarm & Core",
       "github": "https://github.com/1nc0gn30/zoth-civilization",
       "published": true,
@@ -1528,7 +1528,7 @@
       "name": "ZothNet (Sovereign Darknet Mesh)",
       "description": "Autonomous zero-DNS darknet mesh with Sphinx 1,280B onion mixnet, Vaelor feeless L1 DAG, Kademlia DHT alpha=3, RFC 5389 STUN NAT traversal, and CAS parallel swarm on :9900 and UDP :42069.",
       "category": "Swarm & Core",
-      "github": "https://github.com/1nc0gn30/zothnet",
+      "github": "https://github.com/NullAITech/zoth-studio-v2",
       "published": true,
       "studio_url": "https://zoth.nullai.tech/tools/zothnet/",
       "version": "1.2.0",

@@ -23,6 +23,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { Link as RouterLink } from 'react-router-dom';
 import { ProFunnelBanner } from '../context/ProLicenseContext';
+import { safeCopyText } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -169,7 +170,7 @@ curl -s https://zothos.nullai.tech/.well-known/agent.json | jq .capabilities`,
     kicker: 'SILICON & ACOUSTIC RESILIENCE',
     title: 'Strict < 55.0°C Thermal Ceiling & `zoth-heal` Self-Healing Daemon',
     summary:
-      'Autonomous 21-agent swarms and local LLM inference can easily overheat standard Linux laptops. ZothOS enforces a hardware-level `< 55.0°C` ceiling with `no_turbo=1` pstate governance, 0 RPM silent operation, and automatic daemon resurrection.',
+      'Autonomous 23-agent swarms and local LLM inference can easily overheat standard Linux laptops. ZothOS enforces a hardware-level `< 55.0°C` ceiling with `no_turbo=1` pstate governance, 0 RPM silent operation, and automatic daemon resurrection.',
     codeTitle: '/usr/local/bin/zoth-heal --audit',
     code: `# Lock Intel/AMD pstate turbo boost and enforce < 55.0°C ceiling
 echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo
@@ -228,8 +229,8 @@ export default function DocsPage() {
     );
   }, [searchQuery]);
 
-  const handleCopy = (id, text) => {
-    navigator.clipboard.writeText(text);
+  const handleCopy = async (id, text) => {
+    await safeCopyText(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(''), 2000);
   };

@@ -27,10 +27,12 @@ export default function Footer() {
 
   const ecosystemLinks = [
     { label: 'Zoth Studio v2 (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
+    { label: 'ZothOS-Lite v1.2 (zothos-lite.nullai.tech)', href: 'https://zothos-lite.nullai.tech' },
+    { label: 'Zoth Civilization v3.0 (23-Agent Pantheon)', href: 'https://zoth-civilization.netlify.app' },
     { label: 'ZothOS GitHub Repository', href: 'https://github.com/1nc0gn30/zoth-os' },
     { label: 'ZothOS-Lite v1.2 Repository', href: 'https://github.com/1nc0gn30/zothos-lite' },
     { label: 'Chain of Thoughts (zoth-cot) Repo', href: 'https://github.com/1nc0gn30/chain-of-thoughts' },
-    { label: 'NullAI Hub', href: 'https://nullai.tech' },
+    { label: 'NullAI Hub (nullai.tech)', href: 'https://nullai.tech' },
     { label: '1nc0gn30 (1nc0gn30.si)', href: 'https://1nc0gn30.si' },
   ];
 

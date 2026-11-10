@@ -19,13 +19,13 @@ ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 is a sovereign operating system engineere
 SECTION 2: FOUR REALITY PILL OPERATIONAL MODES (`zoth-mode`)
 ================================================================================
 Operators and MCP agents can switch system posture in under 250ms:
-- `zoth-mode gold` (Sovereign Gold Master — Default): 24K Celtic Gold KDE Plasma 6.3 Wayland desktop, UFW default-deny inbound, 22 loopback daemons active, Tailscale mesh ready.
+- `zoth-mode gold` (Sovereign Gold Master — Default): 24K Celtic Gold KDE Plasma 6.3 Wayland desktop, UFW default-deny inbound, 23 loopback daemons active, Tailscale mesh ready.
 - `zoth-mode ghost` (NullAI Ghostmode Stealth — Red Pill): System-wide transparent Tor routing (`9040` transport / `9053` DNS) via nftables, cryptographic MAC address spoofing, ephemeral hostname rotation, and automatic RAM tmpfs scrubbing on poweroff.
 - `zoth-mode matrix` (Hermetic Matrix Phosphor — Green Pill): High-contrast emerald phosphor cyber-deck profile tuned for nocturnal red-team reconnaissance, HexStrike AI terminal auditing, and zero eye strain.
-- `zoth-mode incognito` (Quantum Cyber / Chameleon — Blue Pill): Instant visual camouflage for public field operations while keeping all 22 encrypted loopback enclaves running silently in the background.
+- `zoth-mode incognito` (Quantum Cyber / Chameleon — Blue Pill): Instant visual camouflage for public field operations while keeping all 23 encrypted loopback enclaves running silently in the background.
 
 ================================================================================
-SECTION 3: 22 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
+SECTION 3: 23 RESIDENT LOOPBACK DAEMONS (127.0.0.1 ENCLAVE MESH)
 ================================================================================
 Every ZothOS daemon binds strictly to `127.0.0.1` and never exposes public network sockets:
 - `:8094` — `neuro-memory-daemon` (Python / SQLite STDP): Biomorphic Spike-Timing-Dependent Plasticity (`dw = A+ * exp(-dt/tau)`) synaptic vector memory & HNSW index.
@@ -48,9 +48,10 @@ Every ZothOS daemon binds strictly to `127.0.0.1` and never exposes public netwo
 - `:8118` — `digital-asset-forge` (FastMCP / 300 DPI): Generates 5-ratio 300 DPI printable wall art master packs with 98% digital profit margins.
 - `:8119` — `pod-mockup-forge` (FastMCP / Lumen Matrix): Photorealistic apparel and canvas mockup studio with displacement map ink blending.
 - `:8120` — `pod-margin-sentinel` (FastMCP / Math Solver): Multi-channel break-even solver and ROAS ad-spend simulator.
-- `:9393` — `zoth-civilization` (Node.js / Three.js 3D): 21-Agent autonomous society simulation, 3D Golden Sanctum world, and Adytum Great Work loop.
+- `:9335` — `zoth-bot` (Electron / WebSocket / Taildrop): Cross-screen Edge Portal companion leaping between laptop and Pixel 10 over Tailscale (`:9335/pixel`).
+- `:9393` — `zoth-civilization` (Node.js / Three.js 3D): 23-Agent Pantheon autonomous society simulation, 22-Key Sanctuary, 3D Golden Sanctum world, and Adytum Great Work loop (`https://zoth-civilization.netlify.app`).
 - `:8787` — `zoth-vault-daemon` (Rust / ChaCha20-Poly1305): Resident memory-only cryptographic secrets vault with Argon2id key derivation (`m=65536, t=4, p=4`) and `mlockall()` protection.
-- `:9989` — `zoth-cursor-daemon` (Python / KWin DBus): 60 FPS Wayland/X11 global cursor broadcaster (`127.0.0.1:9989` + `/dev/shm/zoth_cursor_pos`) powering desktop constellation & aura physics.
+- `:8765 / :9989` — `zoth-relay` & `zoth-cursor-daemon` (Systemd Landlock / KWin DBus): Multi-agent Landlock HTTP/MCP bridge (`:8765`) paired with 60 FPS Wayland/X11 global cursor broadcaster (`127.0.0.1:9989` + `/dev/shm/zoth_cursor_pos`).
 
 ================================================================================
 SECTION 4: INSTALLER SCRIPTS FOR 9 AI CODING AGENTS (NOT AFFILIATED WITH THEIR VENDORS)
@@ -108,5 +109,7 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 - **NullAI (Local-First AI Research Lab)**: https://nullai.tech
 - **Zoth Studio v2 (Local-First AI Studio & 77-Tool Enclave)**: https://zoth.nullai.tech
 - **ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 (Sovereign AI-Native Operating System)**: https://zothos.nullai.tech
+- **ZothOS-Lite v1.2 (Amnesic Monotone RAM-Only OS & 56-Model Router)**: https://zothos-lite.nullai.tech
+- **Zoth Civilization v3.0 (23-Agent Pantheon & 22-Key Sanctuary)**: https://zoth-civilization.netlify.app
 - **Sovereign Tools Storefront & Solutions Hub**: https://1nc0gn30.github.io
 - **City Desk (1,000-Page Local Trade Generator)**: https://city-desk.netlify.app

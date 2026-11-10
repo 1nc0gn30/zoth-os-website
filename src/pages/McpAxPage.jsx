@@ -27,7 +27,9 @@ import LockIcon from '@mui/icons-material/Lock';
 import HubIcon from '@mui/icons-material/Hub';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import DownloadIcon from '@mui/icons-material/Download';
 import { ProFunnelBanner, useProLicense } from '../context/ProLicenseContext';
+import { safeCopyText, downloadTextFile } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -247,8 +249,8 @@ const PLAYGROUND_TOOLS = [
       id: 'zoth-rpc-8109',
       result: {
         filterCategory: parsed.category || 'all',
-        onlineDaemons: 22,
-        totalDaemons: 22,
+        onlineDaemons: 23,
+        totalDaemons: 23,
         loopbackAddress: '127.0.0.1',
         totalRssMemoryMb: 418.4,
         cpuPackageTempC: 45.8,
@@ -315,12 +317,12 @@ const AX_ENDPOINTS = [
 - Base: Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI + Kali & Parrot APT Pinning
 - Desktop: KDE Plasma 6.3 Wayland (org.zothos.interactive 3D wallpaper + :9989 cursor daemon)
 - Agents (9): Antigravity (agy), Claude Code, Grok, Aider, Cursor, Cline, Hermes, OpenCode, Ollama
-- Loopback Daemons (22): 127.0.0.1:8094 through :8120, :8787 Vault, :9393 Zoth Civilization`,
+- Loopback Daemons (23): 127.0.0.1:8094 through :8120, :8765 Relay, :8787 Vault, :9335 Edge, :9393 Zoth Civilization, :9989 Cursor`,
   },
   {
     path: '/llms-full.txt',
     mime: 'text/markdown',
-    purpose: 'Complete Deep-Context Specification (APT Pinning, 22 Ports, 4 Reality Pills, MCP)',
+    purpose: 'Complete Deep-Context Specification (APT Pinning, 23 Ports, 4 Reality Pills, MCP)',
     tokens: '~1,850 tokens',
     preview: `# ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — Complete Technical Grounding Specification
 SECTION 1: EXECUTIVE SUMMARY & ARCHITECTURAL IDENTITY
@@ -387,14 +389,26 @@ export default function McpAxPage() {
     return JSON.stringify({ mcpServers: serversObj }, null, 2);
   }, [selectedServers, transportMode]);
 
-  const handleCopyConfig = () => {
+  const [copiedRpc, setCopiedRpc] = useState(false);
+
+  const handleCopyConfig = async () => {
     if (!isPro) {
       openPaywallModal();
       return;
     }
-    navigator.clipboard.writeText(generatedMcpConfig);
+    await safeCopyText(generatedMcpConfig);
     setCopiedConfig(true);
     setTimeout(() => setCopiedConfig(false), 2000);
+  };
+
+  const handleDownloadConfig = () => {
+    downloadTextFile(`zothos-mcp-${ideTarget}-${transportMode}.json`, generatedMcpConfig, 'application/json;charset=utf-8');
+  };
+
+  const handleCopyRpcOutput = async () => {
+    await safeCopyText(rpcOutput);
+    setCopiedRpc(true);
+    setTimeout(() => setCopiedRpc(false), 2000);
   };
 
   const handleToolChange = (newId) => {
@@ -433,7 +447,7 @@ export default function McpAxPage() {
         <Box sx={{ mb: 5 }}>
           <Chip
             icon={<HubIcon sx={{ fontSize: 15 }} />}
-            label="MODEL CONTEXT PROTOCOL (152 SERVERS) • ZOTH-RELAY (:8765) • RING 0–3 AGENT SUBSTRATE"
+            label="MODEL CONTEXT PROTOCOL (163 SERVERS) • ZOTH-RELAY (:8765) • RING 0–3 AGENT SUBSTRATE"
             sx={{
               mb: 1.5,
               fontFamily: mono,
@@ -570,9 +584,20 @@ export default function McpAxPage() {
             </Grid>
 
             <Grid item xs={12} md={6}>
-              <Typography variant="caption" sx={{ fontFamily: mono, fontWeight: 800, color: goldAccent, display: 'block', mb: 1 }}>
-                LOOPBACK ENCLAVE RESPONSE (JSON-RPC 2.0 RESULT)
-              </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1, gap: 1, flexWrap: 'wrap' }}>
+                <Typography variant="caption" sx={{ fontFamily: mono, fontWeight: 800, color: goldAccent }}>
+                  LOOPBACK ENCLAVE RESPONSE (JSON-RPC 2.0 RESULT)
+                </Typography>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  startIcon={copiedRpc ? <CheckIcon /> : <ContentCopyIcon />}
+                  onClick={handleCopyRpcOutput}
+                  sx={{ fontFamily: mono, fontWeight: 700, fontSize: '0.7rem', py: 0.2 }}
+                >
+                  {copiedRpc ? 'Copied Result!' : 'Copy JSON-RPC'}
+                </Button>
+              </Box>
               <Box
                 component="pre"
                 sx={{
@@ -611,15 +636,25 @@ export default function McpAxPage() {
                 Generate a zero-egress <code>mcpServers</code> manifest tailored for Google Antigravity (AGY), Claude Desktop/Code, Cursor AI, or Cline.
               </Typography>
             </Box>
-            <Button
-              variant="contained"
-              color="primary"
-              startIcon={copiedConfig ? <CheckIcon /> : <ContentCopyIcon />}
-              onClick={handleCopyConfig}
-              sx={{ fontFamily: mono, fontWeight: 800 }}
-            >
-              {copiedConfig ? 'Copied mcpServers JSON!' : 'Copy mcpServers Config'}
-            </Button>
+            <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+              <Button
+                variant="contained"
+                color="primary"
+                startIcon={copiedConfig ? <CheckIcon /> : <ContentCopyIcon />}
+                onClick={handleCopyConfig}
+                sx={{ fontFamily: mono, fontWeight: 800 }}
+              >
+                {copiedConfig ? 'Copied mcpServers JSON!' : 'Copy mcpServers Config'}
+              </Button>
+              <Button
+                variant="outlined"
+                startIcon={<DownloadIcon />}
+                onClick={handleDownloadConfig}
+                sx={{ fontFamily: mono, fontWeight: 800 }}
+              >
+                Download mcp.json
+              </Button>
+            </Box>
           </Box>
 
           <Grid container spacing={3}>
