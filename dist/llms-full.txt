@@ -98,7 +98,7 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 ## Zero-Auth Machine-Readable JSON Web APIs for AI Agents & Tools (CORS `*` Enabled)
 - [Master API Discovery Index](https://zothos.nullai.tech/api/index.json): Overview of all machine-readable endpoints on this domain.
 - [Services & Instant Checkout API](https://zothos.nullai.tech/api/services.json): JSON catalog of custom builds, SLAs, and Stripe/Solana payment links.
-- [77-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 77 Studio-native tools.
+- [80-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 80 Studio-native tools.
 - [Structured FAQ Knowledge Base API](https://zothos.nullai.tech/api/faq.json): Direct Q&A pairs for RAG, Perplexity, ChatGPT Search, and voice assistants.
 - [Schema.org @graph Entity Network API](https://zothos.nullai.tech/api/graph.json): Complete interconnected JSON-LD knowledge graph.
 - [A2A Agent Card](https://zothos.nullai.tech/.well-known/agent.json): Agent-to-Agent capability and endpoint declaration.
@@ -107,7 +107,7 @@ SECTION 5: MODEL CONTEXT PROTOCOL (MCP) & AGENT EXPERIENCE (AX)
 ## Complete Ecosystem Network
 - **1nc0gn30 Sovereign Hub**: https://1nc0gn30.si
 - **NullAI (Local-First AI Research Lab)**: https://nullai.tech
-- **Zoth Studio v2 (Local-First AI Studio & 77-Tool Enclave)**: https://zoth.nullai.tech
+- **Zoth Studio v2 (Local-First AI Studio & 80-Tool Enclave)**: https://zoth.nullai.tech
 - **ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 (Sovereign AI-Native Operating System)**: https://zothos.nullai.tech
 - **ZothOS-Lite v1.2 (Amnesic Monotone RAM-Only OS & 56-Model Router)**: https://zothos-lite.nullai.tech
 - **Zoth Civilization v3.0 (23-Agent Pantheon & 22-Key Sanctuary)**: https://zoth-civilization.netlify.app

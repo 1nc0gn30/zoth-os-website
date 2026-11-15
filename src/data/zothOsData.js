@@ -122,7 +122,7 @@ export const CORE_PILLARS = [
     id: 'desktop',
     badge: 'KDE PLASMA 6.3 WAYLAND',
     title: '24K Gold Workstation for Human Operators',
-    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 77 Studio Tools (55 in-browser + 22 CLI, 74 public GitHub repos) / 43 workstations.',
+    desc: 'While AI agents operate over structured JSON-RPC & MCP pipes, human operators command a flagship KDE Plasma 6.3 Wayland desktop with `Zoth-Hermetic` 3D glass icons, 60 FPS interactive QML wallpaper, `zoth-cockpit` TUI/GUI, and 80 Studio Tools (56 in-browser/WebGPU + 24 CLI/daemon, 79 public GitHub repos) / 43 workstations.',
     accent: '#F59E0B',
   },
   {
@@ -258,6 +258,12 @@ export const LOOPBACK_DAEMONS = [
   { port: ':9393', name: 'zoth-civilization', stack: 'Node.js / Three.js 3D', category: 'Simulation', desc: '23-Agent Pantheon autonomous society simulation, 22-Key Sanctuary, citizen task dispatcher, and economic velocity telemetry hub (zoth-civilization.netlify.app).' },
   { port: ':8787', name: 'zoth-vault-daemon', stack: 'Rust / ChaCha20-Poly1305', category: 'Crypto Vault', desc: 'Resident memory-only cryptographic secrets vault (`zoth-vault run -- <agent>`) with Argon2id key derivation and zero disk leaks.' },
   { port: ':8765 / :9989', name: 'zoth-relay & cursor-daemon', stack: 'Systemd Landlock / KWin', category: 'Zero-Egress', desc: 'Multi-agent Landlock-sandboxed HTTP/MCP bridge (`:8765`) paired with 60 FPS Wayland global pointer telemetry (`:9989`).' },
+  { port: ':5185', name: 'creatorplaybooks', stack: 'Node.js / Express + Creators API', category: 'Commerce', desc: 'CreatorPlaybooks autonomous content playbook compiler, viral hook generator, and multi-channel publishing studio.' },
+  { port: ':8148', name: 'pixel-cast', stack: 'Python / WebRTC + ADB Tailscale', category: 'Cross-Device', desc: 'Ultra-low latency Google Pixel screenshare, camera bridge, and wireless ADB mirroring workstation over Tailscale mesh.' },
+  { port: ':8149', name: 'zoth-osint', stack: 'Python / 24-Tool OSINT Graph', category: 'Recon', desc: 'Sovereign multi-pivot reconnaissance engine & 24-tool open-source OSINT orchestrator with 60 FPS Entity Link Graph and Obsidian .canvas export.' },
+  { port: ':8150', name: 'wcag-contrast-guard', stack: 'Node.js / APCA + WCAG 2.2 AAA', category: 'DevTools', desc: 'Real-time WCAG 2.2 AAA & APCA perceptual contrast verifier, color-blindness simulator, and design token accessibility guard.' },
+  { port: ':8151', name: 'zoth-obsidian-tracker', stack: 'Python / SQLite STDP + Vault Sync', category: 'AI Memory', desc: 'Sovereign Obsidian Second Brain & Karpathy LLM Wiki compiler with bidirectional STDP memory engram synchronization.' },
+  { port: ':8152', name: 'zoth-x-connector', stack: 'Node.js / OAuth 1.0a + Multi-Hub', category: 'Commerce', desc: 'Autonomous X (Twitter) multi-account dispatch hub, media pack scheduler, and OAuth 1.0a signing daemon for @1nc0gn30, @zoth_os & @nullaitech.' },
 ];
 
 export const SECURITY_ARSENAL_CATEGORIES = [
@@ -338,7 +344,7 @@ export const DESKTOP_SCREENSHOTS = [
   },
   {
     title: 'ZothOS Cockpit Pro & Studio v2',
-    badge: '77 STUDIO TOOLS + 23-AGENT DECK',
+    badge: '80 STUDIO TOOLS + 23-AGENT DECK',
     src: '/screenshots/zoth-cockpit-gold.png',
     desc: 'Pre-installed `zoth-cockpit` operations center and `/opt/zoth-studio` with live loopback bindings to all 23 resident daemons and 28 WebGPU client tools.',
   },

@@ -22,7 +22,7 @@ import { safeCopyText, downloadTextFile } from '../utils/clipboard';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
-const CATEGORIES = ['All', 'AI Memory', 'Zero-Egress', 'Security', 'Commerce', 'FinOps', 'Crypto Vault', 'Simulation'];
+const CATEGORIES = ['All', ...Array.from(new Set(LOOPBACK_DAEMONS.map((d) => d.category)))];
 
 export default function DaemonsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -93,17 +93,19 @@ WantedBy=default.target`;
         </HeroItem>
         <HeroItem>
           <Chip
-            label="23 LOOPBACK DAEMONS + 9 CODING AGENTS (11 WITH AZOTH + ZOTH-COT)"
+            label={`${LOOPBACK_DAEMONS.length} LOOPBACK DAEMONS + 9 CODING AGENTS (11 WITH AZOTH + ZOTH-COT)`}
             size="small"
             sx={{
               mt: 2.5,
               mb: 1.5,
+              height: 'auto',
               fontFamily: mono,
               fontWeight: 800,
               fontSize: '0.72rem',
               bgcolor: 'rgba(52, 211, 153, 0.14)',
               color: isDark ? '#34D399' : '#047857',
               border: '1px solid rgba(52, 211, 153, 0.4)',
+              '& .MuiChip-label': { whiteSpace: 'normal', py: 0.4 },
             }}
           />
         </HeroItem>
@@ -114,7 +116,7 @@ WantedBy=default.target`;
         </HeroItem>
         <HeroItem>
           <Typography color="text.secondary" sx={{ maxWidth: '65ch', mb: 5 }}>
-            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all 23 resident daemons and the installer scripts for 9 AI coding agents (not affiliated with their vendors) below.
+            Every ZothOS backend service binds strictly to localhost (`127.0.0.1`) under UFW default-deny rules. Inspect all {LOOPBACK_DAEMONS.length} resident daemons and the installer scripts for 9 AI coding agents (not affiliated with their vendors) below.
           </Typography>
         </HeroItem>
       </HeroReveal>
@@ -180,7 +182,7 @@ WantedBy=default.target`;
           02 / 02 · 127.0.0.1 LOOPBACK SERVICE REGISTRY
         </Typography>
         <Typography variant="h3" sx={{ mb: 2.5 }}>
-          The 23 Resident Loopback Daemons
+          The {LOOPBACK_DAEMONS.length} Resident Loopback Daemons
         </Typography>
 
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 1.5, mb: 3 }}>
@@ -199,7 +201,7 @@ WantedBy=default.target`;
           </Box>
           <TextField
             size="small"
-            placeholder="Filter 23 daemons by port, name, stack..."
+            placeholder={`Filter ${LOOPBACK_DAEMONS.length} daemons by port, name, stack...`}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             sx={{ minWidth: { xs: '100%', sm: 290 }, '& input': { fontFamily: mono, fontSize: '0.8rem' } }}
@@ -276,7 +278,7 @@ WantedBy=default.target`;
             </Box>
           </Box>
 
-          <ProOutputGate title={`${selectedDaemon.name}.service & 23-Daemon Systemd Bundle`}>
+          <ProOutputGate title={`${selectedDaemon.name}.service & ${LOOPBACK_DAEMONS.length}-Daemon Systemd Bundle`}>
             <Box
               component="pre"
               sx={{

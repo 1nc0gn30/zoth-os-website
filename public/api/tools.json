@@ -1,7 +1,7 @@
 {
   "schema": "zoth/tools-static/v1",
-  "generated_at": "2026-11-10T17:38:15.234Z",
-  "tool_count": 77,
+  "generated_at": "2026-11-13T12:00:00.000Z",
+  "tool_count": 80,
   "tools": [
     {
       "id": "pixel-cast",
@@ -525,8 +525,8 @@
     },
     {
       "id": "zoth-swarm-multiplexer",
-      "name": "23-Agent Swarm Multiplexer",
-      "description": "23-terminal autonomous agent multiplexer daemon with hot-swappable AI harnesses, PWD control, and SSE telemetry.",
+      "name": "21-Agent Swarm Multiplexer",
+      "description": "21-terminal autonomous agent multiplexer daemon with hot-swappable AI harnesses, PWD control, and SSE telemetry.",
       "category": "Swarm & Core",
       "github": "https://github.com/NullAITech/zoth-swarm-multiplexer",
       "published": true,
@@ -1225,13 +1225,14 @@
     },
     {
       "id": "zoth-civilization",
-      "name": "Zoth Civilization Hub",
-      "description": "The living heart of the 23-agent Pantheon society (https://zoth-civilization.netlify.app). Runs the GameBoy pixel world simulation, 22-Key Sanctuary, Adytum Initiation Deck, and meditation art catalog.",
+      "name": "Zoth Civilization v3.0",
+      "description": "Autonomous 23-agent Pantheon society simulation on the Sphere of Zoth Prime. Features Imperator Quests (Ranks I–V), 4 Planetary Decrees, the zero-leak 22-Key Sanctuary, and lightweight BYOK reasoning via DeepSeek Flash through Hermes Agent (Nous Research).",
       "category": "Swarm & Core",
       "github": "https://github.com/1nc0gn30/zoth-civilization",
+      "live_url": "https://zoth-civilization.netlify.app",
       "published": true,
       "studio_url": "https://zoth.nullai.tech/tools/zoth-civilization/",
-      "version": "2.5.0",
+      "version": "3.0.0",
       "pull": "cd ~/NullAITech/zoth-civilization && ENABLE_KOKORO_VOICE=0 node server.js  # or: zoth-civ status",
       "execution_type": "local_cli",
       "runtimes": [
@@ -1506,7 +1507,7 @@
     {
       "id": "zothos-lite",
       "name": "ZothOS-Lite v1.2 (Amnesic Monotone OS)",
-      "description": "1-Bit Amnesic Monotone Security & AI OS (Debian 13 Live · toram noswap) supporting 48+ AI models across 8 providers, interactive onboarding, ZothNet P2P mesh, external USB/cloud persistence, and lightweight media/dev tools on :8145.",
+      "description": "Tails-style Amnesic Monotone Security & AI OS (#F7F7F4 / #000000 · Debian 13 Live · toram noswap) supporting 56 curated AI models across 8 providers, interactive onboarding, ZothNet P2P mesh, external USB/cloud persistence, and lightweight media/dev tools on :8145.",
       "category": "Hardware & OS",
       "github": "https://github.com/1nc0gn30/zothos-lite",
       "published": true,
@@ -1529,7 +1530,8 @@
       "description": "Autonomous zero-DNS darknet mesh with Sphinx 1,280B onion mixnet, Vaelor feeless L1 DAG, Kademlia DHT alpha=3, RFC 5389 STUN NAT traversal, and CAS parallel swarm on :9900 and UDP :42069.",
       "category": "Swarm & Core",
       "github": "https://github.com/NullAITech/zoth-studio-v2",
-      "published": true,
+      "live_url": "https://zothnet.nullai.tech",
+      "published": false,
       "studio_url": "https://zoth.nullai.tech/tools/zothnet/",
       "version": "1.2.0",
       "pull": "zothnet run --alias \"Studio-Node\"  # or: zothnet status --json | zothnet mcp",
@@ -1542,6 +1544,68 @@
       ],
       "port": 9900,
       "local_url": "http://127.0.0.1:9900"
+    },
+    {
+      "id": "creatorplaybooks",
+      "name": "CreatorPlaybooks",
+      "description": "Curated reading lists, tactical playbooks, and business mental models from top creators and operators with zero-tracking client-side search on :5185.",
+      "category": "Education & Growth",
+      "github": "https://github.com/1nc0gn30/creatorplaybooks",
+      "live_url": "https://creatorplaybooks.netlify.app",
+      "published": true,
+      "studio_url": "https://zoth.nullai.tech/tools/creatorplaybooks/",
+      "version": "1.0.0",
+      "pull": "creatorplaybooks desktop  # or: creatorplaybooks-tui | creatorplaybooks --status",
+      "execution_type": "browser",
+      "runtimes": [
+        "node",
+        "vite",
+        "browser",
+        "zero-egress"
+      ],
+      "port": 5185,
+      "local_url": "http://127.0.0.1:5185"
+    },
+    {
+      "id": "zoth-obsidian-tracker",
+      "name": "Zoth Obsidian Tracker",
+      "description": "Sovereign Second Brain vault explorer, 5 Ecosystem Pillars, 7-APK Master Roadmap, and 78-tool verification matrix with live screenrecordings on :8151.",
+      "category": "Swarm & Core",
+      "github": "https://github.com/1nc0gn30/zoth-obsidian-tracker",
+      "live_url": "https://zs-obsidian-tracker.nullai.tech",
+      "published": true,
+      "studio_url": "https://zoth.nullai.tech/tools/zoth-obsidian-tracker/",
+      "version": "1.2.0",
+      "pull": "zoth-obsidian-tracker --status  # or: zoth-obsidian-tracker-tui | zoth-obsidian-tracker --pillars",
+      "execution_type": "local_cli",
+      "runtimes": [
+        "python",
+        "cli",
+        "zero-egress"
+      ],
+      "port": 8151,
+      "local_url": "http://127.0.0.1:8151"
+    },
+    {
+      "id": "zoth-x-connector",
+      "name": "Zoth X Connector",
+      "description": "Sovereign local X (Twitter) multi-account API controller, persistent systemd timer scheduler, Zoth Vault OAuth configurator, and live campaign workstation on :8152.",
+      "category": "Swarm & Core",
+      "github": "https://github.com/1nc0gn30/zoth-x-connector",
+      "live_url": "https://zoth.nullai.tech/tools/zoth-x-connector",
+      "published": true,
+      "studio_url": "https://zoth.nullai.tech/tools/zoth-x-connector/",
+      "version": "1.0.0",
+      "pull": "zoth-x-connector --status  # or: zoth-x-connector run | zoth-x-connector timer start",
+      "execution_type": "local_cli",
+      "runtimes": [
+        "node",
+        "cli",
+        "systemd",
+        "zero-egress"
+      ],
+      "port": 8152,
+      "local_url": "http://127.0.0.1:8152"
     }
   ]
 }

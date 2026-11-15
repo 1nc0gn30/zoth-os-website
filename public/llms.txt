@@ -13,7 +13,7 @@
   - `Ring 3 (SPECTRE / Layer 0)`: Zero-trust `firejail_strict` sandbox for untrusted subagents & code (2 GB RAM cap, loopback `:11434` only).
 - **163 Pre-Registered MCP Servers (`/etc/zothos/mcp-servers.json`) + `zoth-relay` (`127.0.0.1:8765`)**: Master MCP catalog (`zoth-mcp`) with 16 air-gapped offline servers (`filesystem`, `memory`, `sequential-thinking`, `git`, `sqlite`, `duckdb`, `repomix`, etc.) plus `zoth-relay` Landlock multi-agent bridge with 288-bit SHA-256 tokens, isolated `~/agent-workspace/<name>`, and `/var/log/zoth-relay/audit.log`.
 - **23 Loopback Enclave Daemons**: Bound strictly to `127.0.0.1` ports `:8094` (STDP Neuro-Memory) through `:8120` (POD Margin Sentinel), `:8765` (`zoth-relay`), `:8787` (`zoth-vault-daemon` Argon2id + ChaCha20 RAM-only process secret injection), `:9335` (`zoth-bot` Edge Portal), `:9393` (`zoth-civilization` 23-Agent Pantheon), and `:9989` (`zoth-cursor-daemon`).
-- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 77 Studio Tools (55 in-browser + 22 CLI, 74 public GitHub repos) / 43 workstations (`/opt/zoth-studio`) with 100% CLI (`<tool> --json`), Braille TUI (`<tool>-tui`), and Electron Desktop App (`<tool> desktop`) parity orchestrated by `zoth-arsenal-daemons.service`, including **Zoth Bolt (`zoth-bolt` :5173)**, and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
+- **Human Workstation & Reality Pill Profiles (`zoth-mode`)**: KDE Plasma 6.3 Wayland 24K Celtic Gold desktop, `zoth-cockpit` (Electron + curses TUI), 80 Studio Tools (56 in-browser/WebGPU + 24 CLI/daemon, 79 public GitHub repos) / 43 workstations (`/opt/zoth-studio`) with 100% CLI (`<tool> --json`), Braille TUI (`<tool>-tui`), and Electron Desktop App (`<tool> desktop`) parity orchestrated by `zoth-arsenal-daemons.service`, including **Zoth Bolt (`zoth-bolt` :5173)**, and instant switching across `gold`, `ghost` (Transparent Tor + MAC Spoofing), `matrix`, and `win11` (Incognito Chameleon).
 - **Companion Monotone RAM-Only OS & Working Memory DAG**:
   - **ZothOS-Lite v1.2 (`https://zothos-lite.nullai.tech` | `https://github.com/1nc0gn30/zothos-lite`)**: Amnesic RAM-only (`toram noswap`) Tails-style Monotone operating system (`:8145`) compatible with **56 curated models across 8 providers** (`Ollama Local`, `Hermes / Nous` featuring `DeepSeek Flash` via `Hermes Agent by Nous Research`, `DeepSeek`, `OpenRouter`, `OpenAI`, `Anthropic`, `Google Gemini`, `Groq`), featuring **AZOTH** (Embodied `U+2800` Braille AI Agent with 6 mood rigs & phoneme lip-sync), **Kokoro 82M ONNX Neural TTS + Full-Duplex Mic STT**, `zoth-lite-models`, `zoth-lite-welcome`, `zoth-lite-storage`, and `zoth-lite-pkg`.
   - **Chain of Thoughts (`zoth-cot` — `https://github.com/1nc0gn30/chain-of-thoughts`)**: Multi-turn `/api/chat` context assembly, automatic semantic fact extraction (`IDENTITY`, `MEMORY`, `MISSION`, `SECRET`), and 4-stage reasoning trace (`PERCEPTION -> RECALL -> SYNTHESIS -> VERIFICATION`) linked by SHA-256 Merkle hashes (`N00 -> N01 -> N02...`).
@@ -54,7 +54,7 @@
 ## Zero-Auth Machine-Readable JSON Web APIs for AI Agents & Tools (CORS `*` Enabled)
 - [Master API Discovery Index](https://zothos.nullai.tech/api/index.json): Overview of all machine-readable endpoints on this domain.
 - [Services & Instant Checkout API](https://zothos.nullai.tech/api/services.json): JSON catalog of custom builds, SLAs, and Stripe/Solana payment links.
-- [77-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 77 Studio-native tools.
+- [80-Tool Studio Catalog API](https://zothos.nullai.tech/api/tools.json): Full metadata, live URLs, and categories for all 80 Studio-native tools.
 - [Structured FAQ Knowledge Base API](https://zothos.nullai.tech/api/faq.json): Direct Q&A pairs for RAG, Perplexity, ChatGPT Search, and voice assistants.
 - [Schema.org @graph Entity Network API](https://zothos.nullai.tech/api/graph.json): Complete interconnected JSON-LD knowledge graph.
 - [A2A Agent Card](https://zothos.nullai.tech/.well-known/agent.json): Agent-to-Agent capability and endpoint declaration.
@@ -63,7 +63,7 @@
 ## Complete Ecosystem Network
 - **1nc0gn30 Sovereign Hub**: https://1nc0gn30.si
 - **NullAI (Local-First AI Research Lab)**: https://nullai.tech
-- **Zoth Studio v2 (Local-First AI Studio & 77-Tool Enclave)**: https://zoth.nullai.tech
+- **Zoth Studio v2 (Local-First AI Studio & 80-Tool Enclave)**: https://zoth.nullai.tech
 - **ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 (Sovereign AI-Native Operating System)**: https://zothos.nullai.tech
 - **ZothOS-Lite v1.2 (Amnesic Monotone RAM-Only OS & 56-Model Router)**: https://zothos-lite.nullai.tech
 - **Zoth Civilization v3.0 (23-Agent Pantheon & 22-Key Sanctuary)**: https://zoth-civilization.netlify.app
@@ -75,7 +75,7 @@
 - **ZOTHOS Lite (Amnesic Monotone RAM-Only OS)**: https://zothos-lite.nullai.tech | https://github.com/1nc0gn30/zothos-lite
 - **Zoth Civilization v3.0 (23-Agent Pantheon)**: https://zoth-civilization.netlify.app | https://github.com/1nc0gn30/zoth-civilization
 - **ZothNet (Zero-Cloud Encrypted Mesh Network)**: https://zothnet.nullai.tech | https://zoth.nullai.tech/tools/zothnet
-- **Zoth Studio v2 (77+ Free Zero-Cloud Dev, Security & AEO Tools)**: https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2
+- **Zoth Studio v2 (80 Free Zero-Cloud Dev, Security & AEO Tools)**: https://zoth.nullai.tech | https://github.com/1nc0gn30/zoth-studio-v2
 - **Hermes-Zoth (Nous Research Hermes Agent Plugin)**: https://github.com/1nc0gn30/hermes-zoth
 - **1nc0gn30 · World of Zoth**: https://1nc0gn30.si | https://github.com/1nc0gn30
 - **NullAI Platform**: https://nullai.tech | https://github.com/NullAITech
