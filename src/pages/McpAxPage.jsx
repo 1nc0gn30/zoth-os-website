@@ -522,7 +522,7 @@ export default function McpAxPage() {
               <Chip
                 label="LIVE CLIENT-SIDE JSON-RPC 2.0 INSPECTOR"
                 size="small"
-                sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.68rem', color: '#10B981', bgcolor: 'rgba(16,185,129,0.12)', mb: 1 }}
+                sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.68rem', color: dark ? '#10B981' : '#047857', bgcolor: dark ? 'rgba(16,185,129,0.12)' : '#ECFDF5', mb: 1 }}
               />
               <Typography variant="h4" sx={{ fontWeight: 800 }}>
                 1. Interactive MCP Tool Call Playground

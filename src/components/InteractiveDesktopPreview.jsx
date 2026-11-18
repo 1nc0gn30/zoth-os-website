@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Paper, Typography, Button, Chip, Tooltip } from '@mui/material';
+import { Box, Paper, Typography, Button, Chip, Tooltip, useTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SecurityIcon from '@mui/icons-material/Security';
@@ -8,6 +8,7 @@ import HubIcon from '@mui/icons-material/Hub';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import DownloadIcon from '@mui/icons-material/Download';
 import { REALITY_PILL_MODES } from '../data/zothOsData';
+import { resolveTone } from '../theme';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -21,10 +22,13 @@ const LETTERS = [
 ];
 
 export default function InteractiveDesktopPreview({ activePillId = 'gold', onSelectPill }) {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === 'dark';
   const [internalPill, setInternalPill] = useState(activePillId);
   const currentPillId = onSelectPill ? activePillId : internalPill;
   const setPill = onSelectPill || setInternalPill;
   const activeMode = REALITY_PILL_MODES.find((m) => m.id === currentPillId) || REALITY_PILL_MODES[0];
+  const readableAccent = resolveTone(activeMode.accent, isDark);
 
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -327,19 +331,20 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
               fontFamily: mono,
               fontWeight: 800,
               fontSize: '0.7rem',
-              bgcolor: 'rgba(212,175,55,0.14)',
-              color: activeMode.accent,
-              border: `1px solid ${activeMode.accent}`,
+              bgcolor: isDark ? 'rgba(212,175,55,0.14)' : '#FEF9E7',
+              color: readableAccent,
+              border: `1px solid ${readableAccent}`,
             }}
           />
           <Typography variant="caption" sx={{ fontFamily: mono, color: 'text.secondary' }}>
-            Move cursor or click inside screen to trigger 60 FPS constellation ley-lines & 3D letter tilt
+            Move cursor or click inside screen to trigger 60 FPS constellation ley-lines &amp; 3D letter tilt
           </Typography>
         </Box>
 
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           {REALITY_PILL_MODES.map((pill) => {
             const selected = pill.id === activeMode.id;
+            const pillTone = resolveTone(pill.accent, isDark);
             return (
               <Button
                 key={pill.id}
@@ -353,12 +358,12 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
                   px: 1.6,
                   py: 0.6,
                   borderRadius: 999,
-                  bgcolor: selected ? pill.accent : 'transparent',
-                  color: selected ? '#08080B' : pill.accent,
-                  borderColor: pill.accent,
+                  bgcolor: selected ? (isDark ? pill.accent : pillTone) : 'transparent',
+                  color: selected ? (isDark ? '#08080B' : '#FFFFFF') : pillTone,
+                  borderColor: pillTone,
                   '&:hover': {
-                    bgcolor: selected ? pill.accent : `${pill.accent}22`,
-                    borderColor: pill.accent,
+                    bgcolor: selected ? (isDark ? pill.accent : pillTone) : `${pillTone}18`,
+                    borderColor: pillTone,
                   },
                 }}
               >
@@ -633,8 +638,8 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
           mt: 1.5,
           p: 2,
           borderRadius: 2.5,
-          bgcolor: 'rgba(11, 12, 18, 0.9)',
-          border: `1px solid ${activeMode.accent}44`,
+          bgcolor: isDark ? 'rgba(11, 12, 18, 0.92)' : '#FFFFFF',
+          border: `1px solid ${readableAccent}55`,
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
@@ -643,10 +648,10 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
         }}
       >
         <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.82rem', color: activeMode.accent }}>
+          <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.82rem', color: readableAccent }}>
             $ {activeMode.cmd} — {activeMode.name}
           </Typography>
-          <Typography variant="body2" sx={{ color: '#A6A8B4', fontSize: '0.82rem', mt: 0.25 }}>
+          <Typography variant="body2" sx={{ color: isDark ? '#A6A8B4' : '#475467', fontSize: '0.82rem', mt: 0.25 }}>
             {activeMode.desc}
           </Typography>
         </Box>
@@ -657,9 +662,9 @@ export default function InteractiveDesktopPreview({ activePillId = 'gold', onSel
             fontFamily: mono,
             fontWeight: 700,
             fontSize: '0.68rem',
-            bgcolor: `${activeMode.accent}18`,
-            color: activeMode.secondary,
-            border: `1px solid ${activeMode.accent}44`,
+            bgcolor: `${readableAccent}16`,
+            color: isDark ? activeMode.secondary : readableAccent,
+            border: `1px solid ${readableAccent}44`,
             maxWidth: '100%',
             height: 'auto',
             '& .MuiChip-label': { whiteSpace: 'normal', py: 0.4 },

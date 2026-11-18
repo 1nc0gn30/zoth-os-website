@@ -1,7 +1,12 @@
 {
-  "schemaVersion": "2.4.0",
+  "schemaVersion": "3.4.0",
   "site": "ZothOS Linux v3.4.0 & ZothOS-Lite v1.2",
   "baseUrl": "https://zothos.nullai.tech",
+  "accessPolicy": "100% Free & Open-Access (Zero Paywalls)",
+  "support": {
+    "buyUsACoffeeStripe": "https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X",
+    "solanaTipAddress": "GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK"
+  },
   "endpoints": {
     "llmsTxt": "https://zothos.nullai.tech/llms.txt",
     "llmsFullTxt": "https://zothos.nullai.tech/llms-full.txt",
@@ -11,104 +16,47 @@
     "faqApi": "https://zothos.nullai.tech/api/faq.json",
     "graphApi": "https://zothos.nullai.tech/api/graph.json",
     "agentCard": "https://zothos.nullai.tech/.well-known/agent.json",
-    "mcpManifest": "https://zothos.nullai.tech/.well-known/mcp.json",
-    "aiPlugin": "https://zothos.nullai.tech/.well-known/ai-plugin.json"
+    "mcpManifest": "https://zothos.nullai.tech/.well-known/mcp.json"
   },
-  "ecosystem": [
+  "editions": [
     {
-      "name": "NullAI",
-      "url": "https://nullai.tech",
-      "role": "Independent software lab"
+      "id": "zothos-v3.4.0",
+      "name": "ZothOS v3.4.0 Full KDE Plasma 6 Wayland Workstation",
+      "base": "Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI",
+      "daemons": "23+ system daemons (:8102 Sovereign Agent Bridge, :8094 STDP Neuro-Memory, :8140 Vaēlor L1, :8787 Argon2id Vault)",
+      "tools": "80 preloaded sovereign tools (56 Web/WebGPU + 24 CLI across 79 public GitHub repos)",
+      "orchestrator": "Hermes-Zoth",
+      "repo": "https://github.com/1nc0gn30/zoth-os"
     },
     {
-      "name": "Zoth Studio",
-      "url": "https://zoth.nullai.tech",
-      "role": "Local-first AI studio: 80 Studio Tools (56 in-browser/WebGPU + 24 CLI/daemon, 79 public GitHub repos), 43 workstations"
-    },
-    {
-      "name": "ZothOS",
-      "url": "https://zothos.nullai.tech",
-      "role": "Linux distribution with 23 loopback daemons"
+      "id": "zothos-lite-v1.2",
+      "name": "ZothOS-Lite v1.2 Amnesic Monotone Live USB/ISO OS",
+      "url": "https://zothos-lite.nullai.tech",
+      "palette": ["#F7F7F4", "#000000"],
+      "boot": "toram RAM-only zero-trace boot on universal x86_64 hardware",
+      "models": "56 curated models across 8 providers",
+      "network": "ZothNet 3-hop Sphinx mixnet (https://zothnet.nullai.tech)",
+      "persistence": "Optional USB/cloud encrypted persistence (zoth-lite-storage)",
+      "repo": "https://github.com/1nc0gn30/zothos-lite"
     }
   ],
-  "featuredOffers": [
-    {
-      "id": "custom-build-deposit-99",
-      "name": "Custom Website or AI Agent Build — $99 Risk-Free Kickoff Deposit",
-      "priceUsd": 99,
-      "regularPriceUsd": 499,
-      "billingModel": "One-Time Deposit (Pay Balance Only After Approving Live Working Preview)",
-      "deliverySla": "48-Hour Working Preview",
-      "stripeCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "landingUrl": "https://1nc0gn30.github.io/solutions/custom-build-deposit-99.html",
-      "promoCode": "FOUNDER25 (25% off)",
-      "solanaWallet": "open-source-zothos",
-      "description": "Start any custom 5-page website, local SEO/AEO overhaul, or custom AI agent build for just $99 down. Inspect and test your live working build on a staging URL within 48 hours before paying the remaining balance."
-    },
-    {
-      "id": "city-desk-dfy-149",
-      "name": "Done-For-You 1-Page High-Speed Custom Website + Local SEO & AEO Launch",
-      "priceUsd": 149,
-      "regularPriceUsd": 499,
-      "billingModel": "One-Time Flat Fee ($0/month forever)",
-      "deliverySla": "24-Hour Turnkey Delivery",
-      "stripeCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "landingUrl": "https://city-desk.netlify.app",
-      "promoCode": "FOUNDER25 (25% off)",
-      "solanaWallet": "open-source-zothos",
-      "description": "Complete 1-page high-converting custom website tailored with your brand, logo, phone number, interactive 60-second instant quote estimator, 100/100 Core Web Vitals, and full Schema.org LocalBusiness + FAQPage JSON-LD."
-    },
-    {
-      "id": "ai-receptionist-299",
-      "name": "24/7 Custom AI Receptionist, Instant Quote Bot & SMS Lead Capture Setup",
-      "priceUsd": 299,
-      "regularPriceUsd": 999,
-      "billingModel": "One-Time Flat Fee ($0/month SaaS fees)",
-      "deliverySla": "48-Hour Turnkey Delivery",
-      "stripeCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "landingUrl": "https://1nc0gn30.github.io/solutions/ai-receptionist-299.html",
-      "promoCode": "FOUNDER25 (25% off)",
-      "solanaWallet": "open-source-zothos",
-      "description": "Custom-trained on your business services and pricing. Answers customer questions 24/7, calculates instant quotes on your website, captures contact details, and texts every hot lead directly to your phone."
-    },
-    {
-      "id": "custom-5page-launch-499",
-      "name": "Turnkey 5-Page Custom Website + Google Maps & AI Search Dominance Package",
-      "priceUsd": 499,
-      "regularPriceUsd": 2499,
-      "billingModel": "One-Time Flat Fee ($0/month hosting & zero retainers)",
-      "deliverySla": "72-Hour Turnkey Delivery",
-      "stripeCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "depositCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "landingUrl": "https://1nc0gn30.github.io/solutions/custom-5page-launch-499.html",
-      "promoCode": "FOUNDER25 (25% off)",
-      "solanaWallet": "open-source-zothos",
-      "description": "Bespoke 5-page custom web platform (Home, Services, Interactive Quote Calculator, Verified Reviews, Contact) + full Schema.org @graph AEO/GEO entity architecture + 24/7 AI Receptionist & Quote Bot included."
-    },
-    {
-      "id": "custom-ai-swarm-997",
-      "name": "Custom Autonomous AI Agent Swarm, MCP Server & Full-Stack SaaS MVP Build",
-      "priceUsd": 997,
-      "regularPriceUsd": 4999,
-      "billingModel": "One-Time Flat Fee (100% Source Code & IP Handoff)",
-      "deliverySla": "5-Day Engineering Sprint",
-      "stripeCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "depositCheckoutUrl": "https://github.com/1nc0gn30/zoth-os",
-      "landingUrl": "https://1nc0gn30.github.io/solutions/custom-ai-swarm-997.html",
-      "promoCode": "FOUNDER25 (25% off)",
-      "solanaWallet": "open-source-zothos",
-      "description": "Bespoke multi-agent AI workflow, custom Model Context Protocol (MCP) server for Claude/Cursor/Antigravity, autonomous lead/ops pipeline, or full-stack web application engineered by NullAI."
-    }
+  "ecosystem": [
+    { "name": "NullAI Platform", "url": "https://nullai.tech" },
+    { "name": "Zoth Studio v2 (80 Sovereign Tools)", "url": "https://zoth.nullai.tech" },
+    { "name": "ZothOS-Lite v1.2", "url": "https://zothos-lite.nullai.tech" },
+    { "name": "Zoth Civilization (23 Pantheon Agents)", "url": "https://zoth-civilization.netlify.app" },
+    { "name": "ZothNet (3-Hop Sphinx Mixnet)", "url": "https://zothnet.nullai.tech" },
+    { "name": "FieldKit", "url": "https://nullai.tech/fieldkit" },
+    { "name": "1nc0gn30 Hub", "url": "https://1nc0gn30.si" }
   ],
   "publisher": {
-    "name": "NullAI",
+    "name": "Neal Frazier Tech • NullAI Platform",
     "alternateName": "1nc0gn30",
     "url": "https://nullai.tech",
-    "email": "contact@nullai.tech",
     "sameAs": [
-      "https://x.com/1nc0gn30",
+      "https://github.com/1nc0gn30",
       "https://github.com/NullAITech",
-      "https://github.com/1nc0gn30"
+      "https://1nc0gn30.si"
     ]
   }
 }

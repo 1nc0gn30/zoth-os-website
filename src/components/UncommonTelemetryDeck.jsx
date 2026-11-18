@@ -6,7 +6,7 @@ import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import { renderBrailleDitherLines, useGlyphScramble } from '../motion/AsciiBrailleDitherEngine';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
-const display = '"Celtic Garamond", Georgia, "Times New Roman", serif';
+const display = '"Syne", "Space Grotesk", sans-serif';
 
 const SHAPES = [
   { id: 'shield', label: 'ZothOS v3.4 Shield', sub: 'Kernel + Tor Onion' },
@@ -418,56 +418,56 @@ export default function UncommonTelemetryDeck({ compact = false }) {
           <Grid container spacing={1.5} sx={{ height: '100%' }}>
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
-                label="FLAGSHIP ISO · READY"
+                label="FLAGSHIP WORKSTATION"
                 value="ZOTHOS v3.4.0"
-                sub="4-Folder Deterministic Desktop + Multi-Size 166KB Xcursor Suite + SWCursor"
+                sub="Debian 13 Trixie + KDE Plasma 6 Wayland · 80 Preloaded Sovereign Tools"
                 dark={dark}
                 to="/download"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
-                label="AMNESIC MONOTONE OS"
+                label="AMNESIC LIVE USB OS"
                 value="ZOTHOS-LITE v1.2"
-                sub="Tails-Style RAM-Only OS · 60fps Braille + Bayer Dither Windowed GUI (:8145)"
+                sub="Monotone #F7F7F4/#000000 · toram Zero-Trace · 56 Models (8 Providers)"
                 dark={dark}
-                to="/desktop"
+                href="https://zothos-lite.nullai.tech"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
-                label="L1 SOVEREIGN BLOCKCHAIN"
-                value="VAELOR DAG :8140"
-                sub="100-Agent PoUW Consensus · Hermes Agent Lab · Ed25519 + BLAKE2b"
-                dark={dark}
-                href="https://zoth.nullai.tech/vaelor"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <SplitFlapTile
-                label="LOOPBACK ENCLAVE MESH"
-                value="23 LOOPBACK DAEMONS"
-                sub="Adytum :3000 · WebGen :5173 · Memory :8094 · Consensus :8096 · Civ :9393"
+                label="AGENT RUNTIME BUS"
+                value="BRIDGE :8102"
+                sub="Sovereign Agent Bridge · Hermes-Zoth · Ring 0–3 Kernel Isolation"
                 dark={dark}
                 to="/daemons"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
-                label="CYBER ARSENAL & VAULT"
-                value="Kali and Parrot security tools"
-                sub="Kali + Parrot Dual Parity · Argon2id + AES-256-GCM Zoth Vault"
+                label="BIOMORPHIC CORTEX"
+                value="STDP MEM :8094"
+                sub="3-Factor STDP Vector Memory · 23+ Loopback System Daemons"
                 dark={dark}
-                to="/security"
+                to="/daemons"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <SplitFlapTile
-                label="AGENT PROTOCOL HUB"
-                value="163 MCP SERVERS"
-                sub="Ring 0–3 Permission Enforced · zoth-relay (:8765) · All Off By Default"
+                label="L1 SOVEREIGN LEDGER"
+                value="VAĒLOR L1 :8140"
+                sub="100-Agent PoUW DAG · Ed25519 + BLAKE2b · Zero Cloud Egress"
                 dark={dark}
-                to="/mcp"
+                href="https://zoth.nullai.tech"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <SplitFlapTile
+                label="3-HOP ONION ROUTING"
+                value="ZOTHNET SPHINX"
+                sub="Metadata-Resistant 3-Hop Sphinx Mixnet · zothnet.nullai.tech"
+                dark={dark}
+                href="https://zothnet.nullai.tech"
               />
             </Grid>
           </Grid>

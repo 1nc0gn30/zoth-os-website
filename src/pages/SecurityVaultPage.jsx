@@ -19,6 +19,7 @@ import { HeroReveal, HeroItem, GlowLine } from '../components/MotionReveal';
 import { ProFunnelBanner, ProOutputGate, useProLicense } from '../context/ProLicenseContext';
 import { SECURITY_ARSENAL_CATEGORIES } from '../data/zothOsData';
 import { safeCopyText, downloadTextFile } from '../utils/clipboard';
+import { resolveTone } from '../theme';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -151,7 +152,7 @@ sudo zoth-mode ghost && zoth-ghost status`;
           <Chip
             label={`WebCrypto Commitment: 0x${derivedDigest.slice(0, 28)}...`}
             size="small"
-            sx={{ fontFamily: mono, fontWeight: 700, bgcolor: 'rgba(52,211,153,0.12)', color: '#34D399' }}
+            sx={{ fontFamily: mono, fontWeight: 700, bgcolor: isDark ? 'rgba(52,211,153,0.12)' : '#ECFDF5', color: resolveTone('#34D399', isDark) }}
           />
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
             <Button size="small" variant="outlined" startIcon={<ContentCopyIcon />} onClick={handleCopyVault} sx={{ fontFamily: mono, fontWeight: 800 }}>
@@ -186,53 +187,56 @@ sudo zoth-mode ghost && zoth-ghost status`;
       </Paper>
 
       {/* Kali and Parrot security tools Categories */}
-      {SECURITY_ARSENAL_CATEGORIES.map((group) => (
-        <Box key={group.category} sx={{ mb: 6 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2, flexWrap: 'wrap' }}>
-            <SecurityIcon sx={{ color: group.accent }} />
-            <Typography variant="h4" sx={{ fontWeight: 800 }}>
-              {group.category}
-            </Typography>
-            <Chip
-              label={group.badge}
-              size="small"
-              sx={{
-                fontFamily: mono,
-                fontWeight: 800,
-                fontSize: '0.66rem',
-                bgcolor: `${group.accent}18`,
-                color: group.accent,
-                border: `1px solid ${group.accent}55`,
-              }}
-            />
-          </Box>
-
-          <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, gap: 2.5 }}>
-            {group.tools.map((tool) => (
-              <Paper
-                key={tool.name}
-                elevation={0}
+      {SECURITY_ARSENAL_CATEGORIES.map((group) => {
+        const groupTone = resolveTone(group.accent, isDark);
+        return (
+          <Box key={group.category} sx={{ mb: 6 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2, flexWrap: 'wrap' }}>
+              <SecurityIcon sx={{ color: groupTone }} />
+              <Typography variant="h4">
+                {group.category}
+              </Typography>
+              <Chip
+                label={group.badge}
+                size="small"
                 sx={{
-                  p: 2.5,
-                  borderRadius: 3,
-                  bgcolor: cardBg,
-                  border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : '#EAECF0'}`,
+                  fontFamily: mono,
+                  fontWeight: 800,
+                  fontSize: '0.66rem',
+                  bgcolor: `${groupTone}18`,
+                  color: groupTone,
+                  border: `1px solid ${groupTone}55`,
                 }}
-              >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1, gap: 1, flexWrap: 'wrap' }}>
-                  <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.96rem' }}>
-                    {tool.name}
+              />
+            </Box>
+
+            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' }, gap: 2.5 }}>
+              {group.tools.map((tool) => (
+                <Paper
+                  key={tool.name}
+                  elevation={0}
+                  sx={{
+                    p: 2.5,
+                    borderRadius: 3,
+                    bgcolor: cardBg,
+                    border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : '#DDD9CE'}`,
+                  }}
+                >
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1, gap: 1, flexWrap: 'wrap' }}>
+                    <Typography sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.94rem' }}>
+                      {tool.name}
+                    </Typography>
+                    <Chip label={`$ ${tool.cmd}`} size="small" sx={{ fontFamily: mono, fontSize: '0.68rem', color: gold }} />
+                  </Box>
+                  <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.84rem', lineHeight: 1.6 }}>
+                    {tool.desc}
                   </Typography>
-                  <Chip label={`$ ${tool.cmd}`} size="small" sx={{ fontFamily: mono, fontSize: '0.68rem', color: gold }} />
-                </Box>
-                <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.84rem', lineHeight: 1.6 }}>
-                  {tool.desc}
-                </Typography>
-              </Paper>
-            ))}
+                </Paper>
+              ))}
+            </Box>
           </Box>
-        </Box>
-      ))}
+        );
+      })}
 
       <Snackbar open={Boolean(toast)} autoHideDuration={3000} onClose={() => setToast(null)}>
         <Alert severity="success" onClose={() => setToast(null)} sx={{ fontFamily: mono, fontWeight: 700 }}>

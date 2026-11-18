@@ -1,7 +1,7 @@
 # ZothOS Website — Official Distribution Hub & Agent-Native OS Showcase
 
 > **Official web portal and machine-readable distribution hub for ZOTHOS Linux v3.4.0 & ZothOS-Lite v1.2**  
-> *A Debian 13-based distro built as the dual-surface operating system for autonomous AI agents (Ring 0–3 security boundaries, Chain of Thoughts `zoth-cot` Merkle Working Memory DAG, 163 Model Context Protocol servers, zoth-relay :8765, 23 resident loopback daemons) and human operators (24K Gold KDE Plasma 6.3 Wayland, ZothOS-Lite v1.2 Amnesic Monotone Edition, Debian 13 + Kali & Parrot dual parity).*
+> *Debian 13 (Trixie) + KDE Plasma 6 Wayland Sovereign AI Workstation (23+ system daemons, Sovereign Agent Bridge `:8102`, STDP Neuro-Memory `:8094`, Vaēlor L1 `:8140`, Hermes-Zoth orchestrator, 80 preloaded sovereign tools — 56 Web/WebGPU + 24 CLI across 79 public GitHub repos) paired with ZothOS-Lite v1.2 Amnesic Monotone (`#F7F7F4` / `#000000`) `toram` Live USB OS (56 curated models across 8 providers + ZothNet 3-hop Sphinx mixnet).*
 
 [![Live Production Site](https://img.shields.io/badge/Live-zothos.nullai.tech-gold?style=flat-square&logo=googlechrome)](https://zothos.nullai.tech)
 [![Netlify Deploy](https://img.shields.io/badge/Deploy-Netlify%20Production-00C7B7?style=flat-square&logo=netlify)](https://app.netlify.com)
@@ -19,10 +19,10 @@
 `zoth-os-website` is the official web portal, interactive telemetry dashboard, and machine-agent index for [ZOTHOS Linux](https://github.com/NullAITech/zoth-os) and [ZothOS-Lite v1.2](https://github.com/NullAITech/zothos-lite). Hosted at [https://zothos.nullai.tech](https://zothos.nullai.tech), it provides both human cybersecurity operators and autonomous AI agents with instant access to ISO downloads, verification signatures, tool documentation, and live system telemetries.
 
 ### Key Highlights
-- **Dual-Surface Showcase**: Articulates ZothOS's unique dual-audience design—a hardened, permission-ringed execution substrate for coding agents on the backend, paired with an avant-garde 24K Gold KDE Plasma 6.3 Wayland desktop and Amnesic ZothOS-Lite v1.2 for human operators.
-- **100% In-Browser Interactive Demos**: Interactive terminal simulators, MCP inspector previews, and live telemetry widgets with zero fake work.
-- **Machine Discovery (AEO & AX)**: Structured `/llms.txt`, `/llms-full.txt`, and programmatic `/api/` endpoints enabling LLMs (Perplexity, GPTBot, ClaudeBot, Google SGE) to accurately cite and index ZothOS capabilities.
-- **100% Free & Open-Access**: All tools, ISO builders, and configurations are unlocked by default with zero paywalls, supported via optional "☕ Buy Us a Coffee" (Stripe + Solana tip address).
+- **Interactive Edition & Hardware Boot Advisor**: Client-side hardware fit calculator comparing **ZothOS v3.4.0 Full KDE Plasma 6 Workstation** vs **ZothOS-Lite v1.2 Amnesic `toram` Live USB** with 1-click `dd` USB flash command generator, SHA-256 + Sigstore Cosign verify snippets, and interactive CLI/Daemon `curl` probes.
+- **Dual-Theme Mastery**: Instant switching between **Obsidian Dark (`#08080B` + 24K Gold)** and **Editorial Alabaster / Monotone Lite (`#F7F7F4` / `#0A0D14`)**, powered by `Syne`, `Space Grotesk`, and `JetBrains Mono` typography plus traveling conic border beams.
+- **Machine Discovery (AEO & AX)**: Structured `/llms.txt`, `/llms-full.txt`, Schema.org `@graph` (`OperatingSystem`, `WebApplication`, `SoftwareApplication`, `FAQPage`), and programmatic `/api/` endpoints.
+- **100% Free & Open-Access**: All tools, ISO builders, and configurations are unlocked by default with zero paywalls, supported via optional "☕ Buy Us a Coffee" (`https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X` + Solana tip `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`).
 
 ---
 

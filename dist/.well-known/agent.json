@@ -1,19 +1,18 @@
 {
   "schema_version": "1.0",
-  "name": "ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — Sovereign AI & Web Systems Agent",
-  "description": "Sovereign AI-Native Linux Workstation based on Debian Trixie + KDE Plasma 6.3 Wayland, local LLM orchestration, and eBPF security. Engineered by 1nc0gn30 (NullAI). Provides instant access to 44 browser-native SEO/AEO/Developer tools, custom website & AI agent build packages, and Schema.org entity graphs.",
+  "name": "ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — Sovereign AI & Systems Agent",
+  "description": "Debian 13 (Trixie) + KDE Plasma 6 Wayland Sovereign AI Workstation (23+ system daemons, Sovereign Agent Bridge :8102, STDP Neuro-Memory :8094, Vaēlor L1 :8140, Hermes-Zoth, 80 preloaded sovereign tools — 56 Web/WebGPU + 24 CLI across 79 public GitHub repos) & ZothOS-Lite v1.2 Amnesic Monotone toram Live USB OS (56 models across 8 providers, ZothNet 3-hop Sphinx mixnet). Engineered by Neal Frazier Tech (@1nc0gn30) • NullAI Platform.",
   "url": "https://zothos.nullai.tech",
   "provider": {
-    "organization": "NullAI",
-    "author": "1nc0gn30",
-    "url": "https://nullai.tech",
-    "email": "contact@nullai.tech"
+    "organization": "Neal Frazier Tech • NullAI Platform",
+    "author": "Neal Frazier (@1nc0gn30)",
+    "url": "https://nullai.tech"
   },
   "capabilities": {
     "streaming": false,
     "pushNotifications": false,
     "corsPublicApis": true,
-    "instantCheckout": true
+    "openAccessFree": true
   },
   "apis": {
     "index": "https://zothos.nullai.tech/api/index.json",

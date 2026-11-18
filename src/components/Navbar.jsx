@@ -26,25 +26,23 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import LaunchIcon from '@mui/icons-material/Launch';
-import BoltIcon from '@mui/icons-material/Bolt';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import ZothosAsciiLogo from './ZothosAsciiLogo';
-import { useProLicense } from '../context/ProLicenseContext';
-import { LOOPBACK_DAEMONS, FRONTIER_AGENTS } from '../data/zothOsData';
+import { LOOPBACK_DAEMONS, FRONTIER_AGENTS, ECOSYSTEM_SURFACES } from '../data/zothOsData';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
 const PRIMARY_NAV = [
   { label: 'Overview', path: '/' },
   { label: 'Desktop Lab', path: '/desktop', badge: 'LIVE' },
-  { label: '23 Daemons', path: '/daemons', badge: '23' },
+  { label: 'Daemons', path: '/daemons', badge: '23+' },
   { label: 'Security Vault', path: '/security', badge: 'Kali+Parrot' },
   { label: 'MCP & AX', path: '/mcp', badge: '163' },
   { label: 'Download ISO', path: '/download', badge: 'v3.4' },
   { label: 'Codex', path: '/docs' },
 ];
 
-export default function Navbar({ mode, onToggleTheme }) {
+export default function Navbar({ onToggleTheme }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -53,7 +51,6 @@ export default function Navbar({ mode, onToggleTheme }) {
   const navigate = useNavigate();
   const theme = useTheme();
   const dark = theme.palette.mode === 'dark';
-  const { isPro, openPaywallModal, openSolanaTipCheckout } = useProLicense();
 
   const goldAccent = dark ? '#D4AF37' : '#8A6508';
   const brandColor = dark ? '#F5E6AB' : '#0A0D14';
@@ -91,16 +88,16 @@ export default function Navbar({ mode, onToggleTheme }) {
       sx={{
         top: 0,
         background: dark
-          ? 'linear-gradient(180deg, rgba(14, 15, 22, 0.90) 0%, rgba(8, 8, 11, 0.85) 100%)'
-          : 'rgba(255, 255, 255, 0.96)',
+          ? 'linear-gradient(180deg, rgba(14, 15, 22, 0.92) 0%, rgba(8, 8, 11, 0.88) 100%)'
+          : 'rgba(247, 247, 244, 0.95)',
         backdropFilter: 'blur(24px) saturate(180%)',
         zIndex: 1100,
-        borderBottom: `1px solid ${dark ? 'rgba(212, 175, 55, 0.24)' : 'rgba(212, 175, 55, 0.35)'}`,
+        borderBottom: `1px solid ${dark ? 'rgba(212, 175, 55, 0.24)' : 'rgba(138, 101, 8, 0.32)'}`,
       }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: 74, gap: 1 }}>
-          {/* Pure Black ASCII Brand Logo (No images, no font text title) */}
+          {/* Brand Emblem */}
           <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
             <Box
               component={RouterLink}
@@ -112,7 +109,7 @@ export default function Navbar({ mode, onToggleTheme }) {
                 textDecoration: 'none',
               }}
             >
-              <ZothosAsciiLogo size="sm" showTag />
+              <ZothosAsciiLogo size="sm" />
             </Box>
           </Box>
 
@@ -138,7 +135,7 @@ export default function Navbar({ mode, onToggleTheme }) {
                     fontWeight: active ? 800 : 600,
                     fontSize: { lg: '0.78rem', xl: '0.82rem' },
                     bgcolor: active ? (dark ? 'rgba(212,175,55,0.12)' : '#FEF9E7') : 'transparent',
-                    border: active ? `1px solid ${dark ? 'rgba(212,175,55,0.35)' : '#E2CE82'}` : '1px solid transparent',
+                    border: active ? `1px solid ${dark ? 'rgba(212,175,55,0.35)' : '#D9C26C'}` : '1px solid transparent',
                     '&:hover': {
                       color: navActive,
                       bgcolor: dark ? 'rgba(212,175,55,0.08)' : '#FEF9E7',
@@ -167,9 +164,9 @@ export default function Navbar({ mode, onToggleTheme }) {
             })}
           </Box>
 
-          {/* Right Actions: Search, Studio Link, Status, Theme Toggle */}
+          {/* Right Actions: Search, Lite Link, Theme Pill Toggle, Mobile Menu */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.65, flexShrink: 0 }}>
-            <Tooltip title="Search Daemons, Agents & Security Arsenal (⌘K)">
+            <Tooltip title="Search Daemons, Agents & Ecosystem (⌘K)">
               <Button
                 size="small"
                 variant="outlined"
@@ -183,7 +180,7 @@ export default function Navbar({ mode, onToggleTheme }) {
                   py: 0.5,
                   minWidth: 0,
                   whiteSpace: 'nowrap',
-                  borderColor: dark ? 'rgba(255,255,255,0.16)' : '#D0D5DD',
+                  borderColor: dark ? 'rgba(255,255,255,0.16)' : '#C8C3B8',
                   color: 'text.secondary',
                 }}
               >
@@ -194,67 +191,81 @@ export default function Navbar({ mode, onToggleTheme }) {
             <Button
               size="small"
               variant="outlined"
-              href="https://zoth.nullai.tech"
+              href="https://zothos-lite.nullai.tech"
               target="_blank"
               rel="noopener noreferrer"
               endIcon={<LaunchIcon sx={{ fontSize: 13 }} />}
               sx={{
                 display: { xs: 'none', xl: 'inline-flex' },
                 fontFamily: mono,
-                fontSize: '0.72rem',
-                fontWeight: 700,
+                fontSize: '0.7rem',
+                fontWeight: 800,
                 px: 1.2,
                 py: 0.5,
                 whiteSpace: 'nowrap',
-                borderColor: dark ? 'rgba(212,175,55,0.35)' : '#E2CE82',
-                color: goldAccent,
+                borderColor: dark ? '#F7F7F4' : '#0A0D14',
+                color: dark ? '#F7F7F4' : '#0A0D14',
               }}
             >
-              Zoth Studio
+              ZothOS-Lite v1.2
             </Button>
 
             <Button
               size="small"
               variant="outlined"
-              onClick={() => window.dispatchEvent(new CustomEvent('zoth:replay-intro', { detail: { mode: 'wipe' } }))}
+              href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X"
+              target="_blank"
+              rel="noopener noreferrer"
               sx={{
-                display: { xs: 'none', sm: 'inline-flex' },
+                display: { xs: 'none', xl: 'inline-flex' },
                 fontFamily: mono,
-                fontWeight: 800,
                 fontSize: '0.7rem',
-                px: 1.2,
+                fontWeight: 800,
+                px: 1.15,
                 py: 0.5,
                 whiteSpace: 'nowrap',
                 borderColor: dark ? 'rgba(212,175,55,0.4)' : '#8A6508',
                 color: goldAccent,
               }}
             >
-              ⣿ Braille Intro
+              ☕ Coffee
             </Button>
 
-            <Chip
-              label="v3.4.0 + LITE"
-              size="small"
-              sx={{
-                display: { xs: 'none', md: 'inline-flex' },
-                fontFamily: mono,
-                fontWeight: 800,
-                fontSize: '0.68rem',
-                bgcolor: dark ? 'rgba(16, 185, 129, 0.16)' : '#ECFDF5',
-                color: dark ? '#10B981' : '#047857',
-                border: '1px solid rgba(16, 185, 129, 0.45)',
-              }}
-            />
+            {/* Obsidian Dark <-> Editorial Alabaster / Monotone Lite Toggle */}
+            <Tooltip title={dark ? 'Switch to Editorial Alabaster / Monotone Lite' : 'Switch to Obsidian Dark Mode'}>
+              <Button
+                aria-label={dark ? 'Switch to Editorial Alabaster Light mode' : 'Switch to Obsidian Dark mode'}
+                onClick={onToggleTheme}
+                size="small"
+                variant="outlined"
+                startIcon={dark ? <LightModeIcon sx={{ fontSize: 15 }} /> : <DarkModeIcon sx={{ fontSize: 15 }} />}
+                sx={{
+                  display: { xs: 'none', sm: 'inline-flex' },
+                  fontFamily: mono,
+                  fontWeight: 800,
+                  fontSize: '0.7rem',
+                  px: 1.2,
+                  py: 0.5,
+                  minHeight: 36,
+                  whiteSpace: 'nowrap',
+                  borderColor: dark ? 'rgba(212,175,55,0.4)' : '#8A6508',
+                  color: goldAccent,
+                  bgcolor: dark ? 'rgba(212,175,55,0.08)' : '#FFFFFF',
+                }}
+              >
+                {dark ? 'Alabaster' : 'Obsidian'}
+              </Button>
+            </Tooltip>
 
             <IconButton
               aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
               onClick={onToggleTheme}
-              size="small"
               sx={{
-                border: `1px solid ${dark ? 'rgba(212,175,55,0.3)' : '#E2CE82'}`,
+                display: { xs: 'inline-flex', sm: 'none' },
+                border: `1px solid ${dark ? 'rgba(212,175,55,0.35)' : '#8A6508'}`,
                 color: goldAccent,
-                width: 38,
-                height: 38,
+                width: 44,
+                height: 44,
               }}
             >
               {dark ? <LightModeIcon fontSize="small" /> : <DarkModeIcon fontSize="small" />}
@@ -263,7 +274,7 @@ export default function Navbar({ mode, onToggleTheme }) {
             <IconButton
               aria-label="Open navigation menu"
               onClick={() => setMobileOpen(true)}
-              sx={{ display: { xs: 'inline-flex', lg: 'none' }, color: brandColor, width: 42, height: 42 }}
+              sx={{ display: { xs: 'inline-flex', lg: 'none' }, color: brandColor, width: 44, height: 44 }}
             >
               <MenuIcon />
             </IconButton>
@@ -278,15 +289,15 @@ export default function Navbar({ mode, onToggleTheme }) {
         onClose={() => setMobileOpen(false)}
         PaperProps={{
           sx: {
-            width: 290,
-            bgcolor: dark ? '#08080B' : '#FFFFFF',
+            width: 300,
+            bgcolor: dark ? '#08080B' : '#F7F7F4',
             borderLeft: `1px solid ${goldAccent}`,
           },
         }}
       >
         <Box sx={{ p: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <ZothosAsciiLogo size="sm" showTag={false} />
-          <IconButton aria-label="Close navigation menu" onClick={() => setMobileOpen(false)}>
+          <ZothosAsciiLogo size="sm" />
+          <IconButton aria-label="Close navigation menu" onClick={() => setMobileOpen(false)} sx={{ width: 44, height: 44 }}>
             <CloseIcon />
           </IconButton>
         </Box>
@@ -298,6 +309,7 @@ export default function Navbar({ mode, onToggleTheme }) {
                 component={RouterLink}
                 to={item.path}
                 onClick={() => setMobileOpen(false)}
+                sx={{ minHeight: 46 }}
               >
                 <ListItemText
                   primary={item.label}
@@ -314,11 +326,22 @@ export default function Navbar({ mode, onToggleTheme }) {
             variant="outlined"
             fullWidth
             onClick={() => {
+              onToggleTheme();
               setMobileOpen(false);
-              window.dispatchEvent(new CustomEvent('zoth:replay-intro', { detail: { mode: 'wipe' } }));
             }}
+            sx={{ fontFamily: mono, fontWeight: 800, minHeight: 44 }}
           >
-            ⣿ Replay Braille Intro
+            {dark ? '☀ Switch to Alabaster Light' : '☾ Switch to Obsidian Dark'}
+          </Button>
+          <Button
+            variant="outlined"
+            fullWidth
+            href="https://zothos-lite.nullai.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ fontFamily: mono, fontWeight: 700, minHeight: 44 }}
+          >
+            ZothOS-Lite v1.2 Live OS ↗
           </Button>
           <Button
             variant="outlined"
@@ -326,8 +349,20 @@ export default function Navbar({ mode, onToggleTheme }) {
             href="https://zoth.nullai.tech"
             target="_blank"
             rel="noopener noreferrer"
+            sx={{ fontFamily: mono, fontWeight: 700, minHeight: 44 }}
           >
-            Visit Zoth Studio v2 ↗
+            Zoth Studio v2 (80 Tools) ↗
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ fontFamily: mono, fontWeight: 800, minHeight: 44 }}
+          >
+            ☕ Buy Us a Coffee
           </Button>
         </Box>
       </Drawer>
@@ -352,10 +387,10 @@ export default function Navbar({ mode, onToggleTheme }) {
             <InputBase
               autoFocus
               fullWidth
-              placeholder="Search ZothOS routes, 23 loopback daemons (:8094–:8120), or AI agents..."
+              placeholder="Search ZothOS routes, 23+ daemons (:8102, :8094, :8140), or AI agents..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              sx={{ fontFamily: mono, fontSize: '0.88rem' }}
+              sx={{ fontFamily: mono, fontSize: '0.86rem' }}
             />
             <IconButton aria-label="Close command palette" size="small" onClick={() => setPaletteOpen(false)}>
               <CloseIcon fontSize="small" />
@@ -365,7 +400,7 @@ export default function Navbar({ mode, onToggleTheme }) {
           <Typography variant="caption" sx={{ fontFamily: mono, color: goldAccent, fontWeight: 800, display: 'block', mb: 1 }}>
             PRIMARY ROUTES
           </Typography>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2.5 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
             {PRIMARY_NAV.map((r) => (
               <Chip
                 key={r.path}
@@ -411,7 +446,25 @@ export default function Navbar({ mode, onToggleTheme }) {
           </Box>
 
           <Typography variant="caption" sx={{ fontFamily: mono, color: goldAccent, fontWeight: 800, display: 'block', mb: 1 }}>
-            FRONTIER AI CODING AGENTS
+            SOVEREIGN ECOSYSTEM CONSTELLATION
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.8, mb: 2 }}>
+            {ECOSYSTEM_SURFACES.map((s) => (
+              <Chip
+                key={s.url}
+                label={s.name}
+                component="a"
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                clickable
+                sx={{ fontFamily: mono, fontSize: '0.72rem', fontWeight: 700 }}
+              />
+            ))}
+          </Box>
+
+          <Typography variant="caption" sx={{ fontFamily: mono, color: goldAccent, fontWeight: 800, display: 'block', mb: 1 }}>
+            AUTONOMOUS AGENTS &amp; ORCHESTRATORS
           </Typography>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
             {matchedAgents.map((a) => (

@@ -409,7 +409,7 @@ function IntroOverlay({ intro, mode, enter, onHandoff, onDone }) {
           }}
         />}
 
-        {mode === 'full' && <IntroHud intro={intro} progress={progress} handing={handing} onSkip={beginHandoff} />}
+        {mode === 'full' && <IntroHud intro={intro} progress={progress} handing={handing} onSkip={beginHandoff} narrow={narrow} />}
       </motion.div>
 
       {/* Light leak — brief accent bloom through the opening */}
@@ -562,7 +562,7 @@ function TitleCard({ intro, handing, dark, text }) {
 
 // The rendered cuts carry their own HUD (frame counter, progress), so ours is
 // a top-left cinema telemetry pill + a centred skip control with playback ring.
-function IntroHud({ intro, progress, handing, onSkip }) {
+function IntroHud({ intro, progress, handing, onSkip, narrow = false }) {
   const RING = 2 * Math.PI * 15;
   const dash = useTransform(progress, (p) => RING * (1 - p));
   const scrambledLabel = useGlyphScramble(intro.label, 520, !handing);
@@ -577,39 +577,47 @@ function IntroHud({ intro, progress, handing, onSkip }) {
       <div
         style={{
           position: 'absolute',
-          top: 'max(20px, env(safe-area-inset-top))',
-          left: 'max(22px, env(safe-area-inset-left))',
+          top: 'max(16px, env(safe-area-inset-top))',
+          left: 'max(16px, env(safe-area-inset-left))',
+          maxWidth: 'calc(100vw - 32px)',
           display: 'inline-flex',
           alignItems: 'center',
-          gap: 10,
-          padding: '6px 14px',
+          gap: narrow ? 8 : 10,
+          padding: narrow ? '5px 12px' : '6px 14px',
           borderRadius: 999,
           border: '1px solid rgba(245,241,230,0.16)',
-          background: 'rgba(8,8,11,0.68)',
+          background: 'rgba(8,8,11,0.74)',
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',
           color: '#F5F1E6',
           fontFamily: mono,
-          fontSize: 10.5,
+          fontSize: narrow ? 9.5 : 10.5,
           fontWeight: 700,
-          letterSpacing: '0.2em',
+          letterSpacing: narrow ? '0.12em' : '0.2em',
           textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
         }}
       >
         <span
           style={{
             width: 7,
             height: 7,
+            flexShrink: 0,
             borderRadius: '50%',
             background: intro.accent,
             boxShadow: `0 0 10px ${intro.accent}`,
           }}
         />
-        <span style={{ color: intro.accent }}>{intro.index} / {intro.total}</span>
-        <span style={{ opacity: 0.35 }}>·</span>
-        <span>{scrambledLabel}</span>
-        <span style={{ opacity: 0.35 }}>·</span>
-        <span style={{ color: intro.accent, opacity: 0.9 }}>⣿ BRAILLE · BAYER 8×8</span>
+        <span style={{ color: intro.accent, flexShrink: 0 }}>{intro.index} / {intro.total}</span>
+        <span style={{ opacity: 0.35, flexShrink: 0 }}>·</span>
+        <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>{scrambledLabel}</span>
+        {!narrow && (
+          <>
+            <span style={{ opacity: 0.35, flexShrink: 0 }}>·</span>
+            <span style={{ color: intro.accent, opacity: 0.9, flexShrink: 0 }}>⣿ BRAILLE · BAYER 8×8</span>
+          </>
+        )}
       </div>
 
       <button
@@ -632,7 +640,7 @@ function IntroHud({ intro, progress, handing, onSkip }) {
           padding: '6px 16px 6px 8px',
           borderRadius: 999,
           border: `1px solid ${intro.accent}55`,
-          background: 'rgba(8,8,11,0.68)',
+          background: 'rgba(8,8,11,0.74)',
           boxShadow: `0 10px 28px rgba(0,0,0,0.55), 0 0 20px ${intro.accent}22`,
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
@@ -640,12 +648,13 @@ function IntroHud({ intro, progress, handing, onSkip }) {
           fontFamily: mono,
           fontSize: 11,
           fontWeight: 700,
-          letterSpacing: '0.18em',
+          letterSpacing: narrow ? '0.13em' : '0.18em',
           textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
           cursor: 'pointer',
         }}
       >
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" style={{ flexShrink: 0 }}>
           <circle cx="17" cy="17" r="15" fill="none" stroke="rgba(245,241,230,0.16)" strokeWidth="2" />
           <motion.circle
             cx="17"

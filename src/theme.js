@@ -1,8 +1,31 @@
 import { createTheme } from '@mui/material/styles';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
-const display = '"Celtic Garamond", Georgia, "Times New Roman", serif';
-const sans = '"Google Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+const display = '"Syne", "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif';
+const sans = '"Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+
+const LIGHT_TONE_MAP = {
+  '#D4AF37': '#8A6508',
+  '#FFD700': '#8A6508',
+  '#F5E6AB': '#785706',
+  '#F59E0B': '#B45309',
+  '#00F0FF': '#0369A1',
+  '#38BDF8': '#0369A1',
+  '#3B82F6': '#1D4ED8',
+  '#34D399': '#047857',
+  '#10B981': '#047857',
+  '#EF4444': '#B91C1C',
+  '#F43F5E': '#BE123C',
+  '#FCA5A5': '#B91C1C',
+  '#C084FC': '#6D28D9',
+  '#A855F7': '#6D28D9',
+};
+
+export function resolveTone(hex, isDark = true) {
+  if (isDark || !hex) return hex;
+  const upper = String(hex).toUpperCase();
+  return LIGHT_TONE_MAP[upper] || hex;
+}
 
 export const theme = createTheme({
   palette: {
@@ -20,29 +43,29 @@ export const theme = createTheme({
       contrastText: '#FFFFFF',
     },
     background: {
-      default: '#FAF8F3',
+      default: '#F7F7F4',
       paper: '#FFFFFF',
     },
     text: {
-      primary: '#101828',
+      primary: '#0A0D14',
       secondary: '#475467',
     },
-    divider: '#E6E1D6',
+    divider: '#E2DFD7',
     success: {
-      main: '#12B76A',
+      main: '#047857',
     },
   },
   typography: {
     fontFamily: sans,
-    h1: { fontFamily: display, fontWeight: 400, letterSpacing: '0.01em', lineHeight: 1.08, fontSize: 'clamp(2.2rem, 5vw + 1rem, 4.75rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h2: { fontFamily: display, fontWeight: 400, letterSpacing: '0.01em', lineHeight: 1.12, fontSize: 'clamp(1.75rem, 4vw + 0.8rem, 3.25rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h3: { fontFamily: display, fontWeight: 400, letterSpacing: '0.012em', lineHeight: 1.18, fontSize: 'clamp(1.5rem, 3vw + 0.5rem, 2.5rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h4: { fontFamily: display, fontWeight: 400, letterSpacing: '0.015em', lineHeight: 1.22, fontSize: 'clamp(1.2rem, 2vw + 0.4rem, 1.85rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h5: { fontFamily: display, fontWeight: 400, letterSpacing: '0.02em', lineHeight: 1.25, fontSize: 'clamp(1.05rem, 1.5vw + 0.3rem, 1.45rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h6: { fontFamily: display, fontWeight: 400, letterSpacing: '0.02em', lineHeight: 1.3, fontSize: 'clamp(0.95rem, 1vw + 0.3rem, 1.2rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h1: { fontFamily: display, fontWeight: 800, letterSpacing: '-0.028em', lineHeight: 1.05, fontSize: 'clamp(2.15rem, 4.6vw + 0.9rem, 4.25rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h2: { fontFamily: display, fontWeight: 800, letterSpacing: '-0.022em', lineHeight: 1.1, fontSize: 'clamp(1.7rem, 3.6vw + 0.7rem, 3rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h3: { fontFamily: display, fontWeight: 800, letterSpacing: '-0.018em', lineHeight: 1.15, fontSize: 'clamp(1.4rem, 2.6vw + 0.45rem, 2.25rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h4: { fontFamily: display, fontWeight: 700, letterSpacing: '-0.014em', lineHeight: 1.2, fontSize: 'clamp(1.15rem, 1.8vw + 0.35rem, 1.65rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h5: { fontFamily: display, fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.25, fontSize: 'clamp(1.02rem, 1.3vw + 0.25rem, 1.35rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h6: { fontFamily: display, fontWeight: 700, letterSpacing: '-0.008em', lineHeight: 1.3, fontSize: 'clamp(0.95rem, 1vw + 0.25rem, 1.15rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
     body1: { lineHeight: 1.65 },
     body2: { lineHeight: 1.6 },
-    button: { textTransform: 'none', fontWeight: 650, letterSpacing: '0.01em' },
+    button: { textTransform: 'none', fontWeight: 700, letterSpacing: '0.01em' },
     caption: { letterSpacing: '0.04em' },
   },
   shape: {
@@ -54,8 +77,8 @@ export const theme = createTheme({
         // Accent text tokens: neon in dark mode, AA-safe (>=4.5:1 on white/tints) in light mode.
         ':root': { '--zs-sky': '#0369A1', '--zs-emerald': '#047857', '--zs-mint': '#047857', '--zs-slate': '#475569', '--zs-amber': '#B45309', '--zs-green': '#15803D' },
         body: {
-          backgroundColor: '#FFFFFF',
-          color: '#101828',
+          backgroundColor: '#F7F7F4',
+          color: '#0A0D14',
           '&::after': {
             content: '""',
             position: 'fixed',
@@ -489,15 +512,15 @@ export const darkTheme = createTheme({
   },
   typography: {
     fontFamily: sans,
-    h1: { fontFamily: display, fontWeight: 400, letterSpacing: '0.01em', lineHeight: 1.08, fontSize: 'clamp(2.2rem, 5vw + 1rem, 4.75rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h2: { fontFamily: display, fontWeight: 400, letterSpacing: '0.01em', lineHeight: 1.12, fontSize: 'clamp(1.75rem, 4vw + 0.8rem, 3.25rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h3: { fontFamily: display, fontWeight: 400, letterSpacing: '0.012em', lineHeight: 1.18, fontSize: 'clamp(1.5rem, 3vw + 0.5rem, 2.5rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h4: { fontFamily: display, fontWeight: 400, letterSpacing: '0.015em', lineHeight: 1.22, fontSize: 'clamp(1.2rem, 2vw + 0.4rem, 1.85rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h5: { fontFamily: display, fontWeight: 400, letterSpacing: '0.02em', lineHeight: 1.25, fontSize: 'clamp(1.05rem, 1.5vw + 0.3rem, 1.45rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
-    h6: { fontFamily: display, fontWeight: 400, letterSpacing: '0.02em', lineHeight: 1.3, fontSize: 'clamp(0.95rem, 1vw + 0.3rem, 1.2rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h1: { fontFamily: display, fontWeight: 800, letterSpacing: '-0.028em', lineHeight: 1.05, fontSize: 'clamp(2.15rem, 4.6vw + 0.9rem, 4.25rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h2: { fontFamily: display, fontWeight: 800, letterSpacing: '-0.022em', lineHeight: 1.1, fontSize: 'clamp(1.7rem, 3.6vw + 0.7rem, 3rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h3: { fontFamily: display, fontWeight: 800, letterSpacing: '-0.018em', lineHeight: 1.15, fontSize: 'clamp(1.4rem, 2.6vw + 0.45rem, 2.25rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h4: { fontFamily: display, fontWeight: 700, letterSpacing: '-0.014em', lineHeight: 1.2, fontSize: 'clamp(1.15rem, 1.8vw + 0.35rem, 1.65rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h5: { fontFamily: display, fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.25, fontSize: 'clamp(1.02rem, 1.3vw + 0.25rem, 1.35rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
+    h6: { fontFamily: display, fontWeight: 700, letterSpacing: '-0.008em', lineHeight: 1.3, fontSize: 'clamp(0.95rem, 1vw + 0.25rem, 1.15rem)', overflowWrap: 'break-word', wordBreak: 'break-word' },
     body1: { lineHeight: 1.65 },
     body2: { lineHeight: 1.6 },
-    button: { textTransform: 'none', fontWeight: 650, letterSpacing: '0.01em' },
+    button: { textTransform: 'none', fontWeight: 700, letterSpacing: '0.01em' },
     caption: { letterSpacing: '0.04em' },
   },
   shape: {
@@ -963,16 +986,16 @@ export const themes = {
   },
   light: {
     mode: 'light',
-    bg: '#FAF8F3',
-    bgAlt: '#F4F0E6',
+    bg: '#F7F7F4',
+    bgAlt: '#EFECE6',
     surface: '#FFFFFF',
     card: '#FFFFFF',
     cardSolid: '#FFFFFF',
     text: '#0A0D14',
     textMuted: '#1E293B',
     textDim: '#475467',
-    border: '#E6E1D6',
-    borderGold: 'rgba(184, 134, 11, 0.42)',
+    border: '#DDD9CE',
+    borderGold: 'rgba(138, 101, 8, 0.42)',
     gold: '#8A6508',
     goldBright: '#D4AF37',
     goldDeep: '#6B4E06',
@@ -982,7 +1005,7 @@ export const themes = {
     shadowGold: '0 10px 28px -6px rgba(184, 134, 11, 0.20)',
     codeBg: '#0A0D14',
     codeText: '#F8FAFC',
-    navBg: 'rgba(255, 255, 255, 0.96)',
+    navBg: 'rgba(247, 247, 244, 0.94)',
     statusGreen: '#047857',
     statusAmber: '#B45309',
     statusRed: '#B91C1C',

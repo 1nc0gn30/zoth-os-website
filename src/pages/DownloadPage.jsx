@@ -16,8 +16,9 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import UsbIcon from '@mui/icons-material/Usb';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { HeroReveal, HeroItem, GlowLine } from '../components/MotionReveal';
-import { ProFunnelBanner, ProOutputGate, useProLicense } from '../context/ProLicenseContext';
+import EditionBootAdvisor from '../components/EditionBootAdvisor';
 import { safeCopyText, downloadTextFile } from '../utils/clipboard';
+import { resolveTone } from '../theme';
 
 const mono = '"JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace';
 
@@ -32,12 +33,13 @@ export default function DownloadPage() {
   const isDark = theme.palette.mode === 'dark';
   const gold = isDark ? '#D4AF37' : '#8A6508';
   const cardBg = isDark ? '#0D0E17' : '#FFFFFF';
-  const { isPro, openPaywallModal } = useProLicense();
+  const cyanTone = resolveTone('#00F0FF', isDark);
 
   const customIsoRecipe = `#!/usr/bin/env bash
 # ==============================================================================
 # ZOTHOS v3.4.0 CUSTOM LIVE-BUILD ISO & COSIGN MANIFEST GENERATOR
 # Profile: ${defaultPill.toUpperCase()} | Kali+Parrot: ${includeKaliFull ? 'ENABLED' : 'MINIMAL'} | LUKS2: ${enableLuks2 ? 'ON' : 'OFF'}
+# Includes: Agent Bridge (:8102), STDP Memory (:8094), Vaēlor L1 (:8140), 80 Sovereign Tools
 # ==============================================================================
 set -euo pipefail
 
@@ -58,17 +60,13 @@ Pin: release n=kali-rolling
 Pin-Priority: ${includeKaliFull ? '400' : '100'}
 EOF
 
-${includeOllamaModels ? '# Pre-seed Local Ollama Models (qwen2.5-coder:14b, deepseek-r1:8b)\nexport ZOTH_PRELOAD_OLLAMA=1' : '# Offline model pre-seeding skipped'}
+${includeOllamaModels ? '# Pre-seed Local Ollama Models (qwen2.5-coder:14b, deepseek-r1:8b) + Hermes-Zoth\nexport ZOTH_PRELOAD_OLLAMA=1\nexport ZOTH_HERMES_ORCHESTRATOR=1' : '# Offline model pre-seeding skipped'}
 ${enableLuks2 ? '# Enable Calamares LUKS2 Argon2id Full-Disk Encryption\nexport ZOTH_CALAMARES_LUKS2=1' : ''}
 
 sudo lb build 2>&1 | tee zothos-custom-build.log
 sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
 
   const handleCopyRecipe = async () => {
-    if (!isPro) {
-      openPaywallModal();
-      return;
-    }
     await safeCopyText(customIsoRecipe);
     setToast('Copied Custom ZothOS v3.4.0 Live-Build ISO Recipe!');
   };
@@ -84,7 +82,9 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
         distro: 'ZothOS Linux',
         version: '3.4.0',
         isoVolume: 'ZOTHOS_3_4_SOVEREIGN',
-        base: 'Debian 13.7 (trixie)',
+        base: 'Debian 13 (trixie) + KDE Plasma 6 Wayland',
+        preloadedTools: '80 Sovereign Tools (56 Web/WebGPU + 24 CLI, 79 public GitHub repos)',
+        coreDaemons: ['sovereign-agent-bridge (:8102)', 'neuro-memory-daemon (:8094)', 'vaelor-l1-dag (:8140)', 'zoth-vault (:8787)'],
         defaultRealityPill: defaultPill,
         includeKaliParrotFull: includeKaliFull,
         preloadLocalOllamaModels: includeOllamaModels,
@@ -104,47 +104,50 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
 
   return (
     <Container maxWidth="lg" className="page-fade-in" sx={{ py: { xs: 4, md: 6 } }}>
-      <ProFunnelBanner />
-
       <HeroReveal>
         <HeroItem>
-          <GlowLine color="#00F0FF" glowColor="rgba(0, 240, 255, 0.45)" />
+          <GlowLine color={cyanTone} glowColor="rgba(0, 240, 255, 0.45)" />
         </HeroItem>
         <HeroItem>
           <Chip
-            label="HYBRID UEFI ISO • QEMU/KVM QCOW2 • COSIGN SIGNED"
+            label="HYBRID UEFI ISO • ZOTHOS-LITE TORAM USB • QEMU/KVM • COSIGN SIGNED"
             size="small"
             sx={{
               mt: 2.5,
               mb: 1.5,
+              height: 'auto',
               fontFamily: mono,
               fontWeight: 800,
-              fontSize: '0.72rem',
-              bgcolor: 'rgba(0, 240, 255, 0.12)',
-              color: isDark ? '#00F0FF' : '#0369A1',
-              border: '1px solid rgba(0, 240, 255, 0.4)',
+              fontSize: '0.7rem',
+              bgcolor: `${cyanTone}18`,
+              color: cyanTone,
+              border: `1px solid ${cyanTone}66`,
+              '& .MuiChip-label': { whiteSpace: 'normal', py: 0.35 },
             }}
           />
         </HeroItem>
         <HeroItem>
           <Typography variant="h2" sx={{ mb: 1.5 }}>
-            Download <span className="text-gradient-gold">ZothOS Linux v3.4.0 & ZothOS-Lite v1.2</span> & ISO Studio
+            Download <span className="text-gradient-gold">ZothOS v3.4.0 &amp; ZothOS-Lite v1.2</span>
           </Typography>
         </HeroItem>
         <HeroItem>
-          <Typography color="text.secondary" sx={{ maxWidth: '64ch', mb: 5 }}>
-            Flash the signed Hybrid UEFI/BIOS ISO directly to USB for bare-metal execution, boot the QEMU/KVM virtual appliance, or synthesize a custom `live-build` image below.
+          <Typography color="text.secondary" sx={{ maxWidth: '66ch', mb: 5 }}>
+            100% Free &amp; Open-Access: Flash the signed ZothOS v3.4.0 KDE Plasma 6 Wayland Workstation ISO, boot ZothOS-Lite v1.2 Amnesic <code>toram</code> Live USB, or synthesize a custom Debian 13 <code>live-build</code> script below.
           </Typography>
         </HeroItem>
       </HeroReveal>
 
+      {/* Interactive Edition & Hardware Boot Advisor */}
+      <EditionBootAdvisor compact />
+
       {/* Primary Download Cards */}
       <Box sx={{ display: 'grid', gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' }, gap: 3, mb: 6 }}>
-        <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}`, minWidth: 0 }}>
+        <Paper elevation={0} className="card-border-beam" sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}`, minWidth: 0 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1, mb: 2 }}>
             <UsbIcon sx={{ color: gold, fontSize: 32, flexShrink: 0 }} />
             <Chip
-              label="BARE METAL & LIVE USB (HUMAN + AGENT HOST)"
+              label="WORKSTATION ISO • 80 TOOLS + 23+ DAEMONS"
               size="small"
               sx={{
                 height: 'auto',
@@ -156,20 +159,20 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
               }}
             />
           </Box>
-          <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 700, letterSpacing: 0, overflowWrap: 'anywhere' }}>
+          <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 800, letterSpacing: 0, overflowWrap: 'anywhere' }}>
             zothos-3.4.0-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
-            Hybrid UEFI + Legacy BIOS Live & Calamares 24K Installer ISO (`launch-calamares`). Ships with KDE Plasma 6.3 Wayland, Ring 0–3 `zoth-agent-os`, a 163 MCP catalog that stays off until you enable a server, Kali and Parrot security tools, and 23 loopback daemons. Live credentials: users <code>zoth</code>, <code>azoth</code>, and <code>root</code> / password <code>zoth</code>. The old <code>neo</code> account is deleted on boot.
+            Debian 13 (Trixie) + KDE Plasma 6 Wayland Hybrid UEFI &amp; Calamares LUKS2 Installer ISO. Ships with Sovereign Agent Bridge (<code>:8102</code>), STDP Neuro-Memory (<code>:8094</code>), Vaēlor L1 (<code>:8140</code>), Hermes-Zoth orchestrator, 80 preloaded sovereign tools (56 Web/WebGPU + 24 CLI), and Kali + Parrot security parity.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#F5E6AB' : '#0A0D14', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
-            $ bash zothos-join-iso.sh && sudo dd if=zothos-3.4.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: '#07080D', border: '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: '#F5E6AB', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
+            $ bash zothos-join-iso.sh &amp;&amp; sudo dd if=zothos-3.4.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
               variant="contained"
               color="primary"
-              href="https://github.com/NullAITech/zoth-os/releases/tag/v3.4.0"
+              href="https://github.com/1nc0gn30/zoth-os/releases"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}
@@ -188,7 +191,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
               }
               sx={{ fontFamily: mono, fontWeight: 700 }}
             >
-              Copy Rejoin & Flash Cmd
+              Copy Flash Cmd
             </Button>
           </Box>
         </Paper>
@@ -198,25 +201,25 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             <VerifiedUserIcon sx={{ color: gold, fontSize: 32, flexShrink: 0 }} />
             <Chip label="QEMU / KVM AGENT APPLIANCE" size="small" sx={{ fontFamily: mono, fontWeight: 800, color: gold }} />
           </Box>
-          <Typography variant="h4" sx={{ mb: 1, overflowWrap: 'anywhere' }}>
+          <Typography variant="h4" sx={{ mb: 1, fontFamily: mono, fontWeight: 800, overflowWrap: 'anywhere' }}>
             zothos.qcow2 (Agent VM)
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
-            Dedicated QEMU/KVM virtual machine substrate for autonomous AI agents. Supports live chroot injection (`./tools/inject-vm-customization.sh`), automated 25-point verification (`./tools/verify-zothos.sh`), and `zoth-relay` (`:8765`) host bridging.
+            Dedicated QEMU/KVM virtual machine substrate for autonomous AI agents. Supports live chroot injection, automated invariant verification (<code>./tools/verify-zothos.sh</code>), Sovereign Agent Bridge (<code>:8102</code>), and <code>zoth-relay</code> (<code>:8765</code>) host bridging.
           </Typography>
-          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: isDark ? '#07080D' : '#FAF9F5', border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: isDark ? '#34D399' : '#0A0D14', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
-            $ ./tools/verify-zothos.sh && virsh -c qemu:///system start zothos
+          <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: '#07080D', border: '1px solid rgba(52, 211, 153, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: '#34D399', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
+            $ ./tools/verify-zothos.sh &amp;&amp; virsh -c qemu:///system start zothos
           </Box>
           <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
             <Button
               variant="outlined"
-              href="https://github.com/NullAITech/zoth-os"
+              href="https://github.com/1nc0gn30/zoth-os"
               target="_blank"
               rel="noopener noreferrer"
               startIcon={<DownloadIcon />}
               sx={{ fontFamily: mono, fontWeight: 800, borderColor: gold, color: gold }}
             >
-              Inspect Source & VM Tools
+              Inspect Source &amp; VM Tools
             </Button>
             <Button
               variant="outlined"
@@ -238,6 +241,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
       {/* Companion Amnesic Monotone Edition Card */}
       <Paper
         elevation={0}
+        className="card-border-beam-lite"
         sx={{
           p: { xs: 2.5, md: 3.5 },
           mb: 6,
@@ -249,26 +253,31 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
       >
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1.5, mb: 1.5 }}>
           <Chip
-            label="AMNESIC RAM-ONLY EDITION • TORAM NOSWAP • 56 CURATED MODELS"
+            label="AMNESIC MONOTONE (#F7F7F4 / #000000) • TORAM • 56 MODELS • SPHINX MIXNET"
             size="small"
             sx={{
+              height: 'auto',
               fontFamily: mono,
               fontWeight: 800,
-              fontSize: '0.7rem',
+              fontSize: '0.68rem',
               bgcolor: isDark ? '#F7F7F4' : '#000000',
               color: isDark ? '#000000' : '#F7F7F4',
-              '& .MuiChip-label': { color: isDark ? '#000000 !important' : '#F7F7F4 !important' },
+              '& .MuiChip-label': {
+                whiteSpace: 'normal',
+                py: 0.35,
+                color: isDark ? '#000000 !important' : '#F7F7F4 !important',
+              },
             }}
           />
           <Typography sx={{ fontFamily: mono, fontSize: '0.74rem', fontWeight: 800, color: gold }}>
             zothos-lite-1.2-amd64.iso (~400 MB)
           </Typography>
         </Box>
-        <Typography variant="h5" sx={{ fontWeight: 800, mb: 1 }}>
-          ZothOS-Lite v1.2 — Tails-Style Amnesic Monotone Live OS
+        <Typography variant="h4" sx={{ mb: 1 }}>
+          ZothOS-Lite v1.2 — Tails-Style Amnesic Live USB/ISO OS
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
-          Need ultra-lightweight ephemeral hardware privacy? ZothOS-Lite boots 100% into volatile RAM (`toram noswap`), wiping all session state on power-off unless saved via `zoth-lite-storage`. Ships with `zoth-lite-models` supporting <strong>56 curated AI models across 8 providers</strong> (including <strong>DeepSeek Flash</strong> via <strong>Hermes Agent by Nous Research</strong> and air-gapped local <strong>Ollama</strong>), `zoth-lite-welcome`, and ZothNet P2P messaging.
+          Boots 100% into volatile RAM (<code>toram noswap</code>) on universal x86_64 hardware, wiping all session state on power-off unless explicitly persisted via encrypted USB/cloud storage (<code>zoth-lite-storage</code>). Ships with <strong>56 curated AI models across 8 providers</strong>, <strong>ZothNet 3-hop Sphinx mixnet</strong>, and AZOTH Braille AI.
         </Typography>
         <Box sx={{ display: 'flex', gap: 1.2, flexWrap: 'wrap' }}>
           <Button
@@ -279,7 +288,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             endIcon={<OpenInNewIcon />}
             sx={{ fontFamily: mono, fontWeight: 800 }}
           >
-            Open ZothOS-Lite Hub & Tools
+            Open zothos-lite.nullai.tech
           </Button>
           <Button
             variant="outlined"
@@ -289,7 +298,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             startIcon={<DownloadIcon />}
             sx={{ fontFamily: mono, fontWeight: 700 }}
           >
-            ZothOS-Lite ISO Builder Repo
+            ZothOS-Lite ISO Repo
           </Button>
           <Button
             variant="outlined"
@@ -302,7 +311,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             }
             sx={{ fontFamily: mono, fontWeight: 700 }}
           >
-            Copy Lite ISO Build Cmd
+            Copy Lite Build Cmd
           </Button>
         </Box>
       </Paper>
@@ -311,11 +320,11 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
       <Paper elevation={0} sx={{ p: { xs: 2.5, md: 3.5 }, borderRadius: 3.5, bgcolor: cardBg, border: `1px solid ${gold}` }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2, mb: 2.5 }}>
           <Box>
-            <Typography variant="h5" sx={{ fontWeight: 800 }}>
-              Interactive Custom Debian 13 + Kali/Parrot Live-Build ISO Studio
+            <Typography variant="h4">
+              Custom Debian 13 + Kali/Parrot Live-Build ISO Studio
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Toggle build flags below to synthesize a custom `live-build` ISO script for your hardware profile.
+              Toggle build flags below to synthesize a custom <code>live-build</code> ISO script for your hardware profile.
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -338,7 +347,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             onClick={() => setIncludeKaliFull((v) => !v)}
             sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
           >
-            Kali and Parrot security tools: {includeKaliFull ? 'ON' : 'MINIMAL'}
+            Kali &amp; Parrot Tools: {includeKaliFull ? 'ON' : 'MINIMAL'}
           </Button>
           <Button
             size="small"
@@ -346,7 +355,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             onClick={() => setIncludeOllamaModels((v) => !v)}
             sx={{ fontFamily: mono, fontWeight: 800, fontSize: '0.74rem' }}
           >
-            Pre-Seed Local Ollama Models: {includeOllamaModels ? 'ON' : 'OFF'}
+            Ollama + Hermes-Zoth: {includeOllamaModels ? 'ON' : 'OFF'}
           </Button>
           <Button
             size="small"
@@ -369,26 +378,24 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
           ))}
         </Box>
 
-        <ProOutputGate title="Custom Live-Build ISO Synthesis Script & APT Pinning Config">
-          <Box
-            component="pre"
-            sx={{
-              m: 0,
-              p: 2.5,
-              borderRadius: 2,
-              bgcolor: isDark ? '#07080D' : '#FAF9F5',
-              color: isDark ? '#F5E6AB' : '#0A0D14',
-              border: isDark ? 'none' : '1px solid rgba(212, 175, 55, 0.35)',
-              fontFamily: mono,
-              fontSize: '0.78rem',
-              fontWeight: 600,
-              lineHeight: 1.6,
-              overflowX: 'auto',
-            }}
-          >
-            {customIsoRecipe}
-          </Box>
-        </ProOutputGate>
+        <Box
+          component="pre"
+          sx={{
+            m: 0,
+            p: 2.5,
+            borderRadius: 2,
+            bgcolor: '#07080D',
+            color: '#F5E6AB',
+            border: '1px solid rgba(212, 175, 55, 0.35)',
+            fontFamily: mono,
+            fontSize: '0.78rem',
+            fontWeight: 600,
+            lineHeight: 1.6,
+            overflowX: 'auto',
+          }}
+        >
+          {customIsoRecipe}
+        </Box>
       </Paper>
 
       <Snackbar open={Boolean(toast)} autoHideDuration={3000} onClose={() => setToast(null)}>

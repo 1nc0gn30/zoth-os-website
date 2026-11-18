@@ -18,9 +18,9 @@ import DocsPage from './pages/DocsPage';
 
 // ─── Theme Context ──────────────────────────────────────────
 export const ThemeContext = createContext({
-  mode: 'light',
+  mode: 'dark',
   toggle: () => {},
-  T: getTheme('light'),
+  T: getTheme('dark'),
 });
 
 export const useTheme = () => useContext(ThemeContext);
@@ -56,7 +56,7 @@ const PageStage = ({ children, introKey }) => {
       ref={stageRef}
       key={`${pathname}-${introKey}`}
       style={{
-        animation: 'zothPageMaterialize 580ms cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        animation: 'zothPageMaterialize 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards',
         willChange: 'opacity, transform',
       }}
     >
@@ -65,15 +65,21 @@ const PageStage = ({ children, introKey }) => {
   );
 };
 
-// ─── Global Styles ──────────────────────────────────────────
+// ─── Global Styles & Conic Border Beam Primitives ───────────
 const GlobalStyles = ({ T }) => (
   <style>{`
     @font-face {
       font-family: 'Celtic Garamond';
-      src: url('/fonts/CELTG___.TTF') format('truetype');
+      src: url('/fonts/CelticGaramond.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
+    }
+
+    @property --beam-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
     }
 
     *, *::before, *::after {
@@ -92,9 +98,9 @@ const GlobalStyles = ({ T }) => (
     body {
       background: ${T.bg};
       color: ${T.text};
-      font-family: 'Google Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
-      transition: background 0.35s ease, color 0.35s ease;
+      transition: background 0.3s ease, color 0.3s ease;
       overflow-x: hidden;
     }
 
@@ -110,6 +116,65 @@ const GlobalStyles = ({ T }) => (
 
     a { color: inherit; text-decoration: none; }
     img, video, canvas { max-width: 100%; }
+
+    .card-border-beam {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .card-border-beam::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: conic-gradient(
+        from var(--beam-angle),
+        transparent 12%,
+        #D4AF37 28%,
+        #F5E6AB 38%,
+        #10B981 52%,
+        transparent 68%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: beamRotate 6.5s linear infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .card-border-beam-lite {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .card-border-beam-lite::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: conic-gradient(
+        from var(--beam-angle),
+        transparent 14%,
+        ${T.mode === 'dark' ? '#F7F7F4' : '#0A0D14'} 32%,
+        #D4AF37 48%,
+        transparent 66%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: beamRotate 7.5s linear infinite;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @keyframes beamRotate {
+      to { --beam-angle: 360deg; }
+    }
 
     @keyframes pulse {
       0%, 100% { opacity: 1; }
@@ -162,18 +227,23 @@ export default function App() {
       const params = new URLSearchParams(window.location.search);
       const urlTheme = params.get('theme');
       if (urlTheme === 'light' || urlTheme === 'dark') return urlTheme;
-      return localStorage.getItem('zothos_theme_light_v2') || 'light';
+      const saved =
+        localStorage.getItem('zoth-theme-mode') ||
+        localStorage.getItem('zothos_theme_v34');
+      if (saved === 'light' || saved === 'dark') return saved;
+      return 'dark';
     } catch {
-      return 'light';
+      return 'dark';
     }
   });
-  const [introState, setIntroState] = useState({ active: false, path: '/', completedCount: 0 });
+  const [introState] = useState({ active: false, path: '/', completedCount: 0 });
 
   const toggle = () => {
     setMode((prev) => {
       const next = prev === 'light' ? 'dark' : 'light';
       try {
-        localStorage.setItem('zothos_theme_light_v2', next);
+        localStorage.setItem('zoth-theme-mode', next);
+        localStorage.setItem('zothos_theme_v34', next);
       } catch {
         // ignore storage errors
       }
