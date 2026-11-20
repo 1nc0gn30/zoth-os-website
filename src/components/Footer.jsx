@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import GhostByteMark from './GhostByteMark';
 import { Box, Container, Typography, Link, Chip, Stack, Button, Unstable_Grid2 as Grid, useTheme } from '@mui/material';
 import ShieldIcon from '@mui/icons-material/Shield';
 import TerminalIcon from '@mui/icons-material/Terminal';
@@ -256,19 +257,30 @@ export default function Footer() {
             color: linkColor,
           }}
         >
-          <Box>
-            Engineered by{' '}
-            <Link href="https://1nc0gn30.si" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 800 }}>
-              Neal Frazier Tech
-            </Link>{' '}
-            (
-            <Link href="https://github.com/1nc0gn30/zoth-os-website" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 800 }}>
-              @1nc0gn30
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', flexWrap: 'wrap', gap: 0.8 }}>
+            <Link
+              href="https://nullai.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NullAI Platform — Living 3D GhostByte Specimen"
+              sx={{ display: 'inline-flex', alignItems: 'center', mr: 0.4 }}
+            >
+              <GhostByteMark size={26} variant="hologram" interactive={false} showRings={false} ariaLabel="NullAI 3D GhostByte emblem" />
             </Link>
-            ) •{' '}
-            <Link href="https://nullai.tech" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 800 }}>
-              NullAI Platform
-            </Link>
+            <span>
+              Engineered by{' '}
+              <Link href="https://1nc0gn30.si" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 800 }}>
+                Neal Frazier Tech
+              </Link>{' '}
+              (
+              <Link href="https://github.com/1nc0gn30/zoth-os-website" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 800 }}>
+                @1nc0gn30
+              </Link>
+              ) •{' '}
+              <Link href="https://nullai.tech" target="_blank" rel="noopener noreferrer" sx={{ color: gold, textDecoration: 'none', fontWeight: 800 }}>
+                NullAI Platform
+              </Link>
+            </span>
           </Box>
           <Box sx={{ display: 'flex', gap: 1.8, flexWrap: 'wrap', alignItems: 'center' }}>
             <Link
