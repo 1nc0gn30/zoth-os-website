@@ -7,7 +7,7 @@ const OG_IMAGE = 'https://zothos.nullai.tech/brand/zothos-x-launch-banner.jpg';
 const ROUTE_META = {
   '/': {
     title: 'ZothOS Linux v3.4.0 & ZothOS-Lite v1.2 — Sovereign AI Workstation & Amnesic Live OS',
-    desc: 'ZothOS v3.4.0 (Debian 13 Trixie + KDE Plasma 6 Wayland Sovereign AI Workstation, 23+ system daemons, 80 preloaded sovereign tools — 56 Web/WebGPU + 24 CLI across 79 public GitHub repos, Sovereign Agent Bridge :8102, STDP Neuro-Memory :8094, Vaēlor L1 :8140, Hermes-Zoth) & ZothOS-Lite v1.2 (Amnesic Monotone toram Live USB OS with 56 models & ZothNet Sphinx mixnet).',
+    desc: 'ZothOS v3.4.0 (Debian 13 Trixie + KDE Plasma 6 Wayland Sovereign AI Workstation, 23+ system daemons, 83 preloaded sovereign tools — 56 Web/WebGPU + 27 CLI across 82 public GitHub repos, Sovereign Agent Bridge :8102, STDP Neuro-Memory :8094, Vaēlor L1 :8140, Hermes-Zoth) & ZothOS-Lite v1.2 (Amnesic Monotone toram Live USB OS with 56 models & ZothNet Sphinx mixnet).',
     keywords: 'ZothOS v3.4.0, ZothOS-Lite v1.2, Debian 13 Trixie AI OS, KDE Plasma 6 Wayland, Sovereign Agent Bridge 8102, STDP Neuro-Memory 8094, Vaelor L1 8140, Hermes-Zoth, ZothNet Sphinx Mixnet',
     schemaType: 'SoftwareApplication',
     breadcrumb: 'Overview',
@@ -121,7 +121,7 @@ function buildRouteJsonLd(pathname, meta) {
                 '@type': 'HowToStep',
                 position: 3,
                 name: 'Boot KDE Plasma 6 Wayland or Amnesic Monotone Live Session',
-                text: 'Boot into ZothOS v3.4.0 (23+ loopback daemons, 80 preloaded sovereign tools) or ZothOS-Lite v1.2 (toram RAM-only, 56 models).',
+                text: 'Boot into ZothOS v3.4.0 (23+ loopback daemons, 83 preloaded sovereign tools) or ZothOS-Lite v1.2 (toram RAM-only, 56 models).',
               },
             ],
           }

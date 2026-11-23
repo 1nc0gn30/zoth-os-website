@@ -351,7 +351,7 @@ export default function Navbar({ onToggleTheme }) {
             rel="noopener noreferrer"
             sx={{ fontFamily: mono, fontWeight: 700, minHeight: 44 }}
           >
-            Zoth Studio v2 (80 Tools) ↗
+            Zoth Studio v2 (83 Tools) ↗
           </Button>
           <Button
             variant="contained"

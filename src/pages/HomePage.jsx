@@ -106,7 +106,7 @@ export default function HomePage() {
                   }}
                 />
                 <Chip
-                  label="80 SOVEREIGN TOOLS (56 WEB/WEBGPU + 24 CLI • 79 REPOS)"
+                  label="83 SOVEREIGN TOOLS (56 WEB/WEBGPU + 27 CLI • 82 REPOS)"
                   size="small"
                   sx={{
                     height: 'auto',
@@ -168,7 +168,7 @@ export default function HomePage() {
                   mb: 3.2,
                 }}
               >
-                <strong>ZothOS v3.4.0</strong> transforms Debian 13 (Trixie) + KDE Plasma 6 Wayland into a permission-ringed AI workstation shipping <strong>23+ loopback daemons</strong> (Sovereign Agent Bridge <code>:8102</code>, STDP Neuro-Memory <code>:8094</code>, Vaēlor L1 <code>:8140</code>), the <strong>Hermes-Zoth</strong> orchestrator, and <strong>80 preloaded sovereign tools</strong> (56 Web/WebGPU + 24 CLI across 79 public GitHub repos). Need zero-trace field mobility? Boot <strong>ZothOS-Lite v1.2</strong> completely in RAM (<code>toram</code>) with 56 curated models across 8 providers and ZothNet&apos;s 3-hop Sphinx mixnet.
+                <strong>ZothOS v3.4.0</strong> transforms Debian 13 (Trixie) + KDE Plasma 6 Wayland into a permission-ringed AI workstation shipping <strong>23+ loopback daemons</strong> (Sovereign Agent Bridge <code>:8102</code>, STDP Neuro-Memory <code>:8094</code>, Vaēlor L1 <code>:8140</code>), the <strong>Hermes-Zoth</strong> orchestrator, and <strong>83 preloaded sovereign tools</strong> (56 Web/WebGPU + 27 CLI across 82 public GitHub repos). Need zero-trace field mobility? Boot <strong>ZothOS-Lite v1.2</strong> completely in RAM (<code>toram</code>) with 56 curated models across 8 providers and ZothNet&apos;s 3-hop Sphinx mixnet.
               </Typography>
             </HeroItem>
 
@@ -429,12 +429,12 @@ export default function HomePage() {
               }}
             />
             <Typography variant="h4" sx={{ color: textPrimary, mb: 1.5 }}>
-              KDE Plasma 6 Wayland + 80 Sovereign Tools
+              KDE Plasma 6 Wayland + 83 Sovereign Tools
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
               {[
                 '24K Celtic Gold KDE Plasma 6 Wayland Desktop: Zoth-Hermetic 3D glass icons, 60 FPS interactive QML wallpaper (:9989), and zoth-cockpit TUI/GUI.',
-                '80 Preloaded Sovereign Tools: 56 in-browser/WebGPU workstations + 24 CLI/daemon engines backed by 79 public GitHub repositories.',
+                '83 Preloaded Sovereign Tools: 56 in-browser/WebGPU workstations + 27 CLI/daemon engines backed by 82 public GitHub repositories.',
                 'Debian 13 (Trixie) + Kali + Parrot Parity: Surgical APT pinning (900 Debian, 400 Kali/Parrot) delivers offensive security tools with zero dependency breakage.',
                 'ZothOS-Lite v1.2 Companion USB: Tails-style Monotone (#F7F7F4 / #000000) toram Live OS with 56 curated models across 8 providers & ZothNet Sphinx mixnet.',
                 'Whisper-Quiet Self-Healing Hardware: zoth-sentinel + zoth-heal maintain < 55.0°C CPU ceiling at 0 RPM fan noise.',
@@ -1045,7 +1045,7 @@ $ zoth-cot status
       {/* Sovereign Ecosystem Funnel */}
       <SovereignFunnel
         title="Deploy ZothOS v3.4.0, ZothOS-Lite v1.2 & Sovereign Studio"
-        subtitle="100% Free & Open-Access: Flash ZothOS v3.4.0 to NVMe/KVM, boot ZothOS-Lite v1.2 in RAM off any USB stick, or run all 80 sovereign tools inside Zoth Studio v2."
+        subtitle="100% Free & Open-Access: Flash ZothOS v3.4.0 to NVMe/KVM, boot ZothOS-Lite v1.2 in RAM off any USB stick, or run all 83 sovereign tools inside Zoth Studio v2."
         toolTitle="Option 1: ZothOS-Lite v1.2 Live USB"
         toolTag="TORAM • 56 MODELS"
         toolDescription="Amnesic Monotone (#F7F7F4 / #000000) Live USB/ISO OS with toram zero-trace boot, 56 curated models across 8 providers, and ZothNet 3-hop Sphinx mixnet."

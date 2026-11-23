@@ -420,7 +420,7 @@ export default function UncommonTelemetryDeck({ compact = false }) {
               <SplitFlapTile
                 label="FLAGSHIP WORKSTATION"
                 value="ZOTHOS v3.4.0"
-                sub="Debian 13 Trixie + KDE Plasma 6 Wayland · 80 Preloaded Sovereign Tools"
+                sub="Debian 13 Trixie + KDE Plasma 6 Wayland · 83 Preloaded Sovereign Tools"
                 dark={dark}
                 to="/download"
               />

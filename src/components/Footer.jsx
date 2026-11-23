@@ -39,7 +39,7 @@ export default function Footer() {
 
   const ecosystemLinks = [
     { label: 'NullAI Platform (nullai.tech)', href: 'https://nullai.tech' },
-    { label: 'Zoth Studio v2 — 80 Sovereign Tools (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
+    { label: 'Zoth Studio v2 — 83 Sovereign Tools (zoth.nullai.tech)', href: 'https://zoth.nullai.tech' },
     { label: 'ZothOS-Lite v1.2 Live OS (zothos-lite.nullai.tech)', href: 'https://zothos-lite.nullai.tech' },
     { label: 'Zoth Civilization — 23 Pantheon Agents', href: 'https://zoth-civilization.netlify.app' },
     { label: 'ZothNet — 3-Hop Sphinx Mixnet (zothnet.nullai.tech)', href: 'https://zothnet.nullai.tech' },
@@ -91,7 +91,7 @@ export default function Footer() {
               100% FREE &amp; OPEN-ACCESS SOVEREIGN INFRASTRUCTURE • ZERO PAYWALLS
             </Typography>
             <Typography variant="body2" sx={{ color: isDark ? '#CBD5E1' : '#334155', lineHeight: 1.55 }}>
-              ZothOS v3.4.0, ZothOS-Lite v1.2, all 80 preloaded sovereign tools, and the custom ISO synthesis studio are unlocked forever. Support independent open-source engineering:
+              ZothOS v3.4.0, ZothOS-Lite v1.2, all 83 preloaded sovereign tools, and the custom ISO synthesis studio are unlocked forever. Support independent open-source engineering:
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.2, alignItems: 'center', flexShrink: 0 }}>
@@ -142,13 +142,13 @@ export default function Footer() {
                 pl: 2,
               }}
             >
-              Debian 13 (Trixie) + KDE Plasma 6 Wayland Sovereign AI Workstation shipping 23+ localhost daemons (:8102 Agent Bridge, :8094 STDP Neuro-Memory, :8140 Vaēlor L1), Hermes-Zoth orchestrator, 80 preloaded sovereign tools (56 Web/WebGPU + 24 CLI across 79 public GitHub repos), and companion ZothOS-Lite v1.2 Amnesic toram Live OS.
+              Debian 13 (Trixie) + KDE Plasma 6 Wayland Sovereign AI Workstation shipping 23+ localhost daemons (:8102 Agent Bridge, :8094 STDP Neuro-Memory, :8140 Vaēlor L1), Hermes-Zoth orchestrator, 83 preloaded sovereign tools (56 Web/WebGPU + 27 CLI across 82 public GitHub repos), and companion ZothOS-Lite v1.2 Amnesic toram Live OS.
             </Typography>
 
             <Stack direction="row" spacing={1.2} flexWrap="wrap" useFlexGap>
               <Chip
                 icon={<TerminalIcon sx={{ fontSize: '0.88rem !important', color: `${isDark ? '#34D399' : '#047857'} !important` }} />}
-                label="23+ DAEMONS • 80 TOOLS"
+                label="23+ DAEMONS • 83 TOOLS"
                 size="small"
                 sx={{
                   fontFamily: mono,

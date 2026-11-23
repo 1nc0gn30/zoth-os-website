@@ -14,7 +14,7 @@ ZothOS provides two complementary sovereign Linux distributions engineered for a
 1. ZothOS v3.4.0 (Full KDE Plasma 6 Wayland Workstation):
    - Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI with surgical APT pinning (900 Debian Trixie, 400 Kali Rolling & Parrot Security).
    - 23+ localhost loopback system daemons bound strictly to 127.0.0.1, anchored by Sovereign Agent Bridge (:8102), STDP Neuro-Memory (:8094), Vaēlor L1 PoUW DAG (:8140), Zoth Sovereign Vault (:8787), Zoth-Relay (:8765), and Zoth Civilization (:9393).
-   - 80 preloaded sovereign tools (56 client-side Web/WebGPU workstations + 24 CLI/daemon engines across 79 public GitHub repositories).
+   - 83 preloaded sovereign tools (56 client-side Web/WebGPU workstations + 27 CLI/daemon engines across 82 public GitHub repositories).
    - Hermes-Zoth orchestrator plugin bridging Nous Research Hermes Agent into local MCP clusters and Ring 0–3 kernel sandboxes.
    - Hardware-enforced < 55.0°C thermal ceiling (no_turbo=1, 0 RPM silent passive fan curve, monitored by zoth-sentinel & zoth-heal).
 
@@ -42,7 +42,7 @@ SECTION 2: CORE LOOPBACK SYSTEM DAEMONS (127.0.0.1 ENCLAVE MESH)
 SECTION 3: SOVEREIGN ECOSYSTEM & OPEN-ACCESS SUPPORT
 ================================================================================
 - NullAI Platform: https://nullai.tech
-- Zoth Studio v2 (80 Sovereign Tools): https://zoth.nullai.tech
+- Zoth Studio v2 (83 Sovereign Tools): https://zoth.nullai.tech
 - ZothOS-Lite v1.2: https://zothos-lite.nullai.tech
 - Zoth Civilization (23 Pantheon Agents): https://zoth-civilization.netlify.app
 - ZothNet (3-Hop Sphinx Mixnet): https://zothnet.nullai.tech

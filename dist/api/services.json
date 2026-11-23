@@ -14,7 +14,7 @@
       "priceUsd": 0,
       "url": "https://zothos.nullai.tech/download",
       "repoUrl": "https://github.com/1nc0gn30/zoth-os",
-      "description": "Debian 13 (Trixie) + KDE Plasma 6 Wayland Sovereign AI Workstation with 23+ loopback daemons (:8102 Sovereign Agent Bridge, :8094 STDP Neuro-Memory, :8140 Vaēlor L1), Hermes-Zoth orchestrator, and 80 preloaded sovereign tools (56 Web/WebGPU + 24 CLI, 79 public GitHub repos)."
+      "description": "Debian 13 (Trixie) + KDE Plasma 6 Wayland Sovereign AI Workstation with 23+ loopback daemons (:8102 Sovereign Agent Bridge, :8094 STDP Neuro-Memory, :8140 Vaēlor L1), Hermes-Zoth orchestrator, and 83 preloaded sovereign tools (56 Web/WebGPU + 27 CLI, 82 public GitHub repos)."
     },
     {
       "id": "zothos-lite-v1.2",

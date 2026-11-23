@@ -8,7 +8,7 @@ export const REALITY_PILL_MODES = [
     accent: '#D4AF37',
     secondary: '#FFF8DC',
     bgGlow: 'rgba(212, 175, 55, 0.24)',
-    desc: 'Default 24K Celtic Gold KDE Plasma 6 Wayland desktop for human operators and Ring-2 AI agents — featuring 80 preloaded sovereign tools, Sovereign Agent Bridge (:8102), STDP Neuro-Memory (:8094), Vaēlor L1 (:8140), and UFW loopback isolation.',
+    desc: 'Default 24K Celtic Gold KDE Plasma 6 Wayland desktop for human operators and Ring-2 AI agents — featuring 83 preloaded sovereign tools, Sovereign Agent Bridge (:8102), STDP Neuro-Memory (:8094), Vaēlor L1 (:8140), and UFW loopback isolation.',
     posture: 'UFW Default-Deny • Ring-2 CYBERPUPPET • 23+ Loopback Daemons',
     audioCue: '/usr/share/sounds/zothos/gold-sanctum.wav',
   },
@@ -113,9 +113,9 @@ export const CORE_PILLARS = [
   },
   {
     id: 'arsenal',
-    badge: '80 PRELOADED SOVEREIGN TOOLS',
-    title: '56 Web/WebGPU + 24 CLI Tools (79 Public Repos)',
-    desc: 'Pre-installed `/opt/zoth-studio` & `/usr/local/bin` arsenal delivering 80 100% open-access sovereign tools (56 client-side Web/WebGPU workstations + 24 CLI/daemon engines backed by 79 public GitHub repositories).',
+    badge: '83 PRELOADED SOVEREIGN TOOLS',
+    title: '56 Web/WebGPU + 27 CLI Tools (82 Public Repos)',
+    desc: 'Pre-installed `/opt/zoth-studio` & `/usr/local/bin` arsenal delivering 83 100% open-access sovereign tools (56 client-side Web/WebGPU workstations + 27 CLI/daemon engines backed by 82 public GitHub repositories).',
     accent: '#00F0FF',
   },
   {
@@ -269,11 +269,11 @@ export const LOOPBACK_DAEMONS = [
 export const ECOSYSTEM_SURFACES = [
   {
     name: 'Zoth Studio v2',
-    badge: '80 SOVEREIGN TOOLS',
+    badge: '83 SOVEREIGN TOOLS',
     url: 'https://zoth.nullai.tech',
     domain: 'zoth.nullai.tech',
     accent: '#D4AF37',
-    desc: '80 preloaded sovereign tools (56 client-side Web/WebGPU workstations + 24 CLI/daemon engines across 79 public GitHub repos) with zero cloud telemetry.',
+    desc: '83 preloaded sovereign tools (56 client-side Web/WebGPU workstations + 27 CLI/daemon engines across 82 public GitHub repos) with zero cloud telemetry.',
   },
   {
     name: 'ZothOS-Lite v1.2',
@@ -321,7 +321,7 @@ export const ECOSYSTEM_SURFACES = [
     url: 'https://1nc0gn30.si',
     domain: '1nc0gn30.si',
     accent: '#EF4444',
-    desc: 'Neal Frazier Tech (@1nc0gn30) — systems architect portfolio, 79+ open-source sovereign repositories, WebGPU shaders, and Linux OS engineering.',
+    desc: 'Neal Frazier Tech (@1nc0gn30) — systems architect portfolio, 82+ open-source sovereign repositories, WebGPU shaders, and Linux OS engineering.',
   },
 ];
 
@@ -387,7 +387,7 @@ export const DESKTOP_SCREENSHOTS = [
     title: 'Celtic Gold Applications Kickoff Menu',
     badge: 'HUMAN & AGENT LAUNCHER',
     src: '/screenshots/kickoff-menu.png',
-    desc: 'Hand-crafted 24K gold category insignia across Frontier AI Agents, Offensive Security, Cryptographic Vaults, and 80 Zoth Studio tools.',
+    desc: 'Hand-crafted 24K gold category insignia across Frontier AI Agents, Offensive Security, Cryptographic Vaults, and 83 Zoth Studio tools.',
   },
   {
     title: 'Zoth Sovereign Vault (zoth-vault)',
@@ -403,7 +403,7 @@ export const DESKTOP_SCREENSHOTS = [
   },
   {
     title: 'ZothOS Cockpit Pro & Studio v2',
-    badge: '80 SOVEREIGN TOOLS + 23+ DAEMONS',
+    badge: '83 SOVEREIGN TOOLS + 23+ DAEMONS',
     src: '/screenshots/zoth-cockpit-gold.png',
     desc: 'Pre-installed `zoth-cockpit` operations center and `/opt/zoth-studio` binding live to 23+ system daemons (:8102 Agent Bridge, :8094 STDP Memory, :8140 Vaēlor L1) and 56 Web/WebGPU tools.',
   },
@@ -432,7 +432,7 @@ export const COMPARISON_ROWS = [
   },
   {
     feature: 'Preloaded Sovereign Tools & Public Repos',
-    zoth: '80 Sovereign Tools (56 Web/WebGPU + 24 CLI • 79 Public GitHub Repos)',
+    zoth: '83 Sovereign Tools (56 Web/WebGPU + 27 CLI • 82 Public GitHub Repos)',
     kali: 'Security CLI Only',
     parrot: 'Security CLI Only',
     ubuntu: 'Standard GNOME Utilities',

@@ -7,7 +7,7 @@
 
 ### 1. ZothOS v3.4.0 — Full KDE Plasma 6 Wayland Sovereign AI Workstation
 - **Base Distribution**: Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI with KDE Plasma 6 Wayland 24K Gold Workstation and surgical APT pinning (`900` Debian Trixie, `400` Kali Rolling & Parrot Security).
-- **80 Preloaded Sovereign Tools**: **56 client-side Web/WebGPU workstations + 24 CLI/daemon engines**, backed by **79 public GitHub repositories** (`https://zoth.nullai.tech`).
+- **83 Preloaded Sovereign Tools**: **56 client-side Web/WebGPU workstations + 27 CLI/daemon engines**, backed by **82 public GitHub repositories** (`https://zoth.nullai.tech`).
 - **23+ Loopback System Daemons (`127.0.0.1` Only)**:
   - **Sovereign Agent Bridge (`:8102`)**: Ed25519 capability-leased multi-agent IPC bus enforcing Ring 0–3 permissions across coding agents.
   - **STDP Neuro-Memory (`:8094`)**: Biomorphic Spike-Timing-Dependent Plasticity (`dw = A+ * exp(-dt/tau)`) SQLite HNSW vector memory graph.
@@ -38,7 +38,7 @@
 
 ## NullAI Sovereign Ecosystem Cross-Links
 - **NullAI Platform**: https://nullai.tech
-- **Zoth Studio v2 (80 Preloaded Sovereign Tools)**: https://zoth.nullai.tech
+- **Zoth Studio v2 (83 Preloaded Sovereign Tools)**: https://zoth.nullai.tech
 - **ZothOS-Lite v1.2 (Amnesic Monotone Live OS)**: https://zothos-lite.nullai.tech
 - **Zoth Civilization (23 Pantheon Agents)**: https://zoth-civilization.netlify.app
 - **ZothNet (3-Hop Sphinx Mixnet)**: https://zothnet.nullai.tech

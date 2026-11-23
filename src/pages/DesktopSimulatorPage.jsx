@@ -119,7 +119,7 @@ export default function DesktopSimulatorPage() {
           '[✓] STDP NEURO-MEMORY:  neuro-memory-daemon ONLINE (127.0.0.1:8094 • 3-Factor STDP)',
           '[✓] VAĒLOR L1 LEDGER:   vaelor-l1-dag ONLINE (127.0.0.1:8140 • 100-Agent PoUW)',
           '[✓] MULTI-AGENT RELAY:  zoth-relay ONLINE (127.0.0.1:8765 • Landlock Sandbox)',
-          '[✓] SOVEREIGN ARSENAL:  80 PRELOADED TOOLS (56 Web/WebGPU + 24 CLI • 79 Repos)',
+          '[✓] SOVEREIGN ARSENAL:  83 PRELOADED TOOLS (56 Web/WebGPU + 27 CLI • 82 Repos)',
           '[✓] SOVEREIGN VAULT:    ONLINE (127.0.0.1:8787 • Argon2id + ChaCha20-Poly1305)',
           '[✓] THERMAL CEILING:    41.2°C / 55.0°C MAX (Fans: 0 RPM • no_turbo=1 Locked)',
           '========================================================================',

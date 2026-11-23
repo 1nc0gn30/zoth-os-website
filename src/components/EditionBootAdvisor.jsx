@@ -553,7 +553,7 @@ export default function EditionBootAdvisor({ compact = false }) {
 
             <Stack spacing={0.9} sx={{ mb: 2.2, flex: 1 }}>
               {[
-                '80 Preloaded Sovereign Tools: 56 Web/WebGPU + 24 CLI across 79 public GitHub repos',
+                '83 Preloaded Sovereign Tools: 56 Web/WebGPU + 27 CLI across 82 public GitHub repos',
                 '23+ System Daemons: Sovereign Agent Bridge (:8102), STDP Neuro-Memory (:8094), Vaēlor L1 (:8140)',
                 'Hermes-Zoth Orchestrator + 163 MCP Server Registry + Ring 0–3 Kernel Isolation',
                 'Kali Rolling + Parrot Security surgical APT parity & Argon2id RAM Vault (:8787)',

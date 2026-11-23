@@ -39,7 +39,7 @@ export default function DownloadPage() {
 # ==============================================================================
 # ZOTHOS v3.4.0 CUSTOM LIVE-BUILD ISO & COSIGN MANIFEST GENERATOR
 # Profile: ${defaultPill.toUpperCase()} | Kali+Parrot: ${includeKaliFull ? 'ENABLED' : 'MINIMAL'} | LUKS2: ${enableLuks2 ? 'ON' : 'OFF'}
-# Includes: Agent Bridge (:8102), STDP Memory (:8094), Vaēlor L1 (:8140), 80 Sovereign Tools
+# Includes: Agent Bridge (:8102), STDP Memory (:8094), Vaēlor L1 (:8140), 83 Sovereign Tools
 # ==============================================================================
 set -euo pipefail
 
@@ -83,7 +83,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
         version: '3.4.0',
         isoVolume: 'ZOTHOS_3_4_SOVEREIGN',
         base: 'Debian 13 (trixie) + KDE Plasma 6 Wayland',
-        preloadedTools: '80 Sovereign Tools (56 Web/WebGPU + 24 CLI, 79 public GitHub repos)',
+        preloadedTools: '83 Sovereign Tools (56 Web/WebGPU + 27 CLI, 82 public GitHub repos)',
         coreDaemons: ['sovereign-agent-bridge (:8102)', 'neuro-memory-daemon (:8094)', 'vaelor-l1-dag (:8140)', 'zoth-vault (:8787)'],
         defaultRealityPill: defaultPill,
         includeKaliParrotFull: includeKaliFull,
@@ -147,7 +147,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 1, mb: 2 }}>
             <UsbIcon sx={{ color: gold, fontSize: 32, flexShrink: 0 }} />
             <Chip
-              label="WORKSTATION ISO • 80 TOOLS + 23+ DAEMONS"
+              label="WORKSTATION ISO • 83 TOOLS + 23+ DAEMONS"
               size="small"
               sx={{
                 height: 'auto',
@@ -163,7 +163,7 @@ sha256sum live-image-amd64.hybrid.iso > zothos-3.4.0-amd64.iso.sha256`;
             zothos-3.4.0-amd64.iso
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 2, lineHeight: 1.65 }}>
-            Debian 13 (Trixie) + KDE Plasma 6 Wayland Hybrid UEFI &amp; Calamares LUKS2 Installer ISO. Ships with Sovereign Agent Bridge (<code>:8102</code>), STDP Neuro-Memory (<code>:8094</code>), Vaēlor L1 (<code>:8140</code>), Hermes-Zoth orchestrator, 80 preloaded sovereign tools (56 Web/WebGPU + 24 CLI), and Kali + Parrot security parity.
+            Debian 13 (Trixie) + KDE Plasma 6 Wayland Hybrid UEFI &amp; Calamares LUKS2 Installer ISO. Ships with Sovereign Agent Bridge (<code>:8102</code>), STDP Neuro-Memory (<code>:8094</code>), Vaēlor L1 (<code>:8140</code>), Hermes-Zoth orchestrator, 83 preloaded sovereign tools (56 Web/WebGPU + 27 CLI), and Kali + Parrot security parity.
           </Typography>
           <Box sx={{ p: 1.5, mb: 2.5, borderRadius: 2, bgcolor: '#07080D', border: '1px solid rgba(212, 175, 55, 0.35)', fontFamily: mono, fontSize: '0.73rem', fontWeight: 600, color: '#F5E6AB', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
             $ bash zothos-join-iso.sh &amp;&amp; sudo dd if=zothos-3.4.0-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync

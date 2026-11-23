@@ -24,7 +24,7 @@
       "name": "ZothOS v3.4.0 Full KDE Plasma 6 Wayland Workstation",
       "base": "Debian 13 (Trixie) + Linux 6.12 Hybrid UEFI",
       "daemons": "23+ system daemons (:8102 Sovereign Agent Bridge, :8094 STDP Neuro-Memory, :8140 Vaēlor L1, :8787 Argon2id Vault)",
-      "tools": "80 preloaded sovereign tools (56 Web/WebGPU + 24 CLI across 79 public GitHub repos)",
+      "tools": "83 preloaded sovereign tools (56 Web/WebGPU + 27 CLI across 82 public GitHub repos)",
       "orchestrator": "Hermes-Zoth",
       "repo": "https://github.com/1nc0gn30/zoth-os"
     },
@@ -42,7 +42,7 @@
   ],
   "ecosystem": [
     { "name": "NullAI Platform", "url": "https://nullai.tech" },
-    { "name": "Zoth Studio v2 (80 Sovereign Tools)", "url": "https://zoth.nullai.tech" },
+    { "name": "Zoth Studio v2 (83 Sovereign Tools)", "url": "https://zoth.nullai.tech" },
     { "name": "ZothOS-Lite v1.2", "url": "https://zothos-lite.nullai.tech" },
     { "name": "Zoth Civilization (23 Pantheon Agents)", "url": "https://zoth-civilization.netlify.app" },
     { "name": "ZothNet (3-Hop Sphinx Mixnet)", "url": "https://zothnet.nullai.tech" },
